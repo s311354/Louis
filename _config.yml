@@ -26,7 +26,7 @@ title:               Louis
 tagline:             'Better than before'
 description:         'A personal website about me. Also, sharing technical things I found useful, reading and travels </a>.'
 url:                 http://louis.getpoole.com
-baseurl:             'Louis.github.io'
+baseurl:             '/Louis.github.io'
 paginate:            5
 
 # About/contact
