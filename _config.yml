@@ -10,7 +10,7 @@ tagline:             'Better than before'
 description:         'A personal website about me. Also, sharing technical things I found useful, reading and travels </a>.'
 url:                 "https://Louis.github.io" # the base hostname & protocol for your site
 #url:               "http://localhost:4000" # use this url when you develope
-baseurl:            "Louis.github.io"
+baseurl:            "/Louis.github.io"
 paginate:            5
 
 
