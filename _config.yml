@@ -8,7 +8,7 @@ permalink:          pretty
 title:               Louis
 tagline:             'Better than before'
 description:         'A personal website about me. Also, sharing technical things I found useful, reading and travels </a>.'
-url:                 "https://Louis.github.io.com" # the base hostname & protocol for your site
+url:                 "https://yourdomain.com" # the base hostname & protocol for your site
 #url:               "http://localhost:4000" # use this url when you develope
 baseurl:            ""
 paginate:            5
