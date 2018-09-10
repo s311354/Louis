@@ -26,7 +26,7 @@ author:
   gravatar_md5: 220d6ef27327059400e760067eca1c7b
 
 
-# Plugin (2018/08/24 Louis)
+# fix permalink issue
 plugins: [jekyll-paginate]
 
 # Custom vars
