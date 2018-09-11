@@ -51,11 +51,11 @@ Next, download the Lanyon zip folder from [here](https://github.com/poole/lanyon
 
 Let's move into *username.github.io* directory and run the default page on local server. 
 
-<pre class="highlight"><code>
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code>
   <span class="nv">$ </span><span class="nb">cd </span>username.github.io
   <span class="nv">$ </span><span class="nb">jekyll </span>build
   <span class="nv">$ </span><span class="nb">jekyll </span>serve
-</code></pre>
+</code></pre></div>
 
 Unfortunately, since Lanyon is built on Poole and Poole does not support Jekyll 3 yet, you would get error message, [permalink issue](https://github.com/poole/lanyon/issues/124). For fixing this issue, you'll need to *comment out relative_permalinks: true* and *add jekyll-paginate setting*, as shown below
 
@@ -85,7 +85,7 @@ After that, you should execute *jekyll serve -w*, and must make sure everything 
 
 ### 4. Exploring the directory structure
 
-Before we go ahead and make customization, let's take a look at the overview of architecture in your directory. Once learning the design, we can confidently adjust the format and add several customized designs. 
+Before we go ahead and make customization, let's take a look at the overview of architecture in your directory. Once understanding the structure, we can confidently adjust the format and add several customized designs. 
 
 <figure>
 <a><img src="{{ site.baseurl }}/picture/structure.png"></a>
