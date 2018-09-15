@@ -101,4 +101,5 @@ This is prepared to become part of the next commit.
 ## Reference
 
 [1] [Git Handbook](https://guides.github.com/introduction/git-handbook/), GitHub Guides. 
+
 [2] [Learn Git with Bitbucket Cloud](https://www.atlassian.com/git/tutorials/saving-changes/git-stash)
