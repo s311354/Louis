@@ -94,11 +94,11 @@ This is prepared to become part of the next commit.
 
 <li>Stash your work:</li>
 
-
+========  To be continued   ========
 
 </ol>
 
 ## Reference
 
 [1] [Git Handbook](https://guides.github.com/introduction/git-handbook/), GitHub Guides. 
-
+[2] [Learn Git with Bitbucket Cloud](https://www.atlassian.com/git/tutorials/saving-changes/git-stash)
