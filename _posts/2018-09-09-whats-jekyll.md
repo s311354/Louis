@@ -51,13 +51,12 @@ Next, download the Lanyon zip folder from [here](https://github.com/poole/lanyon
 
 Let's move into *username.github.io* directory and run the default page on local server. 
 
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code>
-  <span class="nv">$ </span><span class="nb">cd </span>username.github.io
-  <span class="nv">$ </span><span class="nb">jekyll </span>build
-  <span class="nv">$ </span><span class="nb">jekyll </span>serve
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">cd </span>username.github.io
+<span class="nv">$ </span><span class="nb">jekyll </span>build
+<span class="nv">$ </span><span class="nb">jekyll </span>serve
 </code></pre></div>
 
-Unfortunately, since Lanyon is built on Poole and Poole does not support Jekyll 3 yet, you would get error message, [permalink issue](https://github.com/poole/lanyon/issues/124). For fixing this issue, you'll need to *comment out relative_permalinks: true* and *add jekyll-paginate setting*, as shown below
+Unfortunately, since Lanyon is built on Poole and Poole does not support Jekyll 3 yet, you would get error message, [permalink issue](https://github.com/poole/lanyon/issues/124). For fixing this issue, you'll need to comment out *relative permalinks: true* and add *jekyll-paginate setting*, as shown below
 
 <figure>
 <a><img src="{{ site.baseurl }}/picture/permalinks_issue.png" width="120%"></a>
@@ -93,11 +92,21 @@ Before we go ahead and make customization, let's take a look at the overview of 
 
 The overview of structure:
 
- -  _config.yml: the configuration file, which placed in your site's root directory, gives you a lot of flexibility to customize how it builds your site. [options](https://jekyllrb.com/docs/configuration/)
- - index.html: this configures your front page. 
- - about.md and archive.md: this is the Makedown files and will be transformed by Jekyll to a static page. You can add other static page by creating Makedown files with a [front matter](https://jekyllrb.com/docs/front-matter/) section.
- - _includes and _layouts: These directories contain the HTML boilerplate required to build your site.
- - _posts: This directory includes the posts that you will be posting. They are Markdown files.
+ -  _config.yml:
+
+    The configuration file, which placed in your site's root directory, gives you a lot of flexibility to customize how it builds your site. [options](https://jekyllrb.com/docs/configuration/)
+ - index.html:
+    
+    This configures your front page. 
+ - about.md and archive.md:
+    
+    This is the Makedown files and will be transformed by Jekyll to a static page. You can add other static page by creating Makedown files with a [front matter](https://jekyllrb.com/docs/front-matter/) section.
+ - _includes and _layouts:
+    
+    These directories contain the HTML boilerplate required to build your site.
+ - _posts:
+    
+    This directory includes the posts that you will be posting. They are Markdown files.
  
  For more details, please refer to this [page](https://jekyllrb.com/docs/structure/).
 
