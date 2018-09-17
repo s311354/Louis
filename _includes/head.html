@@ -22,7 +22,6 @@
   <!-- change the font -->
   <link href="https://fonts.googleapis.com/css?family=Average" rel="stylesheet"> 
 
-
   <!-- Icons -->
   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ site.baseurl }}/public/apple-touch-icon-precomposed.png">
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
@@ -30,7 +29,12 @@
   <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" crossorigin="anonymous"></script>
 
 
-
   <!-- RSS -->
   <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+
+	<!-- Google Analytics -->
+	{% if site.google_analytics and jekyll.environment == 'production' %}
+		{% include google_analytics.html %}
+	{% endif %}
+
 </head>

@@ -112,10 +112,15 @@ The overview of structure:
 
 =========== To be continued.... ==========
 
-
 ## Reference
 [1] [How to build a blog using Github, Jekyll and Lanyon](https://nikhita.github.io//build-blog-using-github-jekyll#using-lanyon), by Nikhita Raghunath
 
 [2] [GitHub Pages](https://pages.github.com)
 
 [3] [Lanyon Repo](https://github.com/poole/lanyon)
+
+## Note
+<p>If you have any constructive criticism or advises, leave the comments below or feel free to email me @qazqazqaz850@gmail.com.
+
+Hope this post will help! :)
+</p>

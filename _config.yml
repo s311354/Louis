@@ -25,6 +25,8 @@ author:
   email:             qazqazqaz850@gmail.com
   gravatar_md5: 220d6ef27327059400e760067eca1c7b
 
+# Google Analytics
+google_analytics: UA-125815034-1
 
 # fix permalink issue
 plugins: [jekyll-paginate]
