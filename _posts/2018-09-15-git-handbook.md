@@ -34,23 +34,19 @@ Now, you can see your current configurations, type:
 
 <h4><a name="TableContent"></a> Table of Contents</h4>
 
-<h6>
-<ol>
-
-<li><a href="#ShowStatus">Show the status of the files on your branch</a></li>
-<li><a href="#CreateBranch">Create a new branch</a></li>    
-<li><a href="#CheckoutBranch">Check out to your new branch</a></li>
-<li><a href="#MergeBranch">Join two or more development histories together</a></li>
-<li><a href="#CompareChange">Compare the changes</a></li>
-<li><a href="#AddFile">Add your file to the staging area</a></li>
-<li><a href="#HistroyCommit">See the histroy of commits</a></li>
-<li><a href="#CommitFile">Commit your file and type the commit message</a></li>
-<li><a href="#PushCommit">Push your commit to the remote and set a trackng branch</a></li>
-<li><a href="#UpdateRepo">Update your local copy of repository</a></li>
-<li><a href="#StashChange">Stash your work</a></li>
-
-</ol>
-</h6>
+<h6><ol>
+    <li><a href="#ShowStatus">Show the status of the files on your branch</a></li>
+    <li><a href="#CreateBranch">Create a new branch</a></li>    
+    <li><a href="#CheckoutBranch">Check out to your new branch</a></li>
+    <li><a href="#MergeBranch">Join two or more development histories together</a></li>
+    <li><a href="#CompareChange">Compare the changes</a></li>
+    <li><a href="#AddFile">Add your file to the staging area</a></li>
+    <li><a href="#HistroyCommit">See the histroy of commits</a></li>
+    <li><a href="#CommitFile">Commit your file and type the commit message</a></li>
+    <li><a href="#PushCommit">Push your commit to the remote and set a trackng branch</a></li>
+    <li><a href="#UpdateRepo">Update your local copy of repository</a></li>
+    <li><a href="#StashChange">Stash your work</a></li>
+</ol></h6>
 
 #### Git Commands
 <ol>
