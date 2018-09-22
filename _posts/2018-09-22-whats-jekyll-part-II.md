@@ -129,9 +129,7 @@ title: Archive
 
 Now, rebuilding jekyll and then you can see the archive page on your website. 
 
-------------------------------------------------------------------
 To be continued ....
-------------------------------------------------------------------
 
 <h4><a name="AddSocial"></a>  4. Adding Social Media Buttons</h4>
 
