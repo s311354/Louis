@@ -18,6 +18,7 @@ Further to the previous past,
 	<li><a href="#EnableAnalytics">Enable Google Analytics</a></li>
 	<li><a href="#InsertDisqus">Inserting Disqus Comments</a></li>
 	<li><a href="#AddArchive">Adding a Archive Page</a></li>
+	<li><a href="#AddSocial">Adding Social Media Buttons</a></li>
 </ol></h6>
 
 <h4><a name="EnableAnalytics"></a>  1. Enable Google Analytics</h4>
@@ -47,7 +48,7 @@ Then, opening your site *\_config.yml* file and add the following line of code. 
 google_analytics: UA-XXXXXXXXX-X 
 </pre></div>
 
-Finally, Google recommends placing the &lt;head&gt; section, shown as below, in the *head.html* of your sitethat located in your site's *\_include/* directroy.
+Finally, Google recommends placing the &lt;head&gt; section, shown as below, in the *head.html* of your site that located in your site's *\_include/* directroy.
 
 <div class="language-shell highlighter-rouge">
 <pre class="highlight"># &lt;head&gt; section
@@ -63,7 +64,7 @@ Save it and you are good to go!!
 Disqus is a networked community platform widely used by website. With Disqus, your website gains a feature-rich comment system complete with social network integration and extensive community functions. 
 
 
-First, you also need a Disqus account for this feature. Head to the [website](https://disqus.com), creating an account and it'll ask you if you want to "Add Disqus to your site". The website will provide the Disqus setting. You should create *comments.html* in *_includes/* dircetory and paste the setting on this html file, shown as below:
+First, you also need a Disqus account for this feature. Head to the [website](https://disqus.com), creating an account and it'll ask you if you want to "Add Disqus to your site". The website will show the guideline how to add the Disqus comment system in your blog. You should create *comments.html* in *_includes/* dircetory and paste the setting on this html file, shown as below:
 
 <div class="language-shell highlighter-rouge">
 <pre class="highlight">&lt;!-- Intergating Disqus comments  --&gt;                                               &lt;div id="disqus_thread"&gt;&lt;/div&gt;
@@ -89,10 +90,11 @@ First, you also need a Disqus account for this feature. Head to the [website](ht
 &lt;noscript&gt;Please enable JavaScript to view the &lt;a href="https://disqus.com/?ref_noscript"&gt;comments powered by Disqus.&lt;/a&gt;&lt;/noscript&gt;
 </pre></div>
 
-In addition, open the *_layouts/default.html* file and add the line as shown:
+#### **NOTE: Do not paste the code posted above - you’ll link to my google analytics account !**
 
-<div class="language-shell highlighter-rouge">
-<pre class="highlight">&lt;body&gt;
+Moreover, opening the *_layouts/default.html* file and adding the line as shown:
+
+<div class="language-shell highlighter-rouge"><pre class="highlight">&lt;body&gt;
 ....
 &lt;!-- disqus web site  --&gt;
 &lt;div class="container content"&gt;
@@ -101,7 +103,6 @@ In addition, open the *_layouts/default.html* file and add the line as shown:
   &#123;% include comments.html %&#125;
 
 &lt;/div&gt;
-
 ....
 &lt;/body&gt;
 </pre></div>
@@ -110,9 +111,9 @@ Now, run jekyll build and jeckll serve again to see Disque comments enable on th
 
 <h4><a name="AddArchive"></a>  3. Adding a Archive Page</h4>
 
-Lanyon, by default, does not provide an archive page. The archive page allows you capture, manage and search collection of your post. In this section, we will show you how to create a archive page in your website. Let's make one. 
+Lanyon, by default, does not provide an archive page. The archive page allows you capture, manage and search collection of your post. In this section, we will show you how to create an archive page in your website. Let's make one. 
 
-You should create an new *archive.md* file in your root folder and add the following contents to it.
+You should create a new *archive.md* file in your root folder and add the following contents to it.
 
 <div class="language-shell highlighter-rouge">
 <pre class="highlight">---
@@ -129,12 +130,32 @@ title: Archive
 
 Now, rebuilding jekyll and then you can see the archive page on your website. 
 
-To be continued ....
-
 <h4><a name="AddSocial"></a>  4. Adding Social Media Buttons</h4>
 
+The [Font Awesome](https://fontawesome.com/?from=io) liberary is the world's most popular and easiest to use icon. It has grown to have over 3000 icons and continuous to add the needed icons. You can choose the icons you need. 
+First, you should add the "font-awesome.min.css" CSS link in *_includes/head.html*:
+<div class="language-shell highlighter-rouge">
+<pre class="highlight">&lt;link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"&gt;
+</pre></div>
+
+Then, you can add multiple social media link buttons in any page you'll allow appearing in. Instance, in my page, I add e-mail, LinkedIn and instagram accounts, and so on in *about.md* . (shown as below)
+
+<div class="language-shell highlighter-rouge">
+<pre class="highlight">&lt;!-- Icon Link --&gt;
+&lt;div style=&quot;text-align: center;&quot;&gt;
+&lt;a style=&quot;margin-right: 20px;&quot; href=&quot;https://www.instagram.com/liulouis0419&quot; target=&quot;\_blank&quot; title=&quot;Instagram Page&quot; class=&quot;x1&quot;&gt;&lt;i class=&quot;fab fa-instagram fa-2x&quot; style=&quot;cursor: pointer&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+&lt;/div&gt;
+</pre></div>
+
+#### **REMARK: Replace href with your social media link.** 
+
+Congratulation, your social buttons are ready for action! :)  
+
+To be continued....
 
 <h4><a name="AddPhoto"></a>  5. Adding your Photo to the sidebar</h4>
+
+
 
 ## Reference
 [1] [How to build a blog using Github, Jekyll and Lanyon](https://nikhita.github.io//build-blog-using-github-jekyll#using-lanyon), by Nikhita Raghunath
