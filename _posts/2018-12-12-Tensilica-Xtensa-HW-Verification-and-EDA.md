@@ -4,12 +4,13 @@ title: Tensilica Xtensa Hardward Verification and EDA
 ---
 
 ## Purpose
-    Fortemedia inc. EDA tool utilizes Tensilica Xtensa HW verification and EDA tool to develop SOC design. The Tensilica was a company based in Sillicon Valley in the semiconductor intellectual property core business. It is now a part of Cadence Design Systems. The Xtensa processor architecture is a configurable, extensible, and synthesizable 32-bits RISC processor, emphasising on software single-clock.
 
-    By using Tensilicas Xtensa dataplane processing units (DPUs), design teams can signifficantly reduce the development and verification time required by hand-coding RTL blocks in Verilog or VHDL. As these DPUs provide programabilit
+Fortemedia inc. EDA tool utilizes Tensilica Xtensa HW verification and EDA tool to develop SOC design. The Tensilica was a company based in Sillicon Valley in the semiconductor intellectual property core business. It is now a part of Cadence Design Systems. The Xtensa processor architecture is a configurable, extensible, and synthesizable 32-bits RISC processor, emphasising on software single-clock.
+
+By using Tensilicas Xtensa dataplane processing units (DPUs), design teams can signifficantly reduce the development and verification time required by hand-coding RTL blocks in Verilog or VHDL. As these DPUs provide programabilit
 y into the dataplane, changes can be made in firmware after sillicon production that extend the life of the product as standards develop and merket needs change.
 
-    Two essential features of all Xtensa customizable processors:
+Two essential features of all Xtensa customizable processors:
 <ul style="list-style-type:disc">
   <li> Configurability </li>
    designers are offered a menu if checkbox and drop-down menu options so they can pick just the features they need.
@@ -26,9 +27,9 @@ erface, and Platform for runing programs and application in simulation (ISS simu
 
 ## Reference
 
-[1] [Tensilica Xtensa Hardware Verification and EDA](https://www.cadence.com/content/cadence-www/global/en_US/home/training/all-courses/86065.html) 
+[1] [Tensilica Xtensa Hardware Verification and EDA](https://www.cadence.com/content/cadence-www/global/en_US/home/training/all-courses/86065.html)
+
 [2] [Xtensa Processors Wiki](https://www.semiwiki.com/forum/showwiki.php?title=Tensilica:Xtensa-Processors-Wiki)
-[3]
 
 ## Note
 <p>If you have any constructive criticism or advises, leave the comments below or feel free to email me @qazqazqaz850@gmail.com.
