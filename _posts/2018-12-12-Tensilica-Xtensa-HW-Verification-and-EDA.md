@@ -7,8 +7,9 @@ title: Tensilica Xtensa Hardward Verification and EDA
 
 In Fortemedia inc., the company utilizes Tensilica Xtensa HW verification and EDA tool to develop SOC design. The Tensilica was a company based in Sillicon Valley in the semiconductor intellectual property core business. It is now a part of Cadence Design Systems. The Xtensa processor architecture is a configurable, extensible, and synthesizable 32-bits RISC processor, emphasising on software single-clock.
 
-By using Tensilicas Xtensa dataplane processing units (DPUs), design teams can signifficantly reduce the development and verification time required by hand-coding RTL blocks in Verilog or VHDL. As these DPUs provide programabilit
-y into the dataplane, changes can be made in firmware after sillicon production that extend the life of the product as standards develop and merket needs change.
+Tensillica's Xtensa technology provides SOC (system-on-chip) designers with the world's first configurable and extensible processor cores fully supported by automatic hardward and software generation. The Xtensa product line is the first processor and DSP core family designed specifically to meet the wide range of performance requirements in today's SOC designs.
+
+By using Tensilicas Xtensa dataplane processing units (DPUs), design teams can signifficantly reduce the development and verification time required by hand-coding RTL blocks in Verilog or VHDL. As these DPUs provide programability into the dataplane, changes can be made in firmware after sillicon production that extend the life of the product as standards develop and merket needs change.
 
 Two essential features of all Xtensa customizable processors:
 <ul style="list-style-type:disc">
