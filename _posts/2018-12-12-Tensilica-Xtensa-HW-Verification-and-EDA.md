@@ -5,7 +5,7 @@ title: Tensilica Xtensa Hardward Verification and EDA
 
 ## Purpose
 
-Fortemedia inc. EDA tool utilizes Tensilica Xtensa HW verification and EDA tool to develop SOC design. The Tensilica was a company based in Sillicon Valley in the semiconductor intellectual property core business. It is now a part of Cadence Design Systems. The Xtensa processor architecture is a configurable, extensible, and synthesizable 32-bits RISC processor, emphasising on software single-clock.
+In Fortemedia inc., the company utilizes Tensilica Xtensa HW verification and EDA tool to develop SOC design. The Tensilica was a company based in Sillicon Valley in the semiconductor intellectual property core business. It is now a part of Cadence Design Systems. The Xtensa processor architecture is a configurable, extensible, and synthesizable 32-bits RISC processor, emphasising on software single-clock.
 
 By using Tensilicas Xtensa dataplane processing units (DPUs), design teams can signifficantly reduce the development and verification time required by hand-coding RTL blocks in Verilog or VHDL. As these DPUs provide programabilit
 y into the dataplane, changes can be made in firmware after sillicon production that extend the life of the product as standards develop and merket needs change.
@@ -21,9 +21,7 @@ Two essential features of all Xtensa customizable processors:
 ## Xtensa Hardware Verification
 
 ### Verification Flows
-    Tensilica provides three methods to verify HW design, ISS simulation, XTSC simulation and FPGA emulation. The both of ISS and XTSC simulations are system level verification. In addition, Tensilica verification scripts (e.g. soc_g
-o) invoke CAD tool directly. For the diagnostic support, Tensilica provides a set diagnostic tests - Architectural Verification Programs (AVP) for all baisc-ISA opcodes, Micro-architecture Verification Programs (MVP) for checking int
-erface, and Platform for runing programs and application in simulation (ISS simulation).
+Tensilica provides three methods to verify HW design, ISS simulation, XTSC simulation and FPGA emulation. The both of ISS and XTSC simulations are system level verification. In addition, Tensilica verification scripts (e.g. soc_go) invoke CAD tool directly. For the diagnostic support, Tensilica provides a set diagnostic tests - Architectural Verification Programs (AVP) for all baisc-ISA opcodes, Micro-architecture Verification Programs (MVP) for checking interface, and Platform for runing programs and application in simulation (ISS simulation).
 
 ## Reference
 
