@@ -9,7 +9,7 @@ Tensilica Instruction Extension (TIE) refers to the proprietary language that is
 
 ## What is TIE, TIE intrinsic and TIE ctypes?
 
-#### TIE and TIE intrinsic
+### TIE and TIE intrinsic
 
 TIE is used to describe assembly/instruction extensions at a high level of abstraction. This syntax is a mixture of Verilog and C that describes how the instruction extensions are used by software.
 
@@ -39,7 +39,7 @@ _TIE_test_MAC(a, b, accum);
 
 </ol>
 
-#### TIE ctypes
+### TIE ctypes
 
 The developers also can depoly the user data types, known as TIE ctypes in TIE intrinsics. The TIE ctypes entend to ANSI C type system and make it possible to use data of arbitrary width in intrinsics, not restricted to using char, short, int, etc. The XCC treats TIE ctypes and ANSI C data types exactly the same. However. TIC ctypes often have their own register files. 
 
@@ -55,7 +55,6 @@ When using variables of TIE ctypes, there are several rules to remember:
 <li> Developers cannot print value of a TIE ctype variable using printf().</li>
 <li> Ctype variables can be viewed in the Debugger View of Xplorer, default display format is hex. </li>
 <li> Developers need to "instruct" XCC to load a value into a TIE ctype variable by: </li>
-</ol>
 
 <div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="nv"></span><span class="nb">// Step 1: initialize an C data type array in memory
 unsigned int temp[4] __attribute__((aligned(16))) = 
@@ -67,6 +66,8 @@ vec *vp = (vec*) temp;
 // Step 3: load value in to vec variable
 vec va = *vp;
 </span></code></pre></div>
+
+</ol>
 
 ## Reference
 
