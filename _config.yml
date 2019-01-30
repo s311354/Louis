@@ -35,3 +35,7 @@ plugins: [jekyll-paginate]
 version:             1.0.0
 
 #theme: jekyll-theme-minimal
+
+# Enable the Jekyll SEO tag
+plugins:
+  - jekyll-seo-tag
