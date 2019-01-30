@@ -20,31 +20,28 @@ During the period from graduating to being an Engineer, Linux/Unix commands beco
 
 \"sed\" is used for finding, parsing, text substitution, replacement and text manipulations such as insertion, deletion search etc. And, we also can use sed with regular expression.
 
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">
-Usage: sed [OPTION]... {script-only-if-no-other-script} [input-file]... 
-
-  -i[SUFFIX], --in-place[=SUFFIX]
-                 edit files in place (makes backup if extension supplied).
-                 The default operation mode is to break symbolic and hard links.
-                 This can be changed with --follow-symlinks and --copy.
-
-  -e script, --expression=script
-                 add the script to the commands to be executed
-
-  ...
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="nv">$ Usage: sed [OPTION]... {script-only-if-no-other-script} [input-file]... 
+$
+$  -i[SUFFIX], --in-place[=SUFFIX]
+$                 edit files in place (makes backup if extension supplied).
+$                 The default operation mode is to break symbolic and hard links.
+$                 This can be changed with --follow-symlinks and --copy.
+$
+$  -e script, --expression=script
+$                 add the script to the commands to be executed
+$
+$  ...
 </span></code></pre></div>
 
 Example:                                                                                                                                                         
 <ol>
 <li> Parsing the strings</li>
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">
-sed -e 's/^..............\(..\)/\1/' nput-file]
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="nv">$ sed -e 's/^..............\(..\)/\1/' nput-file]
 </span></code></pre></div>
 This command is used for parsing the last two strings, line by line. 
 
 <li> Replacement</li>
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">
-sed 's/abc/123/' [input-file]
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="nv">$ sed 's/abc/123/' [input-file]
 </span></code></pre></div>
 This command is used for replacing "abc" with "123".  
 </ol>
@@ -53,19 +50,17 @@ This command is used for replacing "abc" with "123".
 
 \"wc\" is used for print newline, word, and byte counts for each file. 
 
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">
-Usage: wc [OPTION]... [FILE]...
-
-   -l, --lines            print the newline counts
-   -w, --words            print the word counts
-  ...
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="nv">$ Usage: wc [OPTION]... [FILE]...
+$
+$   -l, --lines            print the newline counts
+$   -w, --words            print the word counts
+$  ...
 </span></code></pre></div>
 
 Example: 
 <ol>
 <li> Present the number of lines</li>
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">
-wc -le  [FILE]
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="nv">$ wc -le  [FILE]
 </span></code></pre></div>
 This command supports  more than one files.
 </ol>
@@ -75,37 +70,29 @@ This command supports  more than one files.
 
 \"ln\" is an utility for creating links between files. By default, the ln command creates hard links. To create a symbolic links use the -s (--symbolic) option.
 
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">
-Usage: ln [OPTION]... [-T] TARGET LINK_NAME   (1st form)
-  or:  ln [OPTION]... TARGET                  (2nd form)
-  or:  ln [OPTION]... TARGET... DIRECTORY     (3rd form)
-  or:  ln [OPTION]... -t DIRECTORY TARGET...  (4th form)
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="nv">$ Usage: ln [OPTION]... [-T] TARGET LINK_NAME   (1st form)
+$  or:  ln [OPTION]... TARGET                  (2nd form)
+$  or:  ln [OPTION]... TARGET... DIRECTORY     (3rd form)
+$  or:  ln [OPTION]... -t DIRECTORY TARGET...  (4th form)
   
-  ...
-  -s, --symbolic              make symbolic links instead of hard links
-  -S, --suffix=SUFFIX         override the usual backup suffix
-  -t, --target-directory=DIRECTORY  specify the DIRECTORY in which to create
+$  ...
+$  -s, --symbolic              make symbolic links instead of hard links
+$  -S, --suffix=SUFFIX         override the usual backup suffix
+$  -t, --target-directory=DIRECTORY  specify the DIRECTORY in which to create
                                 the links
-  ...
+$  ...
 </span></code></pre></div>
 
 Example: 
 <ol>
 <li> Creating Symlinks</li>
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">
-ln -s source_file symbolic_link
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="nv">$ ln -s source_file symbolic_link
 </span></code></pre></div>
 This command creates symbolic link in Linux, replascing source_file with the name of the existing file for which you want to create the symbolic link and symbolic_link with the name of the symbolic link.
 </ol>
 
 
-
-
 =========== To be continued.... ==========
-
-
-
-
 
 
 ## Reference
