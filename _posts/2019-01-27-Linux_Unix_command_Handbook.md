@@ -11,9 +11,9 @@ During the period from graduating to being an Engineer, Linux/Unix commands beco
 
 <h4><a name="TableContent"></a> Table of Contents </h4>
 <h5><ol>
-    <li><a href="#SED"></a> SED command </li>
-    <li><a href="#WC"></a> WC command </li>
-    <li><a href="#LN"></a> LN command </li>
+    <li><a href="#SED">SED command</a></li>
+    <li><a href="#WC">WC command</a></li>
+    <li><a href="#LN">LN command</a></li>
 </ol></h5>
 
 <h3><a name="SED"></a> SED command </h3>
