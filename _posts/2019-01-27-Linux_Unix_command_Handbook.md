@@ -41,7 +41,7 @@ Example:
 This command is used for parsing the last two strings, line by line. 
 
 <li> Replacement</li>
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="nv">$ sed 's/abc/123/' [input-file]
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="nv">$ sed -i 's/abc/123/' [input-file]
 </span></code></pre></div>
 This command is used for replacing "abc" with "123".  
 </ol>
