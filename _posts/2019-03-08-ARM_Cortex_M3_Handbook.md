@@ -78,8 +78,7 @@ The Makefile also supports the specified test, please type "make help" and this 
 
 ## Reference
 
-[1] [Arm Cortex-M3 processor, the core of the Internet of Things](https://community.arm.com/processors/b/blog/posts/arm-cortex-m3-processor-the-core-of-the-iot?_ga=2.36344800.133526306
-2.1549937343-1623124150.1549417690)
+[1] [Arm Cortex-M3 processor, the core of the Internet of Things](https://community.arm.com/processors/b/blog/posts/arm-cortex-m3-processor-the-core-of-the-iot?_ga=2.36344800.1335263062.1549937343-1623124150.1549417690)
 
 [2] [ARM Compiler armar User Guide Version 5.04](https://developer.arm.com/products/software-development-tools/compilers/arm-compiler-5/docs/dui0476/j)
 
