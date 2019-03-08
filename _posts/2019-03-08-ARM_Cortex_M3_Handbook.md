@@ -65,8 +65,7 @@ make[1]: Leaving directory .../logical/testbench/execution_tb
     hello_world PASSED
 </span></code></pre></div>
 
-<NOTE>
-The Makefile also supports the specified test, please type "make help" and this would shows extra information.
+Remind: The Makefile also supports the specified test, please type "make help" and this would shows extra information.
 
 ### The Bus Interface
 
