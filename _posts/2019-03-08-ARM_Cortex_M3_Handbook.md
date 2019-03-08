@@ -78,14 +78,14 @@ The Makefile also supports the specified test, please type "make help" and this 
 
 ## Reference
 
-[1] [Arm Cortex-M3 processor - the core of the Internet of Things](https://community.arm.com/processors/b/blog/posts/arm-cortex-m3-processor-the-core-of-the-iot?_ga=2.36344800.133526306
+[1] [Arm Cortex-M3 processor, the core of the Internet of Things](https://community.arm.com/processors/b/blog/posts/arm-cortex-m3-processor-the-core-of-the-iot?_ga=2.36344800.133526306
 2.1549937343-1623124150.1549417690)
 
 [2] [ARM Compiler armar User Guide Version 5.04](https://developer.arm.com/products/software-development-tools/compilers/arm-compiler-5/docs/dui0476/j)
 
 [3] [GNU Arm Embedded Toolchain - Version 5-2016-q2-update](https://developer.arm.com/open-source/gnu-toolchain/gnu-rm/downloads/5-2016-q2-update)
 
-[4] [The Definitive Guide to ARM Cortex-M3 and Cortex-M4 Processors, Joseph Yiu]
+[4] The Definitive Guide to ARM Cortex-M3 and Cortex-M4 Processors, Joseph Yiu
 
 [5] [Multi-layer AHB Overview](http://infocenter.arm.com/help/index.jsp?topic=/com.arm.doc.dvi0045b/index.html)
 
