@@ -44,7 +44,12 @@ This command is used for parsing the last two strings, line by line.
 <li> Replacement</li>
 <div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="nv">$ sed -i 's/abc/123/' [input-file]
 </span></code></pre></div>
-This command is used for replacing "abc" with "123".  
+This command is used for replacing "abc" with "123".
+
+<li> Add a line in a specific position</li>
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="nv">$ sed '3iline 3' [input-file]
+</span></code></pre></div>
+This command is used for inserting the "line 3" text at line 3 in input-file file.
 </ol>
 
 <h3><a name="WC"></a> WC command </h3>
