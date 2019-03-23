@@ -21,8 +21,8 @@ title: Categories
                     <li>
                             <a class="post-title" href="{{ site.baseurl }}{{ post.url }}">
                                 {{ post.title }} 
-                                <small>{{ post.date | date: '%m/%d/%Y' }}</small>
                             </a>
+                                <small>{{ post.date | date: '%m/%d/%Y' }}</small>
                     </li>
                         {% endfor %}
                 </ul>

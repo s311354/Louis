@@ -564,30 +564,7 @@ a.pagination-item:hover {
   box-shadow: -.25rem 0 .5rem rgba(0,0,0,.1);
 }
 
-
-@media(max-width: 1400px) {
-
-  .tag-box {
-    float: right;
-    /* margin-right: 60px; */
-    margin-right: -200px;
-    visibility: visible;
-  }
-}
-
-@media(max-width: 1000px) {
-
-  .tag-box {
-    float: right;
-    /* margin-right: 60px; */
-    margin-right: -100px;
-    visibility: hidden;
-  }
-}
-
-.category-id {
-  margin-left: 5px;
-}
+/*stuff to add for tags*/
 
 small {
   color: #9a9a9a;

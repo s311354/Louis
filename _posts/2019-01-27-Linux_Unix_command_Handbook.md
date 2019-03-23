@@ -2,6 +2,7 @@
 layout: post
 title: Linux/Unix command Handbook
 tags: [Unix, C, CAD]
+categories: [eating, travelling]
 ---
 
 ## Purpose 
