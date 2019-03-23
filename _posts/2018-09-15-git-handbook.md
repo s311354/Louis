@@ -1,5 +1,6 @@
 ---
 layout: post
+categories: [javascript]
 title: Git Handbook
 ---
 

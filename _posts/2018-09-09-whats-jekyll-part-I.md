@@ -1,5 +1,6 @@
 ---
 layout: post
+categories: [programming, javascript]
 title: What's Jekyll and How to build a personal blog using Lanyon ( Part I )
 ---
 

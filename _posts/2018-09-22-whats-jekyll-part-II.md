@@ -1,6 +1,7 @@
 ---
 layout: post
 title: What's Jekyll and How to build a personal blog using Lanyon ( Part II )
+categories: [programming, misc]
 ---
 
 ## Abstract

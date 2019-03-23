@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Introduce Tensilica Instruction Extension Language
+tags: [C, Linux, TEST]
 ---
 
 ## Purpose
