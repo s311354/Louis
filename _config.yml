@@ -40,3 +40,7 @@ version:             1.0.0
 # Enable the Jekyll SEO tag
 plugins:
   - jekyll-seo-tag
+
+# Inculde customized Javescript function (Issue)
+source:
+  - assets/button.js

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Calfornia Driver License 
+tags: [Trivials]
 ---
 
 ## How to Get a Driver's License with Calfornia DMV

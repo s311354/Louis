@@ -1,6 +1,7 @@
 ---
 layout: post
-title: Intorduce Verilog Mode and Emacs 
+title: Intorduce Verilog Mode and Emacs
+tags: [Verliog, Emacs]
 ---
     
 ## Purpose 
@@ -21,7 +22,7 @@ Emacs is a family of text editors, like vim and notepad++. The emacs fans descri
 
 <ol>
 <li>Check Emacs version</li>
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="nv">$ emacs --version 
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb">$ emacs --version 
 GNU Emacs 26.1
 Copyright (C) 2018 Free Software Foundation, Inc.
 GNU Emacs comes with ABSOLUTELY NO WARRANTY.
@@ -30,7 +31,7 @@ under the terms of the GNU General Public License.
 For more information about these matters, see the file named COPYING.
 </span></code></pre></div>
 <li>Install on macOS</li>
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="nv"># Upgrade brew open-source software package management system 
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb"># Upgrade brew open-source software package management system 
 $ brew update
 # Install emacs
 $ brew install emacs
@@ -95,8 +96,10 @@ The Verilog AUTOS are in use by many of the leading IP providers, including IP p
 
 The verilog-mode features have been implemented by Emacs Lisp code loading verilog-auto functions, similar to load-library, but is lower-level and accepts additional arguments.
 
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="nv"># The verilog-mode.elc in Emacs load-path: emacs/26.1/lisp/progmodes/verilog-mode.elc
-$ vi verilog-mode.elc
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb"># The verilog-mode.elc in Emacs load-path: emacs/26.1/lisp/progmodes/verilog-mode.elc
+$ less verilog-mode.elc
+
+...
 3124 Using \[describe-function], see also:
 3125     `verilog-auto-arg'          for AUTOARG module instantiations
 3126     `verilog-auto-ascii-enum'   for AUTOASCIIENUM enumeration decoding
@@ -106,7 +109,7 @@ $ vi verilog-mode.elc
 
 ### Demo Emacs Verilog-mode
 
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="nv"># Clone Verilog_Mode repo
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb"># Clone Verilog_Mode repo
 $ git clone https://github.com/s311354/Verilog_Mode.git
 
 # Enter Verilog_Mode directory and execute emacs

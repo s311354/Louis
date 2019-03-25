@@ -1,7 +1,7 @@
 ---
 layout: post
-categories: [javascript]
 title: Git Handbook
+tags: [Git]
 ---
 
 ## Purpose
@@ -20,16 +20,16 @@ Before working with Git on the command line, there are some basic configurations
 
 By replacing {YOUR NAME} with your first and last name:
 
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">git config </span> --global user.name {YOUR NAME} </code></pre></div>
+<div ><pre class="highlight"><code class="hljs ruby"><span class="nb">$ </span><span class="nb">git config  --global user.name {YOUR NAME} </span></code></pre></div>
 
 Then, replaceing {EMAIL} with the email associated with your GitHub account:
 
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">git config </span>--global user.email {EMAIL}</code></pre></div>
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb">$ </span><span class="nb">git config --global user.email {EMAIL} </span></code></pre></div>
 
 Now, you can see your current configurations, type:
 
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">git config </span>--list
-</code></pre></div>
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb">$ </span><span class="nb">git config --list
+</span></code></pre></div>
 
 ### High Frequency Git Commands
 
@@ -53,26 +53,26 @@ Now, you can see your current configurations, type:
 <ol>
 <li><a name="ShowStatus"></a> Show the status of the files on your branch:</li>
 
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">git status </span></code></pre></div>
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb">$ git status </span></code></pre></div>
 
 <li><a name="CreateBranch"></a> Create a new branch:</li>
 
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">git branch </span>{BRANCH-NAME}</code></pre></div>
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb">$ git branch {BRANCH-NAME}</span></code></pre></div>
 
 <li><a name="CheckoutBranch"></a> Check out to your new branch:</li>
 
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">git checkout </span>{BRANCH-NAME}</code></pre></div>
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb">$ git checkout {BRANCH-NAME}</span></code></pre></div>
 
 <li><a name="MergeBranch"></a> Join two or more development histories together:</li>
 
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">git merge </span>{BRANCH-NAME}</code></pre></div>
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb">$ git merge {BRANCH-NAME}</span></code></pre></div>
 
 <div>Example:
-<div class="language-shell highlighter-rouge"><pre class="highlight">
-<code><span class="nv"># </span>First, let's check out to the "master" branch</code>
-<code><span class="nv">$ </span><span class="nb">git checkout </span>master</code>
-<code><span class="nv"># </span>Then, merge Dev to current branch </code>
-<code><span class="nv">$ </span><span class="nb">git merge </span>Dev</code></pre></div>
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb"># First, let's check out to the "master" branch
+$ git checkout master
+# Then, merge Dev to current branch
+$ git merge Dev
+</span></code></pre></div>
 
 Description: these two syntaxes will replay the changes made on the "Dev" into the current branch "master" since "Dev" is diverged from "master".
 
@@ -85,53 +85,54 @@ Now, you can push a new commit describing the merging change, and hence the curr
 
 <ul style="list-style-type:disc">
   <li> Show you any uncommitted changes since the last commit, type:</li>
-  <div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">git diff </span></code></pre></div>
+  <div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb">$ git diff </span></code></pre></div>
   
   <li> Compare a specific file across branches, type:</li>
-  <div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">git diff </span> {BRANCH-NAME} {OTHER-BRANCH-NAME} {FILE-NAME} </code></pre></div>
+  <div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb">$ git diff  {BRANCH-NAME} {OTHER-BRANCH-NAME} {FILE-NAME} </span></code></pre></div>
 </ul>
   
 <li><a name="AddFile"></a>  Add your file to the staging area:</li>
 
 <div class="language-shell highlighter-rouge"><pre class="highlight">
-<code><span class="nv"># </span>Preparing to become part of the next commit</code>
-<code><span class="nv">$ </span><span class="nb">git add </span>{FILE-NAME}</code></pre></div>
+<code class="hljs ruby"><span class="nb"># Preparing to become part of the next commit
+$ git add {FILE-NAME}
+</span></code></pre></div>
 
 <li><a name="HistroyCommit"></a> See the histroy of commits:</li>
 
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">git log </span></code></pre></div>
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb">$ git log </span></code></pre></div>
 
 <li><a name="CommitFile"></a> Commit your file and type the commit message:</li>
 
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">git commit </span></code> -m "your message"</pre></div>
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb">$ git commit -m "your message"
+</span></code> </pre></div>
 
 <li><a name="PushCommit"></a> Push your commit to the remote and set a trackng branch:</li>
 
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">git push </span></code> -u origin {BRANCH-NAME}</pre></div>
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb">$ git push  -u origin {BRANCH-NAME} </span></code></pre></div>
 
 <li><a name="UpdateRepo"></a> Update your local copy of repository:</li>
 
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">git pull </span></code></pre></div>
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb">$ git pull </span></code></pre></div>
 
 <li><a name="StashChange"></a> Stash your work:</li>
 <p></p>
 
 <ul style="list-style-type:disc"> 
   <li> Stash uncommitted changes in local repo </li>
-  <div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">git stash </span></code></pre></div>
+  <div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb">$ git stash </span></code></pre></div>
   
   <li> Re-apply your stashed changes</li>
-  <div class="language-shell highlighter-rouge"><pre class="highlight">
-  <code><span class="nv"># Reappling the changes and removing</span></code>
-  <code><span class="nv">$ </span><span class="nb">git stash pop</span></code>
-  <code><span class="nv"># Reappling the changes and keeping</span></code>
-  <code><span class="nv">$ </span><span class="nb">git stash apply</span></code></pre></div>
+  <div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb"># Reappling the changes and removing
+$ git stash pop
+# Reappling the changes and keeping
+$ git stash apply </span></code></pre></div>
   
   <li> Manage multiple stashes</li>
-  <div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">git stash list</span></code></pre></div>
+  <div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb">$ git stash list </span></code></pre></div>
   
   <li> View stash diff</li>
-  <div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">git stash show -p</span></code></pre></div>
+  <div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb">$ git stash show -p </span></code></pre></div>
   
 </ul>
 

@@ -1,6 +1,7 @@
 ---                                                                                                                                                                                      
 layout: post
 title: ARM Cortex M3 Handbook
+tags: [ARM, Processor]
 ---
 
 ## Purpose
@@ -23,21 +24,21 @@ In the .../logical/testbench/execution_tb directory, the build configuration sup
 
 <ol>
 <li> Remove all compiled test code</li>
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="nv">$ make clean_tests
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb">$ make clean_tests
 </span></code></pre></div>
 
 <li> Compile all tests</li>
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="nv">$ make tests
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb">$ make tests
 </span></code></pre></div>
 
 <li> Simulate all tests</li>
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="nv">$ make all
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb">$ make all
 </span></code></pre></div>
 
 </ol>
 
 The simulation report shows as below:
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="nv">$            V C S   S i m u l a t i o n   R e p o r t~
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb">$            V C S   S i m u l a t i o n   R e p o r t~
 Time: 374520000 ps
 CPU Time:      1.680 seconds;       Data structure size:   5.5Mb
 Fri Mar  8 19:46:32 2019

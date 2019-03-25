@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Tensilica Xtensa Hardward Verification and EDA
-tags: [CAD, C]
+tags: [Tensilica, Processor]
 ---
 
 ## Purpose

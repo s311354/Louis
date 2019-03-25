@@ -1,7 +1,7 @@
----                                                                                                        
+---
 layout: post
 title: Linux/Unix command Handbook
-tags: [Unix, C, CAD]
+tags: [Linux]
 categories: [eating, travelling]
 ---
 
@@ -22,7 +22,8 @@ During the period from graduating to being an Engineer, Linux/Unix commands beco
 
 \"sed\" is used for finding, parsing, text substitution, replacement and text manipulations such as insertion, deletion search etc. And, we also can use sed with regular expression.
 
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="nv">$ Usage: sed [OPTION]... {script-only-if-no-other-script} [input-file]... 
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby">
+<span class="nb">$ Usage: sed [OPTION]... {script-only-if-no-other-script} [input-file]... 
 $
 $  -i[SUFFIX], --in-place[=SUFFIX]
 $                 edit files in place (makes backup if extension supplied).
@@ -33,22 +34,24 @@ $  -e script, --expression=script
 $                 add the script to the commands to be executed
 $
 $  ...
-</span></code></pre></div>
+</span>
+</code></pre></div>
 
-Example:                                                                                                                                                         
+Example:
 <ol>
 <li> Parsing the strings</li>
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="nv">$ sed -e 's/^..............\(..\)/\1/' nput-file]
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb">$ sed -e 's/^..............\(..\)/\1/' nput-file]
 </span></code></pre></div>
+
 This command is used for parsing the last two strings, line by line. 
 
 <li> Replacement</li>
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="nv">$ sed -i 's/abc/123/' [input-file]
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb">$ sed -i 's/abc/123/' [input-file]
 </span></code></pre></div>
 This command is used for replacing "abc" with "123".
 
 <li> Add a line in a specific position</li>
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="nv">$ sed '3iline 3' [input-file]
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb">$ sed '3iline 3' [input-file]
 </span></code></pre></div>
 This command is used for inserting the "line 3" text at line 3 in input-file file.
 </ol>
@@ -57,7 +60,7 @@ This command is used for inserting the "line 3" text at line 3 in input-file fil
 
 \"wc\" is used for print newline, word, and byte counts for each file. 
 
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="nv">$ Usage: wc [OPTION]... [FILE]...
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb">$ Usage: wc [OPTION]... [FILE]...
 $
 $   -l, --lines            print the newline counts
 $   -w, --words            print the word counts
@@ -67,7 +70,7 @@ $  ...
 Example: 
 <ol>
 <li> Present the number of lines</li>
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="nv">$ wc -le  [FILE]
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb">$ wc -le  [FILE]
 </span></code></pre></div>
 This command supports  more than one files.
 </ol>
@@ -77,7 +80,7 @@ This command supports  more than one files.
 
 \"ln\" is an utility for creating links between files. By default, the ln command creates hard links. To create a symbolic links use the -s (--symbolic) option.
 
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="nv">$ Usage: ln [OPTION]... [-T] TARGET LINK_NAME   (1st form)
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb">$ Usage: ln [OPTION]... [-T] TARGET LINK_NAME   (1st form)
 $  or:  ln [OPTION]... TARGET                  (2nd form)
 $  or:  ln [OPTION]... TARGET... DIRECTORY     (3rd form)
 $  or:  ln [OPTION]... -t DIRECTORY TARGET...  (4th form)
@@ -93,7 +96,7 @@ $  ...
 Example: 
 <ol>
 <li> Creating Symlinks</li>
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="nv">$ ln -s source_file symbolic_link
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb">$ ln -s source_file symbolic_link
 </span></code></pre></div>
 This command creates symbolic link in Linux, replascing source_file with the name of the existing file for which you want to create the symbolic link and symbolic_link with the name of the symbolic link.
 </ol>
@@ -114,5 +117,3 @@ This command creates symbolic link in Linux, replascing source_file with the nam
 <p>If you have any constructive criticism or advises, leave the comments below or feel free to email me @qazqazqaz850@gmail.com.
 Hope this post will help! :)
 </p>
-
-

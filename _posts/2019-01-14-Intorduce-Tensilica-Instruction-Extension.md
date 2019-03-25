@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Introduce Tensilica Instruction Extension Language
-tags: [C, Linux, TEST]
+tags: [Tensilica, Processor]
 ---
 
 ## Purpose
@@ -18,23 +18,23 @@ TIE developers can define operations on user-defined TIE data types to use stand
 
 <ol>
 <li> Scenario 1: Intrinsic with one output argument </li>
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="nv"></span><span class="nb">extern unsigned _TIE_test_AVG(unsigned y, unsigned x);
-#define AVG _TIE_test_AVG
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb">extern unsigned _TIE_test_AVG(unsigned y, unsigned x);
 
+#define AVG _TIE_test_AVG
 c = AVG (a, b);
 </span></code></pre></div>
 
 <li> Scenario 2: Intrinsic with no output, or more than on output arguments </li>
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="nv"></span><span class="nb">extern unsigned _TIE_test_SPLI(short hi /*output*/, short lo /*output*/, unsigned inp);
-#define AVG _TIE_test_SPLI
+<<div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb">extern unsigned _TIE_test_SPLI(short hi /*output*/, short lo /*output*/, unsigned inp);
 
+#define AVG _TIE_test_SPLI
 _TIE_test_SPLI(hi, lo, a);
 </span></code></pre></div>
 
 <li> Scenario 3: Intrinsic with inout arguments </li>
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="nv"></span><span class="nb">extern unsigned _TIE_test_MAC(unsigned y, unsigned x, unsigned acc /*inout*/);
-#define AVG _TIE_test_MAC
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb">extern unsigned _TIE_test_MAC(unsigned y, unsigned x, unsigned acc /*inout*/);
 
+#define AVG _TIE_test_MAC
 _TIE_test_MAC(a, b, accum);
 </span></code></pre></div>
 
@@ -44,7 +44,8 @@ _TIE_test_MAC(a, b, accum);
 
 The developers also can depoly the user data types, known as TIE ctypes in TIE intrinsics. The TIE ctypes entend to ANSI C type system and make it possible to use data of arbitrary width in intrinsics, not restricted to using char, short, int, etc. The XCC treats TIE ctypes and ANSI C data types exactly the same. However. TIC ctypes often have their own register files. 
 
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="nv"></span><span class="nb">extern void _TIE_xt_hifi2_AE_MULA(ae_q56s d, ae_p24x2s d0, ae_p24x2s d1);
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb">extern void _TIE_xt_hifi2_AE_MULA(ae_q56s d, ae_p24x2s d0, ae_p24x2s d1);
+
 #define AE_MULA _TIE_xt_hifi2_AE_MULA
 </span></code></pre></div>
 
@@ -57,7 +58,7 @@ When using variables of TIE ctypes, there are several rules to remember:
 <li> Ctype variables can be viewed in the Debugger View of Xplorer, default display format is hex. </li>
 <li> Developers need to "instruct" XCC to load a value into a TIE ctype variable by: </li>
 
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="nv"></span><span class="nb">// Step 1: initialize an C data type array in memory
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb">// Step 1: initialize an C data type array in memory
 unsigned int temp[4] __attribute__((aligned(16))) = 
 { 0x11111111, 0x22222222, 0x33333333, 0x44444444  };
 

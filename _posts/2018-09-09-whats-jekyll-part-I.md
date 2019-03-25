@@ -1,7 +1,7 @@
 ---
 layout: post
-categories: [programming, javascript]
 title: What's Jekyll and How to build a personal blog using Lanyon ( Part I )
+tags: [Jekyll] 
 ---
 
 ## Abstract
@@ -9,7 +9,6 @@ title: What's Jekyll and How to build a personal blog using Lanyon ( Part I )
 [Jekyll](http://jekyllrb.com) is a static site generator, an open-source tool for creating simple yet powerful websites of all shapes and sizes. From [the project's readme](https://github.com/mojombo/jekyll/blob/master/README.markdown):
 
   > Jekyll is a simple, blog aware, static site generator. It takes a template directory [...] and spits out a complete, static website suitable for serving with Apache or your favorite web server. This is also the engine behind GitHub Pages, which you can use to host your project’s page or blog right here from GitHub.
-
 
 Find out more by [visiting the project on GitHub](https://github.com/mojombo/jekyll).
 
@@ -27,8 +26,8 @@ Here's a short tutorial on how I made this blog. Read to start? Let't go!
 
 Go ahead and type below command line in your termainal to install rudy: 
 
-<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">brew </span>install ruby
-</code></pre></div></div>
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb">$ brew install ruby
+</span></code></pre></div>
 
 Here, we type this on the MAC OS X and will use ruby v2.5.1p57 version.
 
@@ -36,8 +35,8 @@ Then, you'll also need Rudygems which is a package management framework for Rudy
 
 Finally, we can install jekyll!!
 
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">gem </span>install jekyll
-</code></pre></div>
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb">$ gem install jekyll
+</span></code></pre></div>
 
 #### **REMARK: If you use ubuntu or linux operating systems, you should type apt-get instead of brew when you install rudy.**
 
@@ -45,17 +44,17 @@ Finally, we can install jekyll!!
 
 First of all, we will need to create an account of Github and a repository having the name **username.github.io**. For instance, my repo name is *Louis.github.io*. After you do this, clone this repository onto your local computer. 
 
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">git clone </span>https://github.com/username/username.github.io.git
-</code></pre></div>
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb">$ git clone https://github.com/username/username.github.io.git
+</span></code></pre></div>
 
 Next, download the Lanyon zip folder from [here](https://github.com/poole/lanyon/archive/master.zip) and extract those into your *username.github.io* directory. Now, you already prepare a prerequisite for build your local environment.
 
 Let's move into *username.github.io* directory and run the default page on local server. 
 
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">cd </span>username.github.io
-<span class="nv">$ </span><span class="nb">jekyll </span>build
-<span class="nv">$ </span><span class="nb">jekyll </span>serve
-</code></pre></div>
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb">$ cd username.github.io
+$ jekyll build
+$ jekyll serve
+</span></code></pre></div>
 
 Unfortunately, since Lanyon is built on Poole and Poole does not support Jekyll 3 yet, you would get error message, [permalink issue](https://github.com/poole/lanyon/issues/124). For fixing this issue, you'll need to comment out *relative permalinks: true* and add *jekyll-paginate setting*, as shown below
 

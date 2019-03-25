@@ -3,31 +3,37 @@ layout: page
 title: Categories
 ---
 
-
 <div id="tags">
   <ul class="tags">
+  
   <div class="tags-expo-list">
-    <strong> Tags:</strong>
+    <small> Tags:</small>
     {% for tag in site.tags %}
-    <a href="#{{ tag[0] | slugify }}" class="post-tag">{{ tag[0] }} <span> ({{ tag[1].size }})</span></a>
+      <a href="#{{ tag[0] | slugify }}" class="post-tag">
+        {{ tag[0] }} ({{ tag[1].size }})
+      </a>
     {% endfor %}
   </div>
+  
   <hr/>
     	{% for tag in site.tags %}
 			<div>
-                <h1 id="{{ tag[0] | slugify }}"><span> {{ tag | first }} </span></h1>
+                <h3 id="{{ tag[0] | slugify }}">
+                  <span> {{ tag | first }} </span>
+                </h3>
+
+                <!-- List tag posts -->
                 <ul class="tag-list">
-                        {% for post in tag[1] %}
+                    {% for post in tag[1] %}
                     <li>
-                            <a class="post-title" href="{{ site.baseurl }}{{ post.url }}">
-                                {{ post.title }} 
-                            </a>
-                                <small>{{ post.date | date: '%m/%d/%Y' }}</small>
+                        <a href="{{ site.baseurl }}{{ post.url }}">
+                          {{ post.title }}
+                        </a>
+                        <small> {{ post.date | date: '%m/%d/%Y' }} </small>
                     </li>
-                        {% endfor %}
+                    {% endfor %}
                 </ul>
 			</div>
 			{% endfor %}
-
   </ul>
 </div>

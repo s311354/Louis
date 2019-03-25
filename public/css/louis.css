@@ -358,7 +358,6 @@ a.sidebar-nav-item:focus {
   color: inherit;
 }
 
-
 /*
  * Pagination
  *
@@ -409,7 +408,6 @@ a.pagination-item:hover {
     border-bottom-right-radius: 4px;
   }
 }
-
 
 /*
  * Reverse layout
@@ -564,12 +562,42 @@ a.pagination-item:hover {
   box-shadow: -.25rem 0 .5rem rgba(0,0,0,.1);
 }
 
-/*stuff to add for tags*/
-
+/* stuff to add for tags */
 small {
-  color: #9a9a9a;
+  color: #887e7e;
 }
 
 .tag-list {
-  list-style-type: disc;
+  list-style-type: square;
+}
+
+/* set the command background */
+.hljs {
+    display: block;
+    overflow-x: auto;
+    padding: 0.5em;
+    background: #23241f;
+    -webkit-text-size-adjust: none;
+}
+
+/* set the copy botton (Issue) */
+button {
+  overflow: visible;
+}
+
+.copy-btn {
+  display: inline-block;
+  padding: 6px 12px;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 20px;
+  color: #333;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  background-color: #eee;
+  background-image: linear-gradient(#fcfcfc, #eee);
+  border: 1px solid #d5d5d5;
+  border-radius: 3px;
+  user-select: none;
 }

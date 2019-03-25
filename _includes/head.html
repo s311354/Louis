@@ -8,7 +8,7 @@
 
   <title>
     {% if page.title == "About" %}
-	  {{ site.title }} &middot; {{ site.tagline }}
+	    {{ site.title }} &middot; {{ site.tagline }}
     {% else %}
       {{ page.title }} &middot; {{ site.title }}
     {% endif %}
@@ -19,15 +19,16 @@
   <link rel="stylesheet" href="{{ site.baseurl }}/public/css/syntax.css">
   <link rel="stylesheet" href="{{ site.baseurl }}/public/css/louis.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
   <!-- Change the font -->
   <link href="https://fonts.googleapis.com/css?family=Average" rel="stylesheet"> 
 
   <!-- Icons -->
   <link rel="shortcut icon" type="image/png" href="favicon.png" >
-
   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ site.baseurl }}/public/apple-touch-icon-precomposed.png">
-  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
+  <!-- Javescript  -->
   <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" crossorigin="anonymous"></script>
 
   <!-- MathJax library  -->
@@ -36,9 +37,9 @@
   <!-- RSS -->
   <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
 
-	<!-- Google Analytics -->
-	{% if site.google_analytics and jekyll.environment == 'production' %}
-		{% include google_analytics.html %}
-	{% endif %}
+  <!-- Google Analytics -->
+  {% if site.google_analytics and jekyll.environment == 'production' %}
+    {% include google_analytics.html %}
+  {% endif %}
 
 </head>

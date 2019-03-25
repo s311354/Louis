@@ -1,7 +1,7 @@
 ---
 layout: post
 title: What's Jekyll and How to build a personal blog using Lanyon ( Part II )
-categories: [programming, misc]
+tags: [Jekyll] 
 ---
 
 ## Abstract
@@ -30,8 +30,7 @@ First, you most create a new account in [Google Analytics](https://www.google.co
 
 Now, back to your terminal, creating a new file called *google\_analytics.html* in *\_includes* directory. Next, pasting the following Google Analytics tracking code in this file and save it.
 
-<div class="language-shell highlighter-rouge">
-<pre class="highlight"><code>&lt;script&gt;
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb">&lt;script&gt;
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1&#42;new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -40,23 +39,24 @@ Now, back to your terminal, creating a new file called *google\_analytics.html* 
   ga('create', '&#123;&#123; site.google_analytics &#125;&#125;', 'auto');
   ga('send', 'pageview');
 &lt;/script&gt;
-</code></pre></div>
+</span></code></pre></div>
 
 Then, opening your site *\_config.yml* file and add the following line of code. It is important to look at your own tracking ID, so replaceing UA-XXXXXXXXX-X below with your websites unique tracking ID. 
 
-<div class="language-shell highlighter-rouge">
-<pre class="highlight"># Google Analytics
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb"># Google Analytics
 google_analytics: UA-XXXXXXXXX-X 
-</pre></div>
+</span></code></pre></div>
 
 Finally, Google recommends placing the &lt;head&gt; section, shown as below, in the *head.html* of your site that located in your site's *\_include/* directroy.
 
-<div class="language-shell highlighter-rouge">
-<pre class="highlight"># &lt;head&gt; section
-&#123;% if site.google_analytics and jekyll.environment == 'production' %&#125;
-&#123;% include google_analytics.html %&#125;
-&#123;% endif %&#125;
-</pre></div>
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb">&lt;head&gt; 
+  ...
+  &#123;% if site.google_analytics and jekyll.environment == 'production' %&#125;
+    &#123;% include google_analytics.html %&#125;
+  &#123;% endif %&#125;
+  ...
+&lt;/head&gt; 
+</span></code></pre></div>
 
 Save it and you are good to go!! 
 
@@ -67,35 +67,35 @@ Disqus is a networked community platform widely used by website. With Disqus, yo
 
 First, you also need a Disqus account for this feature. Head to the [website](https://disqus.com), creating an account and it'll ask you if you want to "Add Disqus to your site". The website will show the guideline how to add the Disqus comment system in your blog. You should create *comments.html* in *_includes/* dircetory and paste the setting on this html file, shown as below:
 
-<div class="language-shell highlighter-rouge">
-<pre class="highlight">&lt;!-- Intergating Disqus comments  --&gt;                                               &lt;div id="disqus_thread"&gt;&lt;/div&gt;
-&lt;script&gt;
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb">&lt;!-- Intergating Disqus comments  --&gt;
+  &lt;div id="disqus_thread"&gt;&lt;/div&gt;
 
+&lt;script&gt;
 /&#42;&#42;
 &#42;  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-&#42;  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables&#42;/
+&#42;  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables &#42;&#42;/
 
-|   var disqus_config = function () &#123;
-|   |   this.page.url = '&#123;&#123;content.absolute_url&#125;&#125;';  // Replace PAGE_URL with your page's canonical URL variable
-|   |   this.page.identifier = '&#123;&#123;content_id&#125;&#125;'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-|   &#125;;
+  var disqus_config = function () &#123;
+    this.page.url = '&#123;&#123;content.absolute_url&#125;&#125;';  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = '&#123;&#123;content_id&#125;&#125;';  // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+  &#125;;
 
-|   (function() &#123; // DON'T EDIT BELOW THIS LINE
-|   |   var d = document, s = d.createElement('script');
-|   |   s.src = 'https://shirongliu.disqus.com/embed.js';
-|   |   s.setAttribute('data-timestamp', +new Date());
-|   |   (d.head || d.body).appendChild(s);
-|   &#125;)();
+  (function() &#123; // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = 'https://shirongliu.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  &#125;)();
 
 &lt;/script&gt;
 &lt;noscript&gt;Please enable JavaScript to view the &lt;a href="https://disqus.com/?ref_noscript"&gt;comments powered by Disqus.&lt;/a&gt;&lt;/noscript&gt;
-</pre></div>
+</span></code></pre></div>
 
 #### **NOTE: Do not paste the code posted above - you’ll link to my google analytics account !**
 
 Moreover, opening the *_layouts/default.html* file and adding the line as shown:
 
-<div class="language-shell highlighter-rouge"><pre class="highlight">&lt;body&gt;
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb">&lt;body&gt;
 ....
 &lt;!-- disqus web site  --&gt;
 &lt;div class="container content"&gt;
@@ -106,7 +106,7 @@ Moreover, opening the *_layouts/default.html* file and adding the line as shown:
 &lt;/div&gt;
 ....
 &lt;/body&gt;
-</pre></div>
+</span></code></pre></div>
 
 Now, run jekyll build and jeckll serve again to see Disque comments enable on the your website!
 
@@ -116,8 +116,7 @@ Lanyon, by default, does not provide an archive page. The archive page allows yo
 
 You should create a new *archive.md* file in your root folder and add the following contents to it.
 
-<div class="language-shell highlighter-rouge">
-<pre class="highlight">---
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb">---
 layout: page
 title: Archive
 ---
@@ -127,7 +126,7 @@ title: Archive
   * &#123;&#123; post.date | date_to_string &#125;&#125; &raquo;
   &lt;span style="font-size:18px;"&gt; [ &#123;&#123; post.title &#125;&#125; ](&#123;&#123; site.baseurl &#125;&#125;/&#123;&#123; post.url &#125;&#125;)&lt;/span&gt;
 &#123;% endfor %&#125;
-</pre></div>
+</span></code></pre></div>
 
 Now, rebuilding jekyll and then you can see the archive page on your website. 
 
@@ -135,18 +134,17 @@ Now, rebuilding jekyll and then you can see the archive page on your website.
 
 The [Font Awesome](https://fontawesome.com/?from=io) liberary is the world's most popular and easiest to use icon. It has grown to have over 3000 icons and continuous to add the needed icons. You can choose the icons you need. 
 First, you should add the "font-awesome.min.css" CSS link in *_includes/head.html*:
-<div class="language-shell highlighter-rouge">
-<pre class="highlight">&lt;link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"&gt;
-</pre></div>
+
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb">&lt;link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"&gt;
+</span></code></pre></div>
 
 Then, you can add multiple social media link buttons in any page you'll allow appearing in. Instance, in my page, I add e-mail, LinkedIn and instagram accounts, and so on in *about.md* . (shown as below)
 
-<div class="language-shell highlighter-rouge">
-<pre class="highlight">&lt;!-- Icon Link --&gt;
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb">&lt;!-- Icon Link --&gt;
 &lt;div style=&quot;text-align: center;&quot;&gt;
 &lt;a style=&quot;margin-right: 20px;&quot; href=&quot;https://www.instagram.com/liulouis0419&quot; target=&quot;\_blank&quot; title=&quot;Instagram Page&quot; class=&quot;x1&quot;&gt;&lt;i class=&quot;fab fa-instagram fa-2x&quot; style=&quot;cursor: pointer&quot;&gt;&lt;/i&gt;&lt;/a&gt;
 &lt;/div&gt;
-</pre></div>
+</span></code></pre></div>
 
 #### **REMARK: Replace href with your social media link.** 
 
@@ -155,8 +153,6 @@ Congratulation, your social buttons are ready for action! :)
 To be continued....
 
 <h4><a name="AddPhoto"></a>  5. Adding your Photo to the sidebar</h4>
-
-
 
 ## Reference
 [1] [How to build a blog using Github, Jekyll and Lanyon](https://nikhita.github.io//build-blog-using-github-jekyll#using-lanyon), by Nikhita Raghunath
