@@ -42,5 +42,3 @@ plugins:
   - jekyll-seo-tag
 
 # Inculde customized Javescript function (Issue)
-source:
-  - assets/button.js
