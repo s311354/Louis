@@ -119,7 +119,7 @@ Referring to the Matrix Cookbook, I sorted out several commonly used derivatives
 </table>
 
 
-#### Example: Derive the gradient of matrix function 
+#### Derive the gradient of basic objective function (martix representation)
 Derive that the gradient of $$f(\mathbf{W}) = ||\mathbf{W}\mathbf{x} - \mathbf{\hat{y}}||^2$$ (Numerator-layout notation):
 
 Assuming that the specific matrix $$\mathbf{I}_{ij}$$ is as shown below,
