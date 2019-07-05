@@ -29,8 +29,8 @@ author:
 google_analytics: UA-125815034-1
 
 # fix permalink issue
- plugins: [jekyll-paginate]
- permalink: pretty
+plugins: [jekyll-paginate]
+permalink: pretty
 
 # Custom vars
 version:             1.0.0
