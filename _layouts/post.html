@@ -12,7 +12,9 @@ layout: default
     <!-- function called assign to sort if first -->
     {% assign sorted_tags = page.tags | sort %}
       {% for tag in sorted_tags %}
-        <a href="{{ site.baseurl }}/tags/#{{ tag | downcase }}">{{ tag }}</a>
+        <a href="{{ site.baseurl }}/tags/#{{ tag | downcase }}">
+          {{ tag }}
+        </a>
       {% endfor %}
   </span>
 
@@ -32,7 +34,7 @@ layout: default
             {{ post.title }}
             <small>{{ post.date | date_to_string }}</small>
           </a>
-		</h3>
+		    </h3>
       </li>
     {% endfor %}
   </ul>

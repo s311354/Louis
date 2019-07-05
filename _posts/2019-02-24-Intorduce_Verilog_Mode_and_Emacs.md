@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Intorduce Verilog Mode and Emacs
-tags: [Verliog, Emacs]
+tags: [Verliog]
 ---
     
 ## Purpose 

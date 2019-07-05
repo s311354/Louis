@@ -1,7 +1,7 @@
 ---                                                                                                                                                                                      
 layout: post
 title: ARM Cortex M3 Handbook
-tags: [ARM, Processor]
+tags: [Processor]
 ---
 
 ## Purpose

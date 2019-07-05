@@ -6,9 +6,9 @@ tags: [IDE]
 
 ## Purpose 
 
-  For software development, Eclipse is the one of most common integrated development environments (IDE) that provides comprehensive facilities to computer programmers. IDEs contain the necessary compiler, interpreter, or both. 
+  For software development, Eclipse is one of the most common integrated development environments (IDE) that provides comprehensive facilities to computer programmers. IDEs contain the necessary compiler, interpreter, or both.
   
-  Besides, the GUN Debugger (GDB) is a debugger that works for many programming language, inculding C, C++, and Objective-C and partially others. The GDB allows software developers to see what is going on inside another program while it excuates and helps to catch bugs in act.
+  Besides, the GNU Debugger (GDB) is a debugger that works for many programming languages, including C, C++, and Objective-C and partially others. The GDB allows software developers to see what is going on inside another program while it executes and helps to catch bugs in the act.
 
 ## Install Eclipse
 
@@ -21,13 +21,13 @@ tags: [IDE]
 
   <div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb">$ brew install gdb </span></code></pre></div>
 
-  After runing the command, you can find out your gdb version:
+  After running the command, you can find out your gdb version:
 
   <div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb">$ gdb --version </span></code></pre></div>
   
 ### Generate a certificate by Keychain Access
 
-  If you try using GDB to debug a file, the console would show error since the Darwin kernel doesn’t allow gdb to control another process without having special rights. Thus, you must to generate a certificate by Keychain Access to give gdb those permissions.
+  If you try using GDB to debug a file, the console would show error since the Darwin kernel doesn’t allow gdb to control another process without having special rights. Thus, you must generate a certificate by Keychain Access to give gdb those permissions.
 
   <ol>
   <li> Open and Launch Keychain Access application: Applications > Utilities > Keychain Access.. </li>
@@ -35,7 +35,6 @@ tags: [IDE]
   <li> Select Keychain Access > Certificate Assistant > Create a Certificate.</li>
   <li> Choose a name (e.g. gdb-cert). </li>
   <li> Set Identity Type to Self Signed Root. </li>
-  <li> Set Certificate Type to Code Signing. </li>
   <li> Set Certificate Type to Code Signing. </li>
   </ol>
 
@@ -45,7 +44,7 @@ tags: [IDE]
 
   Open your Terminal prompt and run:
 
-  <div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb">$ codesign -s gdb-cert \<gdbPat\> </span></code></pre></div>
+  <div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb">$ codesign -s gdb-cert < gdbPat > </span></code></pre></div>
   
   ,where gdb-cert is the name of your certificate and \<gdbPath\> is the full path to your gdb binary file.
 
@@ -55,7 +54,7 @@ tags: [IDE]
 
 ## Setep Eclipse for using GDB
 
-  There are two methods of configuring GDB. The first method is that configuring GDB for a specific project:
+  There are two methods of configuring GDB. The first method is that configuring GDB *for a specific project*:
 
   <ol>
   <li> Go to Run > Debug Configurations… </li>
@@ -64,10 +63,9 @@ tags: [IDE]
   <li> Set GDB debugger to the full path of your gdb binary file (e.g. /usr/local/bin/gdb) </li>
   <li> Set GDB command file to the full path of your .gdbinit file: ~/.gdbinit </li>
   <li> Click on the Apply button </li>
-  <li> Set Certificate Type to Code Signing. </li>
   </ol>
 
-  The second method is that defining a default configuration for GDB to be used in any Eclipse project:
+  The second method is that defining a default configuration for GDB to be used *in any Eclipse project*:
 
   <ol>
   <li> Go to Eclipse > Preferences </li>
@@ -77,11 +75,11 @@ tags: [IDE]
   <li> Click on the Apply button </li>
   </ol>
 
-  NOTE: if you run debugger then it gets stuck on 100% process.. It shows
+  NOTE: If you run debugger then it gets stuck on 100% process.. and also shows, 
 
   <div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb">$ Launching : Configuring GDB Aborting configuring GDB </span></code></pre></div>
 
-  Refering to [3], the solution is running as root
+  you can refer to [3] and find the solution by running as root:
 
   <div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb">$ sudo /Applications/Eclipse.app/Contents/MacOS/eclipse </span></code></pre></div>
   
