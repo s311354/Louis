@@ -31,6 +31,19 @@ Now, you can see your current configurations, type:
 <div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb">$ </span><span class="nb">git config --list
 </span></code></pre></div>
 
+###  A new repo from an existing project
+
+If you have a existing progect and want to connect with github, you can do the following and start to tract with git.
+
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb"># Initialize the local directory as a Git repository.
+$ git init
+# Add the URL for the remote repository where your local repository will be pushed.
+$ git remote add origin < repository URL >
+# Verifies the new remote URL
+$ git remote -v
+# Push an existing repository
+$ git push -u origin master</span></code></pre></div>
+
 ### High Frequency Git Commands
 
 <h4><a name="TableContent"></a> Table of Contents</h4>
@@ -145,6 +158,8 @@ $ git stash apply </span></code></pre></div>
 [1] [Git Handbook](https://guides.github.com/introduction/git-handbook/), GitHub Guides. 
 
 [2] [Git stash](https://www.atlassian.com/git/tutorials/saving-changes/git-stash)
+
+[3] [Adding an existing project to GitHub using the command line](https://help.github.com/en/articles/adding-an-existing-project-to-github-using-the-command-line)
 
 ## Note
 <p>If you have any constructive criticism or advises, leave the comments below or feel free to email me @qazqazqaz850@gmail.com.
