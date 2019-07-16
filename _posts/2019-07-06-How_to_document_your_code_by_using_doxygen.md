@@ -30,7 +30,7 @@ There are four steps that you should follow:
 </ol>
 <div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb">$brew install doxygen </span></code></pre></div>
 
-<h3><a name="document"></a> Generate a configuration file </h3>
+<h3><a name="generate"></a> Generate a configuration file </h3>
 
   By calling doxygen with the -g option in your project to generate a configuration file:
 
@@ -39,13 +39,20 @@ There are four steps that you should follow:
 The configuration file is a free-form ASCII text file with a structure that is similar to that of a Makefile. The common configuration options are:
 
 <ul style="list-style-type:disc">
-<li> PROJECT_NAME: identify the project for which the documentation is generated.</li>
-<li> PROJECT_NUMBER: enter a project or revision number</li>
-<li> INPUT: specify the files and/or directories that contain documented source files.</li>
-<li> OUTPUT_DIRECTORY: specify the path into which the generated documentatino will be written.</li>
-<li> EXTRACT_ALL: if this tag is set to YES, doxygen will assume all entities in documentation are documented.</li>
-<li> FILE_PATTERNS: specify one or more wildcard patterns to filter out the source-files in the directories.</li>
-<li> INLINE_SOURCE: tag to YES will include the body of functions, classs and enums directly into documentation.</li>
+<li> PROJECT_NAME: 
+      - identify the project for which the documentation is generated.</li>
+<li> PROJECT_NUMBER: 
+      - enter a project or revision number</li>
+<li> INPUT: 
+      - specify the files and/or directories that contain documented source files.</li>
+<li> OUTPUT_DIRECTORY: 
+      - specify the path into which the generated documentatino will be written.</li>
+<li> EXTRACT_ALL: 
+      - if this tag is set to YES, doxygen will assume all entities in documentation are documented.</li>
+<li> FILE_PATTERNS: 
+      - specify one or more wildcard patterns to filter out the source-files in the directories.</li>
+<li> INLINE_SOURCE: 
+      - tag to YES will include the body of functions, classs and enums directly into documentation.</li>
 </ul>
 
 You can refer to [configuration](http://www.doxygen.nl/manual/config.html) link and customize it.  
