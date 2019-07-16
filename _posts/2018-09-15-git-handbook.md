@@ -31,7 +31,7 @@ Now, you can see your current configurations, type:
 <div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb">$ </span><span class="nb">git config --list
 </span></code></pre></div>
 
-###  A new repo from an existing project
+###  Connect a existing progect with github
 
 If you have a existing progect and want to connect with github, you can do the following and start to tract with git.
 
