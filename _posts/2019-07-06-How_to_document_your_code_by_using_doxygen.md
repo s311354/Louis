@@ -8,7 +8,7 @@ tags: [Doxygen]
 
 In order to quickly recap your code, documenting your code is one of the effective methods and also readable. Doxygen supports the de facto standard for creating documentation for C and C++ program, but it also supports other popular programming languages such as Java and Python. It also allows us to generate a fully structured set of HTML or Latex page from the program source code.
 
-For avoiding to forget bit and pieces of using Doxygen, I recorded a few pieces of information and also put a simple [C program](https://github.com/s311354/Doxygen_practice) which contains some Doxygen code snippets. Once processed with Doxygen, it gives this <a href="{{ site.baseurl }}/data/doxygen_c/html/">output</a>.
+For avoiding to forget bit and pieces of using Doxygen, I recorded a few pieces of information and also put a simple [C program](https://github.com/s311354/Doxygen_practice) and a simple [C++ program](https://github.com/s311354/Leetcode_practice) which contain some Doxygen code snippets. Once processed with Doxygen, it gives <a href="{{ site.baseurl }}/data/doxygen_c/html_c_program/">output</a> and <a href="{{ site.baseurl }}/data/doxygen_c/html_c_plus/">output</a>.
 
 ## How to document your code
 
@@ -46,7 +46,7 @@ The configuration file is a free-form ASCII text file with a structure that is s
 <li> INPUT: 
       - specify the files and/or directories that contain documented source files.</li>
 <li> OUTPUT_DIRECTORY: 
-      - specify the path into which the generated documentatino will be written.</li>
+      - specify the path into which the generated documentation will be written.</li>
 <li> EXTRACT_ALL: 
       - if this tag is set to YES, doxygen will assume all entities in documentation are documented.</li>
 <li> FILE_PATTERNS: 
