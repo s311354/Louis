@@ -80,9 +80,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a77fc78e6d32f39f39cd934f5ab51a552"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_array___dynamic.html#a77fc78e6d32f39f39cd934f5ab51a552">array_init</a> ()</td></tr>
 <tr class="memdesc:a77fc78e6d32f39f39cd934f5ab51a552"><td class="mdescLeft">&#160;</td><td class="mdescRight">initialize dynamic array  <a href="#a77fc78e6d32f39f39cd934f5ab51a552">More...</a><br /></td></tr>
 <tr class="separator:a77fc78e6d32f39f39cd934f5ab51a552"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad4437d22bbfb5d0604b61252be514032"><td class="memItemLeft" align="right" valign="top">vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_array___dynamic.html#ad4437d22bbfb5d0604b61252be514032">cast_array</a> ()</td></tr>
-<tr class="memdesc:ad4437d22bbfb5d0604b61252be514032"><td class="mdescLeft">&#160;</td><td class="mdescRight">casting array to vector  <a href="#ad4437d22bbfb5d0604b61252be514032">More...</a><br /></td></tr>
-<tr class="separator:ad4437d22bbfb5d0604b61252be514032"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae7b7662e2cf6c6339773d63a469dced8"><td class="memItemLeft" align="right" valign="top">vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_array___dynamic.html#ae7b7662e2cf6c6339773d63a469dced8">cast_array</a> (int *a)</td></tr>
+<tr class="memdesc:ae7b7662e2cf6c6339773d63a469dced8"><td class="mdescLeft">&#160;</td><td class="mdescRight">casting array to vector  <a href="#ae7b7662e2cf6c6339773d63a469dced8">More...</a><br /></td></tr>
+<tr class="separator:ae7b7662e2cf6c6339773d63a469dced8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acc253c4eaaa6087e2361d97f1be213b2"><td class="memItemLeft" align="right" valign="top">vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_array___dynamic.html#acc253c4eaaa6087e2361d97f1be213b2">mem_copy</a> (vector&lt; int &gt; v_ref)</td></tr>
 <tr class="memdesc:acc253c4eaaa6087e2361d97f1be213b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">memory copy  <a href="#acc253c4eaaa6087e2361d97f1be213b2">More...</a><br /></td></tr>
 <tr class="separator:acc253c4eaaa6087e2361d97f1be213b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -112,7 +112,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Access private members. </p>
 <p>Only the class and friend function can access private members. </p>
-<div class="fragment"><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;: size(size_dynamic) {};</div></div><!-- fragment -->
+<div class="fragment"><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;: size(size_dynamic) {};</div></div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -133,11 +133,11 @@ Public Member Functions</h2></td></tr>
 
 <p>initialize dynamic array </p>
 <p>Declarations and initializers </p>
-<div class="fragment"><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;{</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    vector&lt;int&gt; v1(size, 0); <span class="comment">// default value is 0</span></div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot;The size of v1 is:&quot;</span> &lt;&lt; <span class="keyword">sizeof</span>(v1) &lt;&lt; endl;</div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;}</div></div><!-- fragment -->
+<div class="fragment"><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;{</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    vector&lt;int&gt; v1(size, 0); <span class="comment">// default value is 0</span></div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot;The size of v1 is:&quot;</span> &lt;&lt; <span class="keyword">sizeof</span>(v1) &lt;&lt; endl;</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;}</div></div><!-- fragment -->
 </div>
 </div>
-<a id="ad4437d22bbfb5d0604b61252be514032"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad4437d22bbfb5d0604b61252be514032">&#9670;&nbsp;</a></span>cast_array()</h2>
+<a id="ae7b7662e2cf6c6339773d63a469dced8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae7b7662e2cf6c6339773d63a469dced8">&#9670;&nbsp;</a></span>cast_array()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -145,14 +145,15 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">vector&lt; int &gt; Array_Dynamic::cast_array </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>a</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>casting array to vector </p>
-<div class="fragment"><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;{</div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    vector&lt;int&gt; v_ref(a, *(&amp;a + 1));</div><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot;The contents of v_ref after casting are:&quot;</span>;</div><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <a class="code" href="class_array___dynamic.html#a959f462d19ce8277ae7da11f1c70d24b">print_array_dynamic</a>(v_ref);</div><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordflow">return</span> v_ref;</div><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;}</div><div class="ttc" id="class_array___dynamic_html_a959f462d19ce8277ae7da11f1c70d24b"><div class="ttname"><a href="class_array___dynamic.html#a959f462d19ce8277ae7da11f1c70d24b">Array_Dynamic::print_array_dynamic</a></div><div class="ttdeci">void print_array_dynamic(vector&lt; int &gt; v_ref)</div><div class="ttdoc">print_array_dynamic (vector&lt;int&gt;)</div><div class="ttdef"><b>Definition:</b> array_dynamic.cpp:77</div></div>
+<div class="fragment"><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;{</div><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    vector&lt;int&gt; v_ref(a, *(&amp;a + 1));</div><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    cout &lt;&lt; <span class="stringliteral">&quot;The contents of v_ref after casting are:&quot;</span>;</div><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <a class="code" href="class_array___dynamic.html#a959f462d19ce8277ae7da11f1c70d24b">print_array_dynamic</a>(v_ref);</div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordflow">return</span> v_ref;</div><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;}</div><div class="ttc" id="class_array___dynamic_html_a959f462d19ce8277ae7da11f1c70d24b"><div class="ttname"><a href="class_array___dynamic.html#a959f462d19ce8277ae7da11f1c70d24b">Array_Dynamic::print_array_dynamic</a></div><div class="ttdeci">void print_array_dynamic(vector&lt; int &gt; v_ref)</div><div class="ttdoc">print_array_dynamic (vector&lt;int&gt;)</div><div class="ttdef"><b>Definition:</b> array_dynamic.cpp:68</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -173,7 +174,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>memory copy </p>
-<div class="fragment"><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;{</div><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    vector&lt;int&gt; v_out(v_ref);</div><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordflow">return</span> v_out;</div><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;}</div></div><!-- fragment -->
+<div class="fragment"><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;{</div><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    vector&lt;int&gt; v_out(v_ref);</div><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordflow">return</span> v_out;</div><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;}</div></div><!-- fragment -->
 </div>
 </div>
 <a id="a0740bb6135aa607d1b8d71e5f4527d05"></a>
@@ -193,7 +194,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>print_2d_array_dynamic (vector&lt;vector&lt;int&gt;&gt;) </p>
-<div class="fragment"><div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;{</div><div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; v_ref.size(); i ++) {</div><div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; v_ref[i].size(); j ++)</div><div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            cout &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; v_ref[i][j];</div><div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        cout &lt;&lt; endl;</div><div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    }</div><div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;}</div></div><!-- fragment -->
+<div class="fragment"><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;{</div><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; v_ref.size(); i ++) {</div><div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; v_ref[i].size(); j ++)</div><div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            cout &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; v_ref[i][j];</div><div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        cout &lt;&lt; endl;</div><div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    }</div><div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;}</div></div><!-- fragment -->
 </div>
 </div>
 <a id="a959f462d19ce8277ae7da11f1c70d24b"></a>
@@ -213,8 +214,8 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>print_array_dynamic (vector&lt;int&gt;) </p>
-<div class="fragment"><div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;{</div><div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; v_ref.size(); i ++) {</div><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        cout &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; v_ref[i];</div><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    }</div><div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    cout &lt;&lt; endl;</div><div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;}</div></div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="class_array___dynamic.html#ad4437d22bbfb5d0604b61252be514032">cast_array()</a>.</p>
+<div class="fragment"><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;{</div><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; v_ref.size(); i ++) {</div><div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        cout &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; v_ref[i];</div><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    }</div><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    cout &lt;&lt; endl;</div><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;}</div></div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="class_array___dynamic.html#ae7b7662e2cf6c6339773d63a469dced8">cast_array()</a>.</p>
 
 </div>
 </div>
