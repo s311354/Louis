@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['leetcode_5fpractice_5farray_5fdynamic',['leetcode_practice_array_dynamic',['../dynamic__array__exercise_8cpp.html#ab702836aee53bedbc01fe25c7bd4a191',1,'leetcode_practice_array_dynamic():&#160;dynamic_array_exercise.cpp'],['../dynamic__array__exercise_8h.html#ab702836aee53bedbc01fe25c7bd4a191',1,'leetcode_practice_array_dynamic():&#160;dynamic_array_exercise.cpp']]],
-  ['leetcode_5fpractice_5farray_5fdynamic1',['leetcode_practice_array_dynamic1',['../dynamic__array__exercise_8h.html#a01455b360533d3a86edffe46c5547738',1,'dynamic_array_exercise.h']]],
-  ['leetcode_5fpractice',['Leetcode_practice',['../md__r_e_a_d_m_e.html',1,'']]]
+  ['insertnode',['insertNode',['../class_binary___tree.html#a5c1c12248ae27c10ea2314d6b9110376',1,'Binary_Tree']]]
 ];

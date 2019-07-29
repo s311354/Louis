@@ -1,8 +1,6 @@
 var searchData=
 [
-  ['num',['Num',['../class_num.html',1,'Num'],['../class_num.html#ada35c9e6ac61b5d9d445b841d098f6a5',1,'Num::Num()']]],
-  ['num_2ecpp',['Num.cpp',['../_num_8cpp.html',1,'']]],
-  ['num_2eh',['Num.h',['../_num_8h.html',1,'']]],
-  ['numequivdominopairs',['numEquivDominoPairs',['../class_dynamic___array___exercise.html#a186837db691ec09db20b55b746d73393',1,'Dynamic_Array_Exercise']]],
-  ['numequivdominopairs_5fopt',['numEquivDominoPairs_opt',['../class_dynamic___array___exercise.html#a7c7f1a4d4dc450d592f642713f6199a5',1,'Dynamic_Array_Exercise']]]
+  ['main',['main',['../main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main.cpp']]],
+  ['main_2ecpp',['main.cpp',['../main_8cpp.html',1,'']]],
+  ['mem_5fcopy',['mem_copy',['../class_array___dynamic.html#acc253c4eaaa6087e2361d97f1be213b2',1,'Array_Dynamic']]]
 ];

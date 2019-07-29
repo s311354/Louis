@@ -1,9 +1,9 @@
 var searchData=
 [
-  ['pachira_5ftringle',['pachira_tringle',['../class_dynamic___array___exercise.html#a4ca88c3889dbeb3d0f84d3f276b90005',1,'Dynamic_Array_Exercise']]],
-  ['pivot',['pivot',['../class_dynamic___array___exercise.html#a9023d75d5f566d597bed534477596ce0',1,'Dynamic_Array_Exercise']]],
-  ['plus_5fone',['plus_one',['../class_dynamic___array___exercise.html#ab6c40f10aab7134cc94ed9255c104c90',1,'Dynamic_Array_Exercise']]],
-  ['print_5f2d_5farray_5fdynamic',['print_2d_array_dynamic',['../class_array___dynamic.html#a0740bb6135aa607d1b8d71e5f4527d05',1,'Array_Dynamic']]],
-  ['print_5farray',['print_array',['../class_array___static.html#a6835ca2e41241c270758c198f9a090b8',1,'Array_Static']]],
-  ['print_5farray_5fdynamic',['print_array_dynamic',['../class_array___dynamic.html#a959f462d19ce8277ae7da11f1c70d24b',1,'Array_Dynamic']]]
+  ['newnode',['newNode',['../class_binary___tree.html#a16343f622160f0899be96788b4890949',1,'Binary_Tree']]],
+  ['num',['Num',['../class_num.html',1,'Num'],['../class_num.html#ada35c9e6ac61b5d9d445b841d098f6a5',1,'Num::Num()']]],
+  ['num_2ecpp',['Num.cpp',['../_num_8cpp.html',1,'']]],
+  ['num_2eh',['Num.h',['../_num_8h.html',1,'']]],
+  ['numequivdominopairs',['numEquivDominoPairs',['../class_dynamic___array___exercise.html#a186837db691ec09db20b55b746d73393',1,'Dynamic_Array_Exercise']]],
+  ['numequivdominopairs_5fopt',['numEquivDominoPairs_opt',['../class_dynamic___array___exercise.html#a7c7f1a4d4dc450d592f642713f6199a5',1,'Dynamic_Array_Exercise']]]
 ];
