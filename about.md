@@ -10,15 +10,15 @@ Habits gradually change the face of one's life as time changes one's physical fa
 
 <!-- Introduction  -->
 <span style="font-family:serif" >
-Hi, I am Shi-Rong, Liu and woking as a Wifi embedded software enginner in the [Mediatek inc](https://www.mediatek.com). Previously, I received my master's degree in [Graduate Institue of Communication Engineering](https://comm.ntu.edu.tw/en/#) from National Taiwan University and researched on wireless communication, channel coding theory, information theory and signal processing.
+Hi, I am Shi-Rong Liu and was working as a Wifi embedded software engineer in the [Mediatek inc](https://www.mediatek.com). Previously, I received my master’s degree in [Graduate Institue of Communication Engineering](https://comm.ntu.edu.tw/en/#) from National Taiwan University and researched on wireless communication, channel coding theory, information theory, and signal processing.
 </span>
 
 <span style="font-family:serif" >
-Im my spare time, I dabble in github page, open source, software development, linux and travels.
+In my spare time, I dabble in GitHub page, open-source, software development, Linux, and travels.
 </span>
 
 <span style="font-family:serif" >
-It would be appreciated to leave a comment down below if you've any advices or points.
+It would be appreciated to leave a comment down below if you’ve any pieces of advice or points.
 </span>
 
 <!-- Icon Link -->
