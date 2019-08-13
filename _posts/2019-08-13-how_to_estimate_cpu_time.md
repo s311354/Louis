@@ -1,7 +1,7 @@
 ---
 layout: post
 title: How to estimate CPU time
-tags: [Jekyll] 
+tags: [Processor] 
 ---
 
 ## Purpose
@@ -40,13 +40,13 @@ main(int argc,char **argv) {
   /*****************************/
 
   end_t = clock();
+
+  // Print the information about the CPU time
   printf("End of the big loop, end_t = %ld\n", end_t);
   printf("Total time taken by CPU= %5.3f seconds\n",
       (((double) (end_t - start_t)) / CLOCKS_PER_SEC));
   return 0;
 }</span></code></pre></div>
-
-####
 
 #### Result
 <div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb">Starting of the program, start_t = 631
