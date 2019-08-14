@@ -6,15 +6,15 @@ tags: [Processor]
 
 ## Purpose
 
-   In order to analyze the c programming performance, the CPU time is one of good indications of how to measure user CPU time, system CPU time, and wall clock time.
+To analyze the c programming performance, the CPU time is one of the good indications of how to measure user CPU time, system CPU time, and wall clock time.
 
-   For avoiding to forget bit and pieces of how to measure CPU time in C programming, I found some relevant informations and recorded in this post. 
+For avoiding to forget bit and pieces of how to measure CPU time in C programming, I found some relevant information and recorded in this post. 
 
 ## C library function - clock()
 
 ### Description 
 
-   The C lib function clock_t clock(void) returns the number of clock ticks elapsed. To get the number of seconds used by the CPU, you will need to divide by CLOCKS_PER_SEC. Generally, on a 32 bit system, the CLOCKS_PER_SEC equals 1000000.
+   The C lib function clock_t clock(void) returns the number of clock ticks elapsed. To get the number of seconds used by the CPU, you will need to divide by CLOCKS_PER_SEC. Generally, on a 32-bit system, the CLOCKS_PER_SEC equals 1000000.
 
 #### Example
 <div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb">#include < stdio.h >
