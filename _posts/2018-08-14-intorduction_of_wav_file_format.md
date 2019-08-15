@@ -6,13 +6,13 @@ tags: [Singal_Process]
 
 ## Purpose
 
-    When doing the project on speech recognition, the test audio data for voice processing adopts WAVE PCM file. 
+  When doing the project on speech recognition, the test audio data for voice processing adopts WAVE PCM file. 
     
-    For quickly recapping the concept of WAVE PCM formay and avoiding to forget bit and pieces of this knowledge, I recorded this relevant information in this post.
+  For quickly recapping the concept of WAVE PCM formay and avoiding to forget bit and pieces of this knowledge, I recorded this relevant information in this post.
 
 ## Abstract
 
-    The WAVE file format is a subset of Microsoft's RIFF specfication for the storage of multimedia file. A RIFF file starts out with a file header followed by a sequence of data chunks. A WAVE file is often just a RIFF file with a single "WAVE" chunk whick consists of two sub-chunks, a "fmt" chunk specifying the data format and a "data" chunk containing the actual sample data. 
+  The WAVE file format is a subset of Microsoft's RIFF specfication for the storage of multimedia file. A RIFF file starts out with a file header followed by a sequence of data chunks. A WAVE file is often just a RIFF file with a single "WAVE" chunk whick consists of two sub-chunks, a "fmt" chunk specifying the data format and a "data" chunk containing the actual sample data. 
 
 ## The WAVE File Structure
 
@@ -164,8 +164,7 @@ The typically canonical WAVE format starts with the RIFF header:
   </tr>
 </table>
 
- #### Note
-  The samples at a moment in time are called a sample frame. In a stereo file, a sample frame has 2 samples, one sample for the left channel and the other for right channel.
+  In addition, the samples at a moment in time are called a sample frame. In a stereo file, a sample frame has 2 samples, one sample for the left channel and the other for right channel.
 
 =========== To be continued.... ==========
 
