@@ -34,76 +34,76 @@ tags: [Math]
 
    The simple method for floating-point to fixed-point conversion use the following steps: 
 
-      Step 1. Consider a floating-point variable $$a$$ 
+   Step 1. Consider a floating-point variable $$a$$ 
 
-      Step 2. Calculate $$ b = a \times 2^F $$, where $$ F $$ is the fractional length of the variable and $$ b $$ is represented in decimal.
+   Step 2. Calculate $$ b = a \times 2^F $$, where $$ F $$ is the fractional length of the variable and $$ b $$ is represented in decimal.
 
-      Step 3. Round the value of $$ b $$ to the nearest integer value
+   Step 3. Round the value of $$ b $$ to the nearest integer value
 
-      Step 4. Convert $$ b $$ from decimal to binary representation and name the new variable $$ c $$
+   Step 4. Convert $$ b $$ from decimal to binary representation and name the new variable $$ c $$
 
    The new variable c uses $$ n $$ bits to represent the value of $$ b $$ in binary.
 
 #### Example. 
-      Considering a floating-point value is $$ a = 3.013$$, and fixed-point format is S4.3. 
+   Considering a floating-point value is $$ a = 3.013$$, and fixed-point format is S4.3. 
 
-      The process of conversoin is
+   The process of conversoin is
    
-      Step 1. $$ b = a \times 2^F = 3.013 \times 2^{+3} = 24.104 $$
+   Step 1. $$ b = a \times 2^F = 3.013 \times 2^{+3} = 24.104 $$
    
-      Step 2. $$ round(24.104) = 24 $$
+   Step 2. $$ round(24.104) = 24 $$
    
-      Step 3. $$ c = dec2bin(b) = 11000 $$
+   Step 3. $$ c = dec2bin(b) = 11000 $$
    
-      Step 4. $$ c = 00011,000 $$
+   Step 4. $$ c = 00011,000 $$
 
-      Thus, the corresponding fixed-point value is 00011000. (S4.3)
+   Thus, the corresponding fixed-point value is 00011000. (S4.3)
 
 ### Conversion of floating-point addition to fixed-point addition
-      The process of performing this conversion is shown bellowing:
+   The process of performing this conversion is shown bellowing:
    
-      Step 1. Align the binary point of operands by adding zero in the right side of operand, which has smaller fractional
+   Step 1. Align the binary point of operands by adding zero in the right side of operand, which has smaller fractional
    
-      Step 2. Each of operands are converted to fixed-point
+   Step 2. Each of operands are converted to fixed-point
    
-      Step 3. Perform the addtion with new values
+   Step 3. Perform the addtion with new values
 
    Note. It is necessary to consider one bit for carry since the word length of the addition result is the larger word-length of operands plus one.
 
 #### Example 1. 
-      Considering two floating-point values a = 3.613 (S3.3) and b = 2.3 (S4.2)
+   Considering two floating-point values a = 3.613 (S3.3) and b = 2.3 (S4.2)
 
-      The process to perform this conversion of addition is shown bellowing:
-      Step 1. $$d = a \times 2^F = 3.613 \times 2^3 = 28.904, $$ and $$e = b \times 2^F = 2.3 \times 2^3 = 18.4$$
+   The process to perform this conversion of addition is shown bellowing:
+   Step 1. $$d = a \times 2^F = 3.613 \times 2^3 = 28.904, $$ and $$e = b \times 2^F = 2.3 \times 2^3 = 18.4$$
    
-      Step 2. round(28.904) = 29, and round(18.4) = 18
+   Step 2. round(28.904) = 29, and round(18.4) = 18
    
-      Step 3. add = round(d) + round(e) = 29 + 18 = 47
+   Step 3. add = round(d) + round(e) = 29 + 18 = 47
    
-      Step 4. c = dec2bin(add) = 101111
+   Step 4. c = dec2bin(add) = 101111
    
-      Step 5. c = 00101,111
+   Step 5. c = 00101,111
 
-      Thus, the corresponding fixed-point value is 00101111. (S4.3)
+   Thus, the corresponding fixed-point value is 00101111. (S4.3)
 
 #### Example 2. Norm calculation
-      Considering a floating-point values a = 3.25 + 4.26 (S3.4)
+   Considering a floating-point values a = 3.25 + 4.26 (S3.4)
 
-      The process to perform this conversion of norm calculation is shown bellowing:
+   The process to perform this conversion of norm calculation is shown bellowing:
 
-      Step 1. $$d = Re\{b\} \times 2^F = 3.25 \times 2^4 = 52 $$ and $$e = Im\{b\} \times 2^F = 4.26 \times 2^4$$
+   Step 1. $$d = Re\{b\} \times 2^F = 3.25 \times 2^4 = 52 $$ and $$e = Im\{b\} \times 2^F = 4.26 \times 2^4$$
    
-      Step 2. round(52) = 52, and round(68.18) = 68
+   Step 2. round(52) = 52, and round(68.18) = 68
    
-      Step 3. f = abs(52 + 68i) = 85.6037
+   Step 3. f = abs(52 + 68i) = 85.6037
    
-      Step 4. round(85.6037) = 86
+   Step 4. round(85.6037) = 86
    
-      Step 5.dec2bin(86) = 0101,0110
+   Step 5.dec2bin(86) = 0101,0110
 
-      Thus, the corresponding fixed-point value is 01010110. (S3.4)
+   Thus, the corresponding fixed-point value is 01010110. (S3.4)
 
-      Note. In the hardware implementation, the CORDIC design is an more efficient fixed-point conversion than above method.
+   Note. In the hardware implementation, the CORDIC design is an more efficient fixed-point conversion than above method.
 
 =========== To be continued.... ==========
 

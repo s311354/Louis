@@ -181,7 +181,7 @@ The typically canonical WAVE format starts with the RIFF header:
 ## Parsing the header format by C Program
 Assume: The audio wave file is recorded at 25 fps (40 msec per frame) and a stereo channel. Also, the sample rate is 16000 Hz and the number of bits per sample is 16 bits (2 bytes) 
 
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb">#include < stdio.h >
+<div class="language-shell highlighter-rouge"><pre class="highlight" style="font-size:12px"><code class="hljs ruby"><span class="nb">#include < stdio.h >
 #include < stdlib.h >
 #include < string.h >
 
@@ -255,23 +255,17 @@ int main(int argc, char **argv) {
 	return 0;
 }<span></code></pre></div>
 
+
 The OUTPUT:
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb">fmt sub-chunk: fmt 
+
+<div class="language-shell highlighter-rouge"><pre class="highlight" style="font-size:12px"><code class="hljs ruby"><span class="nb">fmt sub-chunk: fmt 
 data sub-chunk: data 
 numChannels = 1 
 sampleRate = 16000 
 byteRate = 32000 
 bitsPerSample = 16 
 sample_alignment (numChannels * bitsPerSample) = 2 
-audio_format = PCM<span></code></pre></div>
-
-
-
-
-
-
-
-
+audio_format = PCM</span></code></pre></div>
 
 =========== To be continued.... ==========
 
