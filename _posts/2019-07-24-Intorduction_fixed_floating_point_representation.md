@@ -15,7 +15,7 @@ tags: [Math]
 
    A flxed-point representation of number consists of three parts: the sign field (1 bit), integer field, and fractional field. For the sign bit, on the computer, 0 is used to represent "+" and 1 is used to represent "-". (two's complement)
 
-   We can simply represent the format of fixed-point number as SW.F, where S is the sign field, W is the word length of the parameters, F is the fractional length of the parameters. It is obvious that larger W and F results in a better performance and lower bit error rate, but the hardware design needs a large memory size and sillicon area. Thus, we should do simulation and choose suitable value of SW.F for each parameter in the algorithm.
+   We can simply represent the format of fixed-point number as SW.F, where S is the sign field, W is the integral length of the parameters, F is the fractional length of the parameters. It is obvious that larger W and F results in a better performance and lower bit error rate, but the hardware design needs a large memory size and sillicon area. Thus, we should do simulation and choose suitable value of SW.F for each parameter in the algorithm.
 
 #### Example. The 8-bit (S2.5)
 
