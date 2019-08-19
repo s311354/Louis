@@ -101,7 +101,7 @@ tags: [Math]
 
    The process to perform this conversion of norm calculation is shown bellowing:
 
-   Step 1. $$d = Re{b} \times 2^F = 3.25 \times 2^4 = 52 $$ and $$e = Im{b} \times 2^F = 4.26 \times 2^4$$
+   Step 1. $$d = Re\{b\} \times 2^F = 3.25 \times 2^4 = 52 $$ and $$e = Im\{b\} \times 2^F = 4.26 \times 2^4$$
    
    Step 2. round(52) = 52, and round(68.18) = 68
    
