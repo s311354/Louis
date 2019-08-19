@@ -122,7 +122,7 @@ tags: [Math]
 
 [2] [Floating‐point to Fixed‐point conversion](http://ee.sharif.edu/~digitalvlsi/Docs/Fixed-Point.pdf)
 
-[3] [](https://upload.wikimedia.org/wikiversity/en/9/94/CORDIC.Matlab.1.A.20110715.pdf)
+[3] [The conception of CORDIC](https://upload.wikimedia.org/wikiversity/en/9/94/CORDIC.Matlab.1.A.20110715.pdf)
 
 ## Note
 <p>If you have any constructive criticism or advises, leave the comments below or feel free to email me @qazqazqaz850@gmail.com.
