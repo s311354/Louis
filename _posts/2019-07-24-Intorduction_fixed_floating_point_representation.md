@@ -74,6 +74,7 @@ tags: [Math]
    Considering two floating-point values a = 3.613 (S3.3) and b = 2.3 (S4.2)
 
    The process to perform this conversion of addition is shown bellowing:
+   
    Step 1. $$d = a \times 2^F = 3.613 \times 2^3 = 28.904, $$ and $$e = b \times 2^F = 2.3 \times 2^3 = 18.4$$
    
    Step 2. round(28.904) = 29, and round(18.4) = 18

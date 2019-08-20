@@ -179,7 +179,7 @@ The typically canonical WAVE format starts with the RIFF header:
   In addition, the samples at a moment in time are called a sample frame. In a stereo file, a sample frame has 2 samples, one sample for the left channel and the other for right channel.
 
 ## Parsing the header format by C Program
-Assume: The audio wave file is recorded at 25 fps (40 msec per frame) and a stereo channel. Also, the sample rate is 16000 Hz and the number of bits per sample is 16 bits (2 bytes) 
+Assume: The audio wave file is recorded at 25 fps (40 msec per frame) and a Mono channel. Also, the sample rate is 16000 Hz and the number of byte per sample is 2 bytes.
 
 <div class="language-shell highlighter-rouge"><pre class="highlight" style="font-size:12px"><code class="hljs ruby"><span class="nb">#include < stdio.h >
 #include < stdlib.h >
@@ -212,58 +212,54 @@ int main(int argc, char **argv) {
  // Read Wav file - char * fgets(char* str, int Max num of char, FILE* stream), one test case
  if (fgets(wav_test_case, sizeof(wav_test_case), wav_list) != NULL) {
 
- fp = fopen(wav_test_case, "rb");
+  fp = fopen(wav_test_case, "rb");
 
- // Protection on Reading file
- if (wav_list == NULL) {
-	printf("Can't opening wav file");
-	return (-1);
- }
+  // Protection on Reading file
+  if (wav_list == NULL) {
+	 printf("Can't opening wav file");
+	 return (-1);
+  }
 
- // Parsing WAV FORMAT
- fread(&wav_chunk, 1, sizeof(WAV_FORMAT), fp);
+  // Parsing WAV FORMAT
+  fread(&wav_chunk, 1, sizeof(WAV_FORMAT), fp);
  
- // Read fmt sub-chunk
- printf("fmt sub-chunk: %.3s \n", wav_chunk.subchunk1);
- 
- // Read data sub-chunk
- printf("data sub-chunk: %.4s \n", wav_chunk.subChunk2);
- 
- //Print the Format of Wav
- printf("numChannels = %d \n", wav_chunk.numChannels);
- printf("sampleRate = %d \n", wav_chunk.sampleRate);
- printf("byteRate = %d \n", wav_chunk.byteRate);
- printf("bitsPerSample = %d \n", wav_chunk.bitsPerSample);
- printf("sample_alignment (numChannels * bitsPerSample) = %d \n",
-			wav_chunk.blockAlign);
- printf("audio_format = %s \n",
+  printf("fmt sub-chunk: %.3s \n", wav_chunk.subchunk1);  // Read fmt sub-chunk
+  printf("data sub-chunk: %.4s \n", wav_chunk.subChunk2); // Read data sub-chunk
+  printf("numChannels = %d \n", wav_chunk.numChannels);   // Print the Format of Wav
+  printf("sampleRate = %d \n", wav_chunk.sampleRate);
+  printf("byteRate = %d \n", wav_chunk.byteRate);
+  printf("bitsPerSample = %d \n", wav_chunk.bitsPerSample);
+  printf("sample_alignment (numChannels * bitsPerSample) = %d \n",
+			    wav_chunk.blockAlign);
+  printf("audio_format = %s \n",
 			wav_chunk.audioFormat ? "PCM" : "IEEE Float");
- // Read Frame Process
- while (fread(wav_per_frame, wav_chunk.blockAlign, WAVE_SIZE_PER_FRAME,
+
+  // Read Frame Process
+  while (fread(wav_per_frame, wav_chunk.blockAlign, WAVE_SIZE_PER_FRAME,
 			fp) == WAVE_SIZE_PER_FRAME) {
-  printf("Frame = %d", frame_num);
- 
+   printf("Frame = %d", frame_num);
+
   /*-----------------*/
-	// Doing Signal Process per Frame
-	/*-----------------*/
+	
+  // Doing Signal Process per Frame
+  
+  /*-----------------*/
  
-  frame_num++;
+   frame_num++;
+  }
  }
-}
 	fclose(wav_list);
 	return 0;
 }</span></code></pre></div>
 
-
-The OUTPUT:
-
+Result:
 <div class="language-shell highlighter-rouge"><pre class="highlight" style="font-size:12px"><code class="hljs ruby"><span class="nb">fmt sub-chunk: fmt 
 data sub-chunk: data 
 numChannels = 1 
 sampleRate = 16000 
 byteRate = 32000 
 bitsPerSample = 16 
-sample_alignment (numChannels * bitsPerSample) = 2 
+sample_alignment (numChannels * bytes Per Sample) = 2 
 audio_format = PCM</span></code></pre></div>
 
 =========== To be continued.... ==========
