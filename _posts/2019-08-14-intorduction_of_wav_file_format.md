@@ -178,9 +178,10 @@ The typically canonical WAVE format starts with the RIFF header:
 </font>
   In addition, the samples at a moment in time are called a sample frame. In a stereo file, a sample frame has 2 samples, one sample for the left channel and the other for right channel.
 
-## Parsing the header format by C Program
+## Parsing the wave header format by C Program
 Assume: The audio wave file is recorded at 25 fps (40 msec per frame) and a stereo channel. Also, the sample rate is 16000 Hz and the number of bits per sample is 16 bits (2 bytes) 
 
+#### Method 1.
 <div class="language-shell highlighter-rouge"><pre class="highlight" style="font-size:12px"><code class="hljs ruby"><span class="nb">#include < stdio.h >
 #include < stdlib.h >
 #include < string.h >
@@ -238,25 +239,23 @@ int main(int argc, char **argv) {
 			wav_chunk.blockAlign);
  printf("audio_format = %s \n",
 			wav_chunk.audioFormat ? "PCM" : "IEEE Float");
- // Read Frame Process
- while (fread(wav_per_frame, wav_chunk.blockAlign, WAVE_SIZE_PER_FRAME,
-			fp) == WAVE_SIZE_PER_FRAME) {
-  printf("Frame = %d", frame_num);
- 
-  /*-----------------*/
-	// Doing Signal Process per Frame
-	/*-----------------*/
- 
-  frame_num++;
+
+	/***** Frame Process *****/
+	while (fread(wav_per_frame, wav_chunk.blockAlign, WAVE_SIZE_PER_FRAME, fp) == WAVE_SIZE_PER_FRAME) {		
+   printf("Frame = %d", frame_num);
+
+	 /***************************/
+   // Doing Signal Process per Frame
+   /***************************/
+
+   frame_num++;
+  } /***** End of Frame Process *****/
  }
-}
-	fclose(wav_list);
-	return 0;
+ fclose(wav_list);
+ return 0;
 }</span></code></pre></div>
 
-
-The OUTPUT:
-
+Result:
 <div class="language-shell highlighter-rouge"><pre class="highlight" style="font-size:12px"><code class="hljs ruby"><span class="nb">fmt sub-chunk: fmt 
 data sub-chunk: data 
 numChannels = 1 
@@ -264,7 +263,104 @@ sampleRate = 16000
 byteRate = 32000 
 bitsPerSample = 16 
 sample_alignment (numChannels * bitsPerSample) = 2 
-audio_format = PCM</span></code></pre></div>
+audio_format = PCM
+Frame = 0
+...</span></code></pre></div>
+
+#### Method 2.
+<div class="language-shell highlighter-rouge"><pre class="highlight" style="font-size:12px"><code class="hljs ruby"><span class="nb">#include < stdio.h >
+#include < stdlib.h >
+#include < string.h >
+
+#define NUM_FRAME 16000
+#define SAMPLE_PER_FRAME 640 // 16000/25 = 640, 25 fps
+#define NUM_CHANEL 2
+#define BYTE_PER_SAMPLE 2
+#define WAVE_SIZE_PER_FRAME  SAMPLE_PER_FRAME*BYTE_PER_SAMPLE*BYTE_PER_SAMPLE
+
+// Signal parameter structure
+typedef struct SIGNAL_PARA_T {
+	int sampleSize;
+} SIGNAL_PARA;
+
+// Default Value for signal parameter
+SIGNAL_PARA signal_para = { SAMPLE_PER_FRAME };
+
+int main(int argc, char **argv) {
+ FILE *wav_list = NULL;
+ FILE *fp = NULL;
+ int frame_num = 0;
+ WAV_FORMAT wav_chunk;
+
+ // Static Memory
+ char wav_test_case[200];
+ char wav_per_frame[WAVE_SIZE_PER_FRAME];
+
+ // Open Wav file
+ wav_list = fopen(("wav_test_case.txt"), "rb");
+
+ // Protection on Reading file
+ if (wav_list == NULL) {
+	printf("Error opening file");
+	return (-1);
+ }
+
+ // Read Wav file - char * fgets(char* str, int Max num of char, FILE* stream), one test case
+ if (fgets(wav_test_case, sizeof(wav_test_case), wav_list) != NULL) {
+
+ fp = fopen(wav_test_case, "rb");
+
+ // Protection on Reading file
+ if (wav_list == NULL) {
+	printf("Can't opening wav file");
+	return (-1);
+ }
+
+ // Parsing WAV FORMAT
+ fread(&wav_chunk, 1, sizeof(WAV_FORMAT), fp);
+ 
+ // Read fmt sub-chunk
+ printf("fmt sub-chunk: %.3s \n", wav_chunk.subchunk1);
+ 
+ // Read data sub-chunk
+ printf("data sub-chunk: %.4s \n", wav_chunk.subChunk2);
+ 
+ //Print the Format of Wav
+ printf("numChannels = %d \n", wav_chunk.numChannels);
+ printf("sampleRate = %d \n", wav_chunk.sampleRate);
+ printf("byteRate = %d \n", wav_chunk.byteRate);
+ printf("bitsPerSample = %d \n", wav_chunk.bitsPerSample);
+ printf("sample_alignment (numChannels * bitsPerSample) = %d \n",
+			wav_chunk.blockAlign);
+ printf("audio_format = %s \n",
+			wav_chunk.audioFormat ? "PCM" : "IEEE Float");
+
+	/***** Frame Process *****/
+ for (frame_num = 0; frame_num < NUM_FRAME; frame_num++) {
+  result = fread(wav_per_frame, wav_chunk.blockAlign, signal_para.sampleSize, fp); // Read samples
+	printf("Frame = %d \n", frame_num);
+
+	/***************************/
+  // Doing Signal Process per Frame
+  /***************************/
+
+	} /***** End of Frame Process *****/
+ }
+fclose(wav_list);
+return 0;
+}</span></code></pre></div>
+
+Result:
+<div class="language-shell highlighter-rouge"><pre class="highlight" style="font-size:12px"><code class="hljs ruby"><span class="nb">fmt sub-chunk: fmt 
+data sub-chunk: data 
+numChannels = 1 
+sampleRate = 16000 
+byteRate = 32000 
+bitsPerSample = 16 
+sample_alignment (numChannels * bitsPerSample) = 2 
+audio_format = PCM
+Frame = 0
+...</span></code></pre></div>
 
 =========== To be continued.... ==========
 
