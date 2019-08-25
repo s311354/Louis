@@ -10,7 +10,6 @@ tags: [Matlab]
    In this post, I recorded a few pieces of information in this post for avoiding to forget bit and pieces and will keep adding some informations.
 
 ## Read data from text file
-
    The fscanf is the common syntax to read data from text file.
 
    Usage:
@@ -25,7 +24,6 @@ data = fscanf(file, '%x');
 fclose(file)</span></code></pre></div>
 
 ## Write data to text file
-
    The fprint is the common syntax to write formatted data to file.
 
    Usage:
@@ -51,17 +49,17 @@ if (sign_field)
   data = - (2^bit_len - data);</span></code></pre></div>
 
 ## Signed fixed-point numeric object
-    The matlab supports the constructures of signed and unsigned fixed-point numeric object, but unfortunately it does not have the overflowing protection, i.e The value can not more than 3 when the integral length is 3.
+The matlab supports the constructures of signed and unsigned fixed-point numeric object, but unfortunately it does not have the overflowing protection, i.e The value can not more than 3 when the integral length is 3.
 
 <h6><ol>
     <li>sfi: With signed, two's-complement </li>  
     <li>ufi: unsigned fixed-point numbers number</li>
 </ol></h6>
 
-    Usage:
+Usage:
 <div class="language-shell highlighter-rouge"><pre class="highlight" style="font-size:12px"><code class="hljs ruby"><span class="nb">sign_fixed = sfi(value, word length, fraction length)</span></code></pre></div>
 
-    Data Properties
+Data Properties
 <div class="language-shell highlighter-rouge"><pre class="highlight" style="font-size:12px"><code class="hljs ruby"><span class="nb">bin — Stored integer value of a fi object in binary
 data — Numerical real-world value of a fi object
 dec — Stored integer value of a fi object in decimal
