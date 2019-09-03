@@ -10,7 +10,7 @@ tags: [Singal_Process]
   For quickly recapping the concept of WAVE PCM formay and avoiding to forget bit and pieces of this knowledge, I recorded this relevant information in this post.
 
 ## Abstract
-  The WAVE file format is a subset of Microsoft's RIFF specificaiton for the storage of the multimedia file. A RIFF file starts out with a file header followed by a sequence of data chunks. A WAVE file is often just a RIFF file with a single "WAVE" chunk whick consists of two sub-chunks, a "fmt" chunk specifying the data format and a "data" chunk containing the actual sample data. 
+  The WAVE file format is a subset of Microsoft's RIFF specificaiton for the storage of the multimedia file. A RIFF file starts out with a file header followed by a sequence of data chunks. A WAVE file is often just a RIFF file with a single "WAVE" chunk which consists of two sub-chunks, a "fmt" chunk specifying the data format and a "data" chunk containing the actual sample data. 
 
 ## The WAVE File Structure
 The typically canonical WAVE format starts with the RIFF header:
@@ -240,12 +240,14 @@ int main(int argc, char **argv) {
  printf("audio_format = %s \n",
 			wav_chunk.audioFormat ? "PCM" : "IEEE Float");
 
-	/***** Frame Process *****/
-	while (fread(wav_per_frame, wav_chunk.blockAlign, WAVE_SIZE_PER_FRAME, fp) == WAVE_SIZE_PER_FRAME) {		
-   printf("Frame = %d", frame_num);
+ /***** Frame Process *****/
+ while (fread(wav_per_frame, wav_chunk.blockAlign, WAVE_SIZE_PER_FRAME, fp) == WAVE_SIZE_PER_FRAME) {		
+  printf("Frame = %d", frame_num);
 
 	 /***************************/
-   // Doing Signal Process per Frame
+  
+   /* Doing Signal Process per Frame */
+  
    /***************************/
 
    frame_num++;
@@ -341,7 +343,9 @@ int main(int argc, char **argv) {
 	printf("Frame = %d \n", frame_num);
 
 	/***************************/
-  // Doing Signal Process per Frame
+
+  /* Doing Signal Process per Frame */
+  
   /***************************/
 
 	} /***** End of Frame Process *****/
