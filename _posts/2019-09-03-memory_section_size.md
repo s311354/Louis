@@ -22,13 +22,11 @@ In this post, I make a copy about the memory section size from xtensa C applicat
 Additionally, the **.text** section is assigned to IRAM, while **.data** section is assigned to DRAM. For the memory map, indicating how memory is laid out, code (.text) is in local instruction memory, while data (.data, .bss) is in system memory.
 
 Example:
-
 <figure>
-<a><img src="{{ site.baseurl }}/picture/memory_section.png" width="120%"></a>
+<a><img src="{{ site.baseurl }}/picture/memory_section.png"></a>
 </figure>
 
 #### Jump tables
-
 The jump tables are an efficient way of handing similar events in C/C++ program because they offer a unique blend of compactness and execution speed, particularly on microprocessors that support indexed addressing. We can look at the use of arrays of function pointers as jump tables.
 
 Example 1. Simple pseudo code: 
@@ -41,7 +39,6 @@ Example 1. Simple pseudo code:
 }</span></code></pre></div>
 
 In this example, by declaring the static array within the function, no one else can access the jump table.
-
 
 Example 2. Pseudo code for timed task:
 <div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb">#define INTERVAL_16_MSEC 16
