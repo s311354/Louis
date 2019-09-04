@@ -23,14 +23,14 @@ Additionally, the **.text** section is assigned to IRAM, while **.data** section
 
 Example:
 <figure>
-<a><img src="{{ site.baseurl }}/picture/memory_section.png"></a>
+<a><img src="{{ site.baseurl }}/picture/memory_section.PNG"></a>
 </figure>
 
 #### Jump tables
 The jump tables are an efficient way of handing similar events in C/C++ program because they offer a unique blend of compactness and execution speed, particularly on microprocessors that support indexed addressing. We can look at the use of arrays of function pointers as jump tables.
 
 Example 1. Simple pseudo code: 
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb">void test(uint8_t const idx) {
+<div class="language-shell highlighter-rouge"><pre class="highlight" style="font-size:12px" ><code class="hljs ruby"><span class="nb">void test(uint8_t const idx) {
   static void (*pf[])(void) = {func_a, func_b, func_c, ..., func_z};
   if (idx < sizeof(pf) / sizeof(*pf)) {
       /* Call the function specified by idx */
@@ -41,30 +41,25 @@ Example 1. Simple pseudo code:
 In this example, by declaring the static array within the function, no one else can access the jump table.
 
 Example 2. Pseudo code for timed task:
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb">#define INTERVAL_16_MSEC 16
+<div class="language-shell highlighter-rouge"><pre class="highlight" style="font-size:12px"><code class="hljs ruby"><span class="nb">#define INTERVAL_16_MSEC 16
 #define INTERVAL_50_MSEC 50
 
 void fnA();
 void fnB();
-void fnC();
 
-typedef struct
-{
+typedef struct {
    char interval;          /* How often to call the task */
    void (*proc)(void);     /* pointer to function returning void */
 } TIMED_TASK;
 
-static const TIMED_TASK timed_task[] =
-{
+static const TIMED_TASK timed_task[] = {
   { INTERVAL_16_MSEC,  fnA},
   { INTERVAL_50_MSEC,  fnB},
   { 0, NULL }
 };
 
-int main(void)
-{
+int main(void) {
   const TIMED_TASK *ptr;
-  char time;
 
   for (ptr = timed_task; ptr->interval != 0; ptr++)
   {
@@ -75,8 +70,7 @@ int main(void)
 }
 
 void fnA(){}
-void fnB(){}
-void fnC(){}</span></code></pre></div>
+void fnB(){}</span></code></pre></div>
 
 ## Memory map
 A memory map is a sequence of memory description and optional parameter assignments.
