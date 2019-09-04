@@ -7,7 +7,7 @@ tags: [Matlab]
 ## Purpose
    When designing on the algorithm implementation, the matlab script is one of the common programming languages to develope in the initial stage.
 
-   In this post, I recorded a few pieces of information in this post for avoiding to forget bit and pieces and will keep adding some informations.
+   In this post, I recorded a few pieces of information for avoiding to forget bit and pieces and will keep adding some informations.
 
 ## Read data from text file
    The fscanf is the common syntax to read data from text file.
@@ -53,7 +53,7 @@ The matlab supports the constructures of signed and unsigned fixed-point numeric
 
 <h6><ol>
     <li>sfi: With signed, two's-complement </li>  
-    <li>ufi: unsigned fixed-point numbers number</li>
+    <li>ufi: Unsigned fixed-point numbers number</li>
 </ol></h6>
 
 Usage:
@@ -87,7 +87,7 @@ b.hex
 
 [3] [What is “2's Complement”?](https://stackoverflow.com/questions/1049722/what-is-2s-complement)
 
-[3] [Construct signed fixed-point numeric object](https://www.mathworks.com/help/fixedpoint/ref/sfi.html)
+[4] [Construct signed fixed-point numeric object](https://www.mathworks.com/help/fixedpoint/ref/sfi.html)
 
 ## Note
 <p>If you have any constructive criticism or advises, leave the comments below or feel free to email me qazqazqaz850@gmail.com.

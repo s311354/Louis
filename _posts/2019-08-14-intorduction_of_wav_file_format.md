@@ -5,7 +5,7 @@ tags: [Singal_Process]
 ---
 
 ## Purpose
-  When doing the project on speech recognition, the test audio data for voice processing adopts WAVE PCM file. 
+  When doing the project on speech recognition, the test audio data for voice processing utilizes WAVE PCM file. 
     
   For quickly recapping the concept of WAVE PCM formay and avoiding to forget bit and pieces of this knowledge, I recorded this relevant information in this post.
 
