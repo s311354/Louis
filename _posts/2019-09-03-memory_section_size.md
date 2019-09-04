@@ -7,7 +7,7 @@ tags: [Processor]
 ## Purpose
 In order to analyze the code size when implementing C program, we need to understand the meaning of memory section calculated by IDE tool. The memory size can be roughly classified into five sections. 
 
-In this post, I make a copy about the memory section size from xtensa C application programmer's help and recorded the relevant information to quickly look up. 
+In this post, I made a copy about the memory section size from xtensa C application programmer's help and recorded the relevant information to quickly look up. 
 
 ## Memory Section Size
 
