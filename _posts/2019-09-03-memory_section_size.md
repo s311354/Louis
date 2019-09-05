@@ -23,7 +23,7 @@ Additionally, the **.text** section is assigned to IRAM, while **.data** section
 
 Example:
 <figure>
-<a><img src="{{ site.baseurl }}/picture/memory_section.png"></a>
+<a><img src="{{ site.baseurl }}/picture/memory_section.PNG"></a>
 </figure>
 
 #### Jump tables
