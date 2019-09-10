@@ -13,8 +13,7 @@ In this post, I recorded a few pieces of information in this post for avoiding t
 The fscanf is the common syntax to read data from text file.
 
 Usage:
-<div class="language-shell highlighter-rouge"><pre class="highlight" style="font-size:12px"><code class="hljs ruby"><span class="nb">data = fscanf(filename, formatSpec)
-</span></code></pre></div>
+<div class="language-shell highlighter-rouge"><pre class="highlight" style="font-size:12px"><code class="hljs ruby"><span class="nb">data = fscanf(filename, formatSpec)</span></code></pre></div>
 
 #### Example: 
 <div class="language-shell highlighter-rouge"><pre class="highlight" style="font-size:12px"><code class="hljs ruby"><span class="nb">filename = 'data.txt';
@@ -26,8 +25,7 @@ fclose(file)</span></code></pre></div>
 The fprint is the common syntax to write formatted data to file.
 
 Usage:
-<div class="language-shell highlighter-rouge"><pre class="highlight" style="font-size:12px"><code class="hljs ruby"><span class="nb">fprintf(file_name, format, A1)
-</span></code></pre></div>
+<div class="language-shell highlighter-rouge"><pre class="highlight" style="font-size:12px"><code class="hljs ruby"><span class="nb">fprintf(file_name, format, A1)</span></code></pre></div>
 
 #### Example: Write 32 bits Data to Text File
 <div class="language-shell highlighter-rouge"><pre class="highlight" style="font-size:12px"><code class="hljs ruby"><span class="nb">filename = 'test.txt';
@@ -76,6 +74,19 @@ b.data
 b.hex
 </span></code></pre></div>
 
+## Read radio file
+The audioread is the common syntax to write audio file, i.e., wav, mp3, au, flac, etc. 
+
+Usage:
+<div class="language-shell highlighter-rouge"><pre class="highlight" style="font-size:12px"><code class="hljs ruby"><span class="nb">[data,Fs] = audioread(filename)</span></code></pre></div>
+, where data is the sampled data, and Fs is the samplerate for that data. 
+
+#### Example: Write a wav file
+<div class="language-shell highlighter-rouge"><pre class="highlight" style="font-size:12px"><code class="hljs ruby"><span class="nb">samples_frame = 640;
+test_wav = sprintf('wav/xatx_new_clean.wav');
+[data, Fs] = audioread(test_wav);
+numFrame = round(length(data) / (samples_frame));</span></code></pre></div>
+
 =========== To be continued.... ==========
 
 ## Reference
@@ -85,7 +96,9 @@ b.hex
 
 [3] [What is “2's Complement”?](https://stackoverflow.com/questions/1049722/what-is-2s-complement)
 
-[3] [Construct signed fixed-point numeric object](https://www.mathworks.com/help/fixedpoint/ref/sfi.html)
+[4] [Construct signed fixed-point numeric object](https://www.mathworks.com/help/fixedpoint/ref/sfi.html)
+
+[5] [audioread](https://www.mathworks.com/help/matlab/ref/audioread.html)
 
 ## Note
 <p>If you have any constructive criticism or advises, leave the comments below or feel free to email me qazqazqaz850@gmail.com.
