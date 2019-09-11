@@ -83,13 +83,14 @@ Usage:
 
 #### Example: Read a wav file
 <div class="language-shell highlighter-rouge"><pre class="highlight" style="font-size:12px"><code class="hljs ruby"><span class="nb">samples_frame = 640;
-test_wav = sprintf('wav/xatx_new_clean.wav');
+test_wav = sprintf('wav/test.wav');
 [data, Fs] = audioread(test_wav);
 numFrame = round(length(data) / (samples_frame));
 time = (1:length(data))/Fs;
 plot(time, data);
 title('wave: s(n)');</span></code></pre></div>
 
+Result:
 <figure>
 <a><img src="{{ site.baseurl }}/picture/wav.png"></a>
 </figure>
@@ -107,6 +108,8 @@ title('wave: s(n)');</span></code></pre></div>
 [4] [Construct signed fixed-point numeric object](https://www.mathworks.com/help/fixedpoint/ref/sfi.html)
 
 [5] [audioread](https://www.mathworks.com/help/matlab/ref/audioread.html)
+
+[6] [Audio Signal Processing and Recognition (音訊處理與辨識)](http://www.mirlab.org/jang/books/audioSignalProcessing/)
 
 ## Note
 <p>If you have any constructive criticism or advises, leave the comments below or feel free to email me qazqazqaz850@gmail.com.
