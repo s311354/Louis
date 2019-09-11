@@ -81,11 +81,19 @@ Usage:
 <div class="language-shell highlighter-rouge"><pre class="highlight" style="font-size:12px"><code class="hljs ruby"><span class="nb">[data,Fs] = audioread(filename)</span></code></pre></div>
 , where data is the sampled data, and Fs is the samplerate for that data. 
 
-#### Example: Write a wav file
+#### Example: Read a wav file
 <div class="language-shell highlighter-rouge"><pre class="highlight" style="font-size:12px"><code class="hljs ruby"><span class="nb">samples_frame = 640;
 test_wav = sprintf('wav/xatx_new_clean.wav');
 [data, Fs] = audioread(test_wav);
-numFrame = round(length(data) / (samples_frame));</span></code></pre></div>
+numFrame = round(length(data) / (samples_frame));
+time = (1:length(data))/Fs;
+plot(time, data);
+title('wave: s(n)');</span></code></pre></div>
+
+<figure>
+<a><img src="{{ site.baseurl }}/picture/wav.png"></a>
+</figure>
+
 
 =========== To be continued.... ==========
 
