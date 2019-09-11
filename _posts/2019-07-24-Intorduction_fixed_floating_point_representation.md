@@ -62,7 +62,7 @@ tags: [Math]
 ### Conversion of floating-point addition to fixed-point addition
    The process of performing this conversion is shown bellowing:
    
-   Step 1. Align the binary point of operands by adding zero in the right side of operand, which has smaller fractional
+   Step 1. Align the binary point of operands by **adding zero in the right side of operand**, which has smaller fractional
    
    Step 2. Each of operands are converted to fixed-point
    
@@ -105,6 +105,15 @@ tags: [Math]
    Thus, the corresponding fixed-point value is 01010110. (S3.4)
 
    Note. In the hardware implementation, the CORDIC design is an more efficient fixed-point conversion than above method.
+
+#### Example 3. Addication using 32-bit register
+   Considering the addication of two 16-bit registers and storing into 32-bit register. And then add two 32-bit values using 32-bit register.
+   Due to the N-bit number + N-bit number = (N + 1)-bit number, we should use trunction to avoid overflow problem.
+
+The diagrammatic model:
+<figure>
+<a><img src="{{ site.baseurl }}/picture/alignment_fixed.png"></a>
+</figure>
 
 =========== To be continued.... ==========
 
