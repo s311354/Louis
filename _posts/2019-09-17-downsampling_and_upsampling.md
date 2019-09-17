@@ -152,7 +152,7 @@ The diagrammatic convolution in matlab:
 =========== To be continued.... ==========
 
 ## Reference
-[1] [How Do I Upsample and Downsample My Data?] (http://blog.prosig.com/2017/01/27/how-do-i-upsample-and-downsample-my-data/)
+[1] [How Do I Upsample and Downsample My Data?](http://blog.prosig.com/2017/01/27/how-do-i-upsample-and-downsample-my-data/)
 
 [2] [downsampling an fft signal](https://dsp.stackexchange.com/questions/18909/downsampling-an-fft-signal)
 
