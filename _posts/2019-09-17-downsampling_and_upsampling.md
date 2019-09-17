@@ -194,23 +194,23 @@ Result:
 <div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb">w = conv(u,v,shape)</span></code></pre></div>
 , where the shape is specified as 'full'| 'same' | 'valid'.
 
-Example: The full convolution
+Example: The result of full convolution
+
 $$\left[ 1 2 1 \right] * \left[ 1 1 \right] =\left[ 1 3 3 1 \right] $$
 
-Example: The same convolution
+Example: The result of same convolution
+
 $$\left[ 1 2 1 \right] * \left[ 1 1 \right] = \left[ 3 3 1 \right]$$
 
-Example: The valid convolution
+Example: The result of valid convolution
+
 $$\left[ 1 2 1 \right] * \left[ 1 1 \right] = \left[ 3 3 \right]$$
 
 The diagrammatic convolution in matlab:
 <figure>
 <a><img src="{{ site.baseurl }}/picture/convolution.png"></a>
+<figcaption>diagrammatic convolution</figcaption>
 </figure>
-
-## Upsampling
-   The idea of upsampling is to add samples to a time-domain signal. Meanwhile, it also maintains its length with repect to time.
-
 
 =========== To be continued.... ==========
 
