@@ -1,11 +1,11 @@
 ---
 layout: post
-title: Introduction of Downsampling and Upsampling
+title: Introduction of Downsampling
 tags: [Singal_Process] 
 ---
 
 ## Abstract
-   The sampling process is creating a discrete signal from a continuous process. And there are two common sampling processes: down-sampling and un-sampling. To put it simply, downsampling reduces the sample rate and upsampling increases the sample rate.
+   The sampling process is creating a discrete signal from a continuous process. And there are two common sampling processes: down-sampling and un-sampling. To put it simply, downsampling reduces the sample rate and upsampling increases the sample rate. In this post, I only recored the basic concepts of downsampling and the relevant information.
 
 ## Dowmsampling
    The idea of downsampling is removing samples from the time-domain signal.
@@ -32,7 +32,7 @@ fs = 1000;
 t = 0 : 1/fs : 1 - 1/fs;
 % central frequency
 f1 = 3;
-len_fir_order = 31;
+fir_len = 31;
 
 x1 = cos(2*pi*f1*t);
 
@@ -47,10 +47,10 @@ L1_zero = length(x1_zero);
 t_zeropad = [0:L1_zero-1]/fs;
 
 % FFT With downsampling
-states_dn = zeros(1, len_fir_order)'; % Zero-padding
+zero_padd = zeros(1, fir_len)'; % Zero-padding
 
 % Downsampling
-[x1_dwn] = downsample(x1', states_dn);
+[x1_dwn] = downsample(x1', zero_padd);
 x1_dwn = [x1_dwn ; zeros(1, 500)'];
 X1_dwn = fft(x1_dwn);
 L1_dwn = length(x1_dwn);
