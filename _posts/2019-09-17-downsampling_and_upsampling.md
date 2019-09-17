@@ -17,13 +17,76 @@ tags: [Singal_Process]
 
    It means an integral multiplication increases the sample period of a discrete-time siganl by an integer $$ M $$. The replication period in the frequency domain is reduced by the same multiple. 
 
-#### Example. The downsampling and spectral on continuous-time and discrete-time signal
+   The downsampling and spectral on continuous-time and discrete-time signal
 <figure>
 <a><img src="{{ site.baseurl }}/picture/downsampled.png"></a>
 </figure>
 
   Note: 
   Because downsampling by $$ M $$ may causes aliasing, the input signal should need the low-pass filter to prevent this aliasing.
+
+#### Example. Comparison of orignal signal, signal with zero padding and signal after downsampling
+<div class="language-shell highlighter-rouge"><pre class="highlight" style="font-size:12px"><code class="hljs ruby"><span class="nb">% Sampling rate
+fs = 1000;
+% time duration (0 ~ 1 sec)
+t = 0 : 1/fs : 1 - 1/fs;
+% central frequency
+f1 = 3;
+len_fir_order = 31;
+
+x1 = cos(2*pi*f1*t);
+
+% FFT Without Zero-padding
+L1 = length(x1);
+X1 = fft(x1);
+
+% FFT With Zero-padding
+x1_zero = [x1 zeros(1, 1000)];
+X1_zero = fft(x1_zero);
+L1_zero = length(x1_zero);
+t_zeropad = [0:L1_zero-1]/fs;
+
+% FFT With downsampling
+states_dn = zeros(1, len_fir_order)'; % Zero-padding
+
+% Downsampling
+[x1_dwn] = downsample(x1', states_dn);
+x1_dwn = [x1_dwn ; zeros(1, 500)'];
+X1_dwn = fft(x1_dwn);
+L1_dwn = length(x1_dwn);
+t_dwn = [0:L1_dwn-1]/fs;
+
+% Plot
+figure(1);
+subplot(2, 1, 1);
+plot(t, x1)
+hold on
+plot(t_zeropad, x1_zero)
+hold on
+plot(t_dwn, x1_dwn)
+legend('x1','x1 zero padding', 'x1 downsampling')
+xlabel('Time (s)')
+ylabel('Amplitude')
+
+subplot(2, 1, 2);
+plot([-L1/2 : (L1/2 -1)]*fs/L1, fftshift(abs(X1)))
+hold on
+plot([-L1_zero/2 : (L1_zero/2 -1)]*fs/L1_zero, fftshift(abs(X1_zero)))
+hold on
+plot([-L1_dwn/2 : (L1_dwn/2 -1)]*fs/L1_dwn, fftshift(abs(X1_dwn)))
+legend('X1','X1 zero padding', 'X1 downsampling')
+xlabel('Frequency (Hz)')
+ylabel('Magnitude')</span></code></pre></div>
+
+Result: (Amplitude)
+<figure>
+<a><img src="{{ site.baseurl }}/picture/downsampled_amp.png"></a>
+</figure>
+
+Result: (Frequency response)
+<figure>
+<a><img src="{{ site.baseurl }}/picture/downsampled_fre.png"></a>
+</figure>
 
 #### Low-Pass Filter
 A low pass filter is a filter which passes low-frequency signals and blocks high-freqnency signals.
