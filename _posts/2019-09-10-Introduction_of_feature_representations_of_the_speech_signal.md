@@ -24,13 +24,22 @@ MFCCs are commonly derived as follows:
     <li>The MFCCs are the amplitudes of the resulting spectrum.</li>
 </ol></h5>
 
+Typical MFCC features:
+<ul style="list-style-type:disc">
+  <li> 12 cepstral coefficients</li>
+  <li> 1 delt engergy feature</li>
+</ul>
+Total -dimensional features
+
+
+
 ##### The diagrammatic MFCC block diagram
 <figure>
 <a><img src="{{ site.baseurl }}/picture/mfcc_block_diagram.png"></a>
 </figure>
 
 #### RASTA-PLP
-The RASTA-PLP uses bandpass filtering in the log spectral domain then RASTA filtering removes slow channel variations. To put it simply, it is a separate technique that applies a bandpass filter to the energy in each frequency subband in order to smooth over short-term noise variations and to remove any constant offset resulting from static spectral coloration in the speech channel, e.g. from a telephone lone.
+The RASTA-PLP uses bandpass filtering in the log spectral domain then RASTA filtering removes slow channel variations. To put it simply, it is a separated technique that applies a bandpass filter to the energy in each frequency subband in order to smooth over short-term noise variations and to remove any constant offset resulting from static spectral coloration in the speech channel, e.g. from a telephone lone.
 
 #### GFCC
 The GFCC is based on a set of Gammatone Filter banks and the speech signal is multiplied to the Gammatone filter bank in the frequency domain. In recent studies have shown very good robustness against noise and acoustic change.
@@ -52,6 +61,12 @@ The GFCC is based on a set of Gammatone Filter banks and the speech signal is mu
 [4] [GAMMATONE AND MFCC FEATURES IN SPEAKER RECOGNITION](https://repository.lib.fit.edu/bitstream/handle/11141/458/Burgos%2c%20Wilson%2c%20Gammatone%20and%20MFCC....pdf?sequence=1&isAllowed=y)
 
 [5] [Robust Speaker Veriﬁcation UsingGFCC Based i-Vectors](https://www.researchgate.net/publication/309149564_Robust_Speaker_Verification_Using_GFCC_Based_i-Vectors)
+
+[6] [Mel-frequency cepstral coefficients (MFCCs) and gammatone filter banks](http://www.cs.tut.fi/~sgn14006/PDF2015/S04-MFCC.pdf)
+
+[7] [Chapter 9: Automatic Speech Recognition](http://www.cs.columbia.edu/~julia/courses/CS6998-2019/%5B09%5D%20Automatic%20Speech%20Recognition.pdf)
+
+[8] [CS 224S / LINGUIST 285 Spoken Language Processing](https://web.stanford.edu/class/cs224s/lectures/224s.17.lec5.pdf)
 
 ## Note
 <p>If you have any constructive criticism or advises, leave the comments below or feel free to email me @qazqazqaz850@gmail.com.

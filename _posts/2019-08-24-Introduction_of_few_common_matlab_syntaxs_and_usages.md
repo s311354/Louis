@@ -71,8 +71,7 @@ b.bin
 % real-world value
 b.data
 % hexadecimal representation
-b.hex
-</span></code></pre></div>
+b.hex</span></code></pre></div>
 
 ## Read radio file
 The audioread is the common syntax to write audio file, i.e., wav, mp3, au, flac, etc. 
@@ -94,7 +93,6 @@ Result:
 <figure>
 <a><img src="{{ site.baseurl }}/picture/wav.png"></a>
 </figure>
-
 
 =========== To be continued.... ==========
 

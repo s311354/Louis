@@ -11,13 +11,13 @@ In this post, I made a copy about the memory section size from xtensa C applicat
 
 ## Memory Section Size
 
-<h6><ol>
+<h5><ol>
     <li>The .text section contains instruction code.</li>  
     <li>The .data section contains initialized global variables.</li>
     <li>The .bss section contains un-initialized global variables.</li>
     <li>The .rodata section contains read-only global variables, constants, jump tables, etc.</li>
     <li>The .literal section contains literals (32-bit contstants) used in the code. (These sections are specific to the Xtensa architecture)</li>
-</ol></h6>
+</ol></h5>
 
 Additionally, the **.text** section is assigned to IRAM, while **.data** section is assigned to DRAM. For the memory map, indicating how memory is laid out, code (.text) is in local instruction memory, while data (.data, .bss) is in system memory.
 
