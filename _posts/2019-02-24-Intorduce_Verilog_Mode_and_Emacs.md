@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Intorduce Verilog Mode and Emacs
+title: Introduction of Verilog Mode and Emacs
 tags: [Verliog]
 ---
     

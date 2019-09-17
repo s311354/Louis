@@ -5,7 +5,7 @@ tags: [Singal_Process]
 ---
 
 ## Purpose
-  When doing the project on speech recognition, the test audio data for voice processing adopts WAVE PCM file. 
+  When doing the project on speech recognition, the test audio data for voice processing utilizes WAVE PCM file. 
     
   For quickly recapping the concept of WAVE PCM formay and avoiding to forget bit and pieces of this knowledge, I recorded this relevant information in this post.
 
@@ -213,31 +213,26 @@ int main(int argc, char **argv) {
  // Read Wav file - char * fgets(char* str, int Max num of char, FILE* stream), one test case
  if (fgets(wav_test_case, sizeof(wav_test_case), wav_list) != NULL) {
 
- fp = fopen(wav_test_case, "rb");
+  fp = fopen(wav_test_case, "rb");
 
- // Protection on Reading file
- if (wav_list == NULL) {
-	printf("Can't opening wav file");
-	return (-1);
- }
+  // Protection on Reading file
+  if (wav_list == NULL) {
+	 printf("Can't opening wav file");
+	 return (-1);
+  }
 
- // Parsing WAV FORMAT
- fread(&wav_chunk, 1, sizeof(WAV_FORMAT), fp);
+  // Parsing WAV FORMAT
+  fread(&wav_chunk, 1, sizeof(WAV_FORMAT), fp);
  
- // Read fmt sub-chunk
- printf("fmt sub-chunk: %.3s \n", wav_chunk.subchunk1);
- 
- // Read data sub-chunk
- printf("data sub-chunk: %.4s \n", wav_chunk.subChunk2);
- 
- //Print the Format of Wav
- printf("numChannels = %d \n", wav_chunk.numChannels);
- printf("sampleRate = %d \n", wav_chunk.sampleRate);
- printf("byteRate = %d \n", wav_chunk.byteRate);
- printf("bitsPerSample = %d \n", wav_chunk.bitsPerSample);
- printf("sample_alignment (numChannels * bitsPerSample) = %d \n",
-			wav_chunk.blockAlign);
- printf("audio_format = %s \n",
+  printf("fmt sub-chunk: %.3s \n", wav_chunk.subchunk1);  // Read fmt sub-chunk
+  printf("data sub-chunk: %.4s \n", wav_chunk.subChunk2); // Read data sub-chunk
+  printf("numChannels = %d \n", wav_chunk.numChannels);   // Print the Format of Wav
+  printf("sampleRate = %d \n", wav_chunk.sampleRate);
+  printf("byteRate = %d \n", wav_chunk.byteRate);
+  printf("bitsPerSample = %d \n", wav_chunk.bitsPerSample);
+  printf("sample_alignment (numChannels * bitsPerSample) = %d \n",
+			    wav_chunk.blockAlign);
+  printf("audio_format = %s \n",
 			wav_chunk.audioFormat ? "PCM" : "IEEE Float");
 
  /***** Frame Process *****/
