@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Introduction of Downsampling and Upsampling
-tags: [Jekyll] 
+tags: [Singal_Process] 
 ---
 
 ## Abstract
@@ -22,14 +22,14 @@ tags: [Jekyll]
 <a><img src="{{ site.baseurl }}/picture/downsampled.png"></a>
 </figure>
 
-   
   Note: 
   Because downsampling by $$ M $$ may causes aliasing, the input signal should need the low-pass filter to prevent this aliasing.
 
 #### Low-Pass Filter
-A low pass filter is a filter which passes low-frequency signals and blocks high-freqnency signals. There are 
+A low pass filter is a filter which passes low-frequency signals and blocks high-freqnency signals.
 
 Example: Synthesising Finite Impulse Response Low-pass filter
+
 In this example, the length of FIR low-pass filter is 32 and the sample rate is 512. And using frequency response of digital filter to calculate the fs-point frequency response vector $$ h $$ and the corresponding angular frequency vector $$ w $$ for the digital filter with transfer function coefficients stored in B and A.  
 
 <div class="language-shell highlighter-rouge"><pre class="highlight" style="font-size:12px"><code class="hljs ruby"><span class="nb">% Sample rate
@@ -54,6 +54,7 @@ plot(w, abs(h));
 xlabel('Normalised Frequency')
 ylabel('|H(w)|')</span></code></pre></div>
 
+Result:
 <figure>
 <a><img src="{{ site.baseurl }}/picture/low_pass_filter.png"></a>
 </figure>
@@ -87,6 +88,7 @@ plot([-L1/2 : (L1/2 -1)]*fs/L1, fftshift(abs(X1)))
 xlabel('Frequency (Hz)')
 ylabel('Magnitude')</span></code></pre></div>
 
+Result:
 <figure>
 <a><img src="{{ site.baseurl }}/picture/without_zero_padding.png"></a>
 </figure>
@@ -119,6 +121,7 @@ plot([-L1/2 : (L1/2 -1)]*fs/L1, fftshift(abs(X1)))
 xlabel('Frequency (Hz)')
 ylabel('Magnitude')</span></code></pre></div>
 
+Result:
 <figure>
 <a><img src="{{ site.baseurl }}/picture/with_zero_padding.png"></a>
 </figure>
@@ -137,6 +140,7 @@ $$\left[ 1 2 1 \right] * \left[ 1 1 \right] = \left[ 3 3 1 \right]$$
 Example: The valid convolution
 $$\left[ 1 2 1 \right] * \left[ 1 1 \right] = \left[ 3 3 \right]$$
 
+The diagrammatic convolution in matlab:
 <figure>
 <a><img src="{{ site.baseurl }}/picture/convolution.png"></a>
 </figure>
