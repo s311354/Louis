@@ -5,7 +5,7 @@ title: About Me
 
 <!-- Quote  -->
 <p class="message" style="font-family:cursive"><q>
-Habits gradually change the face of one's life as time changes one's physical face; & one does not know it. ― Virginia Woolf, The Diary of Virginia Woolf, Volume Three: 1925-1930
+Ever tried. Ever failed. No matter. Try Again. Fail again. Fail better. ― Samuel Beckett.
 </q></p>
 
 <!-- Introduction  -->
