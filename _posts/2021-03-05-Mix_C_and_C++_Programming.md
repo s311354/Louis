@@ -56,7 +56,7 @@ void main() {
 ### How to call a C++ function and pass an object of C++ class from C ###
 Just do the similar way as above in C++ code and it. 
 
-<pre>Example of C++ code:<code class="hljs"><span id="snippet_spn" class="snippet-span">// example.h code
+<pre>Example of C++ header:<code class="hljs"><span id="snippet_spn" class="snippet-span">// example.h code
 extern "C" {
     void f(int);
     // Call overloaded functions from C
@@ -65,7 +65,7 @@ extern "C" {
 };</span></code><div class="flex-end"></div></pre> 
 
 
-<pre><code class="hljs"><span id="snippet_spn" class="snippet-span">// example.cpp code
+<pre>Example of C++ code:<code class="hljs"><span id="snippet_spn" class="snippet-span">// example.cpp code
 // non-member function
 void f(int i) {
     /* ... */
