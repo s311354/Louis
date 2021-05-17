@@ -56,14 +56,16 @@ void main() {
 ### How to call a C++ function and pass an object of C++ class from C ###
 Just do the similar way as above in C++ code and it. 
 
-<pre>Example of C++ code:<code class="hljs"><span id="snippet_spn" class="snippet-span">// c++ code
+<pre>Example of C++ code:<code class="hljs"><span id="snippet_spn" class="snippet-span">// example.h code
 extern "C" {
-    void f(int)
+    void f(int);
     // Call overloaded functions from C
     void f_i(int i) { f(i); }
     double call_CA_g(CA* p, int i) { return p->g(i); }
-};
+};</span></code><div class="flex-end"></div></pre> 
 
+
+<pre><code class="hljs"><span id="snippet_spn" class="snippet-span">// example.cpp code
 // non-member function
 void f(int i) {
     /* ... */
@@ -73,6 +75,7 @@ void f(int i) {
 class CA {
     virtual double g(int);
 }</span></code><div class="flex-end"></div></pre> 
+
 
 <pre>Example of C code:<code class="hljs"><span id="snippet_spn" class="snippet-span">// c code
 void f(int);
@@ -89,10 +92,9 @@ Note that these techniques can be used to call a C++ library from C code even if
 
 ### Explanation of language linkage ###
 
-Language linkage encapsulates the set of requirements necessary ti link with a module written in another programming language. 
+Language linkage encapsulates the set of requirements necessary to link with a module written in another programming language. 
 
 For more details, you could refer to the [Language linkage][link]  page.
-
 
 ## Reference ##
 
@@ -105,6 +107,5 @@ For more details, you could refer to the [Language linkage][link]  page.
 [Wiki: Compatibility of C and C++](https://en.wikipedia.org/wiki/Compatibility_of_C_and_C%2B%2B)
 
 [ISO C++: Is C++ backward compatible with ANSI/ISO C?](https://isocpp.org/wiki/faq/big-picture#back-compat-with-c)
-
 
 [link]:https://en.cppreference.com/w/cpp/language/language_linkage "https://en.cppreference.com/w/cpp/language/language_linkage"
