@@ -5,7 +5,7 @@ title: About Me
 
 <!-- Quote  -->
 <p class="message" style="font-family:cursive"><q>
-Ever tried. Ever failed. No matter. Try Again. Fail again. Fail better. ― Samuel Beckett.
+Do or do not. there is no try. – yoda
 </q></p>
 
 <!-- Introduction  -->
