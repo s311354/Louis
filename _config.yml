@@ -40,5 +40,5 @@ version:             1.0.0
 # Enable the Jekyll SEO tag
 plugins:
   - jekyll-seo-tag
-
+  - jemoji
 # Inculde customized Javescript function (Issue)

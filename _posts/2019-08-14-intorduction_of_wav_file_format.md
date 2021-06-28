@@ -16,7 +16,7 @@ tags: [Singal_Process]
 The typically canonical WAVE format starts with the RIFF header:
 
 <font size="3" face="Courier New" >
-<table style="width:100%" border-collapse: separate>
+<table style="width:100%">
   <tr>
     <th>Field</th>
     <th>Bytes</th>
@@ -153,7 +153,7 @@ The typically canonical WAVE format starts with the RIFF header:
   The simplest and most common WAVE file is PCM. The PCM samples are just raw sample data and stored as integers. The bytes per sample field will indicate the range of the sample data:
 
 <font size="3" face="Courier New" >
- <table style="width:80%" border-collapse: separate align="center">
+ <table style="width:80%" align="center">
   <tr>
     <th>Bytes per Sample</th>
     <th>Minimum Sample</th>
@@ -192,64 +192,62 @@ Assume: The audio wave file is recorded at 25 fps (40 msec per frame) and a ster
 #define WAVE_SIZE_PER_FRAME  SAMPLE_PER_FRAME*BYTE_PER_SAMPLE*BYTE_PER_SAMPLE
 
 int main(int argc, char **argv) {
- FILE *wav_list = NULL;
- FILE *fp = NULL;
- int frame_num = 0;
- WAV_FORMAT wav_chunk;
+    FILE *wav_list = NULL;
+    FILE *fp = NULL;
+    int frame_num = 0;
+    WAV_FORMAT wav_chunk;
 
- // Static Memory
- char wav_test_case[200];
- char wav_per_frame[WAVE_SIZE_PER_FRAME];
+    // Static Memory
+    char wav_test_case[200];
+    char wav_per_frame[WAVE_SIZE_PER_FRAME];
 
- // Open Wav file
- wav_list = fopen(("wav_test_case.txt"), "rb");
+    // Open Wav file
+    wav_list = fopen(("wav_test_case.txt"), "rb");
 
- // Protection on Reading file
- if (wav_list == NULL) {
-	printf("Error opening file");
-	return (-1);
- }
+    // Protection on Reading file
+    if (wav_list == NULL) {
+    printf("Error opening file");
+    return (-1);
+    }
 
- // Read Wav file - char * fgets(char* str, int Max num of char, FILE* stream), one test case
- if (fgets(wav_test_case, sizeof(wav_test_case), wav_list) != NULL) {
+    // Read Wav file - char * fgets(char* str, int Max num of char, FILE* stream), one test case
+    if (fgets(wav_test_case, sizeof(wav_test_case), wav_list) != NULL) {
 
-  fp = fopen(wav_test_case, "rb");
+    fp = fopen(wav_test_case, "rb");
 
-  // Protection on Reading file
-  if (wav_list == NULL) {
-	 printf("Can't opening wav file");
-	 return (-1);
-  }
+    // Protection on Reading file
+    if (wav_list == NULL) {
+    printf("Can't opening wav file");
+    return (-1);
+    }
 
-  // Parsing WAV FORMAT
-  fread(&wav_chunk, 1, sizeof(WAV_FORMAT), fp);
+    // Parsing WAV FORMAT
+    fread(&wav_chunk, 1, sizeof(WAV_FORMAT), fp);
  
-  printf("fmt sub-chunk: %.3s \n", wav_chunk.subchunk1);  // Read fmt sub-chunk
-  printf("data sub-chunk: %.4s \n", wav_chunk.subChunk2); // Read data sub-chunk
-  printf("numChannels = %d \n", wav_chunk.numChannels);   // Print the Format of Wav
-  printf("sampleRate = %d \n", wav_chunk.sampleRate);
-  printf("byteRate = %d \n", wav_chunk.byteRate);
-  printf("bitsPerSample = %d \n", wav_chunk.bitsPerSample);
-  printf("sample_alignment (numChannels * bitsPerSample) = %d \n",
-			    wav_chunk.blockAlign);
-  printf("audio_format = %s \n",
-			wav_chunk.audioFormat ? "PCM" : "IEEE Float");
+    printf("fmt sub-chunk: %.3s \n", wav_chunk.subchunk1);  // Read fmt sub-chunk
+    printf("data sub-chunk: %.4s \n", wav_chunk.subChunk2); // Read data sub-chunk
+    printf("numChannels = %d \n", wav_chunk.numChannels);   // Print the Format of Wav
+    printf("sampleRate = %d \n", wav_chunk.sampleRate);
+    printf("byteRate = %d \n", wav_chunk.byteRate);
+    printf("bitsPerSample = %d \n", wav_chunk.bitsPerSample);
+    printf("sample_alignment (numChannels * bitsPerSample) = %d \n",
+        wav_chunk.blockAlign);
+    printf("audio_format = %s \n",
+        wav_chunk.audioFormat ? "PCM" : "IEEE Float");
 
- /***** Frame Process *****/
- while (fread(wav_per_frame, wav_chunk.blockAlign, WAVE_SIZE_PER_FRAME, fp) == WAVE_SIZE_PER_FRAME) {		
-  printf("Frame = %d", frame_num);
+    /***** Frame Process *****/
+    while (fread(wav_per_frame, wav_chunk.blockAlign, WAVE_SIZE_PER_FRAME, fp) == WAVE_SIZE_PER_FRAME) {		
+        printf("Frame = %d", frame_num);
 
-	 /***************************/
-  
-   /* Doing Signal Process per Frame */
-  
-   /***************************/
+        /***************************/
+        /* Doing Signal Process per Frame */
+        /***************************/
 
-   frame_num++;
-  } /***** End of Frame Process *****/
- }
- fclose(wav_list);
- return 0;
+        frame_num++;
+        } /***** End of Frame Process *****/
+    }
+    fclose(wav_list);
+    return 0;
 }</span></code></pre></div>
 
 Result:
@@ -277,76 +275,75 @@ Frame = 0
 
 // Signal parameter structure
 typedef struct SIGNAL_PARA_T {
-	int sampleSize;
+    int sampleSize;
 } SIGNAL_PARA;
 
 // Default Value for signal parameter
 SIGNAL_PARA signal_para = { SAMPLE_PER_FRAME };
 
 int main(int argc, char **argv) {
- FILE *wav_list = NULL;
- FILE *fp = NULL;
- int frame_num = 0;
- WAV_FORMAT wav_chunk;
+    FILE *wav_list = NULL;
+    FILE *fp = NULL;
+    int frame_num = 0;
+    WAV_FORMAT wav_chunk;
+    
+    // Static Memory
+    char wav_test_case[200];
+    char wav_per_frame[WAVE_SIZE_PER_FRAME];
+    
+    // Open Wav file
+    wav_list = fopen(("wav_test_case.txt"), "rb");
+    
+    // Protection on Reading file
+    if (wav_list == NULL) {
+       printf("Error opening file");
+       return (-1);
+    }
+    
+    // Read Wav file - char * fgets(char* str, int Max num of char, FILE* stream), one test case
+    if (fgets(wav_test_case, sizeof(wav_test_case), wav_list) != NULL) {
+    
+    fp = fopen(wav_test_case, "rb");
+    
+    // Protection on Reading file
+    if (wav_list == NULL) {
+       printf("Can't opening wav file");
+       return (-1);
+    }
+    
+    // Parsing WAV FORMAT
+    fread(&wav_chunk, 1, sizeof(WAV_FORMAT), fp);
+    
+    // Read fmt sub-chunk
+    printf("fmt sub-chunk: %.3s \n", wav_chunk.subchunk1);
+    
+    // Read data sub-chunk
+    printf("data sub-chunk: %.4s \n", wav_chunk.subChunk2);
+    
+    //Print the Format of Wav
+    printf("numChannels = %d \n", wav_chunk.numChannels);
+    printf("sampleRate = %d \n", wav_chunk.sampleRate);
+    printf("byteRate = %d \n", wav_chunk.byteRate);
+    printf("bitsPerSample = %d \n", wav_chunk.bitsPerSample);
+    printf("sample_alignment (numChannels * bitsPerSample) = %d \n",
+        wav_chunk.blockAlign);
+    printf("audio_format = %s \n",
+        wav_chunk.audioFormat ? "PCM" : "IEEE Float");
 
- // Static Memory
- char wav_test_case[200];
- char wav_per_frame[WAVE_SIZE_PER_FRAME];
+   /***** Frame Process *****/
+    for (frame_num = 0; frame_num < NUM_FRAME; frame_num++) {
+        // Read samples
+        result = fread(wav_per_frame, wav_chunk.blockAlign, signal_para.sampleSize, fp); 
+        printf("Frame = %d \n", frame_num);
 
- // Open Wav file
- wav_list = fopen(("wav_test_case.txt"), "rb");
+        /***************************/
+        /* Doing Signal Process per Frame */
+        /***************************/
 
- // Protection on Reading file
- if (wav_list == NULL) {
-	printf("Error opening file");
-	return (-1);
- }
-
- // Read Wav file - char * fgets(char* str, int Max num of char, FILE* stream), one test case
- if (fgets(wav_test_case, sizeof(wav_test_case), wav_list) != NULL) {
-
- fp = fopen(wav_test_case, "rb");
-
- // Protection on Reading file
- if (wav_list == NULL) {
-	printf("Can't opening wav file");
-	return (-1);
- }
-
- // Parsing WAV FORMAT
- fread(&wav_chunk, 1, sizeof(WAV_FORMAT), fp);
- 
- // Read fmt sub-chunk
- printf("fmt sub-chunk: %.3s \n", wav_chunk.subchunk1);
- 
- // Read data sub-chunk
- printf("data sub-chunk: %.4s \n", wav_chunk.subChunk2);
- 
- //Print the Format of Wav
- printf("numChannels = %d \n", wav_chunk.numChannels);
- printf("sampleRate = %d \n", wav_chunk.sampleRate);
- printf("byteRate = %d \n", wav_chunk.byteRate);
- printf("bitsPerSample = %d \n", wav_chunk.bitsPerSample);
- printf("sample_alignment (numChannels * bitsPerSample) = %d \n",
-			wav_chunk.blockAlign);
- printf("audio_format = %s \n",
-			wav_chunk.audioFormat ? "PCM" : "IEEE Float");
-
-	/***** Frame Process *****/
- for (frame_num = 0; frame_num < NUM_FRAME; frame_num++) {
-  result = fread(wav_per_frame, wav_chunk.blockAlign, signal_para.sampleSize, fp); // Read samples
-	printf("Frame = %d \n", frame_num);
-
-	/***************************/
-
-  /* Doing Signal Process per Frame */
-  
-  /***************************/
-
-	} /***** End of Frame Process *****/
- }
-fclose(wav_list);
-return 0;
+        } /***** End of Frame Process *****/
+    }
+    fclose(wav_list);
+    return 0;
 }</span></code></pre></div>
 
 Result:
@@ -364,14 +361,16 @@ Frame = 0
 =========== To be continued.... ==========
 
 ## Reference
+
 [1] [Wave File Format](http://wavefilegem.com/how_wave_files_work.html)
 
 [2] [WAVE PCM soundfile format](http://soundfile.sapp.org/doc/WaveFormat/)
 
 [3] [Parsing a WAV file in C](http://truelogic.org/wordpress/2015/09/04/parsing-a-wav-file-in-c/)
 
-## Note
-<p>If you have any constructive criticism or advises, leave the comments below or feel free to email me @qazqazqaz850@gmail.com.
+[4] [Parsing a WAV file in C](https://github.com)
+
+<p>Feel free to leave the comments below or <a href="mailto:qazqazqaz850@gmail.com">email</a> to me.
 
 Hope this post will help! :)
 </p>
