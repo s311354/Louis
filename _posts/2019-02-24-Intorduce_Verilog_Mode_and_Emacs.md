@@ -50,7 +50,7 @@ $ brew linkapps emacs
 
 ### Comparison between Vi and Emacs
 
-<table style="width:130%" border-collapse: separate>
+<table style="width:130%">
   <tr>
     <th></th>
     <th>Vi</th>
@@ -132,46 +132,39 @@ $ emacs VerModeDemo.v
     <li><a href="#TEMPLATE">AUTO_TEMPLATE</a></li>
 </ol></h5>
 
-<h3><a name="ARG"></a>/*AUTOARG*/</h3>
+### <a name="ARG">AUTOARG</a> ###
 
 The verilog-auto-arg (function) replaces the argument declarations at the beginning of the module with ones automatically derived from input and output statements. Recommending for using only name-based when instantiating the resulting module.
 
-<h3><a name="INST"></a>/*AUTOINST*/</h3>
+### <a name="INST">AUTOINST</a> ###
 
 The verilog-auto-inst (function) replaces the pin connections to an instantiation or interface declaration with ones automatically derived from the module or interface header of the instantiated item.
 
 If any ports defined before the /\*AUTOINST\*/ are not included in the list of automatics, you should connect pin by yourseld just like you normally make. 
 
-<h3><a name="INOUT"></a>/*AUTOINPUT*/, /*AUTOREGINPUT*/, /*AUTOOUTPUT*/ and /*AUTOINOUT*/</h3>
-
+### <a name="INOUT">AUTOINPUT, AUTOREGINPUT, AUTOOUTPUT and AUTOINOUT</a> ###
 The verilog-auto-input (function), verilog-auto-output (function) and verilog-auto-inout (function) make input statements for any input, any output, and inout signals into an /\*AUTOINST\*/ that aren't declared elsewhere inside the module. This is useful for modules which only instantiate other modules.
 
 For another function, verilog-auto-reg-input (function), it makes reg statements instantiation inputs that aren't already declared just like verilog-auto-input (function).
 
-<h3><a name="WIREREG"></a>/*AUTOWIRE*/ and /*AUTOREG*/</h3>
-
+### <a name="WIREREG">AUTOWIRE and AUTOREG</a> ###
 The verilog-auto-wire (function) makes wire statements for instantiations outputs that aren't already declared. 
 
 The verilog-auto-reg (function) makes reg statements for any output that isn't already declared, and isn't a wire output from a block.
 
-<h3><a name="RESET"></a>/*AUTORESET*/</h3>
-
+### <a name="RESET">AUTORESET</a> ###
 The verilog-auto-reset (function) replaces the /\*AUTORESET\*/ comment with code to initialize all registers set elsewhere in the always block.
 
-<h3><a name="AS"></a>/*AS*/ or /*AUTOSENSE*/</h3>
-
+### <a name="AS">AS or AUTOSENSE</a> ###
 The verilog-auto-sense (function) replaces the always (/\*AUTOSENSE\*/) sensitivity list (/\*AS\*/ for short) with one automatically derived from all inputs declared in the always statement. 
 
-<h3><a name="TIEOFF"></a>/*AUTOTIEOFF*/ and /*AUTOUNUSED*/</h3>
-
+### <a name="TIEOFF">AUTOTIEOFF and AUTOUNUSED</a> ###
 The verilog-auto-tieoff (function) replaces the /*AUTOTIEOFF*/ comment with code to wire-tie all unused output signals to deasserted. For another function, it replaces the /*AUTOUNUSED*/ comment with a comma separated list of all unused input and inout signals.
 
-<h3><a name="ASCII"></a>/*AUTOASCIIENUM*/</h3>
-
+### <a name="ASCII">AUTOASCIIENUM</a> ###
 The verilog-auto-ascii-enum (function) creates a register to contain the ASCII decode of an enumerated signal type. Normally, this function is used to create the finite state machine (FSM), but the default the bitwidth of nextstate and state information should be reviewed and manually modified.
 
-<h3><a name="TEMPLATE"></a>/*AUTO_TEMPLATE*/</h3>
-
+### <a name="TEMPLATE">AUTO_TEMPLATE</a> ###
 This feature is used to customize the parameter connections to an instantiation or create multiple instantiations based upon a single template.
 
 For an example:
@@ -198,10 +191,4 @@ InstModule sub_RAM2 (/*AUTOINST*/);
 
 [4] [Emacs Keys Basics](http://ergoemacs.org/emacs/emacs_keys_basics.html)
 
-
-## Note
-<p>If you have any constructive criticism or advises, leave the comments below or feel free to email me @qazqazqaz850@gmail.com.
-Hope this post will help! :)
-</p>
-
-
+<p>Feel free to leave the comments below or <a href="mailto:qazqazqaz850@gmail.com">email</a> to me. 
