@@ -1,0 +1,3 @@
+I"�<p>The C++ language provides a “<a href="https://en.cppreference.com/w/cpp/language/language_linkage" title="https://en.cppreference.com/w/cpp/language/language_linkage">Language linkage</a>” mechanisms for mixing code that is compiled by compatible C and C++ in the same program. Every function type, every function name with external linkage, and every variable name with external linkage, has a property called language linkage. The mechanism might be helpful to solve common problems that arise when you mix C and C++ code and run into portability issues. In this blog post, I will take notes of how to mix C and C++ in the same program.</p>
+
+:ET

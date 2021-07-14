@@ -2,6 +2,25 @@
 layout: default
 title: Home
 ---
+	<!-- Html Elements for Search -->
+	<div id="search-container", class="container">
+    <i class="fa fa-search"></i>
+	<input class="searchTerm" type="text" id="search-input" placeholder="search...">
+	<ul id="results-container"></ul>
+	</div>
+
+	<!-- Script pointing to search-script.js -->
+	<script src="{{ site.baseurl }}/js/search-script.js" type="text/javascript"></script>
+
+	<!-- Configuration -->
+	<script>
+	SimpleJekyllSearch({
+        searchInput: document.getElementById('search-input'),
+	    resultsContainer: document.getElementById('results-container'),
+	    json: '{{ site.baseurl }}/search.json'
+	})
+	</script>
+
 <!-- Home page  -->
 <div class="posts">
 	{% for post in site.posts %}
