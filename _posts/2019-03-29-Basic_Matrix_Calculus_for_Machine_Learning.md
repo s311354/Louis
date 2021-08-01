@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Basic Matrix Calculus for Machine Learning 
-tags: [ML] 
+tags: [Mathematics]
 ---
 
 ## Purpose 

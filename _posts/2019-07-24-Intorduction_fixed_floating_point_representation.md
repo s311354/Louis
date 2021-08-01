@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Introduction of fixed-point and floating-point representation
-tags: [Math] 
+tags: [Mathematics]
 ---
 
 ## Purpose

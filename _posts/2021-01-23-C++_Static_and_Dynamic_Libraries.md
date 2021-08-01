@@ -2,7 +2,7 @@
 layout: post
 title:   "C++ Static and Dynamic Libraries"
 date:    2021-01-23 21:52
-tags:    [C_C_plus_plus, Linux]
+tags:    [C_C_plus_plus]
 ---
 
 Most modern software systems provide libraries that implement the majority of the system service. Such libraries have orgianized the services which modern application requires. There are two types of libraries: Static and Dynamic Libraries. (This post is refered to [Blog][blog])
