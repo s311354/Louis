@@ -1,7 +1,7 @@
 ---
 layout: post
 title:   "How to Use Tmux and Set up Configuration"
-date:    2021-07-15
+date:    2021-08-01
 tags:    [Tmux, Linux]
 ---
 ## Purpose ##
