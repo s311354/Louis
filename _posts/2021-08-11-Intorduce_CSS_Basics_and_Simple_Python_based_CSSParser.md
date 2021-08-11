@@ -8,7 +8,7 @@ tags:    [Programming, Python]
 ## Purpose ##
 CSS (Cascading Style Sheets) and HTML (Hypertext Markup Languare) are two of the core technologies for building Web pages. CSS (cascading Style Sheets) is the language for describing the presentation of Web pages, including colors, layout, and fonts and the resendering of structured documents (such as HTML and XML). And, HTML represents the structure of the page.
 
-The CSS parser is enable to convert a CSS string to a data struct for HTML so that we could easily find the corresponding styles. In this post, I would like to go through the basic concepts of CSS/HTML and show the simple python css parser reworked from [Simple CSS Parser][simplecssparser].
+The CSS parser is enabled to convert a CSS string to a data struct for HTML so that we could easily find the corresponding styles. In this post, I would like to go through the basic concepts of CSS/HTML and show the simple python css parser reworked from [Simple CSS Parser][simplecssparser].
 
 ## Basic Concept of CSS ##
 CSS is not a programming language and also not a markup language either. It is just a style sheet language for using to selectively style HTML element. For example, this CSS selects paragraph text, setting the color to red:
@@ -17,7 +17,7 @@ CSS is not a programming language and also not a markup language either. It is j
   color: red;
 }</span></code></pre></div>
 
-To apply above CSS to the HTML documents, you neet to give the element an href attribute and link with the CSS style. Otherwise, the styling won't change the appearance of the HTML.
+To apply above CSS to the HTML documents, you neet to give the element a href attribute and link with the CSS style. Otherwise, the styling won't change the appearance of the HTML.
 <div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb">&lt;link href="styles/style.css" rel="stylesheet"&gt;
 </span></code></pre></div>
 
@@ -35,7 +35,7 @@ The main parts of this element are as follows:
 </ul>
 
 ### Different Types of Selectors ###
-A CSS selector is the first part of a CSS Rule. It is a pattern of elements and other terms that tell the browwe which HTML elements should be selected to have the CSS property and values inside the rule applied to them, There are many different types of selectors. Here are some of the more common types of selectors:
+A CSS selector is the first part of a CSS Rule. It is a pattern of elements and other terms that tell the browwe which HTML elements should be selected to have the CSS property and values inside the rule applied to them, There are many types of selectors. Here are some of the more common types of selectors:
 
 <font size="3" face="Courier New">
 <table>
@@ -106,7 +106,7 @@ HTML elements can be represented in other tpyes, such as nested, empty. Nested e
 For more information of HTML elements, you could learn from [HTML elements reference][htmlelements].
 
 ## CSS Parser ##
-There are many CSS parser in java or in C or in C++. etc.. In this post, I created the [lite CSS Parser][litecssparser] in python and further to generate a HTML template. The code was initially extracted from [Simple CSS Parser][simplecssparser] and then reworked. But, the lite CSS parser only process four types of state, parsing in selector, parsing in property, parsing in value and parsing in comment. The basic functions for the CSS parser are a follows:
+There are many CSS parsers in java or in C or in C++, etc. In this post, I created the [lite CSS Parser][litecssparser] in python and further to generate an HTML template. The code was initially extracted from [Simple CSS Parser][simplecssparser] and then reworked. But, the lite CSS parser only process four types of state, parsing in selector, parsing in property, parsing in value and parsing in comment. The basic functions for the CSS parser are a follows:
 
 <ul>
  <li>Read a CSS file</li>
