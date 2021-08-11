@@ -300,4 +300,4 @@ You can find more information about this feature on [Tmux Resurrect][tmuxresurre
 
 [tmuxcontinuum]:https://github.com/tmux-plugins/tmux-continuum "https://github.com/tmux-plugins/tmux-continuum"
 
-<p>Feel free to leave the comments below or <a href="mailto:qazqazqaz850@gmail.com">email</a> to me if you’ve any pieces of advice or points, are interested in this topic, or have the opportunity to work together.
+<p>Feel free to leave the comments below or <a href="mailto:qazqazqaz850@gmail.com">email</a> to me if you are interested in this topic or have any pieces of points. :)
