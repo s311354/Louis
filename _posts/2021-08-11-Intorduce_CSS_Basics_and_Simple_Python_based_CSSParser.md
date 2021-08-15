@@ -106,6 +106,65 @@ HTML elements can be represented in other tpyes, such as nested, empty. Nested e
 For more information of HTML elements, you could learn from [HTML elements reference][htmlelements].
 
 ## CSS Parser ##
+
+### The Concept of Lexical Analysis ###
+In computer science, the lexical analysis or tokenization is the process of coverting a seqenece of characters into a sequence of tokens (strings with an assigned and thus identified meaning). This process can be considered a sub-task of parsing input. A program that performs lexical analysis may be termed a lexer or tokenizer. A lexer is generally combined with a parser, which together analyze the syntax of programming language, web pages, and so forth.
+
+A lexical token or simple token is a string with an assigned and thus identified meaning. It is structured as a pair consisting of token name and an optional token value. The token name is a catergory of lexical unit. Common token names are 
+
+<font size="3" face="Courier New">
+<table>
+ <tr>
+  <th>Token name</th>
+  <th>Description</th>
+  <th>Sample token values</th>
+ </tr>
+ <tr>
+  <td>identifier</td>
+  <td>names the programmer chooses</td>
+  <td>x, color, UP</td>
+ </tr>
+ <tr>
+  <td>keyword</td>
+  <td>names alreay in the programming language</td>
+  <td>if, while, return</td>
+ </tr>
+ <tr>
+  <td>separator</td>
+  <td>punctuation characters and paired-delimiters</td>
+  <td>}, {, ;</td>
+ </tr>
+ <tr>
+  <td>operator</td>
+  <td>symbols that operate an arguments and produce results</td>
+  <td>+, <, =</td>
+ </tr>
+ <tr>
+  <td>literal</td>
+  <td>numeric, logical, textual, reference literals</td>
+  <td>true, "music", 6.02e23</td>
+ </tr>
+ <tr>
+  <td>Comment</td>
+  <td>line, block</td>
+  <td>/* Retrieves user data */</td>
+ </tr>
+</table>
+</font>
+
+Here is an example of expression in the C programming language:
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb">// A simple expression
+x = a + b * 2;
+
+// The lexical analysis of this expression yields the following sequence of tokens:
+[(idnetifier, x), (operator, =), (identifier, a), (operator, +). (identifier, b), (operator, *), (literal, 2), (separator, ;)]
+</span></code></pre></div>
+
+The lexical analysis needs two stages. The first stage, the scanner, is usually based on a finite-state machine (FSM). It has encoded within it information on the possible sequences of characters that can be contained within any of the tokens it handles. The second stage, the evaluator, which goes over the characters of the lexeme to produce a value.
+
+You could learn more information about lexical analysis from [Wiki: Lexical analysis][lexicalanalysis]
+
+### The Implementations of CSS Parser ###
 There are many CSS parsers in java or in C or in C++, etc. In this post, I created the [lite CSS Parser][litecssparser] in python and further to generate an HTML template. The code was initially extracted from [Simple CSS Parser][simplecssparser] and then reworked. But, the lite CSS parser only process four types of state, parsing in selector, parsing in property, parsing in value and parsing in comment. The basic functions for the CSS parser are a follows:
 
 <ul>
@@ -164,6 +223,8 @@ div:hover {
 
 [3] [The ElementTree XML](https://docs.python.org/3/library/xml.etree.elementtree.html)
 
+[4] [Lexical analysis](https://en.wikipedia.org/wiki/Lexical_analysis#Token)
+
 [simplecssparser]:https://github.com/s311354/cssparser "https://github.com/s311354/cssparser"
 
 [htmlelements]:https://developer.mozilla.org/en-US/docs/Web/HTML/Element "https://developer.mozilla.org/en-US/docs/Web/HTML/Element"
@@ -171,5 +232,7 @@ div:hover {
 [cssselectors]:https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Selectors "https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Selectors"
 
 [litecssparser]:https://github.com/s311354/css_parser_python "https://github.com/s311354/css_parser_python"
+
+[lexicalanalysis]:https://en.wikipedia.org/wiki/Lexical_analysis "https://en.wikipedia.org/wiki/Lexical_analysis"
 
 <p>Feel free to leave the comments below or <a href="mailto:qazqazqaz850@gmail.com">email</a> to me if you are interested in this topic or have any pieces of points. :)
