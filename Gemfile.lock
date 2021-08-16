@@ -93,6 +93,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  addressable (~> 2.8.0)
   jekyll (~> 4.1.1)
   jekyll-feed (~> 0.12)
   jekyll-paginate (~> 1.1.0)

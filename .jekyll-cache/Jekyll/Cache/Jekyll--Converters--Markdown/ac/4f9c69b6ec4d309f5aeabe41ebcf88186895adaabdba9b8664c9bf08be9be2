@@ -1,3 +1,0 @@
-I"€<h2 id="abstract">Abstract</h2>
-<p>The sampling process is creating a discrete signal from a continuous process. And there are two common sampling processes: down-sampling and un-sampling. To put it simply, downsampling reduces the sample rate and upsampling increases the sample rate. In this post, I only recored the basic concepts of downsampling and the relevant information.</p>
-:ET
