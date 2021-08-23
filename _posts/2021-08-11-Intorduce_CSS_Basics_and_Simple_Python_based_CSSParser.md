@@ -171,7 +171,7 @@ There are many CSS parsers in java or in C or in C++, etc. In this post, I creat
  <li>Read a CSS file</li>
  <li>Store CSS in the Collection with different elements</li>
  <li>Query for the selector, property and value</li>
- <li>Ture the Collection with different elements into HTML</li>
+ <li>Turn the Collection with different elements into HTML</li>
 </ul>
 
 Here is a simple css format file and the corresponding Web converted by the [lite CSS Parser][litecssparser] repo. The best way to understand the parser interface is to excute main.py which is excerpted below:

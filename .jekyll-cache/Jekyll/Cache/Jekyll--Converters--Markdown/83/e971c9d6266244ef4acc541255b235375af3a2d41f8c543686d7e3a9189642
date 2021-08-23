@@ -1,2 +1,0 @@
-I"ž<p>In computer programming, a callback function is any executable code that is passed an argument to other code; the other code is expected to call back (execute) the argument at the given time. Callbacks have a wide variety of uses. For example in error signaling, a Unix program might want to handle the termination properly when receiving SIGTERM and then would register the cleanup function as a callback.</p>
-:ET
