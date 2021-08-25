@@ -6,7 +6,7 @@ tags:    [Programming, Python]
 ---
 
 ## Introduction ##
-Even if you write clear and readable code, even if you are familiar with your code, even if you cover your code with tests, weird bugs or runtime errors will inevitably appear and you will need to handle them in some way. Python's built-in exceptions module and built-in logging module can be used to test an exception handler, report an error condition or troubleshoot any bugs.
+Working on a large project is challenging on many fronts. One of those challenges is to make sure the logs are relaying all relevant information for the project that could help with debugging issues and failure. Even if you write clear and readable code, even if you are familiar with your code, even if you cover your code with tests, weird bugs or runtime failures will inevitably appear and you will need to handle them in some way. Python's built-in exceptions module and built-in logging module can be used to test an exception handler, report an error condition or troubleshoot any bugs.
 
 In this short tutorial, I would sort out some basic guide with exception handling and logging setup. Also, describe how to use the exception and logging modules.
 
@@ -62,7 +62,7 @@ Here, you could go throught some examples of above exceptions and might be more 
 <h4><a name="TableContent"></a> List of examples</h4>
 <h6><ol>
     <li><a href="#assertion">AssertionError</a></li>
-    <li><a href="#attribute">AttributeError and KeyError</a></li>
+    <li><a href="#attributeandkey">AttributeError and KeyError</a></li>
     <li><a href="#overflow">OverflowError</a></li>
 </ol></h6>
 
@@ -155,7 +155,7 @@ In python, logging module supports to add logging calls to their code to indicat
   <td>Report events that occur during normal operation of a program.</td>
  </tr>
  <tr>
-  <td>logging.warn(msg, *args, **kwargs)</td>
+  <td>logging.warning(msg, *args, **kwargs)</td>
   <td>Issue a warning regarding a particular runtime event</td>
  </tr>
  <tr>
@@ -173,15 +173,7 @@ In python, logging module supports to add logging calls to their code to indicat
 </table>
 </font>
 
-Note:
-<ul>
- <li>The msg is the message format string</li>
- <li>the args are the arguments which are merged into msg using the string formatting operator.</li>
- <li>There are three keyword arguments in kwargs for logging.debug, logging.info, logging.warn, logging.exception which are inspected, exc_info, stack_info and extra.</li>
- <li>The keyword argumens support by logging.basicConfig are different with above.</li>
-</ul>
-
-More information on defining keyword arguments are available in the [logging.debug][loggingdebug] and [logging.basicConfig][loggingbasicconfig] tutorials.
+Note that the msg is message format string and the args is the arguments which are merged into msg using the string formatting operator. More information on defining keyword arguments are available in the [logging.debug][loggingdebug] and [logging.basicConfig][loggingbasicconfig] tutorials.
 
 The logging facility for python supports six fundamental logging level are given in the following table. You might use logging.setLevel() or set the root logger level to the specified level by keyword argument of logging.basicConfig to handle logging messages. The numeric values of logging levels are given in the following table.
 <font size="3" face="Courier New">
@@ -223,7 +215,9 @@ Here, you could go throught some examples of above logging system and might basi
 <div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb">import logging
 
 if __name__ == "__main__":
-    logging.basicConfig(filename='test.log', format='%(filename)s: %(message)s', level=logging.DEBUG)
+    logging.basicConfig(filename='test.log', filemode='w+',
+                        format='%(asctime)s %(filename)s: %(message)s', 
+                        level=logging.DEBUG)
 
     logging.debug('This is a debug message')
     logging.info('This is an info message')
@@ -264,12 +258,8 @@ Python logging and exception are simple and well standardized, due to its powerf
 
 [buildinexception]:https://docs.python.org/3.9/library/exceptions.html?highlight=attributeerror#base-classes "https://docs.python.org/3.9/library/exceptions.html?highlight=attributeerror#base-classes"
 
-
-
 [loggingbasicconfig]:https://docs.python.org/3/library/logging.html#logging.basicConfig "https://docs.python.org/3/library/logging.html#logging.basicConfig"
-
-
 
 [loggingdebug]:https://docs.python.org/3/library/logging.html#logging.debug "https://docs.python.org/3/library/logging.html#logging.debug"
 
-<p>Feel free to leave the comments below or <a href="mailto:qazqazqaz850@gmail.com">email</a> to me. Any other pieces of advice are always welcome. :)
+<p>Feel free to leave the comments below or <a href="mailto:qazqazqaz850@gmail.com">email</a> to me. Any pieces of advice are always welcome. :)
