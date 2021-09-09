@@ -1,7 +1,7 @@
 ---
 layout: post
 title:   "Intorduction of Name Mangle and Demangle"
-date:    2021-08-24
+date:    2021-09-09
 tags:    [Programming,C_C_plus_plus]
 ---
 
