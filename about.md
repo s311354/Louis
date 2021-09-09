@@ -5,8 +5,7 @@ title: About Me
 
 <!-- Quote  -->
 <p class="message" style="font-family:cursive"><q>
-Do or do not. there is no try. – yoda
-</q></p>
+"No amount of genius can overcome a preoccupation with detail" - Marion Levy Jr.</q></p>
 
 <!-- Introduction  -->
 Hello and wellcome to the internet home of Louis blog. (That's me!) 
