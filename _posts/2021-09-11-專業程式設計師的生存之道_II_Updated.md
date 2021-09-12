@@ -1,7 +1,7 @@
 ---
 layout: post
-title:   "專業程式設計師的生存之道 II"
-date:    2021-07-05
+title:   "專業程式設計師的生存之道 II (Updated)"
+date:    2021-09-11
 tags:    [Programming,Reading]
 ---
 
@@ -11,8 +11,8 @@ tags:    [Programming,Reading]
 
 延續上一篇文章，接續整理[Clean Coder, The: A Code of Conduct for Professional Programmers][cleancode]這本書的筆記與心得。
 
-## 章節概要 ##
-<h4><a name="TableContent"></a> 章節</h4>
+##  章節概要 ##
+<h4><a name="TableContent"></a> <a name="章節">章節</a> </h4>
 <h6><ol>
     <li><a href="#測試驅動開發">測試驅動開發（TDD）</a></li>
     <li><a href="#練習">練習</a></li>
@@ -20,6 +20,10 @@ tags:    [Programming,Reading]
     <li><a href="#測試策略">測試策略</a></li>
     <li><a href="#時間管理">時間管理</a></li>
     <li><a href="#預估">預估</a></li>
+    <li><a href="#壓力">壓力</a></li>
+    <li><a href="#協作">協作</a></li>
+    <li><a href="#團隊與專案">團隊與專案</a></li>
+    <li><a href="#學徒期">輔導、學徒期與工藝典範</a></li>
 </ol></h6>
 
 ### <a name="測試驅動開發">測試驅動開發（TDD）</a> ###
@@ -80,7 +84,7 @@ QA身為特性描述者的任務則是遵循探索式測試的原則，將之回
 ### <a name="預估">預估</a> ###
 承諾是必須做到的，意味著必須每天工作12小時，放棄週末的休假，也不得不如此。然而，預估是一種猜測，因為不知道到底要花多時間，所以預估的結果是一種機率分佈。專業開發人員不隨便承諾，除非確切知道可以完成，要能清楚區分預估和承諾。若被要求承諾做自己不確定的事情，那麼就應當堅決拒絕，也不要違背自己的意願，免強去承諾。此外，也要避免給出暗示性的承諾，盡可能清楚地說明預估的機率分佈，這樣主管就可以做出合適的計畫。不過預估是非常容易出錯的，可透過大數定律將大任務分成許多小任務，分開預估再加總，結果會比獨評大任務要準確很多。
 
-PERT（Program Evaluation and Review Technique）計畫評審技術的三元分析法：
+[PERT][pert]（Program Evaluation and Review Technique）計畫評審技術的三元分析法：
 * 樂觀預估（Optimistic estimate）- 如果一切都異常順利，樂觀預估時間的發生機率應當小於1%
 * 常規預估（Nominal estimate）- 常規預估時間的發生機率為最高
 * 悲觀預估（Pessimistic estimate）- 考慮到各種意外，悲觀預估時間的發生機率應該小於1%
@@ -125,7 +129,40 @@ PERT（Program Evaluation and Review Technique）計畫評審技術的三元分�
 對於全部任務完成預估時間約（4.2+3.5+6.5）= 14.2 天，全部的標準差為各項任務的標準差平方和的平方根＝～3.13天。因此可推論全部任務大該需要14天，但也可能需要17天，甚至20天。
 
 Note:
-函式多型（Polymorphically ）:[Dynamic polymorphism is done in C++ through inheritance and virtual member functions.][polymorphism]
+<ul>
+ <li>函式多型（Polymorphically ）: a concept of object-oriented programming that allows us to perform a single action in different forms.</li> 
+ Here is the C++ example:
+ <li>PERT: the statistical tool used in project management, which was designed to analyze and represent the tasks involved in completing a given project.</li>
+</ul>
+
+Here is the C++ example of polymorphically: [Dynamic polymorphism is done in C++ through inheritance and virtual member functions.][polymorphism].
+
+And here is the wiki example to describe how the PERT project scheduling tool works: [PERT example with seven tasks, labeled A through G][pertexample].
+
+### <a name="壓力">壓力</a> ###
+專業開發人員即便面臨到由最後期限和承諾所帶來的壓力，仍然會冷靜果斷並且堅守所受的訓練和紀律。在壓力下保持冷靜的最好方式，便是規避會導致壓力的環境，而且不要改變行為，需要遵守自己的紀律原則以及依靠自己切實有效的方式。例如：若遵守TDD，此時就寫的測試甚至要比平常還要多；若篤信無情重構，此時就要進行更多重構；若相信要保持函式盡量地小，此時就要讓函示變得更小。另外，專業開發人員也要讓系統、程式碼或設計盡可能整潔乾淨，因為混亂會降低速度，導致工期延誤，承諾失守。若尋求結對程式（pair program）的夥伴協助，也可以幫助堅守原則紀律，讓缺陷更少，防止混亂。
+
+&lt;NOTE&gt;
+如果能一週工作80小時，就會被奉為英雄。如果能把一團亂整理成給客戶做展示的材料，也會被奉為英雄。如果拼命工作，可能會獲得晉升。如果得過且過，你可能會被炒魷魚。
+
+### <a name="協作">協作</a> ###
+大多數軟體都是由團隊開發出來，所以專業程式設計師首要職責是滿足雇主的需求。這意味著要和經理們、業務分析師們、測試工程師們和其他團隊成員進行良好的協作（collabrating），深刻理解業務目標。最糟糕的表現是把自己封閉起來，只顧一頭將自己埋在技術堆裡，甚至對於公司業務不聞不問。此外，專業程式設計師並不會僅憑一己之力從零開始建立知識，而是透過互相結對來學習系統的不同部份和業務，以及分享知識。
+
+### <a name="團隊與專案">團隊與專案</a> ###
+團隊比專案更難建置，因此形成團隊首先需要建立關係，以及需要學習如何互相協作，需要瞭解彼此的癖好、強項、弱項，最終才能凝聚成團隊，而形成真正有凝聚力的團隊，可能需要6個月，甚至1年。有凝聚力的團隊通常大約有12名成員，應該配有程式設計師、測試人員和分析師，同時有一名專案經理。（人員比例分配較好的組合：程式設計師：測試人員和分析師＝2:1 ）。讓團隊在一個又一個專案中整體移動、共同工作有助於穩健及形成凝聚力，一直共同工作，成為不斷交付專案的強大引擎。
+
+### <a name="學徒期">輔導、學徒期與工藝典範</a> ###
+專業主義價值觀和技術敏銳度需要進行不斷的傳授、培育、滋長和文火慢燉，直到深植文化當中。但是倘若傳承無力，主要可能是因爲向新人傳授技藝的這個環節缺少了資深人士輔導。
+
+工藝（craftsmanship）是工匠所秉持精神狀態，包含著價值觀、原則、技術、態度和答案，而這文化基因（meme）大多經由口口相傳和親手相承而來，需要由資深人士向年輕學徒殷勤傳授，然後再由學徒之間相互傳播。資深人士會觀察年輕學徒的學習過程，然後不斷反思和改進傳授之道。對於軟體學徒期大致上可歸類以下三個時期（理想化的學徒制方案）：
+
+<ul>
+ <li>大師 - 一般來說大師擁有10年以上的從業經驗，曾在多個不同類型的系統、語言和作業系統上工作。懂得如何領導和協調多個團隊，也是熟練的設計師和架構師，能夠遊刃有餘地進行程式設計。大師會透過閱讀、研究、練習、實踐和教學來維持自身的技術水準，就像是Scotty 中校。</li>
+ <li>熟練工 - 一般來說熟練工平均經驗水準大約在5年左右，還處在受訓期當中，不過已經能勝任工作，而且持續學習如何在團隊中卓越工作和成為團隊的領導者，而且精力充沛。熟練工對當下的技術十分瞭解，但是對其他許多系統尚缺乏經驗，一般只瞭解一種語言、一個系統、一個平台，但是也正在不斷學習的過程中。很少會讓資歷尚淺的熟練工獨立工作，往往都需要在大師或其他資深熟練工的嚴厲督導下進行工作並且程式碼會被人仔細地覆查。隨著經驗不斷累積，自主能力也會不斷增長。</li>
+ <li>學徒/實習生 - 學徒沒有自治權，需要在熟練工的緊密督導下工作，確保學徒們能瞭解設計原則（design principles）、設計模式（design patterns）、各種紀律（disciplines）和固定的操作環節，至少持續一年。一開始不會單獨承接任何任務，只能作為助手、作為熟練工的小幫手，而且應該要十分密集地進行結對程式設計。這階段是學習紀律並強化各項實踐的階段，而各項價值觀的基礎也都是在這個階段塑造成型。</li>
+</ul>
+
+<a href="#章節"> To 章節</a>
 
 ## 總結
 個人認為這本書闡述實際開發軟件中獲得的生存之道，並且也舉出不少案例。這些許多實用的建議和知識，都是值得學習以及內化吸收。
@@ -138,5 +175,9 @@ Note:
 [polymorphism]:http://cplusplus.com/forum/beginner/252618/#msg1111720 "http://cplusplus.com/forum/beginner/252618/#msg1111720"
 
 [cleancode]:https://www.amazon.com/Clean-Coder-Conduct-Professional-Programmers-ebook/dp/B0050JLC9Y "https://www.amazon.com/Clean-Coder-Conduct-Professional-Programmers-ebook/dp/B0050JLC9Y"
+
+[pert]:https://en.wikipedia.org/wiki/Program_evaluation_and_review_technique "https://en.wikipedia.org/wiki/Program_evaluation_and_review_technique"
+
+[pertexample]:https://en.wikipedia.org/wiki/Program_evaluation_and_review_technique#Example
 
 <p>Feel free to leave the comments below or <a href="mailto:qazqazqaz850@gmail.com">email</a> to me. Any other pieces of advice are always welcome. :)
