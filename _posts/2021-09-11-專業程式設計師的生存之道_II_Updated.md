@@ -8,8 +8,7 @@ tags:    [Programming,Reading]
 “In The Clean Coder: A Code of Conduct for Professional Programmers, legendary software expert Robert C. Martin introduces the disciplines, techniques, tools, and practices of true software craftsmanship. This book is packed with practical advice–about everything from estimating and coding to refactoring and testing. It covers much more than technique: It is about attitude. Martin shows how to approach software development with honor, self-respect, and pride; work well and work clean; communicate and estimate faithfully; face difficult decisions with clarity and honesty; and understand that deep knowledge comes with a responsibility to act.”
 
 ## 紀錄與心得
-
-延續上一篇文章，接續整理[Clean Coder, The: A Code of Conduct for Professional Programmers][cleancode]這本書的筆記與心得。
+延續上一篇[文章]({% post_url 2021-06-21-專業程式設計師的生存之道_I %})，接續整理[Clean Coder, The: A Code of Conduct for Professional Programmers][cleancode]這本書的筆記與心得。
 
 ##  章節概要 ##
 <h4><a name="TableContent"></a> <a name="章節">章節</a> </h4>
@@ -167,10 +166,10 @@ And here is the wiki example to describe how the PERT project scheduling tool wo
 ## 總結
 個人認為這本書闡述實際開發軟件中獲得的生存之道，並且也舉出不少案例。這些許多實用的建議和知識，都是值得學習以及內化吸收。
 
-=========== To be continued…. ==========
-
 ## Reference ##
 [1] [Clean Coder, The: A Code of Conduct for Professional Programmers](https://www.amazon.com/Clean-Coder-Conduct-Professional-Programmers-ebook/dp/B0050JLC9Y)
+
+[2] [Wiki: Program evaluation and review technique](https://en.wikipedia.org/wiki/Program_evaluation_and_review_technique)
 
 [polymorphism]:http://cplusplus.com/forum/beginner/252618/#msg1111720 "http://cplusplus.com/forum/beginner/252618/#msg1111720"
 

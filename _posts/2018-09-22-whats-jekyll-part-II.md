@@ -5,11 +5,7 @@ tags: [Jekyll]
 ---
 
 ## Abstract
-
-Further to the previous past,
-<a href="{{ site.baseurl }}/2018-09-09/whats-jekyll-part-I/">
-  What's Jekyll and How to build a personal blog using Lanyon ( Part I )
-</a>, this post guides you how to add unique and useful features in your blog. Such as, linking multiple social media accounts, changing the font that you love and inserting google analytics in your website.
+Further to the previous past, [What's Jekyll and How to build a personalblog using Lanyon ( Part I )]({% post_url 2018-09-09-whats-jekyll-part-I %}), this post guides you how to add unique and useful features in your blog. Such as, linking multiple social media accounts, changing the font that you love and inserting google analytics in your website.
 
 ## Instructions
 
