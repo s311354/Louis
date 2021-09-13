@@ -8,7 +8,7 @@ tags:    [Programming,Reading]
 “In The Clean Coder: A Code of Conduct for Professional Programmers, legendary software expert Robert C. Martin introduces the disciplines, techniques, tools, and practices of true software craftsmanship. This book is packed with practical advice–about everything from estimating and coding to refactoring and testing. It covers much more than technique: It is about attitude. Martin shows how to approach software development with honor, self-respect, and pride; work well and work clean; communicate and estimate faithfully; face difficult decisions with clarity and honesty; and understand that deep knowledge comes with a responsibility to act.”
 
 ## 紀錄與心得
-延續上一篇[文章]({% post_url 2021-06-21-專業程式設計師的生存之道_I %})，接續整理[Clean Coder, The: A Code of Conduct for Professional Programmers][cleancode]這本書的筆記與心得。
+延續上一篇[文章][文章]，接續整理[Clean Coder, The: A Code of Conduct for Professional Programmers][cleancode]這本書的筆記與心得。
 
 ##  章節概要 ##
 <h4><a name="TableContent"></a> <a name="章節">章節</a> </h4>
@@ -178,5 +178,9 @@ And here is the wiki example to describe how the PERT project scheduling tool wo
 [pert]:https://en.wikipedia.org/wiki/Program_evaluation_and_review_technique "https://en.wikipedia.org/wiki/Program_evaluation_and_review_technique"
 
 [pertexample]:https://en.wikipedia.org/wiki/Program_evaluation_and_review_technique#Example
+
+[文章][文章]
+
+[文章]:https://s311354.github.io/Louis.github.io//2021/06/21/專業程式設計師的生存之道_I/ "https://s311354.github.io/Louis.github.io//2021/06/21/專業程式設計師的生存之道_I/"
 
 <p>Feel free to leave the comments below or <a href="mailto:qazqazqaz850@gmail.com">email</a> to me. Any other pieces of advice are always welcome. :)
