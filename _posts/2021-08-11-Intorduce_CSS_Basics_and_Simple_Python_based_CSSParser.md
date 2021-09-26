@@ -17,7 +17,7 @@ CSS is not a programming language and also not a markup language either. It is j
   color: red;
 }</span></code></pre></div>
 
-To apply above CSS to the HTML documents, you neet to give the element a href attribute and link with the CSS style. Otherwise, the styling won't change the appearance of the HTML.
+To apply above CSS to the HTML documents, you need to give the element a href attribute and link with the CSS style. Otherwise, the styling won't change the appearance of the HTML.
 <div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb">&lt;link href="styles/style.css" rel="stylesheet"&gt;
 </span></code></pre></div>
 
@@ -70,7 +70,7 @@ A CSS selector is the first part of a CSS Rule. It is a pattern of elements and 
 You could find and learn more information from [CSS selectors][cssselectors]
 
 ## Basic Concept of HTML ##
-HTML is the language that is used to structure a web page and its content. The content could be structured within a set of paragraphs, a list of bulleted points, or using images and data tables. HTML consists of a series of elements. For example, we could specify a paragrapg by enclosing it in paragraph tags:
+HTML is the language that is used to structure a web page and its content. The content could be structured within a set of paragraphs, a list of bulleted points, or using images and data tables. HTML consists of a series of elements. For example, we could specify a paragraph by enclosing it in paragraph tags:
 
 <div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb">&lt;p&gt;My cat is very grumpy&lt;p&gt;</span></code></pre></div>
 
