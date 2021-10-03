@@ -2,7 +2,7 @@
 layout: post
 title:   "Introduction of POSIX Timer and Thread"
 date:    2021-10-03
-tags:    [C_C_plus_plus]
+tags:    [C_C_plus_plus, Programming]
 ---
 
 ## Abstract ##
@@ -53,7 +53,7 @@ Summary of C standard library for POSIX systems:
  </tr>
 </table>
 
-However, these functions seem don't exist in macOS/iOS. We can take a look at the simple example of timer posted on in stackoverflow and further know how the timer works.
+Even if these functions seem not be implemented in Mac OS X, we can still take a look at the simple example of timer posted in [stackover flow][stackoverflow] and further compile it and understand how the timer works. The porpose of this program is to count down 10 seconds , and hopefully only print the "Hello, World!" with the new thread to console.
 
 ### Example of Simple Timer using pthreads ###
 <pre class="highlight">
@@ -184,5 +184,11 @@ DONE
 [3] [pthread_create function](https://man7.org/linux/man-pages/man3/pthread_create.3.html)
 
 [4] [The Open Group: pthread.h](https://pubs.opengroup.org/onlinepubs/7908799/xsh/pthread.h.html)
+
+
+
+[stackoverflow]:https://stackoverflow.com/questions/44807302/create-c-timer-in-macos/52905687 "https://stackoverflow.com/questions/44807302/create-c-timer-in-macos/52905687"
+
+
 
 <p>Feel free to leave the comments below or <a href="mailto:qazqazqaz850@gmail.com">email</a> to me. Any pieces of advice are always welcome. :)
