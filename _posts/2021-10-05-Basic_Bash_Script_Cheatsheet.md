@@ -1,10 +1,10 @@
 ---
 layout: post
-title:   "Basic Bash Script Reference"
+title:   "Basic Bash Script Cheatsheet"
 date:    2021-10-05
 tags:    [Linux]
 ---
-Bash is a Unix shell and a command processor that can read and execute commands from a file called a shell script. Like all Unix shells, it supports condition-testing and iteration ….etc. In addition, Bash has lots of different kinds of brackets, such as curly brackets, square brackets, parentheses. Due to I am not writing Bash scripts all the time. So here, I’m sorting out some of them and then write in this post.
+Bash is a Unix shell and a command processor that can read and execute commands from a file called a shell script. Like all Unix shells, it supports condition-testing and iteration ….etc. In addition, Bash has lots of different kinds of brackets, such as curly brackets, square brackets, parentheses. In this post, I was sorting out some information and hope these information will be helpful to you or anyone who is interested.
 
 ## Parentheses "()" ##
 
