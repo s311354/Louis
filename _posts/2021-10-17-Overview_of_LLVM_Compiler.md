@@ -11,7 +11,7 @@ tags:    [Programming, Compiler]
 ## 簡介 ##
 最近心血來潮，由於前一陣子查詢[Lexical analysis][lexicalanalysis]的相關文章以及實作[CSS Parser][cssparser]（此程式代碼repo: [lite css parser python][cssparserrepo]），無意間發現只聞其聲、不見其型的LLVM編譯器，就開始試著自學編譯器相關的知識。
 
-LLVM可視為是一個模組化的工具集合，其中包含assemblers, compilers, debuggers, ...等，這些元件皆與Unix系統中的工具兼容。而典型的編譯器架構，主要由三項元件構成：Frontend（Parser）, Optimizer and Backend（Code Generator）。
+LLVM 最初由[Chris Lattner][chris] 於研究助理期間實作的計畫項目，後續Apple聘用並持續將此計畫開發成產品，並且組織一個部門專門開發此技術。LLVM可視為是一個模組化的工具集合，其中包含assemblers, compilers, debuggers, ...等，這些元件皆與Unix系統中的工具兼容。而典型的編譯器架構，主要由三項元件構成：Frontend（Parser）, Optimizer and Backend（Code Generator）。
 
 <figure><center><img src="{{ site.baseurl }}/picture/CompilerDesign.png" width="100%"></center></figure>
 
@@ -100,7 +100,7 @@ Note: 基本指令集
 </ul>
 
 ## 總結 ## 
-由於實作過lite css parser python 程式碼，並將抓取的CSS語言格式轉換成XML語法，對於自學LLVM Compiler的知識與架構更加深刻，雖然僅接觸到一些基本知識，但後續會持續閱讀並試著理解，加深LLVM Compiler的技術知識。
+實作lite css parser python 程式碼(將抓取的CSS語言格式轉換成XML語法的經驗)，稍微能理解[Chris Lattner][chris]大師當時開發LLVM Compiler的知識與設計的理念架構，雖然僅接觸到一些基本知識，但後續將會持續閱讀相關的知識以及技術，並試著理解加深LLVM Compiler的技術知識。
 
 =========== To be continued…. ==========
 
@@ -116,5 +116,7 @@ Note: 基本指令集
 [lexicalanalysis]:https://en.wikipedia.org/wiki/Lexical_analysis "https://en.wikipedia.org/wiki/Lexical_analysis"
 
 [cssparser]:https://s311354.github.io/Louis.github.io/2021/08/11/Intorduce_CSS_Basics_and_Simple_Python_based_CSSParser/ "https://s311354.github.io/Louis.github.io/2021/08/11/Intorduce_CSS_Basics_and_Simple_Python_based_CSSParser/"
+
+[chris]:https://en.wikipedia.org/wiki/Chris_Lattner "https://en.wikipedia.org/wiki/Chris_Lattner"
 
 <p>Feel free to leave the comments below or <a href="mailto:qazqazqaz850@gmail.com">email</a> to me. Any pieces of advice are always welcome. :)
