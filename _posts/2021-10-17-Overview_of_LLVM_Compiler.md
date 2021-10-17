@@ -9,7 +9,7 @@ tags:    [Programming, Compiler]
 "The LLVM logo is a stylized wyvern (a kind of dragon). Dragons have connotations of power, speed and intelligence, and can also be sleek, elegant, and modular (err, maybe not)." - The LLVM Compiler Infrastructure
 
 ## 簡介 ##
-最近心血來潮，由於前一陣子查詢[Lexical analysis][lexicalanalysis]的相關文章以及實作[CSS Parser][cssparser]（此程式代碼repo: [lite css parser python][cssparserrepo]），無意間發現只聞其聲、不見其型的LLVM編譯器，就開始試著自學相關的編譯器知識。
+最近心血來潮，由於前一陣子查詢[Lexical analysis][lexicalanalysis]的相關文章以及實作[CSS Parser][cssparser]（此程式代碼repo: [lite css parser python][cssparserrepo]），無意間發現只聞其聲、不見其型的LLVM編譯器，就開始試著自學編譯器相關的知識。
 
 LLVM可視為是一個模組化的工具集合，其中包含assemblers, compilers, debuggers, ...等，這些元件皆與Unix系統中的工具兼容。而典型的編譯器架構，主要由三項元件構成：Frontend（Parser）, Optimizer and Backend（Code Generator）。
 
