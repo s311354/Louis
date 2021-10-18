@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Introduction of Verilog Mode and Emacs (Updated)
-date: 2021-10-18
-tags: [Verliog]
+title:   "Introduction of Verilog Mode and Emacs (Updated)"
+date:    2021-10-18
+tags:    [Verilog]
 ---
 
 ## Purpose 
