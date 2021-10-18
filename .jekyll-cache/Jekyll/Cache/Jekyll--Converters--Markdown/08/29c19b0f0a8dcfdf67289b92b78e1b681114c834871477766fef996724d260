@@ -1,2 +1,0 @@
-I"<p>Valgrind tools support to autimatically detect many memory management and threading bugs, and profile the programs in the detail. Some of the most difficult C/C++ bugs come from mismanagement of memory: allocating the wrong size, using an uninitialized pointer, accessing memory after it was freed, overrunging a buffer, and so on. These types of errors are tricky, as they can provide little debugging information, such as “Segmentation fault”, and tracing the observed problem back to underlying root cause can be challenging.</p>
-:ET
