@@ -18,9 +18,8 @@ tags: [Singal_Process]
    It means an integral multiplication increases the sample period of a discrete-time siganl by an integer $$ M $$. The replication period in the frequency domain is reduced by the same multiple. 
 
    The downsampling and spectral on continuous-time and discrete-time signal
-<figure>
-<a><img src="{{ site.baseurl }}/picture/downsampled.png"></a>
-</figure>
+
+<figure><center><img src="{{ site.baseurl }}/picture/downsampled.png" width="100%"></center></figure>
 
   Note: 
   Because downsampling by $$ M $$ may causes aliasing, the input signal should need the low-pass filter to prevent this aliasing.
@@ -79,14 +78,10 @@ xlabel('Frequency (Hz)')
 ylabel('Magnitude')</span></code></pre></div>
 
 Result: (Amplitude)
-<figure>
-<a><img src="{{ site.baseurl }}/picture/downsampled_amp.png"></a>
-</figure>
+<figure><center><img src="{{ site.baseurl }}/picture/downsampled_amp.png" width="100%"></center></figure>
 
 Result: (Frequency response)
-<figure>
-<a><img src="{{ site.baseurl }}/picture/downsampled_fre.png"></a>
-</figure>
+<figure><center><img src="{{ site.baseurl }}/picture/downsampled_fre.png" width="100%"></center></figure>
 
 #### Low-Pass Filter
 A low pass filter is a filter which passes low-frequency signals and blocks high-freqnency signals.
@@ -102,10 +97,22 @@ fs = 512;
 f = linspace(0,1,32);
 
 % from DC to fs/2
-amp = [36339434   186540122   477337738   760148204   761699191   367623940  -161062544  -385457455 ...
-    -161535628   183023159   237311199    -6177817  -192162144   -96102896   106831101   130670761 ...
-    -24618760  -118427546   -34616798    81016457    65169473   -36314160   -69585740    -2966005 ...
-    54658857    29242864   -28558676   -39001835    -1087164    30114286    27060106     9247146] / 2^31;
+amp = [ 36339434    186540122  \ 
+        477337738   760148204  \
+        761699191   367623940  \
+       -161062544  -385457455  ...
+       -161535628   183023159  \
+        237311199  -6177817    \
+       -192162144  -96102896   \
+        106831101   130670761  ...
+       -24618760   -118427546  \
+       -34616798    81016457   \
+        65169473   -36314160   \
+       -69585740    -2966005   ...
+        54658857    29242864   \
+       -28558676   -39001835   \
+       -1087164     30114286   \
+        27060106    9247146] / 2^31;
 
 % Least-square linear-phase 10th order FIR filter design
 B = firls(10, f, amp); % generate the coefficients
@@ -118,9 +125,7 @@ xlabel('Normalised Frequency')
 ylabel('|H(w)|')</span></code></pre></div>
 
 Result:
-<figure>
-<a><img src="{{ site.baseurl }}/picture/low_pass_filter.png"></a>
-</figure>
+<figure><center><img src="{{ site.baseurl }}/picture/low_pass_filter.png" width="80%"></center></figure>
 
 #### Zero-padding
    The zero-padding means changing the DFT-lenght $$ N $$ without adding more signal(i.e., information), which just results on a denser sampling of the underlying DTFT of the signal. To put it simply, the visible sampling on a denser frequency grid is achieved by zero-padding.
@@ -217,30 +222,8 @@ The diagrammatic convolution in matlab:
 ## Reference
 [1] [How Do I Upsample and Downsample My Data?](http://blog.prosig.com/2017/01/27/how-do-i-upsample-and-downsample-my-data/)
 
-[2] [downsampling an fft signal](https://dsp.stackexchange.com/questions/18909/downsampling-an-fft-signal)
+[2] [Low-Pass Filtering by FFT Convolution](https://ccrma.stanford.edu/~jos/sasp/Example_1_Low_Pass_Filtering.html)
 
-[3] [Downsampling (Decimation) Operator ](https://www.dsprelated.com/freebooks/sasp/Downsampling_Decimation_Operator.html)
+[3] [Basic Spectral Analysis](https://www.mathworks.com/help/matlab/math/basic-spectral-analysis.html)
 
-[4] [Downsampling — Aliasing](https://www.mathworks.com/help/signal/ug/downsampling-aliasing.html)
-
-[5] [Low-Pass Filtering by FFT Convolution](https://ccrma.stanford.edu/~jos/sasp/Example_1_Low_Pass_Filtering.html)
-
-[6] [Basic Spectral Analysis](https://www.mathworks.com/help/matlab/math/basic-spectral-analysis.html)
-
-[7] [Zero Padding](https://ccrma.stanford.edu/~jos/st/Zero_Padding.html)
-
-[8] [2D Convolution](https://johnloomis.org/ece563/notes/filter/conv/convolution.html)
-
-[9] [Bandpass filter Code design - C Program](https://sestevenson.files.wordpress.com/2009/10/firfixed.pdf)
-
-[10] [Digital Signal Processing](https://m.eet.com/media/1120778/906_pt3pdf.pdf)
-
-[11] [Least-squares linear-phase FIR filter design](https://www.mathworks.com/help/signal/ref/firls.html?searchHighlight=firls&s_tid=doc_srchtitle)
-
-[12] [Low Pass Filter- Explained](http://www.learningaboutelectronics.com/Articles/Low-pass-filter.php)
-
-## Note
-<p>If you have any constructive criticism or advises, leave the comments below or feel free to email me @qazqazqaz850@gmail.com.
-
-Hope this post will help! :)
-</p>
+<p>Feel free to leave the comments below or <a href="mailto:qazqazqaz850@gmail.com">email</a> to me. Any pieces of advice are always welcome. :)
