@@ -11,7 +11,7 @@ The C++ language allows programmers to manually allocate/decallocate memory by s
 ## Smart Pointers - unique_ptr ##
 Smart pointers unique_ptr is nice for when dynamic allocation is necessary. Since any dynamic memory requires a delete, it's much easier, much safer, and much less error prone to let the smart pointer take care of the cleanup, rather than doing it manually.
 
-Thr uses of smart pointer unique_ptr include providing exception safety for dynamically allocated memory, passing ownership of dynamically allocated memory to a function, and returning dynamically allocated memory from a function. The unique_ptr implementation could be referred from C++ STL library or boost C++ library.
+The uses of smart pointer unique_ptr include providing exception safety for dynamically allocated memory, passing ownership of dynamically allocated memory to a function, and returning dynamically allocated memory from a function. The unique_ptr implementation could be referred from C++ STL library or boost C++ library.
 
 <div class="language-shell highlighter-rouge"><pre class="highlight">Boost C++ library<code class="hljs ruby"><span class="nb">// /usr/local/Cellar/boost/1.76.0/include/boost/move/unique_ptr.hpp
 ...
@@ -61,7 +61,7 @@ Note: Function template
 <div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb">void Exam::SmartPointer() { 
       constexpr int SIZE = 8; 
       static const char chars[] = { 'B', 'e', 'S', 'm', 'a', 'r', 't', '!'  };
-      std::unique_ptr<char[]> arr(new char[SIZE); 
+      std::unique_ptr<char[]> arr(new char[SIZE]); 
       for(int i = 0; i < SIZE; ++i) {
           arr[i] = chars[i];
           std::cout << arr[i] << "; ";
@@ -106,4 +106,4 @@ void Exam::SmartPointerMakeUnique() {
 
 [4] [cppreference: std::make_unique](https://en.cppreference.com/w/cpp/memory/unique_ptr/make_unique)
 
-<p>Thanks for reading! Feel free to leave the comments below or <a href="mailto:qazqazqaz850@gmail.com">email</a> to me. Any pieces of advice or discussions are always welcome. :)
+<p>Thanks for reading! Feel free to leave the comments below or <a href="mailto:qazqazqaz850@gmail.com">email</a> to me. Any pieces of advice or discussions are always welcome. :)</p>
