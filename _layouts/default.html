@@ -22,15 +22,18 @@
 		</div>
 	  </div>
 
-	  <!-- disqus web site  -->
+      <!-- web site with disqus and google advertisements  -->
 	  <div class="container content">
 		{{ content }}
 		{% include comments.html %}
+        {% include advertisements.html %}
 	  </div>
 
 	</div>
 
 	<label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7510696744137436" crossorigin="anonymous"></script>
 
 	<script>
 	  (function(document) {
