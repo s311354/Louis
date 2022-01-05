@@ -91,6 +91,14 @@ To generate the documentation you can now enter:
 
 Depending on your setting Doxygen will create HTML, latex inside the output directory.
 
+### Configuration with cppreferences's tag file ###
+
+Doxygen supports automatic linking of C++ names or STL libraries to external documantation via "TAGFILES" functionality. There are two ways to link with cppreference's tag file: using "location/of/cppreference-doxygen-local.tag.xml=/location/of/html/book/root/" to link with local archive or using "location/of/cppreference-doxygen-web.tag.xml=http://en.cppreference.com/w/" to link with cppreference.com.
+
+For more details or downloading the HTML archive file, [Archives for offline viewing][archive] is available to read more description and clear instruction.
+
+=========== To be continued…. ==========
+
 ## Reference
 
 [1] [Doxygen](http://www.doxygen.nl)
@@ -100,6 +108,12 @@ Depending on your setting Doxygen will create HTML, latex inside the output dire
 [3] [Documenting the code](http://www.doxygen.nl/manual/docblocks.html)
 
 [4] [How to document your code using doxygen](https://flcwiki.desy.de/How%20to%20document%20your%20code%20using%20doxygen) 
+
+[5] [cppreference: Archives for offline viewing](https://en.cppreference.com/w/Cppreference:Archives)
+
+
+
+[archive]:https://en.cppreference.com/w/Cppreference:Archives "https://en.cppreference.com/w/Cppreference:Archives"
 
 ## Note
 <p>If you have any constructive criticism or advises, leave the comments below or feel free to email me @qazqazqaz850@gmail.com.
