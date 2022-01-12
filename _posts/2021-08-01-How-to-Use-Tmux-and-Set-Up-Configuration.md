@@ -9,7 +9,7 @@ When you program on the Unix-like terminal, you might not feel comfortable to me
 
 The Tmux is a popular, powerful and flexible terminal multiplexer for Unix-like operating systems, It allows multiple terminal sessions to be accessed simultaneously in a single window that useful for running more than one command-line program or monitor the process of each task or operating multiple tasks at the same time. That makes you more efficent.
 
-In this short post, I am sorting out some basic concepts, related configurations and commands for Tmux and  how to use a Tmux. I hope these informations will be helpful to you or anyone who is interested in Tmux that will be useful.
+In this short post, I am sorting out some basic concept, related configuration and commands for Tmux and  how to use a Tmux. I hope these informations will be helpful to you or anyone who is interested in Tmux that will be useful.
 
 ## Prerequisites ##
 Make sure your Unix-like terminal have been installed Tmux. Currently, the latest release version of tmux is 3.2a and could run on Linux, OS X and Solaris, etc. 
@@ -24,7 +24,7 @@ $ cd tmux
 $ sh autogen.sh
 $ ./configure && make</span></code></pre></div>
 
-#### The Concepts of Tmux ####
+#### The Concept of Tmux ####
 
 Tmux has sessions, windows, and panes. The hierarchy is that Tmux could have multiple sessions, a session could have multiple windows, a window could have multiple panes. User could follow certain conventions or rules to customize Tmux on your Unix-like terminal. For example, we could create one session for launching the long-running process. In this session, we could create multiple windows, and each window would be used for each specific task for the long-running process. In the windows, in order to improve to be more efficent, we could also create multiple panes for purpose such as editting the relevant configurations and launching the process, and process mointoring.
 
