@@ -50,6 +50,19 @@ Here is an example of file structure:
 
 The first CMakeLists.txt specifies an executable target called name to be built from the source files. The second CMakeLists.txt specifies an executable target to be built from the source file (main.cc) and also adds definitions to the compiler command line for targets in the current directory. After building this source file using CMake, CMake identifies the environment settings for the Linux device and creates the Makefile. Once the Makefile has been created, the make command can be used to build the source file.
 
+
+Note that, with Cmake, it supports to specify the build type on single-configuration generators, "[CMAKE_BUILD_TYPE][buildtype]". For example,
+
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb">// Release build
+cmake -DCMAKE_BUILD_TYPE=Release ..
+make
+
+// Debug build
+cmake -DCMAKE_BUILD_TYPE=Debug ..
+make</span></code></pre></div>
+
+For more details, [CMAKE_BUILD_TYPE][buildtype] is available to read the description on the customed build type value.
+
 ## Conclution ##
 The examples above provide a short introduction to Make/CMake and how it can be used to build. For more details, [CMake.org][cmake] is available to read the most up-to-date documentation.
 
@@ -64,6 +77,11 @@ The examples above provide a short introduction to Make/CMake and how it can be 
 
 [5] [About CMake](https://cmake.org/overview/)
 
+[6] [stackoverflow: Debug vs Release in CMake](https://stackoverflow.com/questions/7724569/debug-vs-release-in-cmake)
+
 [cmake]:https://cmake.org "https://cmake.org"
+
+[buildtype]:https://www.url.com "https://www.url.com"
+
 
 <p>Feel free to leave the comments below or <a href="mailto:qazqazqaz850@gmail.com">email</a> to me. Any pieces of advice are always welcome. :)
