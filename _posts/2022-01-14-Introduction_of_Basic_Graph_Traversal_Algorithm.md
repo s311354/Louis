@@ -13,7 +13,7 @@ Recently, I explored the implemenation of graphs and BFS/DFS, and discovered its
 ## Graph Search Algorithm ##
 In computer science, a graph is an abstract data type that is meant to implement the undirected fraph and directed graph concept from the field of a graph theory. A graph data structure consists of a finite set of vertices, together with a set of unordered or ordered paired of these vertices. The graph search (also known as graph traversal) algorithm uses a recursion and linked list based stack to determine a route from a single point on a graph to another single point on a graph. In addition to the structure, there are two basic types of graph search: breadth-first search and depth-first search. The major difference between those two type is that the data structure requires a queue (BFS) or stack (DFS). 
 
-Here, I recapped and practiced the [simple C++ BFS/DFS implemenation][grapg] with directed graph initially extracted from [Practice Directed Graph][directedgraph] then reworked. The basic functions for the directed graph are a follows:
+Here, I recapped and practiced the [simple C++ BFS/DFS implemenation][grapg] with directed graph initially extracted from [Practice Directed Graph][directedgraph] then reworked. The basic functions for the directed graph are as follows:
 <figure><center><img src="{{ site.baseurl }}/picture/graph_search.png" width="40%"> Ordered paired, Unweight and Directed Graph Database</center></figure>
 - BFS (Breadth-first search): use queue and traverse all the connected nodes
 - DFS (Depth-first search): use stack and traverse all the connected nodes
@@ -51,6 +51,28 @@ Depth First Search is a recursive algorithm that uses the idea of backtracking. 
 DFS:
 0 5 8 1 2 6 4 1 2 3 4 5 6 7 8</span></code></pre></div>
 
+### Exercise - Print Binary Tree by BFS  ###
+The basic functions for this simple exercise is as follows:
+- Pass through the binary tree's object.
+- Print out the binary tree by BFS (Breadth-first search) - use queue and traverse all the nodes
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb" style="font-size: 60%">void PrintBFS(BSTNode * node)
+{
+    std::queue&lt;BSTNode*&gt; node_queue;
+    BSTNode* current;
+    node_queue.push(node);
+
+    while (! node_queue.empty()) {
+        current = node_queue.front();
+        node_queue.pop();
+
+        if (current != nullptr) {
+            std::cout &lt;&lt; current-&gt;data &lt;&lt; " ";
+            if (current-&gt;left != nullptr) node_queue.push(current-&gt;left);
+            if (current-&gt;right != nullptr) node_queue.push(current-&gt;right);
+        }
+    }
+}</span></code></pre></div>
+
 ### Exercise - Shortest Distance from All Buildings ###
 You want to build a house on an empty land which reaches all buildings in the shortest amount of distance. You can only move up, down, left, and right. You are given a 2D grid of values 0, 1, or 2, where:
 - Each 0 marks an empty land which you can pass by freely. 
@@ -65,7 +87,6 @@ In this example, there are three buildings at (0,0), (0,4), (2,2), and an obstac
 The point (1,2) is an ideal empty land to build a house, as the total travel distance of 3+3+1=7 is minimal. So return 7.
 
 #### Solution ####
-
 <div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb" style="font-size: 60%">int Solutions::shortestDistance( std::vector&lt; std::vector&lt;int&gt; &gt; & grid )
 {
     int row = grid.size(), column = grid[0].size();
@@ -128,7 +149,7 @@ void Solutions::bfs(int column, int row, std::vector&lt; std::vector&lt;int&gt; 
 }
 </span></code></pre></div>
 
-The solution was initially extracted from [Shortest Distance][shortest] and then reworked. The basic functions for caculating the shortest distanc are a follows:
+The solution was initially extracted from [Shortest Distance][shortest] and then reworked. The basic functions for caculating the shortest distanc are as follows:
 - Traversing 2D grid by BFS algorithm
 - Store visited count and distance between two buildings
 
