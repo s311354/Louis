@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Introduction of Container Map in C++ Standard Template Library (STL)
+title:  Introduction of Container Map in C++ Standard Template Library (STL) - Updated 2022/01/23
 tags: [C_C_plus_plus] 
 ---
 
@@ -33,14 +33,17 @@ tags: [C_C_plus_plus]
     - Clear content
 </ul></h4>
 
-## Exercise: (Leetcode) 1128. Number of Equivalent dominoes Pairs
+You could find and learn more information from [std::map][map].
+
+## Exercise 1: (Leetcode) 1128. Number of Equivalent dominoes Pairs
 
 Description:
 Given a list of dominoes, dominoes[i] = [a, b] is equivalent to dominoes[j] = [c, d] if and only if either (a==c and b==d), or (a==b and b==c) - that is, one domino can be rotated to be equal to another domino.
 
 Return the number of pair (i, j) for which 0 <= i < j < dominoes.length, and dominoes[i] is equivalent to dominoes[j].
 
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb">typedef pair< int, int > two_int;
+Solution:
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb" style="font-size: 80%">typedef pair< int, int > two_int;
 int Dynamic_Array_Exercise::numEquivDominoPairs_opt(vector< vector< int > >& dominoes) {
 	int result = 0;
 	map< pair< int, int >, int > dict;
@@ -53,7 +56,6 @@ int Dynamic_Array_Exercise::numEquivDominoPairs_opt(vector< vector< int > >& dom
 		dict[key] += 1;
 	}
 
-	// Calculate the arithmetic series
 	for(auto it = dict.begin(); it != dict.end(); it++){
 		int value = it->second;
 		result += value * (value-1) / 2;
@@ -61,15 +63,60 @@ int Dynamic_Array_Exercise::numEquivDominoPairs_opt(vector< vector< int > >& dom
 	return result;
 }</span></code></pre></div>
 
+The basic functions for caculating the number of equivalent dominoes pairs are as follows:
+- Sorting the dominoes and count the number of equivalent dominoes pair
+- Calculate the arithmetic series and summarize
+
+## Exercise 2: Number of Fractions that Sum to 1
+Description:
+Given a list of lists fractions where each list contains [numerator, denominator] which represents the number numerator/denominator. 
+
+Return the number of pairs of fractions there are sums to 1.
+
+Solution:
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb" style="font-size: 80%">int Solutions::sumFraction( std::vector &lt; std::vector &lt;int &gt; &gt; & fracrion)
+{
+    std::map &lt; std::pair &lt; int, int &gt;, int &gt; dict;
+    int ans = 0;
+
+    for (auto& elem : fracrion) {
+        int g = gcd(elem[0], elem[1]);
+        dict[{elem[0]/g, elem[1]/g}]++;
+    }
+
+    for (auto it = dict.begin(); it != dict.end() ; it++) {
+        std::pair &lt;int, int &gt; key = it-&gt;first;
+        int count = it->second;
+
+        if (key.first * 2 > key.second) continue;
+        if (key.first * 2 == key.second) {
+            ans += count * (count - 1) /2;
+        } else {
+            auto it_match = dict.find({key.second - key.first, key.second});
+            if ( it_match!= dict.end()) ans += count * it_match->second;  
+        }
+    }
+    return ans;
+}</span></code></pre></div>
+
+The solution was initially extracted from [binary search: fractions][fractions] and then reworked. The basic functions for caculating the number of pairs of fractions there are sums to 1 are as follows:
+- Accumulate the pair of 1/2
+- Accumulate the rest of pair of the fractions there are sums to 1
+
+=========== To be continued…. ==========
 
 ## Reference
 
 [1] [C/C++ - Map (STL) 用法與心得完全攻略](https://mropengate.blogspot.com/2015/12/cc-map-stl.html) 
 
 [2] [Containers: Map](http://www.cplusplus.com/reference/map/map/)
-## Note
+
+[3] [Binarysearch](https://binarysearch.com/problems/Number-of-Fractions-that-Sum-to-1/solutions/5690081)
+
+[fractions]:https://binarysearch.com/problems/Number-of-Fractions-that-Sum-to-1/solutions/5690081 "https://binarysearch.com/problems/Number-of-Fractions-that-Sum-to-1/solutions/5690081"
+
+[map]:https://en.cppreference.com/w/cpp/container/map "https://en.cppreference.com/w/cpp/container/map"
+
 <p>If you have any constructive criticism or advises, leave the comments below or feel free to email me @qazqazqaz850@gmail.com.
 Hope this post will help! :)
 </p>
-
-
