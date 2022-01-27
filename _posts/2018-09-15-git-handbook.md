@@ -60,6 +60,7 @@ $ git push -u origin master</span></code></pre></div>
     <li><a href="#PushCommit">Push your commit to the remote and set a trackng branch</a></li>
     <li><a href="#UpdateRepo">Update your local copy of repository</a></li>
     <li><a href="#StashChange">Stash your work</a></li>
+    <li><a href="#Bisect">Binary search the commit</a></li>
 </ol></h6>
 
 #### Git Commands
@@ -149,6 +150,35 @@ $ git stash apply </span></code></pre></div>
   
 </ul>
 
+<li><a name="StashChange"></a> <a name="Bisect"> Binary search to find the commit: </a> </li>
+<p></p>
+
+<ul style="list-style-type:disc"> 
+  <li> Use binary search to find the commit </li>
+  <div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb">$ git bitsect &lt;subcommand&gt; &lt;options&gt; </span></code></pre></div>
+
+  <li> Start a bisect session </li>
+  <div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb" style="font-size: 100%">$ git bitsect start </span></code></pre></div>
+
+  <li> Bisect reset </li>
+  <div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb" style="font-size: 100%">$ git bitsect reset</span></code></pre></div>
+
+  <li> Bisect skip </li>
+  <div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb" style="font-size: 100%">$ git bisect skip</span></code></pre></div>
+
+  <li> Show bisect log </li>
+  <div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb" style="font-size: 100%">$ git bisect log
+# good: [72a35907200b42246fd039d495cbef8d80fdefe3] Miscellaneous
+git bisect good 72a35907200b42246fd039d495cbef8d80fdefe3
+# good: [72a35907200b42246fd039d495cbef8d80fdefe3] Miscellaneous
+git bisect good 72a35907200b42246fd039d495cbef8d80fdefe3
+# skip: [72a35907200b42246fd039d495cbef8d80fdefe3] Miscellaneous
+git bisect skip 72a35907200b42246fd039d495cbef8d80fdefe3
+# bad: [72a35907200b42246fd039d495cbef8d80fdefe3] Miscellaneous
+git bisect bad 72a35907200b42246fd039d495cbef8d80fdefe3
+  </span></code></pre></div>
+</ul>
+
 </ol>
 
 <a href="#TableContent">Table of Content</a>
@@ -160,6 +190,8 @@ $ git stash apply </span></code></pre></div>
 [2] [Git stash](https://www.atlassian.com/git/tutorials/saving-changes/git-stash)
 
 [3] [Adding an existing project to GitHub using the command line](https://help.github.com/en/articles/adding-an-existing-project-to-github-using-the-command-line)
+
+[4] [Git bisect](https://git-scm.com/docs/git-bisect)
 
 ## Note
 <p>If you have any constructive criticism or advises, leave the comments below or feel free to email me @qazqazqaz850@gmail.com.
