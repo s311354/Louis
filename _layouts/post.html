@@ -6,7 +6,7 @@ layout: default
 <div class="post">
   <h1 class="post-title" style="text-align:center; font-size:36px">{{ page.title }}</h1>
 
-  <span class="post-date">{{ page.date | date: "%m/%d/%Y"  }}
+  <span class="post-date" style="font-size: 18px">{{ page.date | date: "%m/%d/%Y"  }}
     <strong>Tags:</strong>
     <!-- function called assign to sort if first -->
     {% assign sorted_tags = page.tags | sort %}
@@ -17,21 +17,21 @@ layout: default
       {% endfor %}
   </span>
 
-  <section>
+  <section style="font-size: 16px">
     <p>{{ content }}</p>
   </section>
 </div>
 
 <!-- Related posts  -->
 <div class="related" >
-  <h2 style="font-size: 24px">Related Posts</h2>
+  <h2 style="font-size: 16px">Related Posts</h2>
   <ul class="related-posts">
     {% for post in site.related_posts limit:3 %}
       <li>
-        <h3 style="font-size: 20px">
+        <h3 style="font-size: 16px">
           <a href="{{ site.baseurl }}{{ post.url }}">
-            {{ post.title }}
             <small>{{ post.date | date_to_string }}</small>
+            {{ post.title }}
           </a>
 		    </h3>
       </li>
