@@ -2,13 +2,13 @@
 layout: post
 title:   "Overview of Greedy Algorithms"
 date:    2022-02-01
-tags:    [C_C_plus_plus, Mathematics]
+tags:    [C_C_plus_plus, Mathematics, Algorithms]
 ---
 
 "A greedy algorithm is any algorithm that follows the problem-solving heuristic of making the locally optimal choice at each stage. In many problems, a greedy strategy does not produce an optimal solution, but a greedy heuristic can yield locally optimal solutions that approximate a globally optimal solution in a reasonable amount of time." ... From Wiki
 
 ## Brief ##
-Recently, I explored how to solve the minimal distance or timing problems and knew that the greedy algorithm offers quick and simple solutions to this certain optimization problems. Here, sorting out several information associated with greedy algorithm and further practice the simple examples to keep in mind.
+Recently, I explored how to solve the minimal distance or timing problems and knew that the greedy algorithm offers quick and simple solutions to this certain optimization problems. Here, sorting out several information associated with greedy algorithm and further practicing several simple exercises to keep in mind.
 
 ## Greedy Algorithm ##
 The greedy algorithm is a simple and efficient algorithmic approach for solving any given problem by selecting the best available option at that moment of time. It doesn't worry whether the current best result will bring the overall optimal result. This algorithm may not produce the best result for all problems. It's because it always goes for the local best choice to produce the global best result.
@@ -55,7 +55,7 @@ Expected Output 2: 4
     return room;
 }</span></code></pre></div>
 
-### Exercise - The activity selection problem: Minimum Number of Arrows to Burst Balloon ###
+### Exercise - The Activity Selection problem: Minimum Number of Arrows to Burst Balloon ###
 There are some spherical balloons taped onto a flat wall that represents the XY-plane. The balloons are represented as a 2D integer array points where points[i] = [xstart, xend] denotes a balloon whose horizontal diameter stretches between xstart and xend. You do not know the exact y-coordinates of the balloons.
 
 Arrows can be shot up directly vertically (in the positive y-direction) from different points along the x-axis. A balloon with xstart and xend is burst by an arrow shot at x if xstart <= x <= xend. There is no limit to the number of arrows that can be shot. A shot arrow keeps traveling up infinitely, bursting any balloons in its path.
@@ -82,7 +82,7 @@ Expected Output : 2
 ## CASE STUDY: Huffman Code ##
 Huffman codes provide a method of encoding data efficiently. Normally when characters are coded using standard codes like ASCII or the Unicode, each character is represented by a fixed-length codeword of bits. Fixed-length codes are popular, because its is very easy to break a string up into its individual characters, and to access individual characters and substrings by direct indexing.
 
-Consider the following example. Suppose that we want to encode strings over the 4-character alphabet C = {a, b, c, d}. We could use the following fixed-length code:
+Consider the following example. Suppose that we want to encode strings over the 4-character alphabet C = {a, e, i, o, u, t}. We could use the following fixed-length code:
 
 <table>
  <tr>
@@ -118,8 +118,8 @@ Consider the following example. Suppose that we want to encode strings over the 
 For more details of implementation, [Study tonight: Huffman coding][huffman] is available to read and learn more.
 
 Note that: 
-- Huffman coding was used for many years by the Unix utility pack for file com- pression.
-- Multimedia codecs like JPEG, PNG and MP3 and compression formats like GZIP, PKZIP (winzip) and BZIP2 use Huffman encoding.
+- Huffman coding was used for many years by the Unix utility pack for file compression.
+- Both of multimedia codecs like JPEG, PNG and MP3 and compression formats like GZIP, PKZIP (winzip) and BZIP2 use Huffman encoding.
 
 ## Reference ##
 
