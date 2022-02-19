@@ -24,11 +24,14 @@ As the above tables, we could know the best, average, and worst case complexitie
 
 Note on the several common complexity:
 - Complexity of b.count(k): "average case Ο(b.count(k)), worst case Ο(b.size())."
+- Complexity of b.find(k): "average case Ο(1), worst case Ο(b.size())."
+- Complexity of a.erase(q): "average case Ο(1), worst case Ο(a.size())."
 - Complexity of unordered_set: "constant."
-- Complexity of sort: "Ο(Nlog(N)) (where N == last - first) comparisons."
+- Complexity of std::sort: "Ο(Nlog(N)) (where N == last - first) comparisons."
+- Complexity of std::reverse: "exactly last - first assignments."
 - Complexity of insert: "average case Ο(1), worst case Ο(a_eq.size())."
 - Complexity of vector: "linear in n."
-- Complexity of vector::push_back: "linear in the number of elements inserted plus the distance to the end of the vector."
+- Complexity of vector::push_back: "linear in the number of elements inserted plus the distance to the end of the vector.
 
 #### Exercise - Min Steps to Make Pilles Equal Height ####
 Alexa is given n piles of equal or unequal heights. In one step, Alexa can remove any number of boxes from the pile which has the maximum height and try to make it equal to the one which is just lower than the maximum height of the stack. Deterßmine the minimum number of steps required to make all of the piles equal in height.
