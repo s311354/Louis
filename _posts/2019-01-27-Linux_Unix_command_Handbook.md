@@ -4,6 +4,7 @@ title: Linux/Unix command Handbook
 tags: [Linux]
 categories: [eating, travelling]
 ---
+[UPDATED: 2022/02/23]
 
 ## Purpose 
 
@@ -16,6 +17,7 @@ During the period from graduating to being an Engineer, Linux/Unix commands beco
     <li><a href="#SED">SED command</a></li>
     <li><a href="#WC">WC command</a></li>
     <li><a href="#LN">LN command</a></li>
+    <li><a href="#SEQ">SEQ command</a></li>
 </ol></h5>
 
 <h3><a name="SED"></a> SED command </h3>
@@ -101,9 +103,23 @@ Example:
 This command creates symbolic link in Linux, replascing source_file with the name of the existing file for which you want to create the symbolic link and symbolic_link with the name of the symbolic link.
 </ol>
 
+<h3><a name="SEQ"></a> SEQ command </h3>
+
+"seq" is an utility prints a sequence of numbers, one per line (default), from first (default 1), to near last as possible, in increments of incr (default 1).
+
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb" style="font-size: 80%">$ Usage: :seq [-w] [-f format] [-s string] [-t string] [first [incr]] last
+$ -f format     Use a printf(3) style format to print each number.
+$ -s string     Use string to separate numbers.
+$ ...
+</span></code></pre></div>
+
+Example:
+<ol>
+<li> Creating a sequence of numbers, one per line in a file </li>
+</ol>
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb" style="font-size: 80%">$ seq 100 104 > my_file.txt</span></code></pre></div>
 
 =========== To be continued.... ==========
-
 
 ## Reference
 
