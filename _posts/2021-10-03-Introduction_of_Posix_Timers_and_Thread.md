@@ -58,7 +58,7 @@ Even if these functions seem not be implemented in Mac OS X, we can still take a
 ### Example of Simple Timer using pthreads ###
 <pre class="highlight">
 timer.h
-<code class="hljs"><span class="nb">typedef struct Timer {
+<code class="hljs"><span class="nb" style="font-size: 80%">typedef struct Timer {
     void (*fn)(void);
     bool (*timer_delegate)(pthread_t, unsigned int, unsigned int);
     unsigned int seconds;
@@ -68,73 +68,59 @@ void* timer_run(void *t);
 
 bool should_kill_thread(pthread_t self_id, unsigned int start_time, unsigned int utime_new); 
  
-void hello_world();
-</span></code></pre>
+void hello_world();</span></code></pre>
 
 <pre class="highlight">
-timer.c<code class="hljs"><span class="nb">#include "posix_timer.h"
+timer.c<code class="hljs"><span class="nb" style="font-size: 80%">#include "posix_timer.h"
 
 void* timer_run(void *t) {
     unsigned int start_time = time(NULL);
-
     while(1) {
         Timer tmr = *((Timer *) t);
         bool should_kill_thread = tmr.timer_delegate(pthread_self(), start_time, time(NULL));
-
         if (should_kill_thread) 
             pthread_cancel(pthread_self());
-
         tmr.fn();
         sleep(tmr.seconds);
     }
 }
 
 bool should_kill_thread(pthread_t self_id, unsigned int start_time, unsigned int utime_new) {
-
     printf("Thread ID: %u\n",(unsigned) self_id);
     printf("the start time was %d and the new time is %d \n", start_time, utime_new);
-
     // Count down 10 seconds
     if (utime_new - start_time >= 9) {
         return true;
     }
-
     return false;
 }
 
 void hello_world() {
     printf("%s\n", "Hello, World!");
-}
-</span></code></pre>
+}</span></code></pre>
 
 <pre class="highlight">
-main.c<code class="hljs"><span class="nb">#include "posix_timer.h"
+main.c<code class="hljs"><span class="nb" style="font-size: 80%">#include "posix_timer.h"
 
 int main(int argc, char const *argv[])
 {
     pthread_t t1;
-
     Timer args;
     args.fn = &hello_world; // function pointer
     args.timer_delegate = should_kill_thread; // function pointer
     args.seconds = 1; // call every 1 second
-
     // New thread starts execution by invoking timer_run()
     int id = pthread_create(&t1, NULL, timer_run, &args);
-
     if (id) {
        printf("ERROR; return code from pthread_create() is %d\n", id);
        exit(EXIT_FAILURE);
     }
-
     pthread_join(t1, NULL); // blocks main thread
     printf("%s\n", "DONE"); // never reached until t1 is killed
-
     return 0;
-}
-</span></code></pre>
+}</span></code></pre>
 
-<pre class="highlight">The corresponding output<code class="hljs"><span class="nb">$ ./exe/timer
+<pre class="highlight">The corresponding output<code class="hljs"><span class="nb" style="font-size: 80%">$ ./exe/timer
 Thread ID: 47472640
 the start time was 1609083090 and the new time is 1609083090 
 Hello, World!
@@ -165,8 +151,7 @@ Hello, World!
 Thread ID: 47472640
 the start time was 1609083090 and the new time is 1609083099 
 Hello, World!
-DONE
-</span></code></pre>
+DONE</span></code></pre>
 
 **Note**: 
 - pthread_create function starts a new thread in the calling process. The new thread starts execution by invoking start_routine(). arg is passed as the sole argument of start_routine().
@@ -174,6 +159,9 @@ DONE
       int pthread_create(pthread_t *thread, const pthread_attr_t *attr, void *(*start_routine) (void *), void *arg);
 
 - pthread_t type is definied as described in <sys/types.h> 
+- A thread is the basic unit to which the operating system allocates processor time. A thread can execute any part of the process code, including parts currently being executing by another thread.
+
+=========== To be continued…. ==========
 
 ## Reference ##
 
@@ -185,10 +173,6 @@ DONE
 
 [4] [The Open Group: pthread.h](https://pubs.opengroup.org/onlinepubs/7908799/xsh/pthread.h.html)
 
-
-
 [stackoverflow]:https://stackoverflow.com/questions/44807302/create-c-timer-in-macos/52905687 "https://stackoverflow.com/questions/44807302/create-c-timer-in-macos/52905687"
-
-
 
 <p>Feel free to leave the comments below or <a href="mailto:qazqazqaz850@gmail.com">email</a> to me. Any pieces of advice are always welcome. :)

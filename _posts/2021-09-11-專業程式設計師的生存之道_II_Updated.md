@@ -179,8 +179,6 @@ And here is the wiki example to describe how the PERT project scheduling tool wo
 
 [pertexample]:https://en.wikipedia.org/wiki/Program_evaluation_and_review_technique#Example
 
-[文章][文章]
-
 [文章]:https://s311354.github.io/Louis.github.io//2021/06/21/專業程式設計師的生存之道_I/ "https://s311354.github.io/Louis.github.io//2021/06/21/專業程式設計師的生存之道_I/"
 
 <p>Feel free to leave the comments below or <a href="mailto:qazqazqaz850@gmail.com">email</a> to me. Any other pieces of advice are always welcome. :)

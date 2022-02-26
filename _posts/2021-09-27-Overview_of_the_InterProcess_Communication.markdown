@@ -5,7 +5,7 @@ date:    2021-09-27
 tags:    [Linux, Processor]
 ---
 ## Abstract ##
-The basic process management is done with a number of system calls, each with a single (simple) purpose. And these system calls can be combined to implement more complex behaviors. One of these system calls is fork() function that causes creation of a new process and create a child porcess that is a copy of the parent process. The parent and child processes execute the same program but in separate processes. In this post, I would describe the basic concepts of process management and how to manage the children processes.
+The basic process management is done with a number of system calls, each with a single (simple) purpose. And these system calls can be combined to implement more complex behaviors. One of these system calls is fork() function that causes creation of a new process and create a child porcess that is a copy of the parent process. The parent and child processes execute the same program but in separate processes. In addition, an application could consist of one or more processes. A process, in the simplest terms, is an executing program. One or more threads run in the context of the process. In this post, I would describe the basic concepts of process management and how to manage the children processes.
 
 ## Basic Porcess Management ##
 In a sense, the process management uses standard Interprocess communication (IPC) mechanism to communication for parent and child communication that runs the same program, but could use the return value from fork() to distinguish between the parent and child. The following figure shows the basic behavior of porcess management. 
@@ -25,7 +25,7 @@ A child porcess in computing is a process created by another process (the parent
 
 Here, I took a simple example that handles two children processes from a single parent and observed how to go about making two child processes and then having them do different things.
 
-<div class="language-shell highlighter-rouge"><pre class="highlight">A simple example that handles two children processes<code class="hljs ruby"><span class="nb">#include &lt;iostream&gt;
+<div class="language-shell highlighter-rouge"><pre class="highlight">A simple example that handles two children processes<code class="hljs ruby"><span class="nb" style="font-size: 80%">#include &lt;iostream&gt;
 #include &lt;stdio.h&gt;
 #include &lt;sys/types.h&gt;
 #include &lt;unistd.h&gt;
@@ -65,7 +65,7 @@ int main()
     return 0;  
 }</span></code></pre></div>
 
-<div class="language-shell highlighter-rouge"><pre class="highlight">The corresponding output:<code class="hljs ruby"><span class="nb">$ ./src/main
+<div class="language-shell highlighter-rouge"><pre class="highlight">The corresponding output:<code class="hljs ruby"><span class="nb" style="font-size: 80%">$ ./src/main
 Process Child 2 with PID 98903
 Process Child 1 with PID 98902
 Process Parent with PID 98901 and created child1 with PID 98902 and created child2 with PID 98903
@@ -79,7 +79,7 @@ The interprocess communication refers specifically to the mechanisms an operatin
 
 Other IPC mechanisms tend to come in two types: A message queue or pipe where one process puts data into the queue and another process consumes the data. And, shared memory where part of the memory is accessible by more than one process. For more details, you could refer to the [Inter-process communication][wikiipc] page. Here, I took a example that use array in shared memory and access/change them from the different processes.
 
-<div class="language-shell highlighter-rouge"><pre class="highlight">A example that uses shared memory to share an array between processes<code class="hljs ruby"><span class="nb">#include &lt;string.h&gt; 
+<div class="language-shell highlighter-rouge"><pre class="highlight">A example that uses shared memory to share an array between processes<code class="hljs ruby"><span class="nb" style="font-size: 80%">#include &lt;string.h&gt; 
 #include &lt;stdio.h&gt;
 #include &lt;unistd.h&gt;
 #include &lt;sys/mman.h&gt;
@@ -120,13 +120,15 @@ int main() {
   }
 }</span></code></pre></div>
 
-<div class="language-shell highlighter-rouge"><pre class="highlight">The corresponding output:<code class="hljs ruby"><span class="nb">$ ./src/main
+<div class="language-shell highlighter-rouge"><pre class="highlight">The corresponding output:<code class="hljs ruby"><span class="nb" style="font-size: 80%">$ ./src/main
 Parent read: hello with PID: 8428 and created Child process with PID: 8429 
 Child read: hello with PID: 8429 
 Child wrote: goodbye with PID: 8429 
 After 1s, parent read: goodbye with PID: 8428 and created Child process with PID 8429</span></code></pre></div>
 
 In this example, there are just three steps: Parent process initialize the shared memory, Child process accesses and overwirtes the shared memory, Parent process access the shared memory.
+
+=========== To be continued…. ==========
 
 ## Reference ##
 [1] [Wiki: Inter-process communication](https://en.wikipedia.org/wiki/Inter-process_communication)

@@ -19,9 +19,8 @@ Smart pointers is nice for when dynamic allocation is necessary. Since any dynam
 ###  <a name="unique_ptr">std::unique_ptr class</a> ###
 The uses of smart pointer unique_ptr include providing exception safety for dynamically allocated memory, passing ownership of dynamically allocated memory to a function, and returning dynamically allocated memory from a function. The unique_ptr implementation could be referred from C++ STL library or boost C++ library.
 
-<div class="language-shell highlighter-rouge"><pre class="highlight">Boost C++ library<code class="hljs ruby"><span class="nb" style="font-size: 80%">// /usr/local/Cellar/boost/1.76.0/include/boost/move/unique_ptr.hpp
-...
-namespace movelib {
+CASE STUDY: unique_ptr.hpp in Boost C++ library
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb" style="font-size: 80%">namespace movelib {
 ...
 //! \tparam T Provides the type of the stored pointer.
 //! \tparam D The deleter type:
@@ -101,6 +100,7 @@ void Exam::SmartPointerMakeUnique() {
 
 The smart pointer std::shared_ptr stored a pointer to a dynamically allocated object and the object pointed to is guaranteed to be deleted when the last shared_ptr pointing to it is destroyed or reset. In addition to reset the dynamical allocation, cycles of shared_ptr instances will not be reclaimed because the implementation uses reference counting. For example, if main() holds a shared_ptr to A, which directly or indirectly holds a shared_ptr back to A, A's use count will be 2. Destruction of the original shared_ptr will leave A dangling with a use count of 1.
 
+CASE STUDY: shared_ptr.hpp in Boost C++ library
 <div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb" style="font-size: 80%">// /usr/local/Cellar/boost/1.76.0/include/boost/interprocess/smart_ptr/shared_ptr.hpp
 ...
 namespace boost{

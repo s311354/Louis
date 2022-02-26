@@ -13,12 +13,12 @@ The CSS parser is enabled to convert a CSS string to a data struct for HTML so t
 ## Basic Concept of CSS ##
 CSS is not a programming language and also not a markup language either. It is just a style sheet language for using to selectively style HTML element. For example, this CSS selects paragraph text, setting the color to red:
 
-<div class="language-shell highlighter-rouge"><pre class="highlight">styles/style.css<code class="hljs ruby"><span class="nb">p {
+<div class="language-shell highlighter-rouge"><pre class="highlight">styles/style.css<code class="hljs ruby"><span class="nb" style="font-size: 80%">p {
   color: red;
 }</span></code></pre></div>
 
 To apply above CSS to the HTML documents, you need to give the element a href attribute and link with the CSS style. Otherwise, the styling won't change the appearance of the HTML.
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb">&lt;link href="styles/style.css" rel="stylesheet"&gt;
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb" style="font-size: 80%">&lt;link href="styles/style.css" rel="stylesheet"&gt;
 </span></code></pre></div>
 
 ### Anatomy of a CSS Ruleset ###
@@ -35,7 +35,7 @@ The main parts of this element are as follows:
 </ul>
 
 ### Different Types of Selectors ###
-A CSS selector is the first part of a CSS Rule. It is a pattern of elements and other terms that tell the browwe which HTML elements should be selected to have the CSS property and values inside the rule applied to them, There are many types of selectors. Here are some of the more common types of selectors:
+A CSS selector is the first part of a CSS Rule. It is a pattern of elements and other terms that tell the browwe which HTML elements should be selected to have the CSS property and values inside the rule applied to them. There are many types of selectors. Here are some of the more common types of selectors:
 
 <font size="3" face="Courier New">
 <table>
@@ -52,7 +52,7 @@ A CSS selector is the first part of a CSS Rule. It is a pattern of elements and 
  <tr>
   <td>ID selector</td>
   <td>The element on the page with the specified ID</td>
-  <td>#my-id selects &lt;p id="my-id"&gt or &lt;a id="my-id"&gt;;</td>
+  <td>#my-id selects &lt;p id="my-id"&gt; or &lt;a id="my-id"&gt;;</td>
  </tr>
  <tr>
   <td>Class selector</td>
@@ -72,7 +72,7 @@ You could find and learn more information from [CSS selectors][cssselectors]
 ## Basic Concept of HTML ##
 HTML is the language that is used to structure a web page and its content. The content could be structured within a set of paragraphs, a list of bulleted points, or using images and data tables. HTML consists of a series of elements. For example, we could specify a paragraph by enclosing it in paragraph tags:
 
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb">&lt;p&gt;My cat is very grumpy&lt;p&gt;</span></code></pre></div>
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb" style="font-size: 80%">&lt;p&gt;My cat is very grumpy&lt;p&gt;</span></code></pre></div>
 
 ### Anatomy of an HTML element ###
 HTML cover elements, attributes, and other import terms, that can be applied to pieces of text to give them different meaning in a document. Here is an example of paragraph element:
@@ -98,7 +98,7 @@ In addition, the elemnts can also have attributes that look like the following:
 
 #### Some Types of HTML Elements ####
 HTML elements can be represented in other tpyes, such as nested, empty. Nested element could apply multiple HTML tags to a simgle piece of content. And, the empty element could be used for image element because an image element doesn't wrap content to affect it.
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb"># Nested element
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb" style="font-size: 80%"># Nested element
 &lt;p&gt;My dog is&lt;em&gt;very grump.&lt;/em&gt;&lt;/p&gt;
 # Empty element
 &lt;img src="images/firefox-icon.png" alt="My test image"&gt;</span></code></pre></div>
@@ -153,7 +153,7 @@ A lexical token or simple token is a string with an assigned and thus identified
 </font>
 
 Here is an example of expression in the C programming language:
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb">// A simple expression
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb" style="font-size: 80%">// A simple expression
 x = a + b * 2;
 
 // The lexical analysis of this expression yields the following sequence of tokens:
@@ -175,12 +175,12 @@ There are many CSS parsers in java or in C or in C++, etc. In this post, I creat
 </ul>
 
 Here is a simple css format file and the corresponding Web converted by the [lite CSS Parser][litecssparser] repo. The best way to understand the parser interface is to excute main.py which is excerpted below:
-<div class="language-shell highlighter-rouge"><pre class="highlight">main.py<code class="hljs ruby"><span class="nb">filepath = './simple.css'
+<div class="language-shell highlighter-rouge"><pre class="highlight">main.py<code class="hljs ruby"><span class="nb" style="font-size: 80%">filepath = './simple.css'
 parser = CssParser(filepath)
 
 parser.write("test.xml", "xml")</span></code></pre></div>
 
-<div class="language-shell highlighter-rouge"><pre class="highlight">Simple css format<code class="hljs ruby"><span class="nb">/* General page style
+<div class="language-shell highlighter-rouge"><pre class="highlight">Simple css format<code class="hljs ruby"><span class="nb" style="font-size: 80%">/* General page style
  General page style */
 div {
   width: 100px;
@@ -191,7 +191,7 @@ div:hover {
   width: 300px; /* test */
 }</span></code></pre></div>
 
-<div class="language-shell highlighter-rouge"><pre class="highlight">The corresponding HTML<code class="hljs ruby"><span class="nb">&lt;html&gt;
+<div class="language-shell highlighter-rouge"><pre class="highlight">The corresponding HTML<code class="hljs ruby"><span class="nb" style="font-size: 80%">&lt;html&gt;
 	&lt;body&gt;
 		&lt;div&gt;
 		&lt;div&gt;

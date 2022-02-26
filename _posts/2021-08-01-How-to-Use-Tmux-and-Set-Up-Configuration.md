@@ -2,7 +2,7 @@
 layout: post
 title:   "How to Use Tmux and Set up Configuration"
 date:    2021-08-01
-tags:    [Tmux, Linux]
+tags:    [Linux]
 ---
 ## Purpose ##
 When you program on the Unix-like terminal, you might not feel comfortable to mess around with multi-windows, especially more than 5 windows. It is quite difficult to operate with mulit-windows.
@@ -278,6 +278,8 @@ Done, press ENTER to continue.</span></code></pre></div>
 Tmux Resurrect supports to save and restore all the details from your tmux environment. The shortcut of saving is Prefix + Ctrl + s and the shortcut of restoring is Prefix + Ctrl + r.
 
 You can find more information about this feature on [Tmux Resurrect][tmuxresurrect].
+
+=========== To be continued… ==========
 
 ## Reference ##
 [1] [Tmux Repository](https://github.com/tmux/tmux)
