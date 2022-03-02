@@ -38,7 +38,7 @@ Here, I recapped and practiced the [simple C++ BFS/DFS implemenation][grapg] wit
     graph_node->BFS();
 }</span></code></pre></div>
 
-### Breadth-first search ###
+### Breadth-first Search ###
 Breadth First Search is traversing algorithm where you should start traversing from a selected node (source or parent node) and traverse the graph layerwise thus exploring the neighbour nodes. In other words, it starts at the tree root and explores all nodes at the present depth prior to moving on to the nodes at the next depth level. In addition to the traverse, BFS might be the easiest one to understand because the only data structure it requires is a queue. Here is the output of BFS traversal route in my implemenation:
 
 <div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb" style="font-size: 80%">---------------------
@@ -52,7 +52,15 @@ Depth First Search is a recursive algorithm that uses the idea of backtracking. 
 DFS:
 0 5 8 1 2 6 4 1 2 3 4 5 6 7 8</span></code></pre></div>
 
-### Exercise 1. - Print Binary Tree by BFS  (Directed Graph) ###
+## Exercises ##
+<h6><ol>
+    <li><a href="#exercise1">Exercise 1 - Print Binary Tree by BFS</a></li>
+    <li><a href="#exercise2">Exercise 2 - Shortest Distance from All Buildings by BFS</a></li>
+    <li><a href="#exercise3">Exercise 3 - Critical Connections in a Network by DFS</a></li>
+    <li><a href="#exercise4">Exercise 4 - Maximum Length of a Concatenated String with Unique Characters by DFS</a></li>
+</ol></h6>
+
+### <a name="exercise1">Exercise 1. - Print Binary Tree by BFS  (Directed Graph)</a>  ###
 The basic functions for this simple exercise is as follows:
 - Pass through the binary tree's object.
 - Print out the binary tree by BFS (Breadth-first search) - use queue and traverse all the nodes
@@ -74,7 +82,7 @@ The basic functions for this simple exercise is as follows:
     }
 }</span></code></pre></div>
 
-### Exercise 2 - Shortest Distance from All Buildings (Directed Graph) ###
+### <a name="exercise2">Exercise 2 - Shortest Distance from All Buildings by BFS (Directed Graph)</a> ###
 You want to build a house on an empty land which reaches all buildings in the shortest amount of distance. You can only move up, down, left, and right. You are given a 2D grid of values 0, 1, or 2, where:
 - Each 0 marks an empty land which you can pass by freely. 
 - Each 1 markd a building which you cannot pass through. 
@@ -165,7 +173,7 @@ The solution was initially inspired by [Shortest Distance][shortest] and then re
 Here is the status:
 <figure><center><img src="{{ site.baseurl }}/picture/unittest_shortest.png" width="80%"></center></figure>
 
-### Exercise 3. - Critical Connections in a Network (Undirected Graph) ###
+### <a name="exercise3">Exercise 3. - Critical Connections in a Network by DFS (Undirected Graph)</a> ###
 There are n servers numbered from 0 to n-1 connected by undirected server-to-server connections forming a network where connections[i] = [a, b] represents a connection between servers a and b. Any server can reach any other server directly or indirectly through the network.
 
 A critical connection is a connection that, if removed, will make some server unable to reach some other server.
@@ -226,6 +234,61 @@ Note that:
 
 Here is the status:
 <figure><center><img src="{{ site.baseurl }}/picture/unittest_criticalNets.png" width="80%"></center></figure>
+
+### <a name="exercise4">Exercise 4. - Maximum Length of a Concatenated String with Unique Characters by DFS (Undirected Graph)</a>  ###
+You are given an array of strings arr. A string s is formed by the concatenation of a subsequence of arr that has unique characters.
+
+Return the maximum possible length of s.
+
+A subsequence is an array that can be derived from another array by deleting some or no elements without changing the order of the remaining elements.
+
+<figure><center><img src="{{ site.baseurl }}/picture/maxlength.png" width="20%"></center></figure>
+
+Example 1:
+
+Input: arr = ["un","iq","ue"]
+Output: 4
+Explanation: All the valid concatenations are:
+- ""
+- "un"
+- "iq"
+- "ue"
+- "uniq" ("un" + "iq")
+- "ique" ("iq" + "ue")
+
+Maximum length is 4.
+
+#### Solution ####
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb" style="font-size: 60%">int Solutions::maxLength( std::vector&lt; std::string&gt; & arr)
+{
+    int len = 0;
+    if (arr.size() &gt; 0) return 0;
+    if (arr.size() == 1) return arr[0].size();
+    checkLen( arr, "", 0, len)
+    return len;
+}
+// undirected DFS ( graph of string )
+void Solutions::checkLen( std::vector&lt;std::string&gt; & arr, std::string graphstr, int index, int& count )
+{
+    if (isUniqieString(graphstr)) {
+        count = graphstr.size() &gt; count ? graphstr.size(): count;
+    }
+    // recursive
+    for (int i = index; i &lt; arr.size(); ++i) {
+        checkLen(arr, graphstr+arr[i], i+1, count);
+    }
+}
+bool Solutions::isUniqieString(std::string s)
+{
+    for (auto & elem : s) {
+        if (std::count(begin(s), end(s), elem) &lt; 1) return false;
+    }
+    return true;
+}</span></code></pre></div>
+The basic functions for determining maximum possible length of concatenated string are as follows:
+- Concatenated subsequence of string by DFS
+- Check the concatenated string is unique characters
+- Determine the maximum possible length of concatenated string
 
 ## Reference ##
 [1] Wiki: [Graph Theory](https://en.wikipedia.org/wiki/Graph_theory), [Breadth-first search](https://en.wikipedia.org/wiki/Breadth-first_search), [Depth-first search](https://en.wikipedia.org/wiki/Depth-first_search)
