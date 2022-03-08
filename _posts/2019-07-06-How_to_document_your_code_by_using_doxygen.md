@@ -1,17 +1,16 @@
 ---
 layout: post
-title: How to document your code by using doxygen
-tags: [Doxygen]
+title: How to document your C++ Porgram by using Doxygen
+tags: [Doxygen, C_C_plus_plus]
 ---
+[UPDATED: 2022/03/08]
 
 ## Purpose 
+In order to quickly recap your code, documenting your code is one of the effective methods and also readable. Doxygen supports the de facto standard for creating documentation for C and C++ program, but it also supports other popular programming languages such as Java and Python. It also allows us to generate a fully structured set of HTML or Latex page from the program source code. 
 
-In order to quickly recap your code, documenting your code is one of the effective methods and also readable. Doxygen supports the de facto standard for creating documentation for C and C++ program, but it also supports other popular programming languages such as Java and Python. It also allows us to generate a fully structured set of HTML or Latex page from the program source code.
-
-For avoiding to forget bit and pieces of using Doxygen, I recorded a few pieces of information and also put a simple [C program](https://github.com/s311354/Doxygen_practice) and a simple [C++ program](https://github.com/s311354/Leetcode_practice) which contain some Doxygen code snippets. Once processed with Doxygen, it gives <a href="{{ site.baseurl }}/data/doxygen_c/html_c_program/">C output</a> and <a href="{{ site.baseurl }}/data/doxygen_c/html_c_plus/">C ++ output</a>.
+For avoiding to forget bit and pieces of using Doxygen, I recorded a few pieces of information and also put a simple [C program](https://github.com/s311354/Doxygen_practice) and a simple [C++ program](https://github.com/s311354/Leetcode_practice) which contain some Doxygen code snippets. Once processed with Doxygen, it gives <a href="{{ site.baseurl }}/data/doxygen_c/html_c_program/">C output</a> and <a href="{{ site.baseurl }}/data/doxygen_c/html_c_plus/">C ++ output</a>. Hope this post would be helpful.
 
 ## How to document your code
-
 There are four steps that you should follow:
 
 <h4><a name=""></a> Generate doxygen </h4>
@@ -28,13 +27,13 @@ There are four steps that you should follow:
 <li> Open Terminal </li>
 <li> Run: </li>
 </ol>
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb">$brew install doxygen </span></code></pre></div>
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb" style="font-size: 60%">$brew install doxygen </span></code></pre></div>
 
 <h3><a name="generate"></a> Generate a configuration file </h3>
 
   By calling doxygen with the -g option in your project to generate a configuration file:
 
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb">$doxygen -g < config_file > </span></code></pre></div>
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb" style="font-size: 60%">$doxygen -g < config_file > </span></code></pre></div>
 
 The configuration file is a free-form ASCII text file with a structure that is similar to that of a Makefile. The common configuration options are:
 
@@ -55,7 +54,7 @@ The configuration file is a free-form ASCII text file with a structure that is s
       - tag to YES will include the body of functions, classs and enums directly into documentation.</li>
 </ul>
 
-You can refer to [configuration](http://www.doxygen.nl/manual/config.html) link and customize it.  
+You can refer to [configuration](http://www.doxygen.nl/manual/config.html) and customize doxygen by yourself.  
 
 <h3><a name="document"></a> Document your code </h3>
 
@@ -67,33 +66,32 @@ There are several ways to mark a comment block as a detailed description:
 <li> Javadoc style: </li>
 It is consist of a C-style comment block starting with two *'s, like this
 
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb">/**
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb" style="font-size: 60%">/**
  * ... text ...
  */
 </span></code></pre></div>
 <li> Qt style </li>
 It adds an exclamation mark (!) after the opening of a C-style comment block, as shown in
 
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb">/*!
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb" style="font-size: 60%">/*!
  * ... text ...
  */
 </span></code></pre></div>
 </ol>
 
-You can refer to [documenting the code](http://www.doxygen.nl/manual/docblocks.html) and customize it.
-
 <h3><a name="create"></a> Run Doxygen to create the documentation </h3>
 
 To generate the documentation you can now enter:
 
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb">doxygen < config-file >
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb" style="font-size: 60%">doxygen < config-file >
 </span></code></pre></div>
 
 Depending on your setting Doxygen will create HTML, latex inside the output directory.
 
-### Configuration with cppreferences's tag file ###
-
-Doxygen supports automatic linking of C++ names or STL libraries to external documantation via "TAGFILES" functionality. There are two ways to link with cppreference's tag file: using "location/of/cppreference-doxygen-local.tag.xml=/location/of/html/book/root/" to link with local archive or using "location/of/cppreference-doxygen-web.tag.xml=http://en.cppreference.com/w/" to link with cppreference.com.
+### Configuration with Tag file ###
+Doxygen also supports to link with of C++ names or STL libraries from external documantation via "TAGFILES" functionality. There are two ways to link with cppreference's tag file:
+- Using "location/of/cppreference-doxygen-local.tag.xml=/location/of/html/book/root/" to link with local archive 
+- Using "location/of/cppreference-doxygen-web.tag.xml=http://en.cppreference.com/w/" to link with cppreference.com.
 
 For more details or downloading the HTML archive file, [Archives for offline viewing][archive] is available to read more description and clear instruction.
 
