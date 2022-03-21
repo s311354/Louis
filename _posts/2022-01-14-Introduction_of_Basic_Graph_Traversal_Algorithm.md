@@ -4,7 +4,7 @@ title:   "Overview of Basic Graph Traversal Algorithm and Google testing"
 date:    2022-01-14
 tags:    [C_C_plus_plus, Algorithms]
 ---
-[UPDATED: 2022/02/26]
+[UPDATED: 2022/03/21]
 
 "Graph theory is the study of graphs, which are mathematical structures used to model pairwise relations between objects. A graph in this context is made up of vertices (also called nodes or points) which are connected by edges (also called links or lines). A distinction is made between undirected graphs, where edges link two vertices symmetrically, and directed graphs, where edges link two vertices asymmertically. Graphs are one of the principal objects of study in discrete mathematics." from Wiki page.
 
@@ -58,6 +58,7 @@ DFS:
     <li><a href="#exercise2">Exercise 2 - Shortest Distance from All Buildings by BFS</a></li>
     <li><a href="#exercise3">Exercise 3 - Critical Connections in a Network by DFS</a></li>
     <li><a href="#exercise4">Exercise 4 - Maximum Length of a Concatenated String with Unique Characters by DFS</a></li>
+    <li><a href="#exercise5">Exercise 5 - Surrounded Regions by BFS</a></li>
 </ol></h6>
 
 ### <a name="exercise1">Exercise 1. - Print Binary Tree by BFS  (Directed Graph)</a>  ###
@@ -289,6 +290,58 @@ The basic functions for determining maximum possible length of concatenated stri
 - Concatenated subsequence of string by DFS
 - Check the concatenated string is unique characters
 - Determine the maximum possible length of concatenated string
+
+### <a name="exercise5">Exercise 5. - Surrounded Regions by BFS (Undirected Graph)</a>  ###
+Given an m x n matrix board containing 'X' and 'O', capture all regions that are 4-directionally surrounded by 'X'.
+
+A region is captured by flipping all 'O's into 'X's in that surrounded region.
+
+<figure><center><img src="{{ site.baseurl }}/picture/surrounded.png" width="60%"></center></figure>
+
+Example: Input: board = [["X","X","X","X"],["X","O","O","X"],["X","X","O","X"],["X","O","X","X"]]
+Output: [["X","X","X","X"],["X","X","X","X"],["X","X","X","X"],["X","O","X","X"]]
+
+#### Solution ####
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb" style="font-size: 80%">std::vector&lt; std::vector&lt;char&gt; &gt; Solutions::surroundedRegions( std::vector&lt; std::vector&lt;char&gt; &gt; & board)
+{
+    std::queue&lt; std::pair&lt;int,int&gt; &gt; to_visit;
+    int row = board.size(), column = board[0].size();
+    //Getting boundary O's
+    for(int i=0; i&lt;row ; i++)
+    {
+        if(board[i][0]=='O') board[i][0]='U', to_visit.push( {i,0} );
+        if(board[i][column-1]=='O') board[i][column-1]='U', to_visit.push( {i,column-1} );
+    }
+    for(int i=1; i&lt;column-1; i++)
+    {
+        if(board[0][i]=='O') board[0][i]='U', to_visit.push( {0,i} );
+        if(board[row-1][i]=='O') board[row-1][i]='U', to_visit.push( {row-1, i} );
+    }
+    // 2-D Grid BFS which's parent node starts from boundary unsorrounded node
+    while(!to_visit.empty())
+    {
+        int curDepth = to_visit.size();
+        while(curDepth--)
+        {
+            int xx=to_visit.front().first, yy=to_visit.front().second;
+            to_visit.pop();
+            if(xx+1 &lt; row) if(board[xx+1][yy] == 'O') board[xx+1][yy] = 'U', to_visit.push( {xx+1, yy} );   // RIGHT
+            if(xx-1 &gt;= 0) if(board[xx-1][yy] == 'O') board[xx-1][yy] = 'U', to_visit.push( {xx-1, yy} );    // LEFT
+            if(yy+1 &lt; column) if(board[xx][yy+1] == 'O') board[xx][yy+1] = 'U', to_visit.push( {xx, yy+1}); // UP
+            if(yy-1 &gt;= 0) if(board[xx][yy-1] == 'O') board[xx][yy-1] = 'U', to_visit.push({xx, yy-1});      // DOWN
+        }
+    }
+    //all the unsorrounded O's are re-entered
+    for(int i=0; i &lt; row; i++)
+        for(int j=0; j &lt; column; j++)
+            board[i][j] = board[i][j] == 'U' ? 'O' : 'X';
+}</span></code></pre></div>
+The basic functions for determining unsurrounded regions are as follows:
+- Get boundary O's nodes and identify those nodes as unsurrounded node 
+- Start from unsurrounded node and travers 2D grid by BFS algorithm 
+- Determine all of unsurrounded nodes and set those as '0'
+
+=========== To be continued…. ==========
 
 ## Reference ##
 [1] Wiki: [Graph Theory](https://en.wikipedia.org/wiki/Graph_theory), [Breadth-first search](https://en.wikipedia.org/wiki/Breadth-first_search), [Depth-first search](https://en.wikipedia.org/wiki/Depth-first_search)
