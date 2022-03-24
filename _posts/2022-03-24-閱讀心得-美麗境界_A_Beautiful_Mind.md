@@ -24,7 +24,7 @@ Thus begins the true story of John Nash, the mathematical genius who was a legen
 
 一九四五年，納許就讀卡內基理工學院，原本他希望能成為一個化學工程師，但他卻對數學的熱情卻與日俱增。在這期間，他的數學天分逐漸被教授們注意，也視為深具潛力的未來之星，並且在威廉．羅威爾．帕特南數學競試中拿下前10名，這項成就使他收到了哈佛、普林斯頓、芝加哥和密西根的入學許可。一九四九年，納許由於一方面由於哈佛獎學金比普林斯頓少，另一方面當時的普林斯頓在師資群陣容相當堅強，如：愛因斯坦(Albert Einstein)、哥德爾(Godel, 廿世紀最偉大之數理邏輯學家)、歐本海默(Born-Oppenheimer, 曼哈頓計劃的主要領導者之一)和馮紐曼(John von Neumann)等優秀師資，所以選擇就讀普林斯頓。
 
-在研究所期間，他時常曠課，他心中只有一個念頭：發明出一個原創理論，他深信這是研究成功的唯一方法。雖然被同儕所排斥，他們也都希望看到納許失敗，但是卻在無意間激發出他的鬥志，促使他發現一個突破性的理論，證明了在不合作賽局(nonzero-sum noncooperative game)中，一定有「均衡」解存在，並定義出「納許均衡」(Nash Equilibrium)，其中定義為：在一個所謂的非零和遊戲中，一定會存在「均衡」解。參賽的個人為了讓自身能獲取最大的利益，自己所採取的策略必須是同時兼顧他人的利益，因為如此才能讓雙方彼此獲得最大的利益。而其中參與競賽的人願意退一步去顧及對方的利益，最基本的考量仍是為了自身的利益，因為若是施行完全不顧對方利益的策略，結果將會是自身也受到波及，甚至可能連自己本來應該可獲得的最基本利益也化為烏有，所以當每個參賽者都願意採取對自己是最有利，同時又兼顧他人利益的方法時，整個賽局會達到一個均衡點。為不合作賽局立下了宏偉的框架，從此改變了他的一生。不過，也在他三十歲時被診斷出精神疾病，此後他受到精神分裂與偏執症的情緒起伏與住院醫治之苦二十餘載，在這期間他的妻子艾莉西亞始終對他不離不去，扶持陪他走過艱辛的路程。他不願由藥物的治療，而是靠自己的邏輯以及他妻子的愛從幻覺中活過來。
+在研究所期間，他時常曠課，他心中只有一個念頭：發明出一個原創理論，他深信這是研究成功的唯一方法。雖然被同儕所排斥，他們也都希望看到納許失敗，但是卻在無意間激發出他的鬥志，促使他發現一個突破性的理論，證明了在不合作賽局 [nonzero-sum noncooperative game][nonzero] 中，一定有「均衡」解存在，並定義出「納許均衡」(Nash Equilibrium)，其中定義為：在一個所謂的非零和遊戲中，一定會存在「均衡」解。參賽的個人為了讓自身能獲取最大的利益，自己所採取的策略必須是同時兼顧他人的利益，因為如此才能讓雙方彼此獲得最大的利益。而其中參與競賽的人願意退一步去顧及對方的利益，最基本的考量仍是為了自身的利益，因為若是施行完全不顧對方利益的策略，結果將會是自身也受到波及，甚至可能連自己本來應該可獲得的最基本利益也化為烏有，所以當每個參賽者都願意採取對自己是最有利，同時又兼顧他人利益的方法時，整個賽局會達到一個均衡點。為不合作賽局立下了宏偉的框架，從此改變了他的一生。不過，也在他三十歲時被診斷出精神疾病，此後他受到精神分裂與偏執症的情緒起伏與住院醫治之苦二十餘載，在這期間他的妻子艾莉西亞始終對他不離不去，扶持陪他走過艱辛的路程。他不願由藥物的治療，而是靠自己的邏輯以及他妻子的愛從幻覺中活過來。
 
 在1994年，66歲的納許以「賽局理論」論文獲得了諾貝爾經濟學獎。而這篇論文是納許在二十幾歲時就已經發表，只是在經過時間的試煉，此理論可給人類許多助益，世人才注意他的理論。至今為止，納許所提出的「賽局理論」也持續被廣泛低應用並解決許多實際層面的問題。
 
@@ -37,8 +37,12 @@ Thus begins the true story of John Nash, the mathematical genius who was a legen
 
 - [A Beautiful Mind: A Biography of John Forbes Nash, Jr., Winner of the Nobel Prize in Economics](https://www.amazon.com/Beautiful-Mind-Sylvia-Nasar/dp/1451628420)
 
-
+- [Standford CS: Non-zero-sum games](https://cs.stanford.edu/people/eroberts/courses/soco/projects/1998-99/game-theory/nonzero.html)
 
 [distributedpower]:https://ieeexplore.ieee.org/document/5425923 "https://ieeexplore.ieee.org/document/5425923"
 
 [beautiful]:https://www.amazon.com/Beautiful-Mind-Sylvia-Nasar/dp/1451628420 "https://www.amazon.com/Beautiful-Mind-Sylvia-Nasar/dp/1451628420"
+
+
+
+[nonzero]:https://cs.stanford.edu/people/eroberts/courses/soco/projects/1998-99/game-theory/nonzero.html "https://cs.stanford.edu/people/eroberts/courses/soco/projects/1998-99/game-theory/nonzero.html"
