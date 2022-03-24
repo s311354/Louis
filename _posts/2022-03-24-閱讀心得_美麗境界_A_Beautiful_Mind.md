@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 閱讀心得: 美麗境界 A Beautiful Mind
+title: "閱讀心得-美麗境界 A Beautiful Mind"
 date: 2022-03-24
 tags: [Reading]
 ---
