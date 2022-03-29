@@ -44,6 +44,7 @@ def main():
 if __name__ == '__main__':
     main()</span></code></pre></div></details>
 
+
 We could see the backtracking program runs as expected. 
 <details markdown=block>
 <summary markdown=span>*print statement*</summary>
