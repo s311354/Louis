@@ -5,7 +5,7 @@ date:    2021-01-23 21:52
 tags:    [C_C_plus_plus]
 ---
 
-Most modern software systems provide libraries that implement the majority of the system service. Such libraries have orgianized the services which modern application requires. There are two types of libraries: Static and Dynamic Libraries. (This post is refered to [Blog][blog])
+Most modern software systems provide libraries that implement the majority of the system service. Such libraries have orgianized the services which modern application requires. There are two types of libraries: Static and Dynamic Libraries.
 
 <p align="center"><iframe src="https://giphy.com/embed/YGlRW1Am9q7e0" width="480" height="319" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></p>
 
@@ -76,10 +76,8 @@ Note: the path where the dynamic linker searches for the libraries is configured
 
 ## Reference ##
 
-[Wiki: Library(computing)](https://en.wikipedia.org/wiki/Library_(computing))
-
-[C++ Static Libraries and Dynamic Libraries](https://xiaoyuliu.github.io/2018/03/19/compare-static-and-dynamic-library/)
-
-[Linux Installation and Package Management](https://learning.lpi.org/en/learning-materials/101-500/102/102.3/102.3_01/)
+- [Wiki: Library(computing)](https://en.wikipedia.org/wiki/Library_(computing))
+- [C++ Static Libraries and Dynamic Libraries](https://xiaoyuliu.github.io/2018/03/19/compare-static-and-dynamic-library/)
+- [Linux Installation and Package Management](https://learning.lpi.org/en/learning-materials/101-500/102/102.3/102.3_01/)
 
 [blog]: https://xiaoyuliu.github.io/2018/03/19/compare-static-and-dynamic-library/

@@ -15,8 +15,10 @@ The basic properties of backtracking algorithm:
 - No repetition and completion: It is a systematic generating method that avoids repetitions and missing any possible right solution. This property makes it ideal for solving combinatorial problems such as combination and permutation which require us to enumerate all possible solutions.
 - Search pruning: Because the final solution is built incrementally, in the process of working with partial solutions, we can evaluate the partial solution and prune branches that would never lead to the acceptable complete solution: either it is invalid configuration, or it is worse than known possible complete solution.
 
-Here, I throw a simple example: Given a integer number n, enumerate all possible combination using all items from the set of integers {1, 2, ..., n} without repetition. 
+Here, I throw a simple example: Given a integer number n, enumerate all possible combination using all items from the set of integers {1, 2, ..., n} without repetition. The number of possible combinations are 2^n.
 
+<details markdown=block>
+<summary markdown=span>*subsets.py*</summary>
 <div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb" style="font-size: 80%">def backtrack_compact(working_set, k, n):
     global solutions
     if k == n:
@@ -40,12 +42,13 @@ def main():
     print(solutions)
     print('Number of subsets: {}'.format(len(solutions)))
 if __name__ == '__main__':
-    main()</span></code></pre></div>
+    main()</span></code></pre></div></details>
 
-In this programming, we can get the following eight combinations: (The number of possible combinations are 2^n.)
-
+We could see the backtracking program runs as expected. 
+<details markdown=block>
+<summary markdown=span>*print statement*</summary>
 <div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb" style="font-size: 80%">$ python3 subsets.py 3
-[set(), {3}, {2}, {2, 3}, {1}, {1, 3}, {1, 2}, {1, 2, 3}]</span></code></pre></div>
+[set(), {3}, {2}, {2, 3}, {1}, {1, 3}, {1, 2}, {1, 2, 3}]</span></code></pre></div></details>
 
 ## Exercises ##
 <h6><ol>
@@ -66,6 +69,8 @@ Example: Input: n = 4, Output: [[".Q..","...Q","Q...","..Q."],["..Q.","Q...","..
 
 #### Solution ####
 
+<details markdown=block>
+<summary markdown=span>*solveNQueens.cc*</summary>
 <div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb" style="font-size: 60%">bool is_safe( std::vector&lt; std::string&gt; & board, int row, int col)
 {
     // check column
@@ -100,7 +105,7 @@ std::vector&lt; std::vector&lt; std::string&gt; &gt; Solutions::solveNQueens(int
     std::vector&lt; std::string&gt; board(n, std::string(n, '.'));
     backtracking_dfs(board, 0, result);
     return result;
-}</span></code></pre></div>
+}</span></code></pre></div></details>
 
 The solution was inspired by [LeetCode Discuss][discuss1] and then modified. The basic functions for caculating the all distinct solutions are as follows:
 - Iterate in all the columns to look for safe cells where we can place our queen.
@@ -122,6 +127,8 @@ Example: Input: words = ["SEND","MORE"], result = "MONEY", Output: true
 
 #### Solution ####
 
+<details markdown=block>
+<summary markdown=span>*isSolvable.cc*</summary>
 <div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb" style="font-size: 60%">bool backtracking_verbal( std::vector&lt; std::string&gt; & words, std::string & result, std::vector&lt;int&gt; & chtonum, std::vector&lt;int&gt; & numtoch, std::vector&lt;bool&gt; & nonZeroChars, int index, int pos, int sum)
 {
     // reach the end of result
@@ -180,7 +187,7 @@ bool Solutions::isSolvable( std::vector&lt; std::string&gt; & words, std::string
     if (result.size() &gt; 1) nonZeroChars[result[0] - 'A'] = true;
     std::reverse(result.begin(), result.end());
     return backtracking_verbal(words, result, chtonum, numtoch, nonZeroChars, 0, 0, 0);
-}</span></code></pre></div>
+}</span></code></pre></div></details>
 
 The solution was copied from [LeetCode Discuss][discuss2] and then learn how to implement the solution. The basic functions for caculating whether or not the equation is solvable are as follows:
 - Traverse the position for words[index], try to decode each character and keep adding words
@@ -193,7 +200,6 @@ The solution was copied from [LeetCode Discuss][discuss2] and then learn how to 
 ## Reference ##
 
 - [Wiki: Backtracking](https://en.wikipedia.org/wiki/Backtracking)
-
 - [In-depth Backtracking with LeetCode Problems](https://medium.com/algorithms-and-leetcode/backtracking-e001561b9f28)
 
 [discuss1]:https://leetcode.com/problems/n-queens/discuss/810358/C%2B%2B-4ms-Heavily-Commented-Clean-Solution-or-Fast-and-Easy-or-Explanation "https://leetcode.com/problems/n-queens/discuss/810358/C%2B%2B-4ms-Heavily-Commented-Clean-Solution-or-Fast-and-Easy-or-Explanation"

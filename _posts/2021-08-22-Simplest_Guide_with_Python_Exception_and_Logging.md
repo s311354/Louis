@@ -67,9 +67,9 @@ Here, you could go throught some examples of above exceptions and might be more 
 </ol></h6>
 
 #### <a name="assertion">A simple example of AssertionError exception</a> ####
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb"># Roots of a quadratic equation
-import math
-
+<details markdown=block>
+<summary markdown=span>*assertionError.py*</summary>
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb" style="font-size: 80%">import math
 def QuadraticFormula(a, b, c):
     try:
         assert a != 0, "Not a quadratic equation as coefficient of x ^ 2 can't be 0"
@@ -84,16 +84,18 @@ def QuadraticFormula(a, b, c):
 if __name__ == "__main__":
     QuadraticFormula(0, 5, -6)
     QuadraticFormula(1, 1, 6)
-    QuadraticFormula(2, 12, 18)</span></code></pre></div>
+    QuadraticFormula(2, 12, 18)</span></code></pre></div></details>
 
-<div class="language-shell highlighter-rouge"><pre class="highlight">Output:<code class="hljs ruby"><span class="nb">Not a quadratic equation as coefficient of x ^ 2 can't be 0
+<details markdown=block>
+<summary markdown=span>*print statement*</summary>
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb" style="font-size: 80%">Not a quadratic equation as coefficient of x ^ 2 can't be 0
 Roots are imaginary
-('Roots of the quadratic equation are :', -3.0, '', -3.0)</span></code></pre></div>
-
+('Roots of the quadratic equation are :', -3.0, '', -3.0)</span></code></pre></div></details>
 
 #### <a name="attributeandkey">A simple example of AttributeError and KeyError exceptions</a> ####
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb">import warnings
-
+<details markdown=block>
+<summary markdown=span>*attributeError.py*</summary>
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb" style="font-size: 80%">import warnings
 class Person:
     def __init__(self, age, gender, name):
         self.age = age
@@ -117,26 +119,30 @@ if __name__ == "__main__":
     try:
         print("%r's is %r yeard old." %(person, ageMap[person]))
     except KeyError:
-        warnings.warn(message="%r's age is unknown." %person, category=UserWarning, stacklevel=2)</span></code></pre></div>
+        warnings.warn(message="%r's age is unknown." %person, category=UserWarning, stacklevel=2)</span></code></pre></div></details>
 
-<div class="language-shell highlighter-rouge"><pre class="highlight">Output:<code class="hljs ruby"><span class="nb">Name: 'Louis'
+<details markdown=block>
+<summary markdown=span>*warning statement*</summary>
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb" style="font-size: 80%">Name: 'Louis'
 Age: 20
 sys:1: UserWarning: We dont know yet
-sys:1: UserWarning: 'Kevin''s age is unknown.</span></code></pre></div>
-
+sys:1: UserWarning: 'Kevin''s age is unknown.</span></code></pre></div></details>
 
 #### <a name="overflow">A simple example of OverflowError exception</a> ####
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb">if __name__ == "__main__":
-
+<details markdown=block>
+<summary markdown=span>*overflowError.py*</summary>
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb" style="font-size: 80%">if __name__ == "__main__":
     # OverflowError
     try:
         f = 3.0*1
         for i in range(100):
             f = f **2
     except OverflowError as err:
-        print ('Overflow after %r' %f, err)</span></code></pre></div>
+        print ('Overflow after %r' %f, err)</span></code></pre></div></details>
 
-<div class="language-shell highlighter-rouge"><pre class="highlight">Output:<code class="hljs ruby"><span class="nb">('Overflow after 1.9323349832288915e+244', OverflowError(34, 'Result too large'))</span></code></pre></div>
+<details markdown=block>
+<summary markdown=span>*print statement*</summary>
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb" style="font-size: 80%">('Overflow after 1.9323349832288915e+244', OverflowError(34, 'Result too large'))</span></code></pre></div></details>
 
 ### Logging Setup ###
 In python, logging module supports to add logging calls to their code to indicate that certain events have occurred. An event is described by a descriptive message which can optionally contain variable data. By logging usefal data from the right places, you can not only debug errors easily but also use the data to analyze the performance of the application. You could find and learn more information from [Logging HOWTO][logginghowto] or [Logging facility for Python][loggingfacility]. The following functions are the logging tools that provided by logging system:
@@ -212,7 +218,9 @@ The logging facility for python supports six fundamental logging level are given
 ### Example of Logging Tracking Events ###
 Here, you could go throught some examples of above logging system and might basically understand how to use them 
 
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb">import logging
+<details markdown=block>
+<summary markdown=span>*overflowError.py*</summary>
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb" style="font-size: 80%">import logging
 
 if __name__ == "__main__":
     logging.basicConfig(filename='test.log', filemode='w+',
@@ -231,7 +239,7 @@ if __name__ == "__main__":
     except KeyError:
         logging.exception("Exception occurred", exc_info=True)
         warnings.warn(message="%r's age is unknown." %person, category=UserWarning, stacklevel=2)
-</span></code></pre></div>
+</span></code></pre></div></details>
 
 ## Conculsion ##
 Python logging and exception are simple and well standardized, due to its powerful framework built into the standard library. Practical Programming with logging and exception handling might greatly simplify the entire handling process.

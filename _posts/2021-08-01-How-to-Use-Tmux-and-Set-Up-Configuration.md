@@ -16,13 +16,15 @@ Make sure your Unix-like terminal have been installed Tmux. Currently, the lates
 
 #### Install Tmux From Github Version Control ####
 
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb">Clone Tmux Repo:
+```
+Clone Tmux Repo:
 $ git clone https://github.com/tmux/tmux.git
 
 Auto Build Tmux Source Code and Installation:
 $ cd tmux
 $ sh autogen.sh
-$ ./configure && make</span></code></pre></div>
+$ ./configure && make
+```
 
 #### The Concept of Tmux ####
 
@@ -44,20 +46,21 @@ There are three ways to issue commands to tmux:
 
 To start the Tmux, you could simply type the following commands in your console.
 
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb">Start with new session name:
-$ tmux new -s &lt;SessionName&gt;
+```
+Create a new session:
+$ tmux new -s <SessionName>
 
 List sessions:
 $ tmux ls
 
 Kill session:
-$ tmux kill-session -t &lt;SessionName&gt;
+$ tmux kill-session -t <SessionName>
 
 Kill all sessions but keep the current:
 $ tmux kill-session -a
 
 Attach to a specific session:
-$ tmux attach -t &lt;SessionName&gt;
+$ tmux attach -t <SessionName>
 
 Attach the last session:
 $ tmux attach
@@ -66,7 +69,7 @@ $ tmux a
 Detach from the session:
 $ tmux detach
 $ tmux -d
-</span></code></pre></div>
+```
 
 For example, to get a list of all tmux sessions that you created before, you could just type "$ tmux ls" and check all the session name, when to be created, and how many windows be created in the session. 
 <figure>List four Tmux sessions:<a><img src="{{ site.baseurl }}/picture/tmux_list_session.png" width="100%"></a></figure>
@@ -190,7 +193,9 @@ You may find and learn more information from [OpenBSD: tmux][openbsdtmux]
 ## Tmux Configuration ##
 The basic tmux could be configured to personalize the tmux experience that supercharges your tmux and builds comfortable terminal environment. I'm sharing my simple [.tmux.conf][tmuxconf] file as template. These uses remapping, mouse-mode, and bind command, etc. You can try this as your .tmux.conf after backing up yours or as the reference. The configuration file should be located under the home directory.
 
-<div class="language-shell highlighter-rouge"><pre class="highlight">Simple template of .tmux.conf<code class="hljs ruby"><span class="nb"># reload config file (change file location to your the tmux.conf you want to use)
+<details markdown=block>
+<summary markdown=span>*.tmux.conf*</summary>
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb" style="font-size: 80%"># reload config file (change file location to your the tmux.conf you want to use)
 bind r source-file ~/.tmux.conf
 
 # remap prefix from 'C-b' to 'C-a'
@@ -247,7 +252,7 @@ set -sg escape-time 0
 
 # Activity Monitoring
 setw -g monitor-activity on
-set -g visual-activity on</span></code></pre></div>
+set -g visual-activity on</span></code></pre></div></details>
 
 You may find and learn more information from [OpenBSD: tmux][openbsdtmux]
 
@@ -256,10 +261,14 @@ You may find and learn more information from [OpenBSD: tmux][openbsdtmux]
 Like Vim, to add new tmux plugins, we can either manually install themes to employ a pluging manager. It is recommended to install [Tmux Plugin Manager][tmuxplugmanager] and further add new plugins. There are two tmux plugins that can help with restart tmux which running programs when you shut down your computer: [Tmux Resurrect][tmuxresurrect]
 
 First, we need to clone TPM repo:
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb">$ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm</span></code></pre></div>
+```
+$ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+```
 
 Then we configure new plugins to .tmux.conf,
-<div class="language-shell highlighter-rouge"><pre class="highlight">Example of Adding tmux plugins<code class="hljs ruby"><span class="nb">#--------------
+<details markdown=block>
+<summary markdown=span>*.tmux.conf*</summary>
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb" style="font-size: 80%">#--------------
 # Install Tmux plugins
 #--------------
 # List of plugins
@@ -267,11 +276,14 @@ set -g @plugin 'tmux-plugins/tpm'
 set -g @plugin 'tmux-plugins/tmux-resurrect'
 
 # Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
-run -b '~/.tmux/plugins/tpm/tpm'</span></code></pre></div>
+run -b '~/.tmux/plugins/tpm/tpm'
+...</span></code></pre></div></details>
 
 Finally, reloading tmux config to install the plugins by Command-Mode (:source-file ~/.tmux.conf) or Shortcut (Prefix + I). If the installation of plugin was successful, we would see the following information.
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb">TMUX environment reloaded.
-Done, press ENTER to continue.</span></code></pre></div>
+<details markdown=block>
+<summary markdown=span>*display statement*</summary>
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb" style="font-size: 80%">TMUX environment reloaded.
+Done, press ENTER to continue.</span></code></pre></div></details>
 
 #### Save and Restore Tmux Environment ####
 
