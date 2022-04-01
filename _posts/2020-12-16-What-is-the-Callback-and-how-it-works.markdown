@@ -4,6 +4,7 @@ title: What is the callback and how it works by C programming
 date: 2020-12-16 00:32
 tags: [C_C_plus_plus]
 ---
+[UPDATED: 2022/04/01]
 
 In computer programming, a callback function is any executable code that is passed an argument to other code; the other code is expected to call back (execute) the argument at the given time. Callbacks have a wide variety of uses. For example in error signaling, a Unix program might want to handle the termination properly when receiving SIGTERM and then would register the cleanup function as a callback. 
 
@@ -12,9 +13,9 @@ In computer programming, a callback function is any executable code that is pass
 Here, I took a simple example of how to allow to register the callback function in C and then pass a content. Hope it would be helpful to understand. :)  
 
 #### Example ####
-<pre class="highlight">
-callback_example.h
-<code class="hljs"><span class="nb">typedef void (*callback_type) (void *msg, void *content, bool flag);
+<details markdown=block>
+<summary markdown=span>*callback_example.h*</summary>
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb" style="font-size: 80%">typedef void (*callback_type) (void *msg, void *content, bool flag);
 
 typedef struct _MyMsg {
     int appId; /*!< Description */
@@ -23,12 +24,11 @@ typedef struct _MyMsg {
 
 void notification_callback(void* msg, void* content, bool flag);
 
-void register_notification(callback_type callback, void *msg, void *content, bool flag);
+void register_notification(callback_type callback, void *msg, void *content, bool flag);</span></code></pre></div></details>
 
-</span></code></pre>
-
-<pre class="highlight">
-callback_example.c<code class="hljs"><span class="nb">#include "callback_example.h"
+<details markdown=block>
+<summary markdown=span>*callback_example.c*</summary>
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb" style="font-size: 80%">#include "callback_example.h"
 
 void register_notification(callback_type callback, void *msg, void *content, bool flag) 
 {
@@ -45,10 +45,12 @@ void notification_callback(void* msg, void* content, bool flag)
     }
 
     strcpy(m_msg->msgbody, content); 
-}</span></code></pre>
+}</span></code></pre></div></details>
 
-<pre class="highlight">
-main.c<code class="hljs"><span class="nb">#include "callback_example.h"
+
+<details markdown=block>
+<summary markdown=span>*main.c*</summary>
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb" style="font-size: 80%">#include "callback_example.h"
 
 int main(void)
 {
@@ -66,11 +68,12 @@ int main(void)
     printf("ID: %d, Message: %s\n", msg.appId, msg.msgbody);
 
     return 0;
-}
-</span></code></pre>
+}</span></code></pre></div></details>
 
-<pre class="highlight">
-Makefile<code class="hljs"><span class="nb">CC = gcc
+
+<details markdown=block>
+<summary markdown=span>*Makefile*</summary>
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb" style="font-size: 80%">CC = gcc
 CFLAGS = -g -Wall
 ODIR = obj
 SDIR = src
@@ -88,17 +91,18 @@ main: main.c
 .PHONY: clean
 
 clean:
-    rm -f $(ODIR)/*.o $(OUT)
-</span></code></pre>
+    rm -f $(ODIR)/*.o $(OUT)</span></code></pre></div></details>
 
-#### The Expectation Result ####
-<pre class="highlight"><code class="hljs"><span class="nb">$ ./exe/callback
+#### The Expected Result ####
+
+<details markdown=block>
+<summary markdown=span>*execution of statment*</summary>
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb" style="font-size: 80%">$ ./exe/callback
 ID: 1, Message: Hello World!
 
-ID: 2, Message: This is a test</span></code></pre>
+ID: 2, Message: This is a test</span></code></pre></div></details>
 
 Now, we could observe that the calling function can pass whatever parameters it wishes to the called functions. The code that passes a callback to a calling function does not need to know the parameter values that will be passed to the function.
-
 
 ## Reference ##
 
