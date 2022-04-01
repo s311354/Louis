@@ -25,7 +25,10 @@ tags: [Singal_Process]
   Because downsampling by $$ M $$ may causes aliasing, the input signal should need the low-pass filter to prevent this aliasing.
 
 #### Example. Comparison of orignal signal, signal with zero padding and signal after downsampling
-<div class="language-shell highlighter-rouge"><pre class="highlight" style="font-size:12px"><code class="hljs ruby"><span class="nb">% Sampling rate
+
+<details markdown=block>
+<summary markdown=span>*downsampling.m*</summary>
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb" style="font-size: 80%">% Sampling rate
 fs = 1000;
 % time duration (0 ~ 1 sec)
 t = 0 : 1/fs : 1 - 1/fs;
@@ -75,7 +78,8 @@ hold on
 plot([-L1_dwn/2 : (L1_dwn/2 -1)]*fs/L1_dwn, fftshift(abs(X1_dwn)))
 legend('X1','X1 zero padding', 'X1 downsampling')
 xlabel('Frequency (Hz)')
-ylabel('Magnitude')</span></code></pre></div>
+ylabel('Magnitude')</span></code></pre></div></details>
+
 
 Result: (Amplitude)
 <figure><center><img src="{{ site.baseurl }}/picture/downsampled_amp.png" width="100%"></center></figure>
@@ -90,7 +94,9 @@ Example: Synthesising Finite Impulse Response Low-pass filter
 
 In this example, the length of FIR low-pass filter is 32 and the sample rate is 512. And using frequency response of digital filter to calculate the fs-point frequency response vector $$ h $$ and the corresponding angular frequency vector $$ w $$ for the digital filter with transfer function coefficients stored in B and A.  
 
-<div class="language-shell highlighter-rouge"><pre class="highlight" style="font-size:12px"><code class="hljs ruby"><span class="nb">% Sample rate
+<details markdown=block>
+<summary markdown=span>*lowpassFilter.m*</summary>
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb" style="font-size: 80%">% Sample rate
 fs = 512;
 
 % define the frequency response
@@ -122,7 +128,7 @@ A = [1];
 %Plot
 plot(w, abs(h));
 xlabel('Normalised Frequency')
-ylabel('|H(w)|')</span></code></pre></div>
+ylabel('|H(w)|')</span></code></pre></div></details>
 
 Result:
 <figure><center><img src="{{ site.baseurl }}/picture/low_pass_filter.png" width="80%"></center></figure>
@@ -131,7 +137,10 @@ Result:
    The zero-padding means changing the DFT-lenght $$ N $$ without adding more signal(i.e., information), which just results on a denser sampling of the underlying DTFT of the signal. To put it simply, the visible sampling on a denser frequency grid is achieved by zero-padding.
 
 Example: FFT without zero-padding
-<div class="language-shell highlighter-rouge"><pre class="highlight" style="font-size:12px"><code class="hljs ruby"><span class="nb">% Sample rate
+
+<details markdown=block>
+<summary markdown=span>*fft.m*</summary>
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb" style="font-size: 80%">% Sample rate
 fs = 1000;
 % time duration (0 ~ 1 sec)
 t = 0 : 1/fs : 1 - 1/fs;
@@ -154,7 +163,7 @@ ylabel('Amplitude')
 subplot(2, 1, 2); 
 plot([-L1/2 : (L1/2 -1)]*fs/L1, fftshift(abs(X1)))
 xlabel('Frequency (Hz)')
-ylabel('Magnitude')</span></code></pre></div>
+ylabel('Magnitude')</span></code></pre></div></details>
 
 Result:
 <figure>
@@ -162,7 +171,10 @@ Result:
 </figure>
 
 Example: FFT with zero-padding
-<div class="language-shell highlighter-rouge"><pre class="highlight" style="font-size:12px"><code class="hljs ruby"><span class="nb">% Sample rate
+
+<details markdown=block>
+<summary markdown=span>*fftZeroPadding.m*</summary>
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb" style="font-size: 80%">% Sample rate
 fs = 1000;
 % time duration (0 ~ 1 sec)
 t = 0 : 1/fs : 1 - 1/fs;
@@ -187,15 +199,15 @@ ylabel('Amplitude')
 subplot(2, 1, 2);
 plot([-L1/2 : (L1/2 -1)]*fs/L1, fftshift(abs(X1)))
 xlabel('Frequency (Hz)')
-ylabel('Magnitude')</span></code></pre></div>
+ylabel('Magnitude')</span></code></pre></div></details>
 
 Result:
 <figure>
 <a><img src="{{ site.baseurl }}/picture/with_zero_padding.png"></a>
 </figure>
 
-#### Convolution in matlab
-##### Syntax
+## Convolution in matlab
+#### Syntax
 <div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb">w = conv(u,v,shape)</span></code></pre></div>
 , where the shape is specified as 'full'| 'same' | 'valid'.
 
@@ -214,7 +226,6 @@ $$\left[ 1 2 1 \right] * \left[ 1 1 \right] = \left[ 3 3 \right]$$
 The diagrammatic convolution in matlab:
 <figure>
 <a><img src="{{ site.baseurl }}/picture/convolution.png"></a>
-<figcaption>diagrammatic convolution</figcaption>
 </figure>
 
 =========== To be continued.... ==========
