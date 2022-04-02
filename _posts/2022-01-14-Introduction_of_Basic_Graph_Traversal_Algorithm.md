@@ -2,7 +2,7 @@
 layout: post
 title:   "Overview of Basic Graph Traversal Algorithm and Google Testing"
 date:    2022-01-14
-tags:    [C_C_plus_plus, Python, Algorithms]
+tags: [Algorithms, C_C_plus_plus, Python]
 ---
 [UPDATED: 2022/04/02]
 
