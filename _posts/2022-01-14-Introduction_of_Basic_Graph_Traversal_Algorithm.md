@@ -1,19 +1,20 @@
 ---
 layout: post
-title:   "Overview of Basic Graph Traversal Algorithm and Google testing"
+title:   "Overview of Basic Graph Traversal Algorithm and Google Testing"
 date:    2022-01-14
-tags:    [C_C_plus_plus, Algorithms]
+tags:    [C_C_plus_plus, Python, Algorithms]
 ---
-[UPDATED: 2022/03/21]
+[UPDATED: 2022/04/02]
 
 "Graph theory is the study of graphs, which are mathematical structures used to model pairwise relations between objects. A graph in this context is made up of vertices (also called nodes or points) which are connected by edges (also called links or lines). A distinction is made between undirected graphs, where edges link two vertices symmetrically, and directed graphs, where edges link two vertices asymmertically. Graphs are one of the principal objects of study in discrete mathematics." from Wiki page.
 
 ## Brief ##
-Recently, I explored the implemenation of graphs and BFS/DFS, and discovered its algorithm. It should be grateful that I have learned the fundamentals of mathematics and programming in college, so that I could learn and get a basic understanding of how the graph traversal algorithm work, and further make the computer do it. In this post, I would like to discuss the basic concepts, practice the simple implemenation of BFS and DFS with the directed graph and use googletest to do the unit test.
+Recently, I explored the implemenation of graphs, BFS/DFS algorithm and shortest path problem, and discovered its algorithm. It should be grateful that I have learned the fundamentals of mathematics and programming in college, so that I could learn and get a basic understanding of how the graph traversal algorithm work, and further make the computer do it. In this post, I would like to discuss the basic concepts, practice the simple implemenation of BFS and DFS with the directed graph and use googletest to do the unit test.
 
 ## Graph Search Algorithm ##
-In computer science, a graph is an abstract data type that is meant to implement the undirected fraph and directed graph concept from the field of a graph theory. A graph data structure consists of a finite set of vertices, together with a set of unordered or ordered paired of these vertices. The graph search (also known as graph traversal) algorithm uses a recursion and linked list based stack to determine a route from a single point on a graph to another single point on a graph. In addition to the structure, there are two basic types of graph search: breadth-first search and depth-first search. The major difference between those two type is that the data structure requires a queue (BFS) or stack (DFS). 
+In computer science, a graph is an abstract data type that is meant to implement the undirected fraph and directed graph concept from the field of a graph theory. A graph data structure consists of a finite set of vertices, together with a set of unordered or ordered paired of these vertices. The graph search (also known as graph traversal) algorithm uses a recursion and linked list based stack to determine a route from a single point on a graph to another single point on a graph. In addition to the structure, there are two basic types of graph search: breadth-first search and depth-first search. The major difference between those two type is that the data structure requires a queue (BFS) or stack (DFS).
 
+### Directed Graph ###
 Here, I recapped and practiced the [simple C++ BFS/DFS implemenation][grapg] with directed graph initially inspired by [Practice Directed Graph][directedgraph] then reworked. The basic functions for the directed graph are as follows:
 <figure><center><img src="{{ site.baseurl }}/picture/graph_search.png" width="40%"> Ordered paired, Unweight and Directed Graph Database</center></figure>
 - BFS (Breadth-first search): use queue and traverse all the connected nodes
@@ -40,23 +41,115 @@ Here, I recapped and practiced the [simple C++ BFS/DFS implemenation][grapg] wit
     graph_node->BFS();
 }</span></code></pre></div></details>
 
-### Breadth-first Search ###
-Breadth First Search is traversing algorithm where you should start traversing from a selected node (source or parent node) and traverse the graph layerwise thus exploring the neighbour nodes. In other words, it starts at the tree root and explores all nodes at the present depth prior to moving on to the nodes at the next depth level. In addition to the traverse, BFS might be the easiest one to understand because the only data structure it requires is a queue. Here is the output of BFS traversal route in my implemenation:
+#### Breadth-first Search ####
+Breadth First Search is traversing algorithm where you should start traversing from a selected node (source or parent node) and traverse the graph layerwise thus exploring the neighbour nodes. In other words, it starts at the tree root and explores all nodes at the present depth prior to moving on to the nodes at the next depth level. In addition to the traverse, BFS might be the easiest one to understand because the only data structure it requires is a queue. 
 
+Here is the output of BFS traversal route in my implemenation:
 <details markdown=block>
 <summary markdown=span>*print statement*</summary>
 <div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb" style="font-size: 60%">---------------------
 BFS:
 0 1 5 2 8 4 6 1 2 3 4 5 6 7 8</span></code></pre></div></details>
 
-### Depth-first Search ###
-Depth First Search is a recursive algorithm that uses the idea of backtracking. It involves searches of all the nodes by going ahead if possible, else by backtracking. In other words, it starts at the root (selectinh some arbitrary node) and explores as far as possible along each branch before backtracking. Here is the output of DFS traversal route in my implemenation:
+#### Depth-first Search ####
+Depth First Search is a recursive algorithm that uses the idea of backtracking. It involves searches of all the nodes by going ahead if possible, else by backtracking. In other words, it starts at the root (selectinh some arbitrary node) and explores as far as possible along each branch before backtracking. 
 
+Here is the output of DFS traversal route in my implemenation:
 <details markdown=block>
 <summary markdown=span>*print statement*</summary>
 <div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb" style="font-size: 60%">---------------------
 DFS:
 0 5 8 1 2 6 4 1 2 3 4 5 6 7 8</span></code></pre></div></details>
+
+### Undirected Graph ###
+
+Here, I recapped and practiced the simple python BFS/DFS implemenation with undirected graph matrix initially inspired by [Practice Undirected Graph Matrix][undirectedmatrix] then reworked. The basic functions for the undirected graph are as follows:
+<figure><center><img src="{{ site.baseurl }}/picture/undirected_graph_matrix.png" width="30%"></center></figure>
+- BFS (Breadth-first search): use queue and traverse all the connected nodes
+- DFS (Depth-first search) using recursion: use stack and traverse all the connected nodes using recursion
+- DFS  (Breadth-first search) using iteration: use stack and traverse all the connected nodes using iteration
+
+<details markdown=block>
+<summary markdown=span>*undirected_graph_matrix.py*</summary>
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb" style="font-size: 60%">def get_test_graph():
+    udg = UndirectedGraph(9)
+    udg.add_edge(0, 1)
+    udg.add_edge(1, 2)
+    udg.add_edge(2, 3)
+    udg.add_edge(1, 7)
+    udg.add_edge(3, 7)
+    udg.add_edge(7, 8)
+    udg.add_edge(3, 4)
+    udg.add_edge(3, 5)
+    udg.add_edge(4, 5)
+    udg.add_edge(5, 6)
+    udg.add_edge(6, 7)
+    udg.add_edge(6, 8)
+
+    udg.bfs()</span></code></pre></div></details>
+
+Here is the output of BFS traversal route in my implemenation:
+<details markdown=block>
+<summary markdown=span>*print statement*</summary>
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb" style="font-size: 60%">$ python3 undirected_graph_matrix.py
+0 1
+1 0
+1 2
+1 7
+2 3
+7 6
+7 8
+3 4</span></code></pre></div></details>
+
+## Shortest Path Problem ##
+
+In graph theory, the shortest path problem is the problem of finding a path betweenn two vertices (or nodes) in a graph such that the sum of the weights of it consitiuent edges is minimized.
+
+The problem of finding the shortest path between two intersections on a road map may be modeled as a special case of the shortest path problem in graphs, where the vertices correspond to intersections and the edges correspond to road segments, each weighted by the length of the segment.
+
+The most important algorithms for solving this problem are:
+- Dijkstra's algorithm: solves the single-source shortest path problem with non-negative edge weight.
+- Bellman-Ford algorithm: solves the single-source problem if edge weight may be negative.
+
+Here, I recapped and practiced the Dijkstra's algorithm with undirected graph initially inspired by [Undirected graphs weighted][undirected] then learned how it implements. The basic functions for the undirected graph are as follows:
+
+<figure><center><img src="{{ site.baseurl }}/picture/dijkstra.png" width="30%"></center></figure>
+
+- Add edges in the graph and iterally get vertex: pointing out all of vertices in the undirected graph
+- Dijkstra's algorithm: use priority queue and traversal all the connected nodes
+
+<details markdown=block>
+<summary markdown=span>*undirected_graph_weighted.py*</summary>
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb" style="font-size: 60%">def main():
+    g = GraphUndirectedWeighted(9)
+    g.add_edge(0, 1, 4)
+    g.add_edge(1, 7, 6)
+    g.add_edge(1, 2, 1)
+    g.add_edge(2, 3, 3)
+    g.add_edge(3, 7, 1)
+    g.add_edge(3, 4, 2)
+    g.add_edge(3, 5, 1)
+    g.add_edge(4, 5, 1)
+    g.add_edge(5, 6, 1)
+    g.add_edge(6, 7, 2)
+    g.add_edge(6, 8, 2)
+    g.add_edge(7, 8, 2)
+
+    shortest_path, distance = g.dijkstra(0, 8)
+    assert shortest_path == [0, 1, 2, 3, 7, 8] and distance == 11
+    print("The Shortest path from source 0 to destionation 8 is", distance) 
+
+if __name__ == "__main__":
+    main()</span></code></pre></div></details>
+
+### Dijkstra's Algorithm ###
+
+Dijkstra'a algorithm initially starts with infinite distances and then try to improve them step by step to find the shortest path from a single source to the closest of a set of target nodes on finite graph. Continue this porcess of updating the neighbour intersections with the shortest distance, marking the current intersectiob as visited, and moving onto a closest unvisited intersection until you have marked the destination as visited.
+
+<details markdown=block>
+<summary markdown=span>*print statement*</summary>
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb" style="font-size: 80%">$ python3 undirected_graph_weighted.py
+The Shortest path from source 0 to destionation 8 is 11</span></code></pre></div></details>
 
 ## Exercises ##
 <h6><ol>
@@ -396,6 +489,10 @@ The basic functions for determining unsurrounded regions are as follows:
 
 [5] [Wiki: Bridge (graph theory)](https://en.wikipedia.org/wiki/Bridge_(graph_theory))
 
+[6] [Why use Dijkstra's Algorithm if Breadth First Search (BFS) can do the same thing faster?](https://stackoverflow.com/questions/3818079/why-use-dijkstras-algorithm-if-breadth-first-search-bfs-can-do-the-same-thing)
+
+[7] [Shortest path problem](https://en.wikipedia.org/wiki/Shortest_path_problem)
+
 [infotheory]:https://en.wikipedia.org/wiki/Information_theory "https://en.wikipedia.org/wiki/Information_theory"
 
 [grapg]:https://github.com/s311354/practice_common_alogrithm/tree/Master/graphs "https://github.com/s311354/practice_common_alogrithm/tree/Master/graphs"
@@ -407,5 +504,11 @@ The basic functions for determining unsurrounded regions are as follows:
 [critical1]: https://leetcode.com/problems/critical-connections-in-a-network/discuss/929563/C%2B%2B-oror-using-Tarjan's-algorithmoror-Intuition-of-Tarjan's-algo-(video-link) "https://leetcode.com/problems/critical-connections-in-a-network/discuss/929563/C%2B%2B-oror-using-Tarjan's-algorithmoror-Intuition-of-Tarjan's-algo-(video-link)"
 
 [critical2]:https://leetcode.com/problems/critical-connections-in-a-network/discuss/1376800/C%2B%2B-oror-DFS-oror-Easy-Solution-oror-Tarjan's-Algorithm-oror-Graph-oror-85 "https://leetcode.com/problems/critical-connections-in-a-network/discuss/1376800/C%2B%2B-oror-DFS-oror-Easy-Solution-oror-Tarjan's-Algorithm-oror-Graph-oror-85"
+
+[undirected]:https://github.com/jwasham/practice-python/blob/master/graphs/undirected_graph_weighted.py "https://github.com/jwasham/practice-python/blob/master/graphs/undirected_graph_weighted.py"
+
+
+
+[undirectedmatrix]:https://github.com/jwasham/practice-python/blob/master/graphs/undirected_graph_matrix.py "https://github.com/jwasham/practice-python/blob/master/graphs/undirected_graph_matrix.py"
 
 <p>Thanks for reading! Feel free to leave the comments below or <a href="mailto:qazqazqaz850@gmail.com">email</a> to me. Any pieces of advice or discussions are always welcome. :)</p>
