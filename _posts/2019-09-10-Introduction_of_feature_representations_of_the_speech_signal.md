@@ -60,24 +60,13 @@ The GFCC is based on a set of Gammatone Filter banks and the speech signal is mu
 =========== To be continued.... ==========
 
 ## Reference
-[1] [PLP and RASTA (and MFCC, and inversion) in Matlab](https://labrosa.ee.columbia.edu/matlab/rastamat/)
 
-[2] [Mel-frequency cepstrum](https://en.wikipedia.org/wiki/Mel-frequency_cepstrum)
+[1] [Mel-frequency cepstrum](https://en.wikipedia.org/wiki/Mel-frequency_cepstrum)
 
-[3] [Rasta filtering](https://en.wikipedia.org/wiki/Rasta_filtering)
+[2] [GAMMATONE AND MFCC FEATURES IN SPEAKER RECOGNITION](https://repository.lib.fit.edu/bitstream/handle/11141/458/Burgos%2c%20Wilson%2c%20Gammatone%20and%20MFCC....pdf?sequence=1&isAllowed=y)
 
-[4] [GAMMATONE AND MFCC FEATURES IN SPEAKER RECOGNITION](https://repository.lib.fit.edu/bitstream/handle/11141/458/Burgos%2c%20Wilson%2c%20Gammatone%20and%20MFCC....pdf?sequence=1&isAllowed=y)
+[3] [Robust Speaker Veriﬁcation UsingGFCC Based i-Vectors](https://www.researchgate.net/publication/309149564_Robust_Speaker_Verification_Using_GFCC_Based_i-Vectors)
 
-[5] [Robust Speaker Veriﬁcation UsingGFCC Based i-Vectors](https://www.researchgate.net/publication/309149564_Robust_Speaker_Verification_Using_GFCC_Based_i-Vectors)
+[4] [Chapter 9: Automatic Speech Recognition](http://www.cs.columbia.edu/~julia/courses/CS6998-2019/%5B09%5D%20Automatic%20Speech%20Recognition.pdf)
 
-[6] [Mel-frequency cepstral coefficients (MFCCs) and gammatone filter banks](http://www.cs.tut.fi/~sgn14006/PDF2015/S04-MFCC.pdf)
-
-[7] [Chapter 9: Automatic Speech Recognition](http://www.cs.columbia.edu/~julia/courses/CS6998-2019/%5B09%5D%20Automatic%20Speech%20Recognition.pdf)
-
-[8] [CS 224S / LINGUIST 285 Spoken Language Processing](https://web.stanford.edu/class/cs224s/lectures/224s.17.lec5.pdf)
-
-## Note
-<p>If you have any constructive criticism or advises, leave the comments below or feel free to email me @qazqazqaz850@gmail.com.
-
-Hope this post will help! :)
-</p>
+<p>Thanks for reading! Feel free to leave the comments below or <a href="mailto:qazqazqaz850@gmail.com">email</a> to me. Any pieces of advice or discussions are always welcome. :)</p>

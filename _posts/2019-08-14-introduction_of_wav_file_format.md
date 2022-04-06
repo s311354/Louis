@@ -366,11 +366,4 @@ Frame = 0
 
 [2] [WAVE PCM soundfile format](http://soundfile.sapp.org/doc/WaveFormat/)
 
-[3] [Parsing a WAV file in C](http://truelogic.org/wordpress/2015/09/04/parsing-a-wav-file-in-c/)
-
-[4] [Parsing a WAV file in C](https://github.com)
-
-<p>Feel free to leave the comments below or <a href="mailto:qazqazqaz850@gmail.com">email</a> to me.
-
-Hope this post will help! :)
-</p>
+<p>Thanks for reading! Feel free to leave the comments below or <a href="mailto:qazqazqaz850@gmail.com">email</a> to me. Any pieces of advice or discussions are always welcome. :)</p>
