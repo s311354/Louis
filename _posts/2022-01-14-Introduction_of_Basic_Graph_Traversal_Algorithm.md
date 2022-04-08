@@ -86,7 +86,8 @@ Here, I recapped and practiced the simple python BFS/DFS implemenation with undi
     udg.add_edge(6, 7)
     udg.add_edge(6, 8)
 
-    udg.bfs()</span></code></pre></div></details>
+    udg.bfs()
+    udg.dfs_iterative()</span></code></pre></div></details>
 
 Here is the output of BFS traversal route in my implemenation:
 <details markdown=block>
@@ -99,7 +100,22 @@ Here is the output of BFS traversal route in my implemenation:
 2 3
 7 6
 7 8
-3 4</span></code></pre></div></details>
+3 4
+3 5</span></code></pre></div></details>
+
+Here is the output of DFS traversal route in my implemenation:
+<details markdown=block>
+<summary markdown=span>*print statement*</summary>
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb" style="font-size: 80%">$ python3 undirected_graph_matrix.py
+0 1
+1 0
+1 2
+1 7
+7 3
+7 6
+7 8
+6 5
+5 4</span></code></pre></div></details>
 
 ## Shortest Path Problem ##
 
@@ -506,8 +522,6 @@ The basic functions for determining unsurrounded regions are as follows:
 [critical2]:https://leetcode.com/problems/critical-connections-in-a-network/discuss/1376800/C%2B%2B-oror-DFS-oror-Easy-Solution-oror-Tarjan's-Algorithm-oror-Graph-oror-85 "https://leetcode.com/problems/critical-connections-in-a-network/discuss/1376800/C%2B%2B-oror-DFS-oror-Easy-Solution-oror-Tarjan's-Algorithm-oror-Graph-oror-85"
 
 [undirected]:https://github.com/jwasham/practice-python/blob/master/graphs/undirected_graph_weighted.py "https://github.com/jwasham/practice-python/blob/master/graphs/undirected_graph_weighted.py"
-
-
 
 [undirectedmatrix]:https://github.com/jwasham/practice-python/blob/master/graphs/undirected_graph_matrix.py "https://github.com/jwasham/practice-python/blob/master/graphs/undirected_graph_matrix.py"
 
