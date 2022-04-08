@@ -22,6 +22,7 @@ Here, I recapped and practiced the [simple C++ BFS/DFS implemenation][grapg] wit
 - Detect Cycle in a Directed Graph: check whether the graph contains a cycle or not
 - Iterate in a Directed Graph:  pointing to all of vertices in the directed graph
 
+Here is the C++ interface of graph traversing:
 <details markdown=block>
 <summary markdown=span>*directedGraph.cc*</summary>
 <div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb" style="font-size: 60%">int main(int argc, char *argv[])
@@ -41,20 +42,46 @@ Here, I recapped and practiced the [simple C++ BFS/DFS implemenation][grapg] wit
     graph_node->BFS();
 }</span></code></pre></div></details>
 
+Here is the Python interface of graph traversing:
+<details markdown=block>
+<summary markdown=span>*directedGraph.py*</summary>
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb" style="font-size: 60%">def main():
+    dg = DirectedGraph()
+    dg.add_edge(0, 1)
+    dg.add_edge(0, 5)
+    dg.add_edge(1, 2)
+    dg.add_edge(2, 4)
+    dg.add_edge(2, 6)
+    dg.add_edge(3, 2)
+    dg.add_edge(5, 8)
+    dg.add_edge(6, 5)
+    dg.add_edge(7, 5)
+
+    p1 = dg1.bfs()
+
+if __name__ == '__main__':
+    main()</span></code></pre></div></details>
+
+
 #### Breadth-first Search ####
 Breadth First Search is traversing algorithm where you should start traversing from a selected node (source or parent node) and traverse the graph layerwise thus exploring the neighbour nodes. In other words, it starts at the tree root and explores all nodes at the present depth prior to moving on to the nodes at the next depth level. In addition to the traverse, BFS might be the easiest one to understand because the only data structure it requires is a queue. 
 
-Here is the output of BFS traversal route in my implemenation:
+Here is the C++ output of BFS traversal route implemenation:
 <details markdown=block>
 <summary markdown=span>*print statement*</summary>
 <div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb" style="font-size: 60%">---------------------
 BFS:
 0 1 5 2 8 4 6 1 2 3 4 5 6 7 8</span></code></pre></div></details>
 
+Here is the python output of BFS traversal route implemenation:
+<details markdown=block>
+<summary markdown=span>*print statement*</summary>
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb" style="font-size: 60%">{1: 0, 5: 0, 2: 1, 8: 5, 4: 2, 6: 2}</span></code></pre></div></details>
+
 #### Depth-first Search ####
 Depth First Search is a recursive algorithm that uses the idea of backtracking. It involves searches of all the nodes by going ahead if possible, else by backtracking. In other words, it starts at the root (selectinh some arbitrary node) and explores as far as possible along each branch before backtracking. 
 
-Here is the output of DFS traversal route in my implemenation:
+Here is the output of DFS traversal route implemenation:
 <details markdown=block>
 <summary markdown=span>*print statement*</summary>
 <div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb" style="font-size: 60%">---------------------
@@ -87,9 +114,9 @@ Here, I recapped and practiced the simple python BFS/DFS implemenation with undi
     udg.add_edge(6, 8)
 
     udg.bfs()
-    udg.dfs_iterative()</span></code></pre></div></details>
+    udg.dfs_recursive()</span></code></pre></div></details>
 
-Here is the output of BFS traversal route in my implemenation:
+Here is the output of BFS traversal route implemenation:
 <details markdown=block>
 <summary markdown=span>*print statement*</summary>
 <div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb" style="font-size: 60%">$ python3 undirected_graph_matrix.py
@@ -103,19 +130,19 @@ Here is the output of BFS traversal route in my implemenation:
 3 4
 3 5</span></code></pre></div></details>
 
-Here is the output of DFS traversal route in my implemenation:
+Here is the output of DFS traversal route implemenation:
 <details markdown=block>
 <summary markdown=span>*print statement*</summary>
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb" style="font-size: 80%">$ python3 undirected_graph_matrix.py
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb" style="font-size: 60%">$ python3 undirected_graph_matrix.py
 0 1
 1 0
 1 2
-1 7
-7 3
-7 6
-7 8
-6 5
-5 4</span></code></pre></div></details>
+2 3
+3 4
+4 5
+5 6
+6 7
+7 8</span></code></pre></div></details>
 
 ## Shortest Path Problem ##
 
