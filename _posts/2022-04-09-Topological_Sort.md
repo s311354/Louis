@@ -126,4 +126,6 @@ Example: Input: N = 3, relations = [[1,3],[2,3]], Output: 2
 
 + [Data Structure Visualizations: Topological Sort (Indegree)](https://www.cs.usfca.edu/~galles/visualization/TopoSortIndegree.html)
 
++ [VISUALGO: GRAPH TRAVERSAL](https://visualgo.net/en/dfsbfs)
+
 <p>Thanks for reading! Feel free to leave the comments below or <a href="mailto:qazqazqaz850@gmail.com">email</a> to me. Any pieces of advice or discussions are always welcome. :)</p>
