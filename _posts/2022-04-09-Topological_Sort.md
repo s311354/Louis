@@ -65,6 +65,12 @@ Example: Input: numCourses = 2, prerequisites = [[1,0]], Output: true
     }
     return numCourse == 0;
 }</span></code></pre></div></details>
+The solution was inspired by [LeetCode Discuss][discuss1]. The basic functions for caculating the all distinct solutions are as follows:
+- Iteral boys in a class to visit all of unmatched grils
+- DFS traversal and invite the adjacent girls in a class
+- If grid[i][j] == 1, then ith boy can invite the jth girl to the party
+- Recursively trying all possible pairs as we have to get maximum in result
+
 
 ### <a name="exercise2">Exercise 2 - Parallel Courses</a> ###
 There are N courses, labelled from 1 to N.
@@ -112,6 +118,12 @@ Example: Input: N = 3, relations = [[1,3],[2,3]], Output: 2
     }
     return count == numCourse ? semester : -1;
 }</span></code></pre></div></details>
+The solution was inspired by [LeetCode Discuss][discuss2]. The basic functions for caculating the all distinct solutions are as follows:
+- Iteral boys in a class to visit all of unmatched grils
+- DFS traversal and invite the adjacent girls in a class
+- If grid[i][j] == 1, then ith boy can invite the jth girl to the party
+- Recursively trying all possible pairs as we have to get maximum in result
+
 
 
 =========== To be continued…. ==========
@@ -127,5 +139,9 @@ Example: Input: N = 3, relations = [[1,3],[2,3]], Output: 2
 + [Data Structure Visualizations: Topological Sort (Indegree)](https://www.cs.usfca.edu/~galles/visualization/TopoSortIndegree.html)
 
 + [VISUALGO: GRAPH TRAVERSAL](https://visualgo.net/en/dfsbfs)
+
+
+[discuss1]:https://leetcode.com/problems/course-schedule/discuss/783816/c%2B%2B-topological-sort-solution-fast-and-easy-to-understand "https://leetcode.com/problems/course-schedule/discuss/783816/c%2B%2B-topological-sort-solution-fast-and-easy-to-understand"
+
 
 <p>Thanks for reading! Feel free to leave the comments below or <a href="mailto:qazqazqaz850@gmail.com">email</a> to me. Any pieces of advice or discussions are always welcome. :)</p>
