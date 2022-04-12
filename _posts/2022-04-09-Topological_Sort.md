@@ -18,9 +18,10 @@ The basic properties of topolgical sorting:
 <figure><center><img src="{{ site.baseurl }}/picture/toplogical_sort.png" width="100%"></center></figure>
 
 Note: The usual algorithms for topological sorting
-+ Kahn's algorithm: First, find a list of "start node" which have no incoming edges and insert them into a set S; at least one such node must exist in a non-empty actclic graph.
-+ Depth-first search: Loops through each node of the graph, in an arbitrary order, initiating a depth-first search that terminates when it hits any node that has already been visited since the beginning of the topological sort or the node has no outgoing edges.
-+ Parallel algorithms: Repeatedly removes the vertices of indegree 0 and adds them to the topological sorting in the order in which they were removed. Since the outgoing edges of the removed vertices vertices are also removed, there will be a new set of vertices of indegree 0, where the procedure is repeated until no vertices are left. Each iteration can be parallelized.
+
++ Kahn's algorithm: First, find a list of "start node" which have no incoming edges and insert them into a set S; at least one such node must exist in a non-empty actclic graph
++ Depth-first search: Loops through each node of the graph, in an arbitrary order, initiating a depth-first search that terminates when it hits any node that has already been visited since the beginning of the topological sort or the node has no outgoing edges
++ Parallel algorithms: Repeatedly removes the vertices of indegree 0 and adds them to the topological sorting in the order in which they were removed. Since the outgoing edges of the removed vertices vertices are also removed, there will be a new set of vertices of indegree 0, where the procedure is repeated until no vertices are left. Each iteration can be parallelized
 
 ## Exercises ##
 <h6><ol>
@@ -65,12 +66,13 @@ Example: Input: numCourses = 2, prerequisites = [[1,0]], Output: true
     }
     return numCourse == 0;
 }</span></code></pre></div></details>
-The solution was inspired by [LeetCode Discuss][discuss1]. The basic functions for caculating the all distinct solutions are as follows:
-- Iteral boys in a class to visit all of unmatched grils
-- DFS traversal and invite the adjacent girls in a class
-- If grid[i][j] == 1, then ith boy can invite the jth girl to the party
-- Recursively trying all possible pairs as we have to get maximum in result
 
+The solution was inspired by [LeetCode Discuss][discuss1]. The basic functions for caculating the all distinct solutions are as follows:
+
++ Initialize all vertices with indegree 0
++ Create directed graph and update the indegree
++ Parallel topological sorting and iterate through all the courses if indegree is zero then add it to queue
++ Count how many course will be finished and further determine whether or not all courses can be finished
 
 ### <a name="exercise2">Exercise 2 - Parallel Courses</a> ###
 There are N courses, labelled from 1 to N.
@@ -118,13 +120,11 @@ Example: Input: N = 3, relations = [[1,3],[2,3]], Output: 2
     }
     return count == numCourse ? semester : -1;
 }</span></code></pre></div></details>
-The solution was inspired by [LeetCode Discuss][discuss2]. The basic functions for caculating the all distinct solutions are as follows:
-- Iteral boys in a class to visit all of unmatched grils
-- DFS traversal and invite the adjacent girls in a class
-- If grid[i][j] == 1, then ith boy can invite the jth girl to the party
-- Recursively trying all possible pairs as we have to get maximum in result
-
-
+The basic functions for caculating the all distinct solutions are as follows:
++ Initialize all vertices with indegree 0
++ Create directed graph and update the indegree
++ Parallel topological sorting and iterate through all the courses if indegree is zero then add it to queue
++ Count how many courses will be finished and determine the minimum number of semesters needed to study all courses
 
 =========== To be continued…. ==========
 
@@ -140,8 +140,6 @@ The solution was inspired by [LeetCode Discuss][discuss2]. The basic functions f
 
 + [VISUALGO: GRAPH TRAVERSAL](https://visualgo.net/en/dfsbfs)
 
-
 [discuss1]:https://leetcode.com/problems/course-schedule/discuss/783816/c%2B%2B-topological-sort-solution-fast-and-easy-to-understand "https://leetcode.com/problems/course-schedule/discuss/783816/c%2B%2B-topological-sort-solution-fast-and-easy-to-understand"
-
 
 <p>Thanks for reading! Feel free to leave the comments below or <a href="mailto:qazqazqaz850@gmail.com">email</a> to me. Any pieces of advice or discussions are always welcome. :)</p>

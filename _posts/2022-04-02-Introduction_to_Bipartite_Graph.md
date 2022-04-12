@@ -96,7 +96,7 @@ bool Solutions::isBipartite( std::vector&;t; std::vector&;t;int&gt; &gt; & graph
     }
     return true;
 }</span></code></pre></div></details>
-The solution was inspired by [LeetCode Discuss][discuss1]. The basic functions  are same as above description implemented by python.
+The solution was inspired by [LeetCode Discuss][discuss1]. The basic functions are same as above description implemented by python.
 
 
 ### <a name="exercise2">Exercise 2 - Maximum Number of Accepted Invitations</a> ###
@@ -139,7 +139,7 @@ int Solutions::maximumInvitations( std::vector&;t; std::vector&;t;int&gt; &gt; &
     return matches;
 }</span></code></pre></div></details>
 The solution was inspired by [LeetCode Discuss][discuss2]. The basic functions for caculating the all distinct solutions are as follows:
-- Iteral boys in a class to visit all of unmatched grils
+- Iterate boys in a class to visit all of unmatched grils
 - DFS traversal and invite the adjacent girls in a class
 - If grid[i][j] == 1, then ith boy can invite the jth girl to the party
 - Recursively trying all possible pairs as we have to get maximum in result
