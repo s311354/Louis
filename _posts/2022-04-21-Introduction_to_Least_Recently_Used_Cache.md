@@ -34,6 +34,30 @@ def fib(n):
         return n
     return fib(n-1) + fib(n-2)</span></code></pre></div></details>
 
+
+Another simple example of operation using a cache to add two numbers:
+<details markdown=block>
+<summary markdown=span>*add_nums.py*</summary>
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb" style="font-size: 80%">from functools import lru_cache
+
+@lru_cache(None)
+def add(x, y):
+    print("calculating: %s + %s" % (x, y))
+    return x + y
+
+print(add(1, 2))
+print(add(1, 2))
+print(add(2, 3))
+</span></code></pre></div></details>
+
+<details markdown=block>
+<summary markdown=span>*print statement*</summary>
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb" style="font-size: 80%">$ python3 main.py                                                                      [13:48:34]
+calculating: 1 + 2
+3
+3
+calculating: 2 + 3</span></code></pre></div></details>
+
 ## Exercises ##
 Design a data structure that follows the constraints of a Least Recently Used (LRU) cache.
 
@@ -71,7 +95,7 @@ Output: [null, null, null, 1, null, -1, null, -1, 3, 4]
         if len(self.cache) &gt; self.capacity:
             # Delete LRU (bottom of key stack)
             del self.cache[next(iter(self.cache)</span></code></pre></div></details>
-I learned the solution from [LeetCode Discuss][discuss1].
+The solution was learned from [LeetCode Discuss][discuss1].
 
 =========== To be continued…. ==========
 
