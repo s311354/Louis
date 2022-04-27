@@ -12,16 +12,41 @@ The dynamic programming (DP) refers to simplifying a complicated problem by brea
 
 ### Properties ###
 There are two key properties that a problem must have in order of dynamic programming to be applicable:
-+ Optimal substructure:  the solution to given optimizationn problem can be obtained by the combination of optimal solutions to its sub-problems. Sub optimal substructures are usually described by means of recursion.
++ Optimal substructure: the solution to given optimizationn problem can be obtained by the combination of optimal solutions to its sub-problems. Sub optimal substructures are usually described by means of recursion.
 + Overlapping sub-problem: the space of sub-problems must be small, that is, any recursive algorithm solving the problem should solve the same sub-problems over and over, rather than generating new sub-problems.
 
 ## Exercises ##
 <h6><ol>
-    <li><a href="#exercise1">Exercise 1 - Best Time to Buy and Sell Stock</a></li>
-    <li><a href="#exercise2">Exercise 2 - Parallel Courses</a></li>
+    <li><a href="#exercise1">Exercise 1 - Min Cost Climbing Stairs</a></li>
+    <li><a href="#exercise2">Exercise 2 - Best Time to Buy and Sell Stock</a></li>
+    <li><a href="#exercise3">Exercise 3 - Parallel Courses</a></li>
 </ol></h6>
 
-### <a name="exercise1">Exercise 1 - Best Time to Buy and Sell Stock</a> ###
+### <a name="exercise1">Exercise 1 - Min Cost Climbing Stairs</a> ###
+You are given an integer array cost where cost[i] is the cost of ith step on a staircase. Once you pay the cost, you can either climb one or two steps.
+
+You can either start from the step with index 0, or the step with index 1.
+
+Return the minimum cost to reach the top of the floor.
+
+Example: Input: cost = [10,15,20], Output: 15
+
+#### Solution ####
+<details markdown=block>
+<summary markdown=span>*minCostClimbingStairs.cc*</summary>
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb" style="font-size: 60%">int Solutions::minCostClimbingStairs( std::vector&lt;int&gt; & cost) {
+    int n = cost.size();
+    std::vector&lt;int&gt; dp = cost;
+    for (int i = 2; i &lt; n; i++) {
+        dp[i] += std::min(dp[i-2], dp[i-1]);
+    }
+    return std::min(dp[n-2], dp[n-1]);
+}</span></code></pre></div></details>
+The solution was inspired by [LeetCode Discuss][discuss1]. The basic functions for caculating the minimal cost to reach the top of the floor are:
++ Iterate over 1 step or 2 step in the stairs and climb the minimal cost.
++ Determine the minimal cost when reaching the top of the floor.
+
+### <a name="exercise2">Exercise 2 - Best Time to Buy and Sell Stock</a> ###
 You are given an integer array prices where prices[i] is the price of a given stock on the ith day.
 
 On each day, you may decide to buy and/or sell the stock. You can only hold at most one share of the stock at any time. However, you can buy it then immediately sell it on the same day.
@@ -31,29 +56,24 @@ Find and return the maximum profit you can achieve.
 Example: Input: prices = [7,1,5,3,6,4], Output: 7
 
 #### Solution ####
-
 <details markdown=block>
 <summary markdown=span>*maxProfit.cc*</summary>
 <div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb" style="font-size: 60%">int Solutions::maxProfit( std::vector&lt;int&gt; & prices) {
     int curHold = INT_MIN, curProfit = 0;
-
     for (const int stockprice: prices) {
         int prevHold = curHold, preProfit = curProfit;
-
-        // Buy the in stock market today
+        // either keep holding stock in hand, or buy in new stock today at stock price
         curHold = std::max(prevHold, preProfit - stockprice);
-
-        // Sell in stock market today
+        // either keep having no stock in hand, or sell out the stock today at stock price
         curProfit = std::max(preProfit, prevHold + stockprice);
     }
-
     // Max profit must come from notHold
     return curProfit;
 }</span></code></pre></div></details>
 
-The solution was inspired by [LeetCode Discuss][discuss1]. The basic functions for caculating the minimal number of semesters are the same.
+The solution was inspired by [LeetCode Discuss][discuss2]. The basic functions for caculating the maximum profit are the same.
 
-### <a name="exercise1">Exercise 2 - Parallel Courses II</a> ###
+### <a name="exercise3">Exercise 3 - Parallel Courses II</a> ###
 You are given an integer n, which indicates that there are n courses labeled from 1 to n. You are also given an array relations where relations[i] = [prevCoursei, nextCoursei], representing a prerequisite relationship between course prevCoursei and course nextCoursei: course prevCoursei has to be taken before course nextCoursei. Also, you are given the integer k.
 
 In one semester, you can take at most k courses as long as you have taken all the prerequisites in the previous semester for the courses you are taking.
@@ -114,7 +134,7 @@ int Solutions::minNumberOfSemesters(int n, std::vector&lt; std::vector&lt;int&gt
     bitmask.assign(1&lt;&lt;n, -1);
     return find_min_semester(adjacent, bitmask, 0, k, n);
 }</span></code></pre></div></details>
-The solution was inspired by [LeetCode Discuss][discuss2]. The basic functions for caculating the minimal number of semesters are as follows:
+The solution was inspired by [LeetCode Discuss][discuss3]. The basic functions for caculating the minimal number of semesters are as follows:
 
 + Initialize all cities without visiting
 + DFS-based linear-time traverse neighbor city
@@ -125,6 +145,8 @@ The solution was inspired by [LeetCode Discuss][discuss2]. The basic functions f
 ## Reference ##
 + [Wiki: Dynamic Programming](https://en.wikipedia.org/wiki/Dynamic_programming)
 
-[discuss1]:https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/discuss/803206/PythonJSGoC%2B%2B-O(n)-by-DP-w-Visualization "https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/discuss/803206/PythonJSGoC%2B%2B-O(n)-by-DP-w-Visualization"
+[discuss1]:https://leetcode.com/problems/min-cost-climbing-stairs/discuss/1256650/C%2B%2B-Simple-and-Short-Dynamic-Programming-Solution "https://leetcode.com/problems/min-cost-climbing-stairs/discuss/1256650/C%2B%2B-Simple-and-Short-Dynamic-Programming-Solution"
 
-[discuss2]:https://leetcode.com/problems/parallel-courses-ii/discuss/719159/DP-solution-with-memoization-and-bitmasks-With-C%2B%2B-code-20-ms-runtime "https://leetcode.com/problems/parallel-courses-ii/discuss/719159/DP-solution-with-memoization-and-bitmasks-With-C%2B%2B-code-20-ms-runtime"
+[discuss2]:https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/discuss/803206/PythonJSGoC%2B%2B-O(n)-by-DP-w-Visualization "https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/discuss/803206/PythonJSGoC%2B%2B-O(n)-by-DP-w-Visualization"
+
+[discuss3]:https://leetcode.com/problems/parallel-courses-ii/discuss/719159/DP-solution-with-memoization-and-bitmasks-With-C%2B%2B-code-20-ms-runtime "https://leetcode.com/problems/parallel-courses-ii/discuss/719159/DP-solution-with-memoization-and-bitmasks-With-C%2B%2B-code-20-ms-runtime"

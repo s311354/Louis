@@ -14,7 +14,7 @@ A cache implemented using the LRU strategy organizes its items in order of use. 
 
 The LRU algorithm requires keeping track of what was used when, which is expensive if one wants to make sure the algorithm always discards the least recently used item. In general, the LRU cache should only be used when you want to reuse previously computed values.
 
-In this post, I would like to briefly discuss about the concept of LRU cache and practice to design a data structure that follows the constraints of a Least Recently Used (LRU) cache.
+In this post, I would like to briefly discuss about the simple concept of LRU cache in python and practice to design a data structure that follows the constraints of a Least Recently Used (LRU) cache.
 
 ### Properties ###
 The basic properties of LRU caches:
@@ -34,7 +34,6 @@ def fib(n):
         return n
     return fib(n-1) + fib(n-2)</span></code></pre></div></details>
 
-
 Another simple example of operation using a cache to add two numbers:
 <details markdown=block>
 <summary markdown=span>*add_nums.py*</summary>
@@ -50,9 +49,10 @@ print(add(1, 2))
 print(add(2, 3))
 </span></code></pre></div></details>
 
+Here is the output of addition operator using a cache:
 <details markdown=block>
 <summary markdown=span>*print statement*</summary>
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb" style="font-size: 80%">$ python3 main.py                                                                      [13:48:34]
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb" style="font-size: 80%">$ python3 main.py
 calculating: 1 + 2
 3
 3
