@@ -65,10 +65,10 @@ Example: Input: graph = [[1,2,3],[0,2],[0,1,3],[0,2]], Output: false
 #### Solution ####
 <details markdown=block>
 <summary markdown=span>*isBiparitie.cc*</summary>
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb" style="font-size: 80%">bool colorable_node(int i, std::vector&;t;int&gt; &color, 
-                std::vector&;t; std::vector&;t;int&gt; &gt; & graph)
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb" style="font-size: 80%">bool colorable_node(int i, std::vector&lt;int&gt; &color, 
+                std::vector&lt; std::vector&lt;int&gt; &gt; & graph)
 {
-    std::queue&;t;int&gt; q;
+    std::queue&lt;int&gt; q;
     q.push(i);
     color[i] = 0; // color the first node
     while (!q.empty()) {
@@ -84,11 +84,11 @@ Example: Input: graph = [[1,2,3],[0,2],[0,1,3],[0,2]], Output: false
     }
     return true;
 }
-bool Solutions::isBipartite( std::vector&;t; std::vector&;t;int&gt; &gt; & graph ) 
+bool Solutions::isBipartite( std::vector&lt; std::vector&lt;int&gt; &gt; & graph ) 
 {
     int depth = graph.size();
-    std::vector&;t;int&gt; color(depth, -1); // all the node are uncolored
-    for (int i = 0; i &;t; depth; ++i) {
+    std::vector&lt;int&gt; color(depth, -1); // all the node are uncolored
+    for (int i = 0; i &lt; depth; ++i) {
         if (color[i] == -1) {
             if (!colorable_node(i, color, graph))
                 return false;
