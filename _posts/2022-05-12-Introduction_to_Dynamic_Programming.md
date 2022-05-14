@@ -164,7 +164,7 @@ Given an input string s and a pattern p, implement regular expression matching w
 
 The matching should cover the entire input string (not partial).
 
-Example: Input: s = "aa", p = "a*", Output: true
+Example: Input: s = "aacd", p = "a*b*cd*", Output: true
 
 #### Solution ####
 
@@ -173,15 +173,16 @@ Example: Input: s = "aa", p = "a*", Output: true
 <div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb" style="font-size: 60%">bool Solutions::isMatch( std::string s, std::string p) {
     int m = s.length();
     int n = p.length();
+    // build our dp array depends on the current character in the pattern string
     std::vector&lt; std::vector&lt;bool&gt; &gt; dp (m + 1, std::vector&lt;bool&gt;(n + 1, false));
     dp[0][0] = true;
     for(int i = 0; i &lt;= m; i++) { // S
         for(int j = 1 ;j &lt;= n; j++) { // p
             if(p[j-1] == '*') {
-                dp[i][j] = ( dp[i][j-2] )||
-                        ( i-1 &gt;= 0 && dp[i-1][j] && ( s[i-1] == p[j-2] || p[j-2] == '.' ) ); 
+                dp[i][j] = ( dp[i][j-2] )|| // repeats for 0 time 
+                        ( i-1 &gt;= 0 && dp[i-1][j] && ( s[i-1] == p[j-2] || p[j-2] == '.' ) );  // repeats for at least 1 time
             } else {
-                dp[i][j] = i-1 &gt;= 0 && dp[i-1][j-1] && ( s[i-1] == p[j-1] || p[j-1] == '.' );
+                dp[i][j] = i-1 &gt;= 0 && dp[i-1][j-1] && ( s[i-1] == p[j-1] || p[j-1] == '.' ); // the pattern is the same
             }
         }
     }
@@ -189,7 +190,10 @@ Example: Input: s = "aa", p = "a*", Output: true
 }</span></code></pre></div></details>
 The solution was inspired by [LeetCode Discuss][discuss4]. The basic functions for caculating the maximum profit are the same.
 
-+ Reduce to subproblems: the pattern is the same, and the pattern repeats for 0 time or the pattern repeats for at least 1 time if p[j - 1] != '*'
++ Define the state dp[i][j] (two pointers pointing to the current characters at the string and pattern respectively) to be true if string s[0..i) matches pattern p[0..j) and false otherwise.
++ Depend on the current character in the pattern string to reduce to subproblems: 
+    + check the pattern repeats for 0 time or the pattern repeats for at least 1 time if the current character is *
+    + check the pattern is the same if the current character is not *
 + The solution to given optimization problem can be obtained by the combination of optimal solutions to its sub-problems
 
 =========== To be continued…. ==========
