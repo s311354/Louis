@@ -1,9 +1,10 @@
 ---
 layout: post
-title: "淡定的撲克臉 (Poker face)"
+title: "淡定的撲克臉 (Poker Face)"
 date: 2022-05-21
 tags: [Miscellaneous]
 ---
+"Positive emotions affect our brains in ways that increase our awareness, attention, and memory. When we feel more positive emotions than negative ones, difficult situations are easier to handle. Positive emotions build our resilience (the emotional resources needed for coping). They broaden our awareness, letting us see more options for problem solving.... TeensHealth"
 
 ## 生活札記 ##
 
@@ -18,4 +19,10 @@ tags: [Miscellaneous]
 
 所以盡量讓自己在適當的時機擺一張淡定的撲克臉，展現出恰當的情緒，但並非毫無表情或時刻隱藏真實情緒。而憐憫或感激等正面的情緒有助於提升準確判斷情勢的能力，因此能提出有創意的解決方法，進行創新。- Positive emotions, like compassion or gratitude, can enhance our ability to judge circumstances accurately, come up with creative solutions, innovate - all of which are importance for negotiation.
 
+## Reference ##
+
++ [The Power of Positive Emotions](https://kidshealth.org/en/teens/power-positive.html#:~:text=Positive%20emotions%20build%20our%20resilience,positive%20emotions%20as%20negative%20emotions.)
+
 [ask]:https://s311354.github.io/Louis.github.io/2022/01/08/%E9%96%B1%E8%AE%80%E5%BF%83%E5%BE%97-%E9%8F%A1%E8%88%87%E7%AA%97%E8%AB%87%E5%88%A4%E8%AA%B2_Updated/ "https://s311354.github.io/Louis.github.io/2022/01/08/%E9%96%B1%E8%AE%80%E5%BF%83%E5%BE%97-%E9%8F%A1%E8%88%87%E7%AA%97%E8%AB%87%E5%88%A4%E8%AA%B2_Updated/"
+
+
