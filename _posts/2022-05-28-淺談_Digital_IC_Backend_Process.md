@@ -37,7 +37,6 @@ after the layout is completed, the parasitic routing capacitance is extracted an
 + The solution is to use a technique called timing-driven placement, which takes into
 account the timing (speed) of the circuit as cells are placed.
 
-
 &lt;Note&gt; The support costs amortized over the life of the equipment and the length of the design that might break down as
 project include:
 
@@ -47,8 +46,13 @@ project include:
 + CAD Tools (digital back end): $1M
 + Education or re-education costs: $10–$30K
 
-=========== To be continued…. ==========
+Example: 
 
+You are starting a company to commercialize your brilliant research idea. Estimate the cost to prototype a mixed-signal chip in a 45 nm process. Assume you have seven digital designers, three analog designers, and five support personnel and that the prototype takes two fabrication runs and two years.
+
+Assume that seven digital designers will cost 7 X ($70K + $30K + $10K + $10K) = $840. The three analog designers will cost 3 X ($100K + $30K + $10K + $100K) = $720K. The five support personnel cost 5 X ($40K + $20K + $10K) = $350K. One fabrication run with the back-end tools will cost $6M. Thus, the cost is $7.91M per year.
+
+=========== To be continued…. ==========
 
 ## Reference ##
 + CMOS VLSI Design A Circuits and Systems Perspective
