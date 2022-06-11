@@ -4,6 +4,7 @@ title: "Introduction to the Basic Backtracking Algorithms"
 date: 2022-03-28
 tags: [Algorithms, C_C_plus_plus, Python]
 ---
+[UPDATED: 2022/06/11]
 
 "Backtracking is a general algorithm for finding solutions to some computational problems, notably constraint satisfaction problems, that incrementally builds candidates to the solutions, and abandons a candidate ("backtracks") as soon as it determines that the candidate cannot possibly be completed to a valid solution." ... from Wiki page.
 
@@ -15,41 +16,19 @@ The basic properties of backtracking algorithm:
 - No repetition and completion: It is a systematic generating method that avoids repetitions and missing any possible right solution. This property makes it ideal for solving combinatorial problems such as combination and permutation which require us to enumerate all possible solutions.
 - Search pruning: Because the final solution is built incrementally, in the process of working with partial solutions, we can evaluate the partial solution and prune branches that would never lead to the acceptable complete solution: either it is invalid configuration, or it is worse than known possible complete solution.
 
-Here, I throw a simple example: Given a integer number n, enumerate all possible combination using all items from the set of integers {1, 2, ..., n} without repetition. The number of possible combinations are 2^n.
+Here, I throw a simple example:  Given an integer array nums of unique elements ([1,2,3]), return all possible subsets (the power set). 
+<figure><center><img src="{{ site.baseurl }}/picture/subsets.png" width="80%"></center></figure>
 
 <details markdown=block>
 <summary markdown=span>*subsets.py*</summary>
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb" style="font-size: 80%">def backtrack_compact(working_set, k, n):
-    global solutions
-    if k == n:
-        s = {k for k in working_set if working_set[k] == 1}
-        solutions.append(s)
-    else:
-        k += 1
-        for i in [0, 1]:
-            working_set[k] = i
-            backtrack_compact(working_set, k, n)
-def main():
-    if 0 &lt; 1 &lt; len(sys.argv):
-        n = int(sys.argv[1])
-    else:
-        exit('Usage: subsets.py number')
-
-    global solutions
-    solutions = []
-
-    backtrack_compact({}, 0, n)
-    print(solutions)
-    print('Number of subsets: {}'.format(len(solutions)))
-if __name__ == '__main__':
-    main()</span></code></pre></div></details>
-
-
-We could see the backtracking program runs as expected. 
-<details markdown=block>
-<summary markdown=span>*print statement*</summary>
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb" style="font-size: 80%">$ python3 subsets.py 3
-[set(), {3}, {2}, {2, 3}, {1}, {1, 3}, {1, 2}, {1, 2, 3}]</span></code></pre></div></details>
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb" style="font-size: 80%">def subsets(self, nums: List[int]) -> List[List[int]]:
+    ans, temp = [], []
+    def helper(nums, temp, ans):
+        for i in range(len(nums)):
+            helper(nums[i+1:], temp + [nums[i]], ans)
+        ans.append(temp)
+    helper(nums, temp, ans)
+    return ans</span></code></pre></div></details>
 
 ## Exercises ##
 <h6><ol>
