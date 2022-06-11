@@ -30,6 +30,22 @@ Here, I throw a simple example:  Given an integer array nums of unique elements 
     helper(nums, temp, ans)
     return ans</span></code></pre></div></details>
 
+Here, I throw a simple example: Given an array nums of distinct integers ([1, 2, 3]), return all the possible permutations. You can return the answer in any order.
+<figure><center><img src="{{ site.baseurl }}/picture/permute.png" width="80%"></center></figure>
+
+<details markdown=block>
+<summary markdown=span>*permute.py*</summary>
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb" style="font-size: 80%">def permute(self, nums: List[int]) -> List[List[int]]:
+        ans = []
+        def helper(nums, temp, ans):
+            if len(nums) == 0:
+                ans.append(temp)
+                return
+            for i in range(len(nums)):
+                helper(nums[:i]+nums[i+1:], temp+[nums[i]], ans)
+        helper(nums, [], ans)
+        return ans</span></code></pre></div></details>
+
 ## Exercises ##
 <h6><ol>
     <li><a href="#exercise1">Exercise 1 - N-Queens</a></li>
