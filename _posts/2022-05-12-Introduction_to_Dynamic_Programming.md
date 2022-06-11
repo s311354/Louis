@@ -9,7 +9,7 @@ tags: [Programming, C_C_plus_plus, Python]
 "Dynamic Programming is both a mathematical optimization method and a computer programming method. The method was developed by Richard Bellman in the 1950s and has found applicationns in numerous fields, from aerospace engineering to economics." ... from Wiki.
 
 ## Brief ##
-The dynamic programming (DP) refers to simplifying a complicated problem by breaking it down into simpler sub-problems in a recursive manner and is just an optimization technique. While some decision problems cannot be taken apart this way, decisions that span several points in time do often break apart recursively. Likewise, in computer science, if a problem can be solved optimally by breaking it into sub-problems and then recursively finding the optimal solutions to the sub-problems, then it is said to have optimal substructure.  In this post, I would like to briefly discuss about the properties of dynamic programming and practice several exercises, such as min cost climbing stairs, schedule parallel courses and choose the best time to buy and sell stock. 
+The dynamic programming (DP) refers to simplifying a complicated problem by breaking it down into simpler sub-problems in a recursive manner and is just an optimization technique. While some decision problems cannot be taken apart this way, decisions that span several points in time do often break apart recursively. Likewise, in computer science, if a problem can be solved optimally by breaking it into sub-problems and then recursively finding the optimal solutions to the sub-problems, then it is said to have optimal substructure. In this post, I would like to briefly discuss about the properties of dynamic programming and practice several exercises, such as min cost climbing stairs, schedule parallel courses and choose the best time to buy, sell stock and coin Change. 
 
 ### Properties ###
 There are two key properties that a problem must have in order of dynamic programming to be applicable:
@@ -35,6 +35,7 @@ def fib(n):
     <li><a href="#exercise2">Exercise 2 - Best Time to Buy and Sell Stock</a></li>
     <li><a href="#exercise3">Exercise 3 - Parallel Courses</a></li>
     <li><a href="#exercise4">Exercise 4 - Regular Expression Matching</a></li>
+    <li><a href="#exercise5">Exercise 5 - Coin Change</a></li>
 </ol></h6>
 
 ### <a name="exercise1">Exercise 1 - Min Cost Climbing Stairs</a> ###
@@ -196,6 +197,35 @@ The solution was inspired by [LeetCode Discuss][discuss4]. The basic functions f
     + check the pattern is the same if the current character is not *
 + The solution to given optimization problem can be obtained by the combination of optimal solutions to its sub-problems
 
+### <a name="exercise5">Exercise 5 - Coin Change</a> ###
+You are given an integer array coins representing coins of different denominations and an integer amount representing a total amount of money.
+
+Return the fewest number of coins that you need to make up that amount. If that amount of money cannot be made up by any combination of the coins, return -1.
+
+You may assume that you have an infinite number of each kind of coin.
+
+Example: Input: coins = [1,2,5], amount = 11, Output: 3
+
+#### Solution ####
+
+<details markdown=block>
+<summary markdown=span>*coinchange.py*</summary>
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb" style="font-size: 80%">def coinChange(self, coins: List[int], amount: int) -> int:
+    dp = [math.inf]*(amount+1)
+    dp[0] = 0
+    for a in range(1, amount + 1):
+        for coin in coins:
+            if a - coin >= 0:
+                dp[a] = min(dp[a], 1 + dp[a - coin])
+
+    return dp[-1] if dp[-1] != float('inf') else -1</span></code></pre></div></details>
+
+The solution was inspired by [LeetCode Discuss][discuss5]. The basic functions for caculating the fewest number of coins that you need to make up that amount.
++ Define the state dp[a] the fewest number of coins that you need to make up that a.
++ Depend on the current coin in the coins to reduce to subproblems: 
+    + check the the fewest number of coins that you need to make up that a
++ The solution is determined by the recursive algorithm solving the problem, and should solve the same sub-problems over and over to obtain the fewest number of coins that you need to make up that amount.
+
 =========== To be continued…. ==========
 
 ## Reference ##
@@ -208,3 +238,5 @@ The solution was inspired by [LeetCode Discuss][discuss4]. The basic functions f
 [discuss3]:https://leetcode.com/problems/parallel-courses-ii/discuss/719159/DP-solution-with-memoization-and-bitmasks-With-C%2B%2B-code-20-ms-runtime "https://leetcode.com/problems/parallel-courses-ii/discuss/719159/DP-solution-with-memoization-and-bitmasks-With-C%2B%2B-code-20-ms-runtime"
 
 [discuss4]:https://leetcode.com/problems/regular-expression-matching/discuss/5684/C%2B%2B-O(n)-space-DP "https://leetcode.com/problems/regular-expression-matching/discuss/5684/C%2B%2B-O(n)-space-DP"
+
+[discuss5]:https://leetcode.com/problems/coin-change/discuss/2099712/Python-Easy-DP-solution-with-video-explaination "https://leetcode.com/problems/coin-change/discuss/2099712/Python-Easy-DP-solution-with-video-explaination"
