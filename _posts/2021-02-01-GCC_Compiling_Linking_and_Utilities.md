@@ -181,12 +181,13 @@ extern "C"
 #endif 
 int strcmp(const char*, const char*);</span></code></pre></div></details>
 
-
 ## Reference ##
-[GCC and Make Compiling, Linking and Building C/C++ Applications](https://www3.ntu.edu.sg/home/ehchua/programming/cpp/gcc_make.html#zz-2.3)
++ [GCC and Make Compiling, Linking and Building C/C++ Applications](https://www3.ntu.edu.sg/home/ehchua/programming/cpp/gcc_make.html#zz-2.3)
 
-[Wiki - Richard Stallman](https://en.wikipedia.org/wiki/Richard_Stallman)
++ [Wiki - Richard Stallman](https://en.wikipedia.org/wiki/Richard_Stallman)
 
-[Compiling 64-Bit Code](https://developer.apple.com/library/archive/documentation/Darwin/Conceptual/64bitPorting/building/building.html)
++ [Compiling 64-Bit Code](https://developer.apple.com/library/archive/documentation/Darwin/Conceptual/64bitPorting/building/building.html)
+
++ [C++ Primer (5th Edition)](https://www.amazon.com/Primer-5th-Stanley-B-Lippman/dp/0321714113)
 
 <p>Thanks for reading! Feel free to leave the comments below or <a href="mailto:qazqazqaz850@gmail.com">email</a> to me. Any pieces of advice or discussions are always welcome. :)</p>
