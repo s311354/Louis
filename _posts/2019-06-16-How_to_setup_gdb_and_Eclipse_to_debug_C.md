@@ -94,9 +94,6 @@ tags: [IDE]
 
 [3] [Launching gdb aborting configuring gdb issue](https://stackoverflow.com/questions/5425396/eclipse-cdt-cant-use-debugger-always-stuck-on-89-process)
 
-## Note
-<p>If you have any constructive criticism or advises, leave the comments below or feel free to email me @qazqazqaz850@gmail.com.
-Hope this post will help! :)
-</p>
+<p>Thanks for reading! Feel free to leeve the comments below or <a href="mailto:qazqazqaz850@gmail.com">email</a> to me. Any pieces of advice or discussions are always welcome. :)
 
 
