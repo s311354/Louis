@@ -134,6 +134,50 @@ Idx Name          Size     VMA              Type
   1 __unwind_info 00000048 0000000100003fb0 DATA
 ```
 
+## Inherently Nonportable Features - Bit-Fields ##
+To support low-level programming, C++ defines some features that are inherently nonportable. A nonprotable feature is one that is machine specific. Programs that use nonprotable features often require reporgramming when use nonprotable features often require reporgramming when they are moved from one machine to another. The fact that the size of the arithmetic types vary across machines is one such nonportable feature that we have already used.
+
+A class can define a (nonstatic) data member as a **bit-field**. A bit-field holds a specified number a bits. Bit-fields are normally used when a program needs to pass binary data to another program or to a hardware device, thus the memory layout of a bit-field is machine dependent.
+
+<details markdown=block>
+<summary markdown=span>*bit_fields.h*</summary>
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb" style="font-size: 80%">typedef unsigned int Bit; 
+class File {
+  Bit mode: 2;       // mode has 2 bits
+  Bit modified: 1;   // modified has 1 bit
+  Bit prot_owner: 3; // prot_owner has 3 bits
+  Bit prot_group: 3; // prot_group has 3 bits
+  Bit prot_world: 3; // prot_world has 3 bits
+  // operations and data members of File 
+public:
+  enum modes { READ = 01, WRITE = 02, EXECUTE = 03 };     
+  File &open(modes);     
+  void close();     
+  void write();     
+  bool isRead() const;     
+  void setWrite(); 
+  };</span></code></pre></div></details>
+
+A bit-field is accessed in much the same way as the other data members of a class, and also usually define a set of inline member functions to test and set the value of the bit-field.
+<details markdown=block>
+<summary markdown=span>*bit_fields.cc*</summary>
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb" style="font-size: 80%">void File::write() {     modified = 1;     // . . . } 
+void File::close() {     if (modified)         // . . . save contents }
+File &File::open(File::modes m) {     
+  mode |= READ;    // set the READ bit by default     
+  // other processing     
+  if (m & WRITE) // if opening READ and WRITE     
+  // processing to open the file in read/write mode     
+  return *this; 
+}
+inline bool File::isRead() const { return mode & READ; } 
+inline void File::setWrite() { mode |= WRITE; }</span></code></pre></div></details>
+
+&lt;Note&gt;
+A function specified as **inline** (usually) is expanded “in line” at each call. In general, the inline mechanism is meant to optimize small, straight-line functions that are called frequently. The inline specification is only a request to the compilee, but the compiler may choose to ignore this request.
+
+Lippman, Stanley B.; Moo, Barbara E.; JoséLajoie, e. C++ Primer, 5/e (Kindle Locations 11007-11008). Pearson Education (USA). Kindle Edition. 
+
 ## Reference ##
 
 + [Wiki: Code segment](https://en.wikipedia.org/wiki/Code_segment)
@@ -143,3 +187,7 @@ Idx Name          Size     VMA              Type
 + [Memory Layout in C++](https://medium.com/@vivekkr1020/memory-layout-in-c-87f8b8c67fc5)
 
 + [Memory Layout of C Programs](https://www.geeksforgeeks.org/memory-layout-of-c-program/)
+
++ [C++ Primer (5th Edition)](https://www.amazon.com/Primer-5th-Stanley-B-Lippman/dp/0321714113)
+
+<p>Thanks for reading! Feel free to leave the comments below or <a href="mailto:qazqazqaz850@gmail.com">email</a> to me. Any pieces of advice or discussions are always welcome. :)</p>
