@@ -1,40 +1,35 @@
 ---
 layout: post
-title: What is the callback and how it works by C programming
-date: 2020-12-16 00:32
+title: What is the Callback (function pointer) and How it Works
+date: 2020-12-16
 tags: [C_C_plus_plus]
 ---
-[UPDATED: 2022/04/01]
+[UPDATED: 2022/06/14]
 
 In computer programming, a callback function is any executable code that is passed an argument to other code; the other code is expected to call back (execute) the argument at the given time. Callbacks have a wide variety of uses. For example in error signaling, a Unix program might want to handle the termination properly when receiving SIGTERM and then would register the cleanup function as a callback. 
 
 ## Invoke Callback Function Used by C Programming ##
 
-Here, I took a simple example of how to allow to register the callback function in C and then pass a content. Hope it would be helpful to understand. :)  
+Here, I took a simple example of how to allow to register the callback function (function pointer) in C and then pass a content. It is just that a pointer that denotes a function rather than an object. Like any other pointer, a function pointer points to a particular type. A function’s type is determined by its return type and the types of its parameters. The function’s name is not part of its type. Hope it would be helpful to understand. :)  
 
 #### Example ####
 <details markdown=block>
 <summary markdown=span>*callback_example.h*</summary>
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb" style="font-size: 80%">typedef void (*callback_type) (void *msg, void *content, bool flag);
-
-typedef struct _MyMsg {
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb" style="font-size: 80%">typedef struct _MyMsg {
     int appId; /*!< Description */
     char msgbody[32];
 } MyMsg;
-
-void notification_callback(void* msg, void* content, bool flag);
-
-void register_notification(callback_type callback, void *msg, void *content, bool flag);</span></code></pre></div></details>
+typedef void (*callback_type) (void *msg, void *content, bool flag); // callback_type have pointer to function type
+void register_notification(callback_type callback, void *msg, void *content, bool flag);
+void notification_callback(void* msg, void* content, bool flag);</span></code></pre></div></details>
 
 <details markdown=block>
 <summary markdown=span>*callback_example.c*</summary>
 <div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb" style="font-size: 80%">#include "callback_example.h"
-
 void register_notification(callback_type callback, void *msg, void *content, bool flag) 
 {
     callback(msg, content, flag);
 }
-
 void notification_callback(void* msg, void* content, bool flag)
 {
     MyMsg *m_msg = (MyMsg *) msg;
@@ -43,33 +38,24 @@ void notification_callback(void* msg, void* content, bool flag)
     } else {
         assert(m_msg != NULL);
     }
-
     strcpy(m_msg->msgbody, content); 
 }</span></code></pre></div></details>
-
 
 <details markdown=block>
 <summary markdown=span>*main.c*</summary>
 <div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb" style="font-size: 80%">#include "callback_example.h"
-
 int main(void)
 {
     MyMsg msg;
     msg.appId = 0;
     char message1[20] = "Hello World!\n";
     char message2[20] = "This is a test\n";
-
     register_notification((callback_type) notification_callback, &msg, message1, true); 
-
     printf("ID: %d, Message: %s\n", msg.appId, msg.msgbody);
-
     register_notification((callback_type) notification_callback, &msg, message2, true); 
-
     printf("ID: %d, Message: %s\n", msg.appId, msg.msgbody);
-
     return 0;
 }</span></code></pre></div></details>
-
 
 <details markdown=block>
 <summary markdown=span>*Makefile*</summary>
