@@ -174,9 +174,7 @@ inline bool File::isRead() const { return mode & READ; }
 inline void File::setWrite() { mode |= WRITE; }</span></code></pre></div></details>
 
 &lt;Note&gt;
-A function specified as **inline** (usually) is expanded “in line” at each call. In general, the inline mechanism is meant to optimize small, straight-line functions that are called frequently. The inline specification is only a request to the compilee, but the compiler may choose to ignore this request.
-
-Lippman, Stanley B.; Moo, Barbara E.; JoséLajoie, e. C++ Primer, 5/e (Kindle Locations 11007-11008). Pearson Education (USA). Kindle Edition. 
+A function specified as **inline** (usually) is expanded “in line” at each call. In general, the inline mechanism is meant to optimize small, straight-line functions that are called frequently. The inline specification is only a request to the compilee, but the compiler may choose to ignore this request.ga 
 
 ## Reference ##
 
