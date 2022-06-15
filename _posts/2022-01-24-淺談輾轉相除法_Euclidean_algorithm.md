@@ -32,7 +32,7 @@ tags:    [Algorithms, Mathematics]
 
 ### 交換法 ###
 - 讓a保持被除數、b保持除數，相除之後互換
-- 當除數為 0，即為最大公因數
+- 當除數為 0，即被除數為最大公因數
 
 <div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb" style="font-size: 60%">int gcd(int a, int b) {
     while (b!= 0) {
@@ -50,9 +50,6 @@ tags:    [Algorithms, Mathematics]
     if (b == 0) return a;
     return f(b, a%b);
 }</span></code></pre></div>
-
-
-
 
 ## Reference ##
 
