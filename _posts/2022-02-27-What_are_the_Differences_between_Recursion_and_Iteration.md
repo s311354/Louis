@@ -4,6 +4,7 @@ title:   "What are the Differences between Recursion and Iteration"
 date:    2022-02-27
 tags:    [Programming, C_C_plus_plus]
 ---
+[2022/06/16]
 
 ## Brief ##
 Iteration and recursion are key computer science technique using in developing algorithm and programming. In simple terms, an iterative function is one that loops to repeat some part of the code, and a recursive function is one that calls itself again to repeat the code. Both of two terms repeatedly execute the set of instructions. In this post, I would like to record a few pieces of information for avoiding to forget bit and pieces and also hope to be helpful.
@@ -49,6 +50,43 @@ Iteration use repetition structure and does not use the stack so it's faster tha
 <div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb" style="font-size: 80%">$ ./factorial
 Iteration: Elapsed time in nanoseconds: 34325 ns
 Recursion: Elapsed time in nanoseconds: 370471 ns</span></code></pre></div>
+
+#### Simple Example:  pow(x, n) ####
+Implement pow(x, n), which calculates x raised to the power n (i.e., x^n).
+
+Iteration:
+<details markdown=block>
+<summary markdown=span>*iteration_power.cc*</summary>
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb" style="font-size: 80%">double myPow(double x, int n) {
+    int flag = 0;
+    double res = 1;
+    if( n < 0 )
+    {
+        flag = 1;
+        n = abs(n);
+    }
+    while( n > 0 )
+    {
+        if( n & 1 )
+            res = res*x;
+        x = x*x;
+        n >>= 1;
+    }
+    if(flag)
+        res = 1/res;
+    return res;
+}</span></code></pre></div></details>
+
+Recrusion:
+<details markdown=block>
+<summary markdown=span>*recrusion_power.cc*</summary>
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb" style="font-size: 60%">double myPow(double x, int n) {
+    if (n == 0) return 1;
+    if (n<0) return 1/x * myPow(1/x, -(n+1));
+    if (n%2 == 0) return myPow(x*x, n/2);
+    else return x*myPow(x*x, n/2);
+}</span></code></pre></div></details>
+
 
 Now, as you can see, the recursion approach is executed much slowerly than iteration approach.
 
