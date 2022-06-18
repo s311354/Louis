@@ -14,7 +14,7 @@ In this short tutorial, I would sort out some basic guide with exception handlin
 In programming, error handling is the process of responding to the occurrence of exceptions, anomalous conditions requiring special processing, during the execution of a program. In other words, it is the process comprised of anticipation, detection, and resolution of application errors or programming errors. Under the handling process for the program, your code would be more robust, which guards against potential failures that would cause your program to exit.
 
 ### Exception Handling ###
-In python, built-in exceptions module supports to handles any exceptions. The syntax is a try statement with an except clause. User can use this to test an exception handler or to report and error condition "just like" the situation; but beware that there is nothing to prevent user code from raising an inapproproate error. More information on defining exception is available in the python tutorial under [User-defined Exceptions][userdefinedexceptios]. The following exceptions are the exceptions that are usually raised:
+In python, built-in exceptions module supports to handles any exceptions. The syntax is a try statement with an except clause. User can use this to test an exception handler or to report and error condition "just like" the situation; but be aware that there is nothing to prevent user code from raising an inappropriate error. More information on defining exception is available in the python tutorial under [User-defined Exceptions][userdefinedexceptios]. The following exceptions are the exceptions that are usually raised:
 <font size="3" face="Courier New">
 <table>
  <tr>
