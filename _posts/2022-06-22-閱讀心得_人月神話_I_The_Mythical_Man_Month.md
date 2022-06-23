@@ -13,8 +13,7 @@ tags: [Reading]
 "The classic book on the human elements of software engineering. Software tools and development environments may have changed in the 21 years since the first edition of this book, but the peculiarly nonlinear economies of scale in collaborative work and the nature of individuals and groups has not changed an epsilon. If you write code or depend upon those who do, get this book as soon as possible" ... Amazon Review
 
 ## 紀錄與心得 ##
-這陣子因緣巧合翻閱人月神話這本軟體管理的相關書籍，深受吸引。由工作中所累積的經驗或經歷加以驗證書中的論點時，算是能認同書中所闡述的觀念，例如：要用漸進式開發模型，而非瀑布模型;在系統設計時，保有概念整體性(conceptual integrity)是重要的原則... 等。
-而這些觀念可能在當時是新穎的，現在已被視為常識，如同作者在<<人月神話二十年>>自我調侃：
+這陣子因緣巧合翻閱人月神話這本軟體管理的相關書籍，深受吸引。由工作中所累積的經驗或經歷加以驗證書中的論點時，算是能認同書中所闡述的部分觀念，例如：要用漸進式開發模型，而非瀑布模型;在系統設計時，保有概念整體性(conceptual integrity)是重要的原則... 等。而這些觀念可能在當時是新穎的，現在已被視為常識，如同作者在<<人月神話二十年>>自我調侃：
 
 ```
 飛往LaGuardia機場的班機以一種低沉的嗡嗡聲響劃過天際，美麗的景色都被雲霧和黑暗所籠罩，我翻閱著平淡無趣的文章資料，但我並不感到無聊，因為坐在我旁邊的那位陌生人正在看<<人月神話>>，而我一直在等，等看看他會不會有什麼反應，也許是一番話或某些表示。最後，飛機終於降落滑向了登機門，我不能再等了:
