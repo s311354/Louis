@@ -4,12 +4,16 @@ title: "Introduction to Dynamic Programming"
 date: 2022-05-12
 tags: [Programming, C_C_plus_plus, Python]
 ---
-[UPDATED: 2022/05/12]
+[UPDATED: 2022/06/27]
 
 "Dynamic Programming is both a mathematical optimization method and a computer programming method. The method was developed by Richard Bellman in the 1950s and has found applicationns in numerous fields, from aerospace engineering to economics." ... from Wiki.
 
 ## Brief ##
-The dynamic programming (DP) refers to simplifying a complicated problem by breaking it down into simpler sub-problems in a recursive manner and is just an optimization technique. While some decision problems cannot be taken apart this way, decisions that span several points in time do often break apart recursively. Likewise, in computer science, if a problem can be solved optimally by breaking it into sub-problems and then recursively finding the optimal solutions to the sub-problems, then it is said to have optimal substructure. In this post, I would like to briefly discuss about the properties of dynamic programming and practice several exercises, such as min cost climbing stairs, schedule parallel courses and choose the best time to buy, sell stock and coin Change. 
+The dynamic programming (DP) refers to simplifying a complicated problem by breaking it down into simpler sub-problems in a recursive manner and is just an optimization technique. While some decision problems cannot be taken apart this way, decisions that span several points in time do often break apart recursively. Likewise, in computer science, if a problem can be solved optimally by breaking it into sub-problems and then recursively finding the optimal solutions to the sub-problems, then it is said to have optimal substructure. 
+
+In other words, the dynamic programming approach describes the optimal plan by finding a rule that tells what the controls should be, given any possible value of the state. For example, if consumption (c) depends only on wealth (W), we would seek a rule c(W) that gives consumption as a function of wealth. Such a rule, determining the controls as a function of the states, is called a policy function. Finally, by definition, the optimal decision rule is the one that achieves the best possible value of the objective. The best possible value of the objective, written as a function of the state, is called the value function.
+
+In this post, I would like to briefly discuss about the properties of dynamic programming and practice several exercises, such as min cost climbing stairs, schedule parallel courses and choose the best time to buy, sell stock and coin Change.
 
 ### Properties ###
 There are two key properties that a problem must have in order of dynamic programming to be applicable:
@@ -240,3 +244,7 @@ The solution was inspired by [LeetCode Discuss][discuss5]. The basic functions f
 [discuss4]:https://leetcode.com/problems/regular-expression-matching/discuss/5684/C%2B%2B-O(n)-space-DP "https://leetcode.com/problems/regular-expression-matching/discuss/5684/C%2B%2B-O(n)-space-DP"
 
 [discuss5]:https://leetcode.com/problems/coin-change/discuss/2099712/Python-Easy-DP-solution-with-video-explaination "https://leetcode.com/problems/coin-change/discuss/2099712/Python-Easy-DP-solution-with-video-explaination"
+
+
+
+[bellman]:https://en.wikipedia.org/wiki/Bellman_equation "https://en.wikipedia.org/wiki/Bellman_equation"
