@@ -1,0 +1,397 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Recap Python Basic Conception and Alogrithm &#8212; leetcode 1.0 documentation</title>
+    <link rel="stylesheet" href="_static/haiku.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Example: guide.rst — The leetcode practice guide" href="guide.html" />
+    <link rel="prev" title="Readme File" href="readme_link.html" /> 
+  </head><body>
+      <div class="header" role="banner"><h1 class="heading"><a href="index.html">
+          <span>leetcode 1.0 documentation</span></a></h1>
+        <h2 class="heading"><span>Recap Python Basic Conception and Alogrithm</span></h2>
+      </div>
+      <div class="topnav" role="navigation" aria-label="top navigation">
+      
+        <p>
+        «&#160;&#160;<a href="readme_link.html">Readme File</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="guide.html">Example: guide.rst — The leetcode practice guide</a>&#160;&#160;»
+        </p>
+
+      </div>
+      <div class="content" role="main">
+        
+        
+  <section id="recap-python-basic-conception-and-alogrithm">
+<h1>Recap Python Basic Conception and Alogrithm<a class="headerlink" href="#recap-python-basic-conception-and-alogrithm" title="Permalink to this headline">¶</a></h1>
+<p>Welcome! This is the personal documentation for learning the basic conception of python.</p>
+<section id="dataclasses-data-classes">
+<h2>Dataclasses - Data Classes<a class="headerlink" href="#dataclasses-data-classes" title="Permalink to this headline">¶</a></h2>
+<p>This module provides a decorator and functions for automatically adding generated special methods such as __init__() and __repr__() to user-defined classes.</p>
+<p>The dataclass() decorator examines the class to find fields. A field is defined as class variable that has a type annotation.</p>
+<p>The parameters to dataclass() are:</p>
+<ul class="simple">
+<li><p>The __init_()  method is automatically added to the class: it is not directly specified in the InventoryItem definition.</p></li>
+<li><p>The __repr__() method compute the “offical” string representation of an object. This is typeically used for debugging, so it is important that the representation is information-rich and unambiguous.</p></li>
+</ul>
+<p>The example this code:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">dataclasses</span> <span class="kn">import</span> <span class="n">dataclass</span>
+
+<span class="nd">@dataclass</span>
+<span class="k">class</span> <span class="nc">InventoryItem</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot; Class for keeping track of an item in inventory. &quot;&quot;&quot;</span>
+    <span class="n">name</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">unit_price</span><span class="p">:</span> <span class="nb">float</span>
+    <span class="n">quantity_on_hand</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="k">def</span> <span class="nf">total_cost</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">unit_price</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">quantity_on_hand</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">unit_price</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">quantity_on_hand</span><span class="p">:</span> <span class="nb">int</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">unit_price</span> <span class="o">=</span> <span class="n">unit_price</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">quantity_on_hand</span> <span class="o">=</span> <span class="n">quantity_on_hand</span>
+</pre></div>
+</div>
+<p>See the <a class="reference external" href="https://docs.python.org/3.7/library/dataclasses.html?highlight=class#module-dataclasses">Python dataclasses page</a> for more info.</p>
+</section>
+<section id="container-datatypes-list-tuple-set-and-dict">
+<h2>Container Datatypes (list, tuple, set and dict)<a class="headerlink" href="#container-datatypes-list-tuple-set-and-dict" title="Permalink to this headline">¶</a></h2>
+<p>This module implements specialized container datatypes providing alternatives to python’s general purpose built-in container, <strong>list</strong>, <strong>tuple</strong>, <strong>set</strong> and <strong>dict</strong>.</p>
+<section id="sequence-types-list-tuple">
+<h3>Sequence Types - <strong>list</strong>, <strong>tuple</strong><a class="headerlink" href="#sequence-types-list-tuple" title="Permalink to this headline">¶</a></h3>
+<section id="lists">
+<h4>Lists<a class="headerlink" href="#lists" title="Permalink to this headline">¶</a></h4>
+<p>Lists are <em>mutable sequences</em>, typeically used to store collections of <em>homogeneous items</em>.</p>
+<p>class list([iterable]) may be constructed in several ways:</p>
+<ul class="simple">
+<li><p>Using a pair of square brackets to denote the empty list: []</p></li>
+<li><p>Using square brackets, separating items with commas: [a], [a, b, c]</p></li>
+<li><p>Using a list comprehension: [x for x in iterable]</p></li>
+<li><p>Using the type constructor: list() or list(iterable)</p></li>
+</ul>
+<p>The example all return a list equal to [1, 2, 3]</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="p">)</span>
+</pre></div>
+</div>
+<p>See the <a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#lists">Python lists page</a> for more info.</p>
+</section>
+<section id="tuples">
+<h4>Tuples<a class="headerlink" href="#tuples" title="Permalink to this headline">¶</a></h4>
+<p>Tuples are <em>immutable sequences</em>, typeically used to store collections of <em>heretrogeneous data</em>. Tuples are also used for cases where ann immutable sequence of homogeneous data is needed.</p>
+<p>class tuple([iterable]) may be constructed in a number of ways:</p>
+<ul class="simple">
+<li><p>Using a pair of parentheses to denote the empty tuple: ()</p></li>
+<li><p>Using a trailing comma for a singleton tuple: a, or (a, )</p></li>
+<li><p>Separating items with commas: a, b, c or (a, b, c)</p></li>
+<li><p>Using the tuple() built-in: tuple() or tuple(iterable)</p></li>
+</ul>
+<p>The example all return (‘a’, ‘b’, ‘c’)</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="s1">&#39;abc&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">]</span> <span class="p">)</span>
+</pre></div>
+</div>
+<p>See the <a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#tuples">Python tuples page</a> for more info.</p>
+</section>
+</section>
+<section id="mapping-types-dict">
+<h3>Mapping Types - <strong>dict</strong><a class="headerlink" href="#mapping-types-dict" title="Permalink to this headline">¶</a></h3>
+<p><em>A mapping object maps hashable values to arbitrary objects</em>. A dictionary’s keys are almost arbitrary values. Values that are not hashable, that is, values containing lists, dictionaries or other mutable types may not be used as keys.</p>
+<p>class dict(** kwargs) dictionaries can be created by several mean:</p>
+<ul class="simple">
+<li><p>Use a comma-separeted list or key: value pairs within braces: {‘jack’: 4098, ‘sjoerd’: 4227}</p></li>
+<li><p>Use a dict comprehension: {}</p></li>
+<li><p>Use the type constructor: dict()</p></li>
+</ul>
+<p>The examples all return a dictionary equal to {“one”: 1, “two”: 2, “three”: 3}</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">one</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">two</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">three</span> <span class="o">=</span> <span class="mi">3</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;one&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;two&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;three&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>There are the operations that dictionaries support:</p>
+<ul class="simple">
+<li><p>items(): Return the value for key if key is in the dictionary, else default.</p></li>
+<li><p>setdefault(key[, default]): If key is in the dictionary, return its value. If not, insert key with a value of default and return default.</p></li>
+<li><p>values(): Return a new view of the dictionary’s values.</p></li>
+</ul>
+<p>See the <a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#mapping-types-dict">Python dict page</a> for more info.</p>
+</section>
+<section id="set-types-set-frozenset">
+<h3>Set Types - <strong>set</strong>, frozenset<a class="headerlink" href="#set-types-set-frozenset" title="Permalink to this headline">¶</a></h3>
+<p>A set object is an <em>unordered collection of distinct hashable objects</em>. Common uses include membership testing, removing duplicates from a sequence, and computing mathematical operations. such as intersection, union, difference, and symmetric difference.</p>
+<p>class set([iterable]) can be created by several means:</p>
+<ul class="simple">
+<li><p>Use a comma-separated list of elements within braces: {‘jack’, ‘sjoerd’}</p></li>
+<li><p>Use the type constructor: set(), set(‘foobar’)</p></li>
+</ul>
+<p>The example all return a set equal to {‘a’, ‘b’}:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>See the <a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html#set-types-set-frozenset">Python set, forzenset page</a> for more info.</p>
+</section>
+</section>
+<section id="collections-container-datatypes-defaultdict-container">
+<h2>Collections — Container datatypes (defaultdict, Container)<a class="headerlink" href="#collections-container-datatypes-defaultdict-container" title="Permalink to this headline">¶</a></h2>
+<p>This module implements specialized container datatypes providing alternatives to Python’s general purpose built-in containers, dict, list, set, and tuple.</p>
+<section id="defaultdict-objects">
+<h3>defaultdict objects<a class="headerlink" href="#defaultdict-objects" title="Permalink to this headline">¶</a></h3>
+<p>dict subclass that calls a factory function to supplty missing values</p>
+<p>Return a <em>new dictionary-like object</em>. defaultdict is a subclass of the built-in dict class. It overrides one method and adds one writable instance variable. The remaining functionality is the same as for the dict class and is not documented here.</p>
+<p>When each key is encountered for the first time, it is not already in the mapping; so an entry is automatically created using the default_factory function which returns an empty list. The list.append() operation then attaches the value to the new list. When keys are encountered again, the look-up proceeds normally (returning the list for that key) and the list.append() operation adds another value to the list.</p>
+<p>The example using list as the default_factory:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">defaultdict</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="p">[(</span><span class="s1">&#39;yellow&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;yellow&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">s</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="n">d</span><span class="p">[</span><span class="n">k</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+<span class="gp">...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">sorted</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">items</span><span class="p">())</span>
+<span class="go">[(&#39;blue&#39;, [2, 4]), (&#39;red&#39;, [1]), (&#39;yellow&#39;, [1, 3])]</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">s</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="n">d</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span>
+<span class="gp">...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">sorted</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">items</span><span class="p">())</span>
+<span class="go">[(&#39;blue&#39;, 4), (&#39;red&#39;, 1), (&#39;yellow&#39;, 3)]</span>
+</pre></div>
+</div>
+<p>Note:</p>
+<ul class="simple">
+<li><p>Using a defaultdict to handle missing keys can be faster than using dict.setdefault().</p></li>
+</ul>
+<p>See the <a class="reference external" href="https://docs.python.org/3.7/library/collections.html?highlight=collections%20defaultdict#defaultdict-objects">Python defaultdict object page</a> for more info.</p>
+</section>
+<section id="counter-objects">
+<h3>Counter objects<a class="headerlink" href="#counter-objects" title="Permalink to this headline">¶</a></h3>
+<p>dict subclass for counting hashable objects</p>
+<p>A Counter is a dict subclass for counting hashable objects. It is a collection where elements are stored as dictionary keys and their counts are stored as dictionary values.</p>
+<p>The example using Counter objects that have a dictionary:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">Counter</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Counter</span><span class="p">([</span><span class="s1">&#39;egg&#39;</span><span class="p">,</span> <span class="s1">&#39;ham&#39;</span><span class="p">])</span>
+<span class="go">Counter({&#39;egg&#39;: 1, &#39;ham&#39;: 1})</span>
+</pre></div>
+</div>
+<p>See the <a class="reference external" href="https://docs.python.org/3.7/library/collections.html?highlight=collections%20defaultdict#counter-objects">Python Counter object page</a> for more info.</p>
+</section>
+</section>
+<section id="built-in-types-str-range">
+<h2>Built-in Types (str, range)<a class="headerlink" href="#built-in-types-str-range" title="Permalink to this headline">¶</a></h2>
+<p>The principle built-in types are numerics, sequences, mapping, class, instance and exceptions.</p>
+<section id="text-sequence-type-str">
+<h3>Text Sequence Type - (str)<a class="headerlink" href="#text-sequence-type-str" title="Permalink to this headline">¶</a></h3>
+<p>Textual data in Python is handled with str objects, or strings.</p>
+<p>str(object=’’) return a string version of object. If object is not provided, returns the empty string. Otherwise, the behavior of str() depends on whether encoding or errors is given.</p>
+<p>The standard library covers a number of other modules that provide various text related utilities:</p>
+<ul>
+<li><p>str.upper(): return a copy of the string with all the cased characters coverted to uppercase.</p></li>
+<li><p>str.lower(): return a copy of the string with all the cased characters coverted to lowercase.</p></li>
+<li><p>str.find(sub[, start[, end]]): return the lowest index in the string where substring sub is found within the slice s[start:end].</p></li>
+<li><p>str.isdigit(): return True if all characters in the string are digits and there is at least one characters, False otherwise.</p></li>
+<li><p>str.split(sep=None, maxsplit=-1): return a list of the words in the string, using sep as the delimiter string.</p></li>
+<li><p>str.endswith(suffix[, start[, end]]): return True if the string ends with the specified suffix, otherwise return False. suffix can be a tuple of suffixs to look for. With optional start, test begining at that position. With optional end, stop comparing at that position.</p></li>
+<li><p>str.strip([chars]): return a copy of the string with the leading and trailing characters removed:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="s1">&#39;   spacious   &#39;</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+<span class="go">spacious</span>
+</pre></div>
+</div>
+</li>
+<li><p>str.index(sub[, start[, end]]): like find(), but raise ValueError when the substring is not found.</p></li>
+</ul>
+<p>See the <a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html?highlight=strip#str">Python str page</a> for more info.</p>
+</section>
+<section id="ranges">
+<h3>Ranges<a class="headerlink" href="#ranges" title="Permalink to this headline">¶</a></h3>
+<p>The range type represents an immutable sequence of numbers and is commonly used for looping a specific number of times in for loops.</p>
+<p>class range(stop), class range(start, stop[, step]) may be constructed in integers.</p>
+<p>Range example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+<span class="go">[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">))</span>
+<span class="go">[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]</span>
+</pre></div>
+</div>
+<p>See the <a class="reference external" href="https://docs.python.org/3.7/library/stdtypes.html?highlight=range#ranges">Python ranges page</a> for more info.</p>
+</section>
+</section>
+<section id="built-in-functions-enumerate-map">
+<h2>Built-in Functions (enumerate, map)<a class="headerlink" href="#built-in-functions-enumerate-map" title="Permalink to this headline">¶</a></h2>
+<p>The Python interpreter has a number of functions and types built into it that are always available.</p>
+<section id="enumerate">
+<h3>Enumerate<a class="headerlink" href="#enumerate" title="Permalink to this headline">¶</a></h3>
+<p>enumerate(iterable, start=0) returns an enumerate object.</p>
+<p>The example using enumerate objects that have a List:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="nb">enumerate</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]))</span>
+<span class="go">[(0, 1), (1, 1), (2, 0)]</span>
+</pre></div>
+</div>
+<p>See the <a class="reference external" href="https://docs.python.org/3.7/library/functions.html?highlight=enumerate#enumerate">Python enumerate page</a> for more info.</p>
+</section>
+<section id="map">
+<h3>Map<a class="headerlink" href="#map" title="Permalink to this headline">¶</a></h3>
+<p>map(function, iterable, …) return an iterator that applies function to every item of iterable, yielding the result. If additional iterable arguments are passed, function must take that many arguments and is applied to the items from all iterables in parallel, With multiple iterables, the iterator stops when the shortest iterable is exhausted.</p>
+<p>See the <a class="reference external" href="https://docs.python.org/3.7/library/functions.html#map">Python map page</a> for more info.</p>
+</section>
+</section>
+<section id="heap-queue-algorithm-heapq">
+<h2>Heap queue algorithm (heapq)<a class="headerlink" href="#heap-queue-algorithm-heapq" title="Permalink to this headline">¶</a></h2>
+<p>This module provides an implementation of the heap queue algorithm, also known as the priority queue algorithm.</p>
+<p>This implementation uses arrays for which heap[k] &lt;= heap[2*k + 1] and heap[k] &lt;= heap[2*k+2] for all k, counting elements from zero. These make it possible to view that heap[0] is the smallest item, and heap.sort() maintains the heap invariant!</p>
+<p>Heaps are binary trees for which every parent node has a value less than or equal to any of its children.</p>
+<p>The example of using heapq:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">In</span> <span class="p">[</span><span class="mi">17</span><span class="p">]:</span> <span class="n">heapq</span><span class="o">.</span><span class="n">heappush</span><span class="p">(</span><span class="n">heap</span><span class="p">,</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">In</span> <span class="p">[</span><span class="mi">18</span><span class="p">]:</span> <span class="n">heapq</span><span class="o">.</span><span class="n">heappush</span><span class="p">(</span><span class="n">heap</span><span class="p">,</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">In</span> <span class="p">[</span><span class="mi">19</span><span class="p">]:</span> <span class="n">heap</span>
+<span class="go">Out[19]: [(1, 1, 0, 0), (3, 1, 2, 0)]</span>
+</pre></div>
+</div>
+<section id="heapq">
+<h3>Heapq<a class="headerlink" href="#heapq" title="Permalink to this headline">¶</a></h3>
+<p>The API below differs from textbook heap algorithm in two aspects:</p>
+<ul class="simple">
+<li><p>use zero-based indexing.</p></li>
+<li><p>pop method returns the smallest item, not the largest.</p></li>
+</ul>
+<p>The following functions are provided:</p>
+<ul class="simple">
+<li><p>heapq.heappush(heap, item): push the value item onto the heap, maintaining the heap invariant.</p></li>
+<li><p>heapq.heappop(heap): pop, and return the smallest item from the heap, maintaining the heap invariant. If the heap is empty, IndexError is raised.</p></li>
+</ul>
+<p>See the <a class="reference external" href="https://docs.python.org/3.7/library/heapq.html?highlight=heappush#module-heapq">Python heapq page</a> for more info.</p>
+</section>
+</section>
+<section id="supporting-for-type-hits-typevar-list-optional">
+<h2>Supporting for type hits (TypeVar, List, Optional)<a class="headerlink" href="#supporting-for-type-hits-typevar-list-optional" title="Permalink to this headline">¶</a></h2>
+<section id="typevar">
+<h3>TypeVar<a class="headerlink" href="#typevar" title="Permalink to this headline">¶</a></h3>
+<p>Type variable</p>
+<p>the example using typevar:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">TypeVar</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">T</span> <span class="o">=</span> <span class="n">TypeVar</span><span class="p">(</span><span class="s1">&#39;T&#39;</span><span class="p">,</span> <span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">vec2</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="n">T</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">T</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">T</span><span class="p">]:</span> <span class="k">return</span> <span class="p">[</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vec2</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mf">2.2</span><span class="p">)</span>
+<span class="go">[1, 2.2]</span>
+</pre></div>
+</div>
+<p>See the <a class="reference external" href="https://docs.python.org/3.7/library/typing.html?highlight=optional#typing.TypeVar">Python TypeVar page</a> for more info.</p>
+</section>
+<section id="list">
+<h3>List<a class="headerlink" href="#list" title="Permalink to this headline">¶</a></h3>
+<p>Generic version of list. Useful for annotating return types. To annotate argument it is preferred to use an abstract collection type such as Sequence of Iterable.</p>
+<p>The example using List:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Vector</span> <span class="o">=</span> <span class="n">List</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">scale</span><span class="p">(</span><span class="n">scalar</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">vector</span><span class="p">:</span> <span class="n">Vector</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Vector</span><span class="p">:</span> <span class="k">return</span> <span class="p">[</span><span class="n">scalar</span> <span class="o">*</span> <span class="n">num</span> <span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="n">vector</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">scale</span><span class="p">(</span><span class="mf">2.0</span><span class="p">,</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">4.2</span><span class="p">,</span> <span class="mf">5.4</span><span class="p">])</span>
+<span class="go">[2.0, -8.4, 10.8]</span>
+</pre></div>
+</div>
+<p>See the <a class="reference external" href="https://docs.python.org/3.7/library/typing.html?highlight=optional#typing.List">Python List page</a> for more info.</p>
+</section>
+<section id="optional">
+<h3>Optional<a class="headerlink" href="#optional" title="Permalink to this headline">¶</a></h3>
+<p>Optional type is equivalent to Union[X, None]</p>
+<p>The example using Optional:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Optional</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">test</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">dict</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">test</span><span class="p">({</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="mi">1234</span><span class="p">})</span>
+<span class="go">{&#39;a&#39;: 1234}</span>
+</pre></div>
+</div>
+<p>See the <a class="reference external" href="https://docs.python.org/3.7/library/typing.html?highlight=optional#typing.Optional">Python Optional page</a> for more info.</p>
+</section>
+</section>
+<section id="supporting-for-enumerations">
+<h2>Supporting for enumerations<a class="headerlink" href="#supporting-for-enumerations" title="Permalink to this headline">¶</a></h2>
+<p>An enumeration is a set of symbolic names (members) bound to unique, constant values. Within an enumeration, the members can be compared by identity, and the enumeration itself can be iterated over.</p>
+<p>The example using to create an enum:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">enum</span> <span class="kn">import</span> <span class="n">Enum</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">Color</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="n">RED</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="gp">... </span>    <span class="n">GREEN</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="gp">... </span>    <span class="n">BLUE</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="gp">...</span>
+</pre></div>
+</div>
+<p>See the <a class="reference external" href="https://docs.python.org/3.7/library/enum.html?highlight=enum#module-enum">Python Enum page</a> for more info.</p>
+</section>
+<section id="expressions-lambda">
+<h2>Expressions (lambda)<a class="headerlink" href="#expressions-lambda" title="Permalink to this headline">¶</a></h2>
+<section id="lambdas">
+<h3>Lambdas<a class="headerlink" href="#lambdas" title="Permalink to this headline">¶</a></h3>
+<p>lambda expressions (sometimes called called lambda forms) are used to created anonymous functions.</p>
+<p>The expression <code class="docutils literal notranslate"><span class="pre">`</span> <span class="pre">lambda</span> <span class="pre">parameters:</span> <span class="pre">expression</span> <span class="pre">`</span></code> yield a function object.</p>
+<p>The example using lambda expressions:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">words</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;ea&#39;</span><span class="p">,</span> <span class="s1">&#39;bcd&#39;</span><span class="p">,</span> <span class="s1">&#39;ay&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">sorted</span><span class="p">(</span><span class="n">words</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">elem</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">elem</span><span class="p">))</span>
+<span class="go">[&#39;ea&#39;, &#39;ay&#39;, &#39;bcd&#39;]</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nums</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">n</span><span class="p">:</span> <span class="n">n</span> <span class="o">**</span> <span class="mi">2</span><span class="p">,</span> <span class="n">nums</span><span class="p">))</span>
+<span class="go">[1, 9, 36, 49]</span>
+</pre></div>
+</div>
+<p>See the <a class="reference external" href="https://docs.python.org/3.7/reference/expressions.html?highlight=lambda#lambda">Python Lambdas page</a> for more info.</p>
+</section>
+</section>
+<section id="functools-lru-cache">
+<h2>Functools (lru_cache)<a class="headerlink" href="#functools-lru-cache" title="Permalink to this headline">¶</a></h2>
+<p>The functools module is for higher-order functions: functions that act on or return other functions. In general, any callable object can be treated as a function for the purposes of this module.</p>
+<section id="functools-lru-cache-1">
+<h3>&#64;functools.lru_cache<a class="headerlink" href="#functools-lru-cache-1" title="Permalink to this headline">¶</a></h3>
+<p>Decorator to wrap a function with a memorizing callable that saves up to the maxsize most recent calls. It can save time when an expensive or I/O bound function is periodcally called with the same argument.</p>
+<p>An LRU (least recently used) cache works best when the most recent calls are the best predictors of upcoming calls (for example, the most popular articles on a news server tend to change each day). The cache’s size limit assures that the cache does not grow without bound on long-running processes such as web servers.</p>
+<p>In general, the LRU cache should only be used when you want to reuse previously computed values. Accordingly, it doesn’t make sense to cache functions with side-effects, functions that need to create distinct mutable objects on each call, or impure functions such as time() or random().</p>
+<p>The example using lru_cache to computing Fibonacci numbers to implement a dynamic programming:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nd">@lru_cache</span><span class="p">(</span><span class="n">maxsize</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">fib</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+<span class="gp">&gt;&gt;&gt; </span>        <span class="k">return</span> <span class="n">n</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="k">return</span> <span class="n">fib</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">fib</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="p">[</span><span class="n">fib</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">16</span><span class="p">)]</span>
+<span class="go">[0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610]</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+
+      </div>
+      <div class="bottomnav" role="navigation" aria-label="bottom navigation">
+      
+        <p>
+        «&#160;&#160;<a href="readme_link.html">Readme File</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="guide.html">Example: guide.rst — The leetcode practice guide</a>&#160;&#160;»
+        </p>
+
+      </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2022, Louis Liu.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.1.2.
+    </div>
+  </body>
+</html>

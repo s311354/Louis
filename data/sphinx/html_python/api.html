@@ -1,0 +1,2398 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>The leetcode API Reference &#8212; leetcode 1.0 documentation</title>
+    <link rel="stylesheet" href="_static/haiku.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Example: guide.rst — The leetcode practice guide" href="guide.html" /> 
+  </head><body>
+      <div class="header" role="banner"><h1 class="heading"><a href="index.html">
+          <span>leetcode 1.0 documentation</span></a></h1>
+        <h2 class="heading"><span>The leetcode API Reference</span></h2>
+      </div>
+      <div class="topnav" role="navigation" aria-label="top navigation">
+      
+        <p>
+        «&#160;&#160;<a href="guide.html">Example: guide.rst — The leetcode practice guide</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="index.html">Contents</a>
+        </p>
+
+      </div>
+      <div class="content" role="main">
+        
+        
+  <section id="module-leetcode">
+<span id="the-leetcode-api-reference"></span><h1>The leetcode API Reference<a class="headerlink" href="#module-leetcode" title="Permalink to this headline">¶</a></h1>
+<p>Routines for working with leetcode practice</p>
+<p>The two modules inside of this package are packed with useful features:</p>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">mock_test</span></code></dt><dd><p>For unit test, this module uses unit testing framework to supports test automation, sharing of setup and shutdown code for tests.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">solution</span></code></dt><dd><p>This module provides a <cite>Solution</cite> object that is the implementation corresponding to each of quizs.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">solution_design</span></code></dt><dd><p>This module provides a <cite>Solution Design</cite> object that is the implementation corresponding to design quizs.</p>
+</dd>
+</dl>
+<section id="module-leetcode.mocktest">
+<span id="the-mocktest-module"></span><h2>The “mocktest” module<a class="headerlink" href="#module-leetcode.mocktest" title="Permalink to this headline">¶</a></h2>
+<p>Use the SolutionCase class to represent unit testing framework</p>
+<dl class="py class">
+<dt id="leetcode.mocktest.SolutionCase">
+<em class="property">class </em><code class="sig-prename descclassname">leetcode.mocktest.</code><code class="sig-name descname">SolutionCase</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">methodName</span><span class="o">=</span><span class="default_value">'runTest'</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/leetcode/mocktest.html#SolutionCase"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.mocktest.SolutionCase" title="Permalink to this definition">¶</a></dt>
+<dd><p>A <a class="reference internal" href="#leetcode.mocktest.SolutionCase" title="leetcode.mocktest.SolutionCase"><code class="xref py py-class docutils literal notranslate"><span class="pre">SolutionCase</span></code></a> object is the unittest module (dummy component).</p>
+<p>This module can construct and run tests by using assertEqual(a, b) assert methods to check for and report failures.</p>
+<p>If the unittest unit testing framework is correct, then the script produces an output that looks like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">----------------------------------------------------------------------</span>
+<span class="n">Ran</span> <span class="mi">2</span> <span class="n">tests</span> <span class="ow">in</span> <span class="mf">1.314</span><span class="n">s</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt id="leetcode.mocktest.SolutionCase.test_twoSum">
+<code class="sig-name descname">test_twoSum</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/leetcode/mocktest.html#SolutionCase.test_twoSum"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.mocktest.SolutionCase.test_twoSum" title="Permalink to this definition">¶</a></dt>
+<dd><ol class="arabic simple">
+<li><p>Two Sum</p></li>
+</ol>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.mocktest.SolutionCase.test_minNumberOfSemesters">
+<code class="sig-name descname">test_minNumberOfSemesters</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/leetcode/mocktest.html#SolutionCase.test_minNumberOfSemesters"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.mocktest.SolutionCase.test_minNumberOfSemesters" title="Permalink to this definition">¶</a></dt>
+<dd><ol class="arabic simple" start="1494">
+<li><p>Parallel Courses II</p></li>
+</ol>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.mocktest.SolutionCase.test_convertToTitle">
+<code class="sig-name descname">test_convertToTitle</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/leetcode/mocktest.html#SolutionCase.test_convertToTitle"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.mocktest.SolutionCase.test_convertToTitle" title="Permalink to this definition">¶</a></dt>
+<dd><ol class="arabic simple" start="168">
+<li><p>Excel Sheet Column Title</p></li>
+</ol>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.mocktest.SolutionCase.test_isMatch">
+<code class="sig-name descname">test_isMatch</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/leetcode/mocktest.html#SolutionCase.test_isMatch"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.mocktest.SolutionCase.test_isMatch" title="Permalink to this definition">¶</a></dt>
+<dd><ol class="arabic simple" start="10">
+<li><p>Regular Expression Matching</p></li>
+</ol>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.mocktest.SolutionCase.test_romanToInt">
+<code class="sig-name descname">test_romanToInt</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/leetcode/mocktest.html#SolutionCase.test_romanToInt"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.mocktest.SolutionCase.test_romanToInt" title="Permalink to this definition">¶</a></dt>
+<dd><ol class="arabic simple" start="13">
+<li><p>Roman to Integer</p></li>
+</ol>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.mocktest.SolutionCase.test_maxLength">
+<code class="sig-name descname">test_maxLength</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/leetcode/mocktest.html#SolutionCase.test_maxLength"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.mocktest.SolutionCase.test_maxLength" title="Permalink to this definition">¶</a></dt>
+<dd><ol class="arabic simple" start="1239">
+<li><p>Maximum Length of a Concatenated String with Unique Characters</p></li>
+</ol>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.mocktest.SolutionCase.test_criticalConnections">
+<code class="sig-name descname">test_criticalConnections</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/leetcode/mocktest.html#SolutionCase.test_criticalConnections"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.mocktest.SolutionCase.test_criticalConnections" title="Permalink to this definition">¶</a></dt>
+<dd><ol class="arabic simple" start="1192">
+<li><p>Critical Connections in a Network</p></li>
+</ol>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.mocktest.SolutionCase.test_arrayNesting">
+<code class="sig-name descname">test_arrayNesting</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/leetcode/mocktest.html#SolutionCase.test_arrayNesting"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.mocktest.SolutionCase.test_arrayNesting" title="Permalink to this definition">¶</a></dt>
+<dd><ol class="arabic simple" start="565">
+<li><p>Array Nesting docstring for arrayNesting</p></li>
+</ol>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.mocktest.SolutionCase.test_findPeakElement">
+<code class="sig-name descname">test_findPeakElement</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/leetcode/mocktest.html#SolutionCase.test_findPeakElement"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.mocktest.SolutionCase.test_findPeakElement" title="Permalink to this definition">¶</a></dt>
+<dd><ol class="arabic simple" start="162">
+<li><p>Find Peak Element docstring for findPeakElement</p></li>
+</ol>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.mocktest.SolutionCase.test_judgeCircle">
+<code class="sig-name descname">test_judgeCircle</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/leetcode/mocktest.html#SolutionCase.test_judgeCircle"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.mocktest.SolutionCase.test_judgeCircle" title="Permalink to this definition">¶</a></dt>
+<dd><ol class="arabic simple" start="657">
+<li><p>Robot Return to Origin docstring for judgeCircle</p></li>
+</ol>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.mocktest.SolutionCase.test_longestStrChain">
+<code class="sig-name descname">test_longestStrChain</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/leetcode/mocktest.html#SolutionCase.test_longestStrChain"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.mocktest.SolutionCase.test_longestStrChain" title="Permalink to this definition">¶</a></dt>
+<dd><ol class="arabic simple" start="1048">
+<li><p>Longest String Chain docstring for longestStrChain</p></li>
+</ol>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.mocktest.SolutionCase.test_lengthOfLongestSubstring">
+<code class="sig-name descname">test_lengthOfLongestSubstring</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/leetcode/mocktest.html#SolutionCase.test_lengthOfLongestSubstring"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.mocktest.SolutionCase.test_lengthOfLongestSubstring" title="Permalink to this definition">¶</a></dt>
+<dd><ol class="arabic simple" start="3">
+<li><p>Longest Substring Without Repeating Characters docstring for lengthOfLongestSubstring</p></li>
+</ol>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.mocktest.SolutionCase.test_minimumCardPickup">
+<code class="sig-name descname">test_minimumCardPickup</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/leetcode/mocktest.html#SolutionCase.test_minimumCardPickup"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.mocktest.SolutionCase.test_minimumCardPickup" title="Permalink to this definition">¶</a></dt>
+<dd><ol class="arabic simple" start="2260">
+<li><p>Minimum Consecutive Cards to Pick Up docstring for minimumCardPickup</p></li>
+</ol>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.mocktest.SolutionCase.test_findCircleNum">
+<code class="sig-name descname">test_findCircleNum</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/leetcode/mocktest.html#SolutionCase.test_findCircleNum"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.mocktest.SolutionCase.test_findCircleNum" title="Permalink to this definition">¶</a></dt>
+<dd><ol class="arabic simple" start="547">
+<li><p>Number of Provinces docstring for findCircleNum</p></li>
+</ol>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.mocktest.SolutionCase.test_canFinish">
+<code class="sig-name descname">test_canFinish</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/leetcode/mocktest.html#SolutionCase.test_canFinish"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.mocktest.SolutionCase.test_canFinish" title="Permalink to this definition">¶</a></dt>
+<dd><ol class="arabic simple" start="207">
+<li><p>Course Schedule docstring for canFinish</p></li>
+</ol>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.mocktest.SolutionCase.test_lengthOfLIS">
+<code class="sig-name descname">test_lengthOfLIS</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/leetcode/mocktest.html#SolutionCase.test_lengthOfLIS"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.mocktest.SolutionCase.test_lengthOfLIS" title="Permalink to this definition">¶</a></dt>
+<dd><ol class="arabic simple" start="300">
+<li><p>Longest Increasing Subsequence docstring for lengthOfLIS</p></li>
+</ol>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.mocktest.SolutionCase.test_originalDigits">
+<code class="sig-name descname">test_originalDigits</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/leetcode/mocktest.html#SolutionCase.test_originalDigits"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.mocktest.SolutionCase.test_originalDigits" title="Permalink to this definition">¶</a></dt>
+<dd><ol class="arabic simple" start="423">
+<li><p>Reconstruct Original Digits from English docstring for originalDigits</p></li>
+</ol>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.mocktest.SolutionCase.test_strongPasswordChecker">
+<code class="sig-name descname">test_strongPasswordChecker</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/leetcode/mocktest.html#SolutionCase.test_strongPasswordChecker"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.mocktest.SolutionCase.test_strongPasswordChecker" title="Permalink to this definition">¶</a></dt>
+<dd><ol class="arabic simple" start="420">
+<li><p>Strong Password Checker docstring for strongPasswordChecker</p></li>
+</ol>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.mocktest.SolutionCase.testmaxProfitIV">
+<code class="sig-name descname">testmaxProfitIV</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/leetcode/mocktest.html#SolutionCase.testmaxProfitIV"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.mocktest.SolutionCase.testmaxProfitIV" title="Permalink to this definition">¶</a></dt>
+<dd><ol class="arabic simple" start="188">
+<li><p>Best Time to Buy and Sell Stock IV docstring for maxProfit</p></li>
+</ol>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.mocktest.SolutionCase.test_searchRange">
+<code class="sig-name descname">test_searchRange</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/leetcode/mocktest.html#SolutionCase.test_searchRange"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.mocktest.SolutionCase.test_searchRange" title="Permalink to this definition">¶</a></dt>
+<dd><ol class="arabic simple" start="34">
+<li><p>Find First and Last Position of Element in Sorted Array docstring for searchRange</p></li>
+</ol>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.mocktest.SolutionCase.test_maxSubArray">
+<code class="sig-name descname">test_maxSubArray</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/leetcode/mocktest.html#SolutionCase.test_maxSubArray"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.mocktest.SolutionCase.test_maxSubArray" title="Permalink to this definition">¶</a></dt>
+<dd><ol class="arabic simple" start="53">
+<li><p>Maximum Subarray docstring for maxSubArray</p></li>
+</ol>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.mocktest.SolutionCase.test_minPathSum">
+<code class="sig-name descname">test_minPathSum</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/leetcode/mocktest.html#SolutionCase.test_minPathSum"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.mocktest.SolutionCase.test_minPathSum" title="Permalink to this definition">¶</a></dt>
+<dd><ol class="arabic simple" start="64">
+<li><p>Minimum Path Sum docstring for minPathSum</p></li>
+</ol>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.mocktest.SolutionCase.test_simplifyPath">
+<code class="sig-name descname">test_simplifyPath</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/leetcode/mocktest.html#SolutionCase.test_simplifyPath"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.mocktest.SolutionCase.test_simplifyPath" title="Permalink to this definition">¶</a></dt>
+<dd><ol class="arabic simple" start="71">
+<li><p>Simplify Path docstring for simplifyPath</p></li>
+</ol>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.mocktest.SolutionCase.test_subsets">
+<code class="sig-name descname">test_subsets</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/leetcode/mocktest.html#SolutionCase.test_subsets"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.mocktest.SolutionCase.test_subsets" title="Permalink to this definition">¶</a></dt>
+<dd><ol class="arabic simple" start="78">
+<li><p>Subsets docstring for subsets</p></li>
+</ol>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.mocktest.SolutionCase.test_numDecodings">
+<code class="sig-name descname">test_numDecodings</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/leetcode/mocktest.html#SolutionCase.test_numDecodings"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.mocktest.SolutionCase.test_numDecodings" title="Permalink to this definition">¶</a></dt>
+<dd><ol class="arabic simple" start="91">
+<li><p>Decode Ways docstring for numDecodings</p></li>
+</ol>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.mocktest.SolutionCase.test_getMinimumDays">
+<code class="sig-name descname">test_getMinimumDays</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/leetcode/mocktest.html#SolutionCase.test_getMinimumDays"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.mocktest.SolutionCase.test_getMinimumDays" title="Permalink to this definition">¶</a></dt>
+<dd><p>Interview docstring for getMinimumDays</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.mocktest.SolutionCase.test_longestNiceSubstring">
+<code class="sig-name descname">test_longestNiceSubstring</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/leetcode/mocktest.html#SolutionCase.test_longestNiceSubstring"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.mocktest.SolutionCase.test_longestNiceSubstring" title="Permalink to this definition">¶</a></dt>
+<dd><ol class="arabic simple" start="1763">
+<li><p>Longest Nice Substring docstring for longestNiceSubstring</p></li>
+</ol>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.mocktest.SolutionCase.test_containDuplicate">
+<code class="sig-name descname">test_containDuplicate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/leetcode/mocktest.html#SolutionCase.test_containDuplicate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.mocktest.SolutionCase.test_containDuplicate" title="Permalink to this definition">¶</a></dt>
+<dd><ol class="arabic simple" start="217">
+<li><p>Contains Duplicate  docstring for containDuplicate</p></li>
+</ol>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.mocktest.SolutionCase.test_moveZeroes">
+<code class="sig-name descname">test_moveZeroes</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/leetcode/mocktest.html#SolutionCase.test_moveZeroes"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.mocktest.SolutionCase.test_moveZeroes" title="Permalink to this definition">¶</a></dt>
+<dd><ol class="arabic simple" start="283">
+<li><p>Move Zeroes  docstring for moveZeroes</p></li>
+</ol>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.mocktest.SolutionCase.test_isValidSudoku">
+<code class="sig-name descname">test_isValidSudoku</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/leetcode/mocktest.html#SolutionCase.test_isValidSudoku"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.mocktest.SolutionCase.test_isValidSudoku" title="Permalink to this definition">¶</a></dt>
+<dd><ol class="arabic simple" start="36">
+<li><p>Valid Sudoku docstring for isValidSudoku</p></li>
+</ol>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.mocktest.SolutionCase.test_halvesAreAlike">
+<code class="sig-name descname">test_halvesAreAlike</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/leetcode/mocktest.html#SolutionCase.test_halvesAreAlike"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.mocktest.SolutionCase.test_halvesAreAlike" title="Permalink to this definition">¶</a></dt>
+<dd><ol class="arabic simple" start="1704">
+<li><p>Determine if String Halves Are Alike docstring for halvesAreAlike</p></li>
+</ol>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.mocktest.SolutionCase.test_maxProfitII">
+<code class="sig-name descname">test_maxProfitII</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/leetcode/mocktest.html#SolutionCase.test_maxProfitII"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.mocktest.SolutionCase.test_maxProfitII" title="Permalink to this definition">¶</a></dt>
+<dd><ol class="arabic simple" start="122">
+<li><p>Best Time to Buy and Sell Stock II docstring for maxProfitII</p></li>
+</ol>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.mocktest.SolutionCase.test_maxProfit">
+<code class="sig-name descname">test_maxProfit</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/leetcode/mocktest.html#SolutionCase.test_maxProfit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.mocktest.SolutionCase.test_maxProfit" title="Permalink to this definition">¶</a></dt>
+<dd><ol class="arabic simple" start="121">
+<li><p>Best Time to Buy and Sell Stock</p></li>
+</ol>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.mocktest.SolutionCase.test_maxProfitwithfee">
+<code class="sig-name descname">test_maxProfitwithfee</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/leetcode/mocktest.html#SolutionCase.test_maxProfitwithfee"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.mocktest.SolutionCase.test_maxProfitwithfee" title="Permalink to this definition">¶</a></dt>
+<dd><ol class="arabic simple" start="714">
+<li><p>Best Time to Buy and Sell Stock with Transaction Fee</p></li>
+</ol>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.mocktest.SolutionCase.test_minDeletionSize">
+<code class="sig-name descname">test_minDeletionSize</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/leetcode/mocktest.html#SolutionCase.test_minDeletionSize"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.mocktest.SolutionCase.test_minDeletionSize" title="Permalink to this definition">¶</a></dt>
+<dd><p>docstring for minDeletionSize</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.mocktest.SolutionCase.test_WildcardisMatch">
+<code class="sig-name descname">test_WildcardisMatch</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/leetcode/mocktest.html#SolutionCase.test_WildcardisMatch"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.mocktest.SolutionCase.test_WildcardisMatch" title="Permalink to this definition">¶</a></dt>
+<dd><ol class="arabic simple" start="44">
+<li><p>Wildcard Matching</p></li>
+</ol>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.mocktest.SolutionCase.test_nextGreaterElement">
+<code class="sig-name descname">test_nextGreaterElement</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/leetcode/mocktest.html#SolutionCase.test_nextGreaterElement"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.mocktest.SolutionCase.test_nextGreaterElement" title="Permalink to this definition">¶</a></dt>
+<dd><p>docstring for nextGreaterElement</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.mocktest.SolutionCase.test_nextGreaterElementsII">
+<code class="sig-name descname">test_nextGreaterElementsII</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/leetcode/mocktest.html#SolutionCase.test_nextGreaterElementsII"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.mocktest.SolutionCase.test_nextGreaterElementsII" title="Permalink to this definition">¶</a></dt>
+<dd><p>docstring for nextGreaterElementII</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.mocktest.SolutionCase.test_totalStrength">
+<code class="sig-name descname">test_totalStrength</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/leetcode/mocktest.html#SolutionCase.test_totalStrength"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.mocktest.SolutionCase.test_totalStrength" title="Permalink to this definition">¶</a></dt>
+<dd><p>docstring for totalStrength</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.mocktest.SolutionCase.test_StreamChecker">
+<code class="sig-name descname">test_StreamChecker</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/leetcode/mocktest.html#SolutionCase.test_StreamChecker"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.mocktest.SolutionCase.test_StreamChecker" title="Permalink to this definition">¶</a></dt>
+<dd><p>docstring for StreamChecker</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.mocktest.SolutionCase.test_isSameTree">
+<code class="sig-name descname">test_isSameTree</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/leetcode/mocktest.html#SolutionCase.test_isSameTree"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.mocktest.SolutionCase.test_isSameTree" title="Permalink to this definition">¶</a></dt>
+<dd><ol class="arabic simple" start="100">
+<li><p>Same Tree docstring for isSameTree</p></li>
+</ol>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.mocktest.SolutionCase.test_minSwaps">
+<code class="sig-name descname">test_minSwaps</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/leetcode/mocktest.html#SolutionCase.test_minSwaps"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.mocktest.SolutionCase.test_minSwaps" title="Permalink to this definition">¶</a></dt>
+<dd><p>docstring for minSwaps</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.mocktest.SolutionCase.test_merge">
+<code class="sig-name descname">test_merge</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/leetcode/mocktest.html#SolutionCase.test_merge"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.mocktest.SolutionCase.test_merge" title="Permalink to this definition">¶</a></dt>
+<dd><p>docstring for merge</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.mocktest.SolutionCase.test_searchInsert">
+<code class="sig-name descname">test_searchInsert</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/leetcode/mocktest.html#SolutionCase.test_searchInsert"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.mocktest.SolutionCase.test_searchInsert" title="Permalink to this definition">¶</a></dt>
+<dd><p>docstring for searchInsert</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.mocktest.SolutionCase.test_findLucky">
+<code class="sig-name descname">test_findLucky</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/leetcode/mocktest.html#SolutionCase.test_findLucky"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.mocktest.SolutionCase.test_findLucky" title="Permalink to this definition">¶</a></dt>
+<dd><ol class="arabic simple" start="1394">
+<li><p>Find Lucky Integer in an Array docstring for findLucky</p></li>
+</ol>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.mocktest.SolutionCase.test_isValid">
+<code class="sig-name descname">test_isValid</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/leetcode/mocktest.html#SolutionCase.test_isValid"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.mocktest.SolutionCase.test_isValid" title="Permalink to this definition">¶</a></dt>
+<dd><p>docstring for isValid</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.mocktest.SolutionCase.test_mergeTwoLists">
+<code class="sig-name descname">test_mergeTwoLists</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/leetcode/mocktest.html#SolutionCase.test_mergeTwoLists"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.mocktest.SolutionCase.test_mergeTwoLists" title="Permalink to this definition">¶</a></dt>
+<dd><p>docstring for mergeTwoLists</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.mocktest.SolutionCase.test_removeNthFromEnd">
+<code class="sig-name descname">test_removeNthFromEnd</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/leetcode/mocktest.html#SolutionCase.test_removeNthFromEnd"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.mocktest.SolutionCase.test_removeNthFromEnd" title="Permalink to this definition">¶</a></dt>
+<dd><p>docstring for removeNthFromEnd</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.mocktest.SolutionCase.test_coinChange">
+<code class="sig-name descname">test_coinChange</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/leetcode/mocktest.html#SolutionCase.test_coinChange"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.mocktest.SolutionCase.test_coinChange" title="Permalink to this definition">¶</a></dt>
+<dd><p>docstring for coinChange</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.mocktest.SolutionCase.test_countBits">
+<code class="sig-name descname">test_countBits</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/leetcode/mocktest.html#SolutionCase.test_countBits"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.mocktest.SolutionCase.test_countBits" title="Permalink to this definition">¶</a></dt>
+<dd><ol class="arabic simple" start="338">
+<li><p>Counting Bits docstring for countBits</p></li>
+</ol>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.mocktest.SolutionCase.test_getSum">
+<code class="sig-name descname">test_getSum</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/leetcode/mocktest.html#SolutionCase.test_getSum"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.mocktest.SolutionCase.test_getSum" title="Permalink to this definition">¶</a></dt>
+<dd><p>docstring for getSum</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.mocktest.SolutionCase.test_numIslands">
+<code class="sig-name descname">test_numIslands</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/leetcode/mocktest.html#SolutionCase.test_numIslands"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.mocktest.SolutionCase.test_numIslands" title="Permalink to this definition">¶</a></dt>
+<dd><ol class="arabic simple" start="200">
+<li><p>Number of Islands docstring for numIslands</p></li>
+</ol>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.mocktest.SolutionCase.test_strStr">
+<code class="sig-name descname">test_strStr</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/leetcode/mocktest.html#SolutionCase.test_strStr"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.mocktest.SolutionCase.test_strStr" title="Permalink to this definition">¶</a></dt>
+<dd><p>docstring for strStr</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.mocktest.SolutionCase.test_myAtoi">
+<code class="sig-name descname">test_myAtoi</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/leetcode/mocktest.html#SolutionCase.test_myAtoi"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.mocktest.SolutionCase.test_myAtoi" title="Permalink to this definition">¶</a></dt>
+<dd><p>docstring for myAtoi</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.mocktest.SolutionCase.test_search">
+<code class="sig-name descname">test_search</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/leetcode/mocktest.html#SolutionCase.test_search"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.mocktest.SolutionCase.test_search" title="Permalink to this definition">¶</a></dt>
+<dd><p>docstring for search</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.mocktest.SolutionCase.test_permute">
+<code class="sig-name descname">test_permute</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/leetcode/mocktest.html#SolutionCase.test_permute"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.mocktest.SolutionCase.test_permute" title="Permalink to this definition">¶</a></dt>
+<dd><p>docstring for permute</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.mocktest.SolutionCase.test_combinationSum">
+<code class="sig-name descname">test_combinationSum</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/leetcode/mocktest.html#SolutionCase.test_combinationSum"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.mocktest.SolutionCase.test_combinationSum" title="Permalink to this definition">¶</a></dt>
+<dd><p>docstring for combinationSum</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.mocktest.SolutionCase.test_combinationSum2">
+<code class="sig-name descname">test_combinationSum2</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/leetcode/mocktest.html#SolutionCase.test_combinationSum2"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.mocktest.SolutionCase.test_combinationSum2" title="Permalink to this definition">¶</a></dt>
+<dd><p>docstring for combinationSum2</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.mocktest.SolutionCase.test_restoreIpAddresses">
+<code class="sig-name descname">test_restoreIpAddresses</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/leetcode/mocktest.html#SolutionCase.test_restoreIpAddresses"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.mocktest.SolutionCase.test_restoreIpAddresses" title="Permalink to this definition">¶</a></dt>
+<dd><p>docstring for restoreIpAddresses</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.mocktest.SolutionCase.test_letterCombinations">
+<code class="sig-name descname">test_letterCombinations</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/leetcode/mocktest.html#SolutionCase.test_letterCombinations"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.mocktest.SolutionCase.test_letterCombinations" title="Permalink to this definition">¶</a></dt>
+<dd><p>docstring for letterCombinations</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.mocktest.SolutionCase.test_minOperations">
+<code class="sig-name descname">test_minOperations</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/leetcode/mocktest.html#SolutionCase.test_minOperations"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.mocktest.SolutionCase.test_minOperations" title="Permalink to this definition">¶</a></dt>
+<dd><p>docstring for minOperations</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.mocktest.SolutionCase.test_reverseBits">
+<code class="sig-name descname">test_reverseBits</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/leetcode/mocktest.html#SolutionCase.test_reverseBits"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.mocktest.SolutionCase.test_reverseBits" title="Permalink to this definition">¶</a></dt>
+<dd><p>docstring for reverse</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.mocktest.SolutionCase.test_removeDuplicates">
+<code class="sig-name descname">test_removeDuplicates</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/leetcode/mocktest.html#SolutionCase.test_removeDuplicates"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.mocktest.SolutionCase.test_removeDuplicates" title="Permalink to this definition">¶</a></dt>
+<dd><p>docstring for removeDuplicates</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.mocktest.SolutionCase.test_rob">
+<code class="sig-name descname">test_rob</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/leetcode/mocktest.html#SolutionCase.test_rob"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.mocktest.SolutionCase.test_rob" title="Permalink to this definition">¶</a></dt>
+<dd><p>docstring for rob</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.mocktest.SolutionCase.test_maxArea">
+<code class="sig-name descname">test_maxArea</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/leetcode/mocktest.html#SolutionCase.test_maxArea"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.mocktest.SolutionCase.test_maxArea" title="Permalink to this definition">¶</a></dt>
+<dd><p>docstring for maxArea</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.mocktest.SolutionCase.test_myPow">
+<code class="sig-name descname">test_myPow</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/leetcode/mocktest.html#SolutionCase.test_myPow"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.mocktest.SolutionCase.test_myPow" title="Permalink to this definition">¶</a></dt>
+<dd><p>docstring for myPow</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.mocktest.SolutionCase.test_groupAnagrams">
+<code class="sig-name descname">test_groupAnagrams</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/leetcode/mocktest.html#SolutionCase.test_groupAnagrams"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.mocktest.SolutionCase.test_groupAnagrams" title="Permalink to this definition">¶</a></dt>
+<dd><p>docstring for gr</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.mocktest.SolutionCase.test_wordBreak">
+<code class="sig-name descname">test_wordBreak</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/leetcode/mocktest.html#SolutionCase.test_wordBreak"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.mocktest.SolutionCase.test_wordBreak" title="Permalink to this definition">¶</a></dt>
+<dd><p>docstring for wordBreak</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.mocktest.SolutionCase.test_dailyTemperatures">
+<code class="sig-name descname">test_dailyTemperatures</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/leetcode/mocktest.html#SolutionCase.test_dailyTemperatures"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.mocktest.SolutionCase.test_dailyTemperatures" title="Permalink to this definition">¶</a></dt>
+<dd><p>docstring for dailyTemperatures</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.mocktest.SolutionCase.test_getTopRateFoodOutlets">
+<code class="sig-name descname">test_getTopRateFoodOutlets</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/leetcode/mocktest.html#SolutionCase.test_getTopRateFoodOutlets"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.mocktest.SolutionCase.test_getTopRateFoodOutlets" title="Permalink to this definition">¶</a></dt>
+<dd><p>docstring for getTopRateFoodOutlets</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.mocktest.SolutionCase.test_kSmallestPairs">
+<code class="sig-name descname">test_kSmallestPairs</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/leetcode/mocktest.html#SolutionCase.test_kSmallestPairs"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.mocktest.SolutionCase.test_kSmallestPairs" title="Permalink to this definition">¶</a></dt>
+<dd><p>docstring for kSmallestPairs</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.mocktest.SolutionCase.test_function1">
+<code class="sig-name descname">test_function1</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/leetcode/mocktest.html#SolutionCase.test_function1"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.mocktest.SolutionCase.test_function1" title="Permalink to this definition">¶</a></dt>
+<dd><p>docstring for function1</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-leetcode.impl.solution">
+<span id="the-solution-module"></span><h2>The “solution” module<a class="headerlink" href="#module-leetcode.impl.solution" title="Permalink to this headline">¶</a></h2>
+<p>Use the Solution class to represent Leedcode problems</p>
+<dl class="py class">
+<dt id="leetcode.impl.solution.Solution">
+<em class="property">class </em><code class="sig-prename descclassname">leetcode.impl.solution.</code><code class="sig-name descname">Solution</code><a class="reference internal" href="_modules/leetcode/impl/solution.html#Solution"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.impl.solution.Solution" title="Permalink to this definition">¶</a></dt>
+<dd><p>A <a class="reference internal" href="#module-leetcode.impl.solution" title="leetcode.impl.solution"><code class="xref py py-class docutils literal notranslate"><span class="pre">solution</span></code></a> object is the leetcode quiz module</p>
+<p>This module is to implementate the leetcode problems</p>
+<dl class="py method">
+<dt id="leetcode.impl.solution.Solution.WildcardisMatch">
+<code class="sig-name descname">WildcardisMatch</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">s</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">p</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span> &#x2192; bool<a class="reference internal" href="_modules/leetcode/impl/solution.html#Solution.WildcardisMatch"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.impl.solution.Solution.WildcardisMatch" title="Permalink to this definition">¶</a></dt>
+<dd><ol class="arabic simple" start="44">
+<li><p>Wildcard Matching (Hard)</p></li>
+</ol>
+<p>Given an input string (s) and a pattern (p), implement wildcard pattern matching with support for ‘?’ and ‘*’ where:</p>
+<p>‘?’ Matches any single character.
+‘*’ Matches any sequence of characters (including the empty sequence).
+The matching should cover the entire input string (not partial).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>s</strong> (<em>str</em>) – input string</p></li>
+<li><p><strong>p</strong> (<em>str</em>) – pattern</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>whether or not input staring and pattern are matched</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.impl.solution.Solution.arrayNesting">
+<code class="sig-name descname">arrayNesting</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">nums</span><span class="p">:</span> <span class="n">List<span class="p">[</span>int<span class="p">]</span></span></em><span class="sig-paren">)</span> &#x2192; int<a class="reference internal" href="_modules/leetcode/impl/solution.html#Solution.arrayNesting"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.impl.solution.Solution.arrayNesting" title="Permalink to this definition">¶</a></dt>
+<dd><p>565. Array Nesting (Medium)
+You are given an integer array nums of length n where nums is a permutation of the numbers in the range [0, n - 1].</p>
+<p>You should build a set s[k] = {nums[k], nums[nums[k]], nums[nums[nums[k]]], … } subjected to the following rule:</p>
+<p>The first element in s[k] starts with the selection of the element nums[k] of index = k.
+The next element in s[k] should be nums[nums[k]], and then nums[nums[nums[k]]], and so on.
+We stop adding right before a duplicate element occurs in s[k].</p>
+<p>Return the longest length of a set s[k].</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>nums</strong> (<em>List</em><em>[</em><em>int</em><em>]</em>) – integer array nums of length n</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the longest length of a set s[k]</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.impl.solution.Solution.buildTree">
+<code class="sig-name descname">buildTree</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">preorder</span><span class="p">:</span> <span class="n">List<span class="p">[</span>int<span class="p">]</span></span></em>, <em class="sig-param"><span class="n">inorder</span><span class="p">:</span> <span class="n">List<span class="p">[</span>int<span class="p">]</span></span></em><span class="sig-paren">)</span> &#x2192; Optional<span class="p">[</span>leetcode.impl.solution.TreeNode<span class="p">]</span><a class="reference internal" href="_modules/leetcode/impl/solution.html#Solution.buildTree"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.impl.solution.Solution.buildTree" title="Permalink to this definition">¶</a></dt>
+<dd><ol class="arabic simple" start="105">
+<li><p>Construct Binary Tree from Preorder and Inorder Traversal</p></li>
+</ol>
+<p>Given two integer arrays preorder and inorder where preorder is the preorder traversal of a binary tree and inorder is the inorder traversal of the same tree, construct and return the binary tree.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>preorder</strong> (<em>List</em><em>[</em><em>int</em><em>]</em>) – preorder binary tree</p></li>
+<li><p><strong>inorder</strong> (<em>List</em><em>[</em><em>int</em><em>]</em>) – inorder binary tree</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Construct binary tree</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Optional[TreeNode]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.impl.solution.Solution.canFinish">
+<code class="sig-name descname">canFinish</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">numCourses</span><span class="p">:</span> <span class="n">int</span></em>, <em class="sig-param"><span class="n">prerequisites</span><span class="p">:</span> <span class="n">List<span class="p">[</span>List<span class="p">[</span>int<span class="p">]</span><span class="p">]</span></span></em><span class="sig-paren">)</span> &#x2192; bool<a class="reference internal" href="_modules/leetcode/impl/solution.html#Solution.canFinish"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.impl.solution.Solution.canFinish" title="Permalink to this definition">¶</a></dt>
+<dd><ol class="arabic simple" start="207">
+<li><p>Course Schedule (Medium)</p></li>
+</ol>
+<p>There are a total of numCourses courses you have to take, labeled from 0 to numCourses - 1. You are given an array prerequisites 
+where prerequisites[i] = [ai, bi] indicates that you must take course bi first if you want to take course ai.</p>
+<p>For example, the pair [0, 1], indicates that to take course 0 you have to first take course 1.</p>
+<p>Return true if you can finish all courses. Otherwise, return false.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>numCourses</strong> (<em>int</em>) – total of number courses you have to take</p></li>
+<li><p><strong>prerequisites</strong> (<em>List</em><em>[</em><em>List</em><em>[</em><em>int</em><em>]</em><em>]</em>) – array prerequisites</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>whether or not you can finish all courses.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.impl.solution.Solution.climbStairs">
+<code class="sig-name descname">climbStairs</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">n</span><span class="p">:</span> <span class="n">int</span></em><span class="sig-paren">)</span> &#x2192; int<a class="reference internal" href="_modules/leetcode/impl/solution.html#Solution.climbStairs"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.impl.solution.Solution.climbStairs" title="Permalink to this definition">¶</a></dt>
+<dd><ol class="arabic simple" start="70">
+<li><p>Climbing Stairs</p></li>
+</ol>
+<p>You are climbing a staircase. It takes n steps to reach the top.</p>
+<p>Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>n</strong> (<em>int</em>) – take n steps</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>how many distinct ways can climb to the top</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.impl.solution.Solution.coinChange">
+<code class="sig-name descname">coinChange</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">coins</span><span class="p">:</span> <span class="n">List<span class="p">[</span>int<span class="p">]</span></span></em>, <em class="sig-param"><span class="n">amount</span><span class="p">:</span> <span class="n">int</span></em><span class="sig-paren">)</span> &#x2192; int<a class="reference internal" href="_modules/leetcode/impl/solution.html#Solution.coinChange"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.impl.solution.Solution.coinChange" title="Permalink to this definition">¶</a></dt>
+<dd><ol class="arabic simple" start="322">
+<li><p>Coin Change</p></li>
+</ol>
+<p>You are given an integer array coins representing coins of different denominations and an integer amount representing a total amount of money.</p>
+<p>Return the fewest number of coins that you need to make up that amount. If that amount of money cannot be made up by any combination of the coins, return -1.</p>
+<p>You may assume that you have an infinite number of each kind of coin.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>param</strong> (<em>List</em><em>[</em><em>int</em><em>]</em>) – an integer array coins</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the fewest number of coins that you need to make up that amount</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.impl.solution.Solution.combinationSum">
+<code class="sig-name descname">combinationSum</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">candidates</span><span class="p">:</span> <span class="n">List<span class="p">[</span>int<span class="p">]</span></span></em>, <em class="sig-param"><span class="n">target</span><span class="p">:</span> <span class="n">int</span></em><span class="sig-paren">)</span> &#x2192; List<span class="p">[</span>List<span class="p">[</span>int<span class="p">]</span><span class="p">]</span><a class="reference internal" href="_modules/leetcode/impl/solution.html#Solution.combinationSum"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.impl.solution.Solution.combinationSum" title="Permalink to this definition">¶</a></dt>
+<dd><ol class="arabic simple" start="39">
+<li><p>Combination Sum  (Medium)</p></li>
+</ol>
+<p>Given an array of distinct integers candidates and a target integer target, return a list of all unique combinations of candidates where the chosen numbers sum to target. You may return the combinations in any order.</p>
+<p>The same number may be chosen from candidates an unlimited number of times. Two combinations are unique if the frequency of at least one of the chosen numbers is different.</p>
+<p>It is guaranteed that the number of unique combinations that sum up to target is less than 150 combinations for the given input.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>candidates</strong> (<em>List</em><em>[</em><em>int</em><em>]</em>) – distinct integer candidates</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>a list of all unique combinations of candidates where the chosed numbers sum to target</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>List[List[int]]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.impl.solution.Solution.combinationSum2">
+<code class="sig-name descname">combinationSum2</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">candidates</span><span class="p">:</span> <span class="n">List<span class="p">[</span>int<span class="p">]</span></span></em>, <em class="sig-param"><span class="n">target</span><span class="p">:</span> <span class="n">int</span></em><span class="sig-paren">)</span> &#x2192; List<span class="p">[</span>List<span class="p">[</span>int<span class="p">]</span><span class="p">]</span><a class="reference internal" href="_modules/leetcode/impl/solution.html#Solution.combinationSum2"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.impl.solution.Solution.combinationSum2" title="Permalink to this definition">¶</a></dt>
+<dd><ol class="arabic simple" start="40">
+<li><p>Combination Sum II (Medium)</p></li>
+</ol>
+<p>Given a collection of candidate numbers (candidates) and a target number (target), find all unique combinations in candidates where the candidate numbers sum to target.</p>
+<p>Each number in candidates may only be used once in the combination.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>param</strong> (<em>List</em><em>[</em><em>int</em><em>]</em>) – a collection of candidate numbers</p></li>
+<li><p><strong>target</strong> (<em>int</em>) – a target number</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>all unique combinations in candidates where the candidates numbers sum to target</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>List[List[int]]</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>e</strong> – Description</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.impl.solution.Solution.containDuplicate">
+<code class="sig-name descname">containDuplicate</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">nums</span><span class="p">:</span> <span class="n">List<span class="p">[</span>int<span class="p">]</span></span></em><span class="sig-paren">)</span> &#x2192; bool<a class="reference internal" href="_modules/leetcode/impl/solution.html#Solution.containDuplicate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.impl.solution.Solution.containDuplicate" title="Permalink to this definition">¶</a></dt>
+<dd><ol class="arabic simple" start="217">
+<li><p>Contains Duplicate docstring for containDuplicate</p></li>
+</ol>
+<p>Given an integer array nums, return true if any value appears at least twice in the array, and return false
+if every element is distinct.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>List</strong><strong>[</strong><strong>int</strong><strong>]</strong> (<em>List</em><em>[</em><em>int</em><em>]</em>) – an integer array nums</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Whether if any value appears at least twice in the array</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.impl.solution.Solution.convertToTitle">
+<code class="sig-name descname">convertToTitle</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">columnNumber</span><span class="p">:</span> <span class="n">int</span></em><span class="sig-paren">)</span> &#x2192; str<a class="reference internal" href="_modules/leetcode/impl/solution.html#Solution.convertToTitle"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.impl.solution.Solution.convertToTitle" title="Permalink to this definition">¶</a></dt>
+<dd><ol class="arabic simple" start="168">
+<li><p>Excel Sheet Column Title (Medium)</p></li>
+</ol>
+<p>Given an integer columnNumber, return its corresponding column title as it appears in an Excel sheet.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>columnNumber</strong> (<em>int</em>) – Execel sheet</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>its corresponding column title</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.impl.solution.Solution.countBits">
+<code class="sig-name descname">countBits</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">n</span><span class="p">:</span> <span class="n">int</span></em><span class="sig-paren">)</span> &#x2192; List<span class="p">[</span>int<span class="p">]</span><a class="reference internal" href="_modules/leetcode/impl/solution.html#Solution.countBits"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.impl.solution.Solution.countBits" title="Permalink to this definition">¶</a></dt>
+<dd><ol class="arabic simple" start="338">
+<li><p>Counting Bits</p></li>
+</ol>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.impl.solution.Solution.criticalConnections">
+<code class="sig-name descname">criticalConnections</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">n</span><span class="p">:</span> <span class="n">int</span></em>, <em class="sig-param"><span class="n">connections</span><span class="p">:</span> <span class="n">List<span class="p">[</span>List<span class="p">[</span>int<span class="p">]</span><span class="p">]</span></span></em><span class="sig-paren">)</span> &#x2192; List<span class="p">[</span>List<span class="p">[</span>int<span class="p">]</span><span class="p">]</span><a class="reference internal" href="_modules/leetcode/impl/solution.html#Solution.criticalConnections"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.impl.solution.Solution.criticalConnections" title="Permalink to this definition">¶</a></dt>
+<dd><ol class="arabic simple" start="1192">
+<li><p>Critical Connections in a Network (HARD)</p></li>
+</ol>
+<p>There are n servers numbered from 0 to n - 1 connected by undirected server-to-server connections forming a network where connections[i] = [ai, bi] represents a connection between servers ai and bi. Any server can reach other servers directly or indirectly through the network.</p>
+<p>A critical connection is a connection that, if removed, will make some servers unable to reach some other server.</p>
+<p>Return all critical connections in the network in any order.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>connections</strong> (<em>List</em><em>[</em><em>List</em><em>[</em><em>int</em><em>]</em><em>]</em>) – Undirected server-to-server connections forming a network</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>all critical connections in the network in any order</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>List[List[int]]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.impl.solution.Solution.dailyTemperatures">
+<code class="sig-name descname">dailyTemperatures</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">temperatures</span><span class="p">:</span> <span class="n">List<span class="p">[</span>int<span class="p">]</span></span></em><span class="sig-paren">)</span> &#x2192; List<span class="p">[</span>int<span class="p">]</span><a class="reference internal" href="_modules/leetcode/impl/solution.html#Solution.dailyTemperatures"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.impl.solution.Solution.dailyTemperatures" title="Permalink to this definition">¶</a></dt>
+<dd><ol class="arabic simple" start="739">
+<li><p>Daily Temperatures (Medium)</p></li>
+</ol>
+<p>Given an array of integers temperatures represents the daily temperatures, return an array answer such that answer[i] is the number of days you have to wait after 
+the ith day to get a warmer temperature. If there is no future day for which this is possible, keep answer[i] == 0 instead.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>temperatures</strong> (<em>List</em><em>[</em><em>int</em><em>]</em>) – an array of integers temperatures</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>an array is the number of days you have to wait after the ith day to get warmer temperature.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>List[int]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.impl.solution.Solution.findCircleNum">
+<code class="sig-name descname">findCircleNum</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">isConnected</span><span class="p">:</span> <span class="n">List<span class="p">[</span>List<span class="p">[</span>int<span class="p">]</span><span class="p">]</span></span></em><span class="sig-paren">)</span> &#x2192; int<a class="reference internal" href="_modules/leetcode/impl/solution.html#Solution.findCircleNum"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.impl.solution.Solution.findCircleNum" title="Permalink to this definition">¶</a></dt>
+<dd><ol class="arabic simple" start="547">
+<li><p>Number of Provinces (Medium)</p></li>
+</ol>
+<p>There are n cities. Some of them are connected, while some are not. If city a is connected directly with city b, and city b is 
+connected directly with city c, then city a is connected indirectly with city c.</p>
+<p>A province is a group of directly or indirectly connected cities and no other cities outside of the group.</p>
+<p>You are given an n x n matrix isConnected where isConnected[i][j] = 1 if the ith city and the jth city are directly connected, 
+and isConnected[i][j] = 0 otherwise.</p>
+<p>Return the total number of provinces.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>isConnected</strong> (<em>List</em><em>[</em><em>List</em><em>[</em><em>int</em><em>]</em><em>]</em>) – a province is a group of directly or indirectly connected cities and no other cities outside of the group</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the total number of provinces</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.impl.solution.Solution.findLucky">
+<code class="sig-name descname">findLucky</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">arr</span><span class="p">:</span> <span class="n">List<span class="p">[</span>int<span class="p">]</span></span></em><span class="sig-paren">)</span> &#x2192; int<a class="reference internal" href="_modules/leetcode/impl/solution.html#Solution.findLucky"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.impl.solution.Solution.findLucky" title="Permalink to this definition">¶</a></dt>
+<dd><ol class="arabic simple" start="1394">
+<li><p>Find Lucky Integer in an Array</p></li>
+</ol>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.impl.solution.Solution.findMin">
+<code class="sig-name descname">findMin</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">nums</span><span class="p">:</span> <span class="n">List<span class="p">[</span>int<span class="p">]</span></span></em><span class="sig-paren">)</span> &#x2192; int<a class="reference internal" href="_modules/leetcode/impl/solution.html#Solution.findMin"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.impl.solution.Solution.findMin" title="Permalink to this definition">¶</a></dt>
+<dd><ol class="arabic simple" start="153">
+<li><p>Find Minimum in Rotated Sorted Array</p></li>
+</ol>
+<p>Suppose an array of length n sorted in ascending order is rotated between 1 and n times. For example, the array nums = [0,1,2,4,5,6,7] might become:</p>
+<p>[4,5,6,7,0,1,2] if it was rotated 4 times.
+[0,1,2,4,5,6,7] if it was rotated 7 times.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>nums</strong> (<em>List</em><em>[</em><em>int</em><em>]</em>) – sorted rotated array of unique elements</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the minimum element of this array</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.impl.solution.Solution.findPeakElement">
+<code class="sig-name descname">findPeakElement</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">nums</span><span class="p">:</span> <span class="n">List<span class="p">[</span>int<span class="p">]</span></span></em><span class="sig-paren">)</span> &#x2192; int<a class="reference internal" href="_modules/leetcode/impl/solution.html#Solution.findPeakElement"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.impl.solution.Solution.findPeakElement" title="Permalink to this definition">¶</a></dt>
+<dd><ol class="arabic simple" start="162">
+<li><p>Find Peak Element (Medium)</p></li>
+</ol>
+<p>A peak element is an element that is strictly greater than its neighbors.</p>
+<p>Given an integer array nums, find a peak element, and return its index. If the array contains multiple peaks, return the index to any of the peaks.</p>
+<p>You may imagine that nums[-1] = nums[n] = -∞.</p>
+<p>You must write an algorithm that runs in O(log n) time.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>nums</strong> (<em>int</em>) – integer array</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>peak element</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.impl.solution.Solution.firstUniqChar">
+<code class="sig-name descname">firstUniqChar</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">s</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span> &#x2192; int<a class="reference internal" href="_modules/leetcode/impl/solution.html#Solution.firstUniqChar"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.impl.solution.Solution.firstUniqChar" title="Permalink to this definition">¶</a></dt>
+<dd><ol class="arabic simple" start="387">
+<li><p>First Unique Character in a String</p></li>
+</ol>
+<p>Given a string s, find the first non-repeating character in it and return its index. If it does not exist, return -1.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>s</strong> (<em>str</em>) – string</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the first non-repeating character</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Type</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>e</strong> – Description</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.impl.solution.Solution.floodFill">
+<code class="sig-name descname">floodFill</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">image</span><span class="p">:</span> <span class="n">List<span class="p">[</span>List<span class="p">[</span>int<span class="p">]</span><span class="p">]</span></span></em>, <em class="sig-param"><span class="n">sr</span><span class="p">:</span> <span class="n">int</span></em>, <em class="sig-param"><span class="n">sc</span><span class="p">:</span> <span class="n">int</span></em>, <em class="sig-param"><span class="n">color</span><span class="p">:</span> <span class="n">int</span></em><span class="sig-paren">)</span> &#x2192; List<span class="p">[</span>List<span class="p">[</span>int<span class="p">]</span><span class="p">]</span><a class="reference internal" href="_modules/leetcode/impl/solution.html#Solution.floodFill"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.impl.solution.Solution.floodFill" title="Permalink to this definition">¶</a></dt>
+<dd><ol class="arabic simple" start="733">
+<li><p>Flood Fill</p></li>
+</ol>
+<p>An image is represented by an m x n integer grid image where image[i][j] represents the pixel value of the image.</p>
+<p>You are also given three integers sr, sc, and color. You should perform a flood fill on the image starting from the pixel image[sr][sc].</p>
+<p>To perform a flood fill, consider the starting pixel, plus any pixels connected 4-directionally to the starting pixel of the same color as the starting pixel, plus any pixels connected 4-directionally to those pixels (also with the same color), and so on. Replace the color of all of the aforementioned pixels with color.</p>
+<p>Return the modified image after performing the flood fill.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>image</strong> (<em>List</em><em>[</em><em>List</em><em>[</em><em>int</em><em>]</em><em>]</em>) – integer grid image represents the pixel value of the image</p></li>
+<li><p><strong>sr</strong> (<em>int</em>) – source x-index</p></li>
+<li><p><strong>sc</strong> (<em>int</em>) – source y-index</p></li>
+<li><p><strong>color</strong> (<em>int</em>) – color of all of the aforementioned pixels color</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the modified image after performing the flood fill</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>List[List[int]]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.impl.solution.Solution.function1">
+<code class="sig-name descname">function1</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">A</span><span class="p">:</span> <span class="n">List<span class="p">[</span>int<span class="p">]</span></span></em><span class="sig-paren">)</span> &#x2192; List<span class="p">[</span>int<span class="p">]</span><a class="reference internal" href="_modules/leetcode/impl/solution.html#Solution.function1"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.impl.solution.Solution.function1" title="Permalink to this definition">¶</a></dt>
+<dd><p>docstring for function1</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.impl.solution.Solution.getSum">
+<code class="sig-name descname">getSum</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">a</span><span class="p">:</span> <span class="n">int</span></em>, <em class="sig-param"><span class="n">b</span><span class="p">:</span> <span class="n">int</span></em><span class="sig-paren">)</span> &#x2192; int<a class="reference internal" href="_modules/leetcode/impl/solution.html#Solution.getSum"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.impl.solution.Solution.getSum" title="Permalink to this definition">¶</a></dt>
+<dd><ol class="arabic simple" start="371">
+<li><p>Sum of Two Integers</p></li>
+</ol>
+<p>Given two integers a and b, return the sum of the two integers without using the operators + and -</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>a</strong> (<em>int</em>) – integer</p></li>
+<li><p><strong>b</strong> (<em>int</em>) – integer</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the sum of the two integers</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.impl.solution.Solution.groupAnagrams">
+<code class="sig-name descname">groupAnagrams</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">strs</span><span class="p">:</span> <span class="n">List<span class="p">[</span>str<span class="p">]</span></span></em><span class="sig-paren">)</span> &#x2192; List<span class="p">[</span>List<span class="p">[</span>str<span class="p">]</span><span class="p">]</span><a class="reference internal" href="_modules/leetcode/impl/solution.html#Solution.groupAnagrams"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.impl.solution.Solution.groupAnagrams" title="Permalink to this definition">¶</a></dt>
+<dd><ol class="arabic simple" start="49">
+<li><p>Group Anagrams</p></li>
+</ol>
+<p>Given an array of strings strs, group the anagrams together. You can return the answer in any order.</p>
+<p>An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>strs</strong> (<em>List</em><em>[</em><em>str</em><em>]</em>) – array of strings</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the answer in any order</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>List[List[str]]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.impl.solution.Solution.halvesAreAlike">
+<code class="sig-name descname">halvesAreAlike</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">s</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span> &#x2192; bool<a class="reference internal" href="_modules/leetcode/impl/solution.html#Solution.halvesAreAlike"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.impl.solution.Solution.halvesAreAlike" title="Permalink to this definition">¶</a></dt>
+<dd><ol class="arabic simple" start="1704">
+<li><p>Determine if String Halves Are Alike docstring for halvesAreAlike (Easy)</p></li>
+</ol>
+<p>You are given a string s of even length. Split this string into two halves of equal lengths, 
+and let a be the first half and b be the second half.</p>
+<p>Two strings are alike if they have the same number of vowels (‘a’, ‘e’, ‘i’, ‘o’, ‘u’, ‘A’, ‘E’, ‘I’, ‘O’, ‘U’).</p>
+<p>Notice that s contains uppercase and lowercase letters.</p>
+<p>Return true if a and b are alike. Otherwise, return false.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>s</strong> (<em>str</em>) – string</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Determine if string halves are alike</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.impl.solution.Solution.hasCycle">
+<code class="sig-name descname">hasCycle</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">head</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>leetcode.impl.solution.ListNode<span class="p">]</span></span></em><span class="sig-paren">)</span> &#x2192; bool<a class="reference internal" href="_modules/leetcode/impl/solution.html#Solution.hasCycle"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.impl.solution.Solution.hasCycle" title="Permalink to this definition">¶</a></dt>
+<dd><ol class="arabic simple" start="141">
+<li><p>Linked List Cycle (Easy)</p></li>
+</ol>
+<p>Given head, the head of a linked list, determine if the linked list has a cycle in it.</p>
+<p>There is a cycle in a linked list if there is some node in the list that can be reached again by continuously following the next pointer. Internally, pos is used to denote the index of the node that tail’s next pointer is connected to. Note that pos is not passed as a parameter.</p>
+<p>Return true if there is a cycle in the linked list. Otherwise, return false.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>head</strong> (<em>Optional</em><em>[</em><em>List</em><em>[</em><em>ListNode</em><em>]</em><em>]</em>) – head of a linked list</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>whether or not there is a cycle in the linked list</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.impl.solution.Solution.hasPathSum">
+<code class="sig-name descname">hasPathSum</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">root</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>leetcode.impl.solution.TreeNode<span class="p">]</span></span></em>, <em class="sig-param"><span class="n">targetSum</span><span class="p">:</span> <span class="n">int</span></em><span class="sig-paren">)</span> &#x2192; bool<a class="reference internal" href="_modules/leetcode/impl/solution.html#Solution.hasPathSum"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.impl.solution.Solution.hasPathSum" title="Permalink to this definition">¶</a></dt>
+<dd><ol class="arabic simple" start="112">
+<li><p>Path Sum</p></li>
+</ol>
+<p>Given the root of a binary tree and an integer targetSum, return true if the tree has a root-to-leaf path such that adding up all the values along the path equals targetSum.</p>
+<p>A leaf is a node with no children.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>root</strong> (<em>Optional</em><em>[</em><em>TreeNode</em><em>]</em>) – the root of a binary tree</p></li>
+<li><p><strong>targetSum</strong> (<em>int</em>) – target Sum</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>if the tree has a root-to-leaf path that adding up all the values along the path equals targetSum</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.impl.solution.Solution.isAnagram">
+<code class="sig-name descname">isAnagram</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">s</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">t</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span> &#x2192; bool<a class="reference internal" href="_modules/leetcode/impl/solution.html#Solution.isAnagram"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.impl.solution.Solution.isAnagram" title="Permalink to this definition">¶</a></dt>
+<dd><ol class="arabic simple" start="242">
+<li><p>Valid Anagram</p></li>
+</ol>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.impl.solution.Solution.isIsomorphic">
+<code class="sig-name descname">isIsomorphic</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">s</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">t</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span> &#x2192; bool<a class="reference internal" href="_modules/leetcode/impl/solution.html#Solution.isIsomorphic"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.impl.solution.Solution.isIsomorphic" title="Permalink to this definition">¶</a></dt>
+<dd><ol class="arabic simple" start="205">
+<li><p>Isomorphic Strings</p></li>
+</ol>
+<p>Given two strings s and t, determine if they are isomorphic.</p>
+<p>Two strings s and t are isomorphic if the characters in s can be replaced to get t.</p>
+<p>All occurrences of a character must be replaced with another character while preserving the order of characters. No two characters may map to the same character, but a character may map to itself.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>s</strong> (<em>str</em>) – string</p>
+</dd>
+</dl>
+<p>:param t;  string
+:type  t;  str</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>if two string are isomorphic</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.impl.solution.Solution.isMatch">
+<code class="sig-name descname">isMatch</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">s</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">p</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span> &#x2192; bool<a class="reference internal" href="_modules/leetcode/impl/solution.html#Solution.isMatch"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.impl.solution.Solution.isMatch" title="Permalink to this definition">¶</a></dt>
+<dd><ol class="arabic simple" start="10">
+<li><p>Regular Expression Matching (HARD)</p></li>
+</ol>
+<p>Given an input string s and a pattern p, implement regular expression matching with support for ‘.’ and ‘*’ where:</p>
+<p>‘.’ Matches any single character.
+‘*’ Matches zero or more of the preceding element.
+The matching should cover the entire input string (not partial).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>s</strong> (<em>string</em>) – input string</p></li>
+<li><p><strong>p</strong> (<em>string</em>) – pattern character</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>whehter the matching pattern cover the entire input string</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.impl.solution.Solution.isSameTree">
+<code class="sig-name descname">isSameTree</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">p</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>leetcode.impl.solution.TreeNode<span class="p">]</span></span></em>, <em class="sig-param"><span class="n">q</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>leetcode.impl.solution.TreeNode<span class="p">]</span></span></em><span class="sig-paren">)</span> &#x2192; bool<a class="reference internal" href="_modules/leetcode/impl/solution.html#Solution.isSameTree"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.impl.solution.Solution.isSameTree" title="Permalink to this definition">¶</a></dt>
+<dd><ol class="arabic simple" start="100">
+<li><p>Same Tree (Easy)</p></li>
+</ol>
+<p>Given the roots of two binary trees p and q, write a function to check if they are the same or not.</p>
+<p>Two binary trees are considered the same if they are structurally identical, and the nodes have the same value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>p</strong> (<em>Optional</em><em>[</em><em>TreeNode</em><em>]</em>) – binary tree</p></li>
+<li><p><strong>q</strong> (<em>Optional</em><em>[</em><em>TreeNode</em><em>]</em>) – binary tree</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Whether two binary trees are considered the same</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.impl.solution.Solution.isSubsequence">
+<code class="sig-name descname">isSubsequence</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">s</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">t</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span> &#x2192; bool<a class="reference internal" href="_modules/leetcode/impl/solution.html#Solution.isSubsequence"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.impl.solution.Solution.isSubsequence" title="Permalink to this definition">¶</a></dt>
+<dd><ol class="arabic simple" start="392">
+<li><p>Is Subsequence</p></li>
+</ol>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.impl.solution.Solution.isValid">
+<code class="sig-name descname">isValid</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">s</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span> &#x2192; bool<a class="reference internal" href="_modules/leetcode/impl/solution.html#Solution.isValid"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.impl.solution.Solution.isValid" title="Permalink to this definition">¶</a></dt>
+<dd><ol class="arabic simple" start="20">
+<li><p>Valid Parentheses</p></li>
+</ol>
+<p>Given a string s containing just the characters ‘(’, ‘)’, ‘{’, ‘}’, ‘[’ and ‘]’, determine if the input string is valid.</p>
+<p>An input string is valid if:</p>
+<p>Open brackets must be closed by the same type of brackets.
+Open brackets must be closed in the correct order.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>s</strong> (<em>str</em>) – string containing just characters</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>determine if the input string is valid</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.impl.solution.Solution.isValidBST">
+<code class="sig-name descname">isValidBST</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">root</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>leetcode.impl.solution.TreeNode<span class="p">]</span></span></em><span class="sig-paren">)</span> &#x2192; bool<a class="reference internal" href="_modules/leetcode/impl/solution.html#Solution.isValidBST"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.impl.solution.Solution.isValidBST" title="Permalink to this definition">¶</a></dt>
+<dd><ol class="arabic simple" start="98">
+<li><p>Validate Binary Search Tree</p></li>
+</ol>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.impl.solution.Solution.isValidSudoku">
+<code class="sig-name descname">isValidSudoku</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">board</span><span class="p">:</span> <span class="n">List<span class="p">[</span>List<span class="p">[</span>str<span class="p">]</span><span class="p">]</span></span></em><span class="sig-paren">)</span> &#x2192; bool<a class="reference internal" href="_modules/leetcode/impl/solution.html#Solution.isValidSudoku"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.impl.solution.Solution.isValidSudoku" title="Permalink to this definition">¶</a></dt>
+<dd><ol class="arabic simple" start="36">
+<li><p>Valid Sudoku (Medium)</p></li>
+</ol>
+<p>Determine if a 9 x 9 Sudoku board is valid. Only the filled cells need to be validated according to the following rules:</p>
+<p>Each row must contain the digits 1-9 without repetition.
+Each column must contain the digits 1-9 without repetition.
+Each of the nine 3 x 3 sub-boxes of the grid must contain the digits 1-9 without repetition.
+Note:</p>
+<p>A Sudoku board (partially filled) could be valid but is not necessarily solvable.
+Only the filled cells need to be validated according to the mentioned rules.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>board</strong> (<em>List</em><em>[</em><em>List</em><em>[</em><em>str</em><em>]</em><em>]</em>) – Sudoku board</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Determine if Sudoku board is valid</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.impl.solution.Solution.judgeCircle">
+<code class="sig-name descname">judgeCircle</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">moves</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span> &#x2192; bool<a class="reference internal" href="_modules/leetcode/impl/solution.html#Solution.judgeCircle"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.impl.solution.Solution.judgeCircle" title="Permalink to this definition">¶</a></dt>
+<dd><ol class="arabic simple" start="657">
+<li><p>Robot Return to Origin (Easy)</p></li>
+</ol>
+<p>There is a robot starting at the position (0, 0), the origin, on a 2D plane. Given a sequence of its moves, judge if this robot ends up at (0, 0) after it completes its moves.</p>
+<p>You are given a string moves that represents the move sequence of the robot where moves[i] represents its ith move. Valid moves are ‘R’ (right), ‘L’ (left), ‘U’ (up), and ‘D’ (down).</p>
+<p>Return true if the robot returns to the origin after it finishes all of its moves, or false otherwise.</p>
+<p>Note: The way that the robot is “facing” is irrelevant. ‘R’ will always make the robot move to the right once, ‘L’ will always make it move left, etc. Also, assume that the magnitude of the robot’s movement is the same for each move.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>moves</strong> (<em>str</em>) – the represents the move sequence of the robot</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>whether or not the robot returns to the origin after it finishes all of its moves</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.impl.solution.Solution.kClosest">
+<code class="sig-name descname">kClosest</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">points</span><span class="p">:</span> <span class="n">List<span class="p">[</span>List<span class="p">[</span>int<span class="p">]</span><span class="p">]</span></span></em>, <em class="sig-param"><span class="n">k</span><span class="p">:</span> <span class="n">int</span></em><span class="sig-paren">)</span> &#x2192; List<span class="p">[</span>List<span class="p">[</span>int<span class="p">]</span><span class="p">]</span><a class="reference internal" href="_modules/leetcode/impl/solution.html#Solution.kClosest"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.impl.solution.Solution.kClosest" title="Permalink to this definition">¶</a></dt>
+<dd><ol class="arabic simple" start="973">
+<li><p>K Closest Points to Origin (Medium)</p></li>
+</ol>
+<p>Given an array of points where points[i] = [xi, yi] represents a point on the X-Y plane and an integer k, return the k closest points to the origin (0, 0).</p>
+<p>The distance between two points on the X-Y plane is the Euclidean distance (i.e., √(x1 - x2)2 + (y1 - y2)2).</p>
+<p>You may return the answer in any order. The answer is guaranteed to be unique (except for the order that it is in).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>points</strong> (<em>List</em><em>[</em><em>List</em><em>[</em><em>int</em><em>]</em><em>]</em>) – an array of points represents a point on the X-Y plane</p></li>
+<li><p><strong>k</strong> (<em>int</em>) – k closest points to the origin (0, 0)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>unique closest points to the origin</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>List[List[int]]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.impl.solution.Solution.kSmallestPairs">
+<code class="sig-name descname">kSmallestPairs</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">nums1</span><span class="p">:</span> <span class="n">List<span class="p">[</span>int<span class="p">]</span></span></em>, <em class="sig-param"><span class="n">nums2</span><span class="p">:</span> <span class="n">List<span class="p">[</span>int<span class="p">]</span></span></em>, <em class="sig-param"><span class="n">k</span><span class="p">:</span> <span class="n">int</span></em><span class="sig-paren">)</span> &#x2192; List<span class="p">[</span>List<span class="p">[</span>int<span class="p">]</span><span class="p">]</span><a class="reference internal" href="_modules/leetcode/impl/solution.html#Solution.kSmallestPairs"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.impl.solution.Solution.kSmallestPairs" title="Permalink to this definition">¶</a></dt>
+<dd><ol class="arabic simple" start="373">
+<li><p>Find K Pairs with Smallest Sums (Medium)</p></li>
+</ol>
+<p>You are given two integer arrays nums1 and nums2 sorted in ascending order and an integer k.</p>
+<p>Define a pair (u, v) which consists of one element from the first array and one element from the second array.</p>
+<p>Return the k pairs (u1, v1), (u2, v2), …, (uk, vk) with the smallest sums.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>num1</strong> – integer array sorted in ascending order</p></li>
+<li><p><strong>nums2</strong> (<em>List</em><em>[</em><em>int</em><em>]</em>) – integer array sorted in ascending order</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the k pair (u1, v1), (u2, v2). …, (uk, vk)</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>List[List[int]]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.impl.solution.Solution.lengthOfLIS">
+<code class="sig-name descname">lengthOfLIS</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">nums</span><span class="p">:</span> <span class="n">List<span class="p">[</span>int<span class="p">]</span></span></em><span class="sig-paren">)</span> &#x2192; int<a class="reference internal" href="_modules/leetcode/impl/solution.html#Solution.lengthOfLIS"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.impl.solution.Solution.lengthOfLIS" title="Permalink to this definition">¶</a></dt>
+<dd><ol class="arabic simple" start="300">
+<li><p>Longest Increasing Subsequence (Medium)</p></li>
+</ol>
+<p>Given an integer array nums, return the length of the longest strictly increasing subsequence.</p>
+<p>A subsequence is a sequence that can be derived from an array by deleting some or no elements without changing
+the order of the remaining elements. For example, [0, 3, 6, 7] is a subsequence of the array [0,3,1,6,2,2,7].</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>nums</strong> (<em>List</em><em>[</em><em>int</em><em>]</em>) – array nums</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the longest strictly increasing subsequence</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.impl.solution.Solution.lengthOfLastWord">
+<code class="sig-name descname">lengthOfLastWord</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">s</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span> &#x2192; int<a class="reference internal" href="_modules/leetcode/impl/solution.html#Solution.lengthOfLastWord"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.impl.solution.Solution.lengthOfLastWord" title="Permalink to this definition">¶</a></dt>
+<dd><ol class="arabic simple" start="58">
+<li><p>Length of Last Word</p></li>
+</ol>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.impl.solution.Solution.lengthOfLongestSubstring">
+<code class="sig-name descname">lengthOfLongestSubstring</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">s</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span> &#x2192; int<a class="reference internal" href="_modules/leetcode/impl/solution.html#Solution.lengthOfLongestSubstring"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.impl.solution.Solution.lengthOfLongestSubstring" title="Permalink to this definition">¶</a></dt>
+<dd><ol class="arabic simple" start="3">
+<li><p>Longest Substring Without Repeating Characters (Medium)</p></li>
+</ol>
+<p>Given a string s, find the length of the longest substring without repeating characters.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>s</strong> (<em>str</em>) – string</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the length of the longest substring without repeating characters</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.impl.solution.Solution.letterCombinations">
+<code class="sig-name descname">letterCombinations</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">digits</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span> &#x2192; List<span class="p">[</span>str<span class="p">]</span><a class="reference internal" href="_modules/leetcode/impl/solution.html#Solution.letterCombinations"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.impl.solution.Solution.letterCombinations" title="Permalink to this definition">¶</a></dt>
+<dd><ol class="arabic simple" start="17">
+<li><p>Letter Combinations of a Phone Number (Medium)</p></li>
+</ol>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.impl.solution.Solution.longestCommonPrefix">
+<code class="sig-name descname">longestCommonPrefix</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">strs</span><span class="p">:</span> <span class="n">List<span class="p">[</span>str<span class="p">]</span></span></em><span class="sig-paren">)</span> &#x2192; str<a class="reference internal" href="_modules/leetcode/impl/solution.html#Solution.longestCommonPrefix"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.impl.solution.Solution.longestCommonPrefix" title="Permalink to this definition">¶</a></dt>
+<dd><ol class="arabic simple" start="14">
+<li><p>Longest Common Prefix</p></li>
+</ol>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.impl.solution.Solution.longestNiceSubstring">
+<code class="sig-name descname">longestNiceSubstring</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">s</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span> &#x2192; str<a class="reference internal" href="_modules/leetcode/impl/solution.html#Solution.longestNiceSubstring"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.impl.solution.Solution.longestNiceSubstring" title="Permalink to this definition">¶</a></dt>
+<dd><ol class="arabic simple" start="1763">
+<li><p>Longest Nice Substring (Easy)</p></li>
+</ol>
+<p>A string s is nice if, for every letter of the alphabet that s contains, it appears both in uppercase and lowercase. 
+For example, “abABB” is nice because ‘A’ and ‘a’ appear, and ‘B’ and ‘b’ appear. However, “abA” is not 
+because ‘b’ appears, but ‘B’ does not.</p>
+<p>Given a string s, return the longest substring of s that is nice. If there are multiple, return the substring of the earliest occurrence. 
+If there are none, return an empty string.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>s</strong> (<em>str</em>) – string</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the longest substring</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.impl.solution.Solution.longestStrChain">
+<code class="sig-name descname">longestStrChain</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">words</span><span class="p">:</span> <span class="n">List<span class="p">[</span>str<span class="p">]</span></span></em><span class="sig-paren">)</span> &#x2192; int<a class="reference internal" href="_modules/leetcode/impl/solution.html#Solution.longestStrChain"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.impl.solution.Solution.longestStrChain" title="Permalink to this definition">¶</a></dt>
+<dd><ol class="arabic simple" start="1048">
+<li><p>Longest String Chain (Medium)</p></li>
+</ol>
+<p>You are given an array of words where each word consists of lowercase English letters.</p>
+<p>wordA is a predecessor of wordB if and only if we can insert exactly one letter anywhere in wordA without changing the order of the other characters to make 
+it equal to wordB.</p>
+<p>For example, “abc” is a predecessor of “abac”, while “cba” is not a 
+predecessor of “bcad”.</p>
+<p>A word chain is a sequence of words [word1, word2, …, wordk] with k &gt;= 1, where word1 is a predecessor of word2, word2 is a predecessor of word3, 
+and so on. A single word is trivially a word chain with k == 1.</p>
+<p>Return the length of the longest possible word chain with words chosen from the given list of words.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>words</strong> (<em>List</em><em>[</em><em>str</em><em>]</em>) – an array of words where each word consists of lowercase English letters.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the length of the longest possible word chain with words choosen from the given list of words</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.impl.solution.Solution.lowestCommonAncestor">
+<code class="sig-name descname">lowestCommonAncestor</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">root</span><span class="p">:</span> <span class="n">leetcode.impl.solution.TreeNode</span></em>, <em class="sig-param"><span class="n">p</span><span class="p">:</span> <span class="n">leetcode.impl.solution.TreeNode</span></em>, <em class="sig-param"><span class="n">q</span><span class="p">:</span> <span class="n">leetcode.impl.solution.TreeNode</span></em><span class="sig-paren">)</span> &#x2192; leetcode.impl.solution.TreeNode<a class="reference internal" href="_modules/leetcode/impl/solution.html#Solution.lowestCommonAncestor"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.impl.solution.Solution.lowestCommonAncestor" title="Permalink to this definition">¶</a></dt>
+<dd><ol class="arabic simple" start="235">
+<li><p>Lowest Common Ancestor of a Binary Search Tree (Easy)</p></li>
+</ol>
+<p>Given a binary search tree (BST), find the lowest common ancestor (LCA) of two given nodes in the BST.</p>
+<p>According to the definition of LCA on Wikipedia: “The lowest common ancestor is defined between two nodes p and q as the lowest node in T that has both p and q as descendants (where we allow a node to be a descendant of itself).”</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>root</strong> (<em>Optional</em><em>[</em><em>TreeNode</em><em>]</em>) – binary search tree</p></li>
+<li><p><strong>p</strong> (<em>Optional</em><em>[</em><em>TreeNode</em><em>]</em>) – Tree node</p></li>
+<li><p><strong>q</strong> (<em>Optional</em><em>[</em><em>TreeNode</em><em>]</em>) – Tree node</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the lowest common ancestor of two given nodes in the BST</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Optional[TreeNode]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.impl.solution.Solution.majorityElement">
+<code class="sig-name descname">majorityElement</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">nums</span><span class="p">:</span> <span class="n">List<span class="p">[</span>int<span class="p">]</span></span></em><span class="sig-paren">)</span> &#x2192; int<a class="reference internal" href="_modules/leetcode/impl/solution.html#Solution.majorityElement"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.impl.solution.Solution.majorityElement" title="Permalink to this definition">¶</a></dt>
+<dd><ol class="arabic simple" start="169">
+<li><p>Majority Element (Easy)</p></li>
+</ol>
+<p>Given an array nums of size n, return the majority element.</p>
+<p>The majority element is the element that appears more than ⌊n / 2⌋ times. You may assume that the majority element always exists in the array.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>nums</strong> (<em>List</em><em>[</em><em>int</em><em>]</em>) – array nums</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the majority element</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.impl.solution.Solution.maxArea">
+<code class="sig-name descname">maxArea</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">height</span><span class="p">:</span> <span class="n">List<span class="p">[</span>int<span class="p">]</span></span></em><span class="sig-paren">)</span> &#x2192; int<a class="reference internal" href="_modules/leetcode/impl/solution.html#Solution.maxArea"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.impl.solution.Solution.maxArea" title="Permalink to this definition">¶</a></dt>
+<dd><ol class="arabic simple" start="11">
+<li><p>Container With Most Water</p></li>
+</ol>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.impl.solution.Solution.maxLength">
+<code class="sig-name descname">maxLength</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">arr</span><span class="p">:</span> <span class="n">List<span class="p">[</span>str<span class="p">]</span></span></em><span class="sig-paren">)</span> &#x2192; int<a class="reference internal" href="_modules/leetcode/impl/solution.html#Solution.maxLength"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.impl.solution.Solution.maxLength" title="Permalink to this definition">¶</a></dt>
+<dd><ol class="arabic simple" start="1239">
+<li><p>Maximum Length of a Concatencated String with Unique Characters (Medium)</p></li>
+</ol>
+<p>You are given an array of strings arr. A string s is formed by the concatenation of a subsequence of arr that has unique characters that has unique characters.</p>
+<p>A subsequence is an array that can be derived from another array of by deleting some or no elements without changing the order of the remaining elements.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>arr</strong> (<em>List</em><em>[</em><em>str</em><em>]</em>) – array of strings</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the maximum possible length of subsequence</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.impl.solution.Solution.maxProfit">
+<code class="sig-name descname">maxProfit</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">prices</span><span class="p">:</span> <span class="n">List<span class="p">[</span>int<span class="p">]</span></span></em><span class="sig-paren">)</span> &#x2192; int<a class="reference internal" href="_modules/leetcode/impl/solution.html#Solution.maxProfit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.impl.solution.Solution.maxProfit" title="Permalink to this definition">¶</a></dt>
+<dd><ol class="arabic simple" start="121">
+<li><p>Best Time to Buy and Sell Stock (Easy)</p></li>
+</ol>
+<p>You are given an array prices where prices[i] is the price of a given stock on the ith day.</p>
+<p>You want to maximize your profit by choosing a single day to buy one stock and 
+choosing a different day in the future to sell that stock.</p>
+<p>Return the maximum profit you can achieve from this transaction. 
+If you cannot achieve any profit, return 0.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>prices</strong> (<em>List</em><em>[</em><em>int</em><em>]</em>) – integer array prices</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>maximum profit you can achieve from this transaction</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.impl.solution.Solution.maxProfitII">
+<code class="sig-name descname">maxProfitII</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">prices</span><span class="p">:</span> <span class="n">List<span class="p">[</span>int<span class="p">]</span></span></em><span class="sig-paren">)</span> &#x2192; int<a class="reference internal" href="_modules/leetcode/impl/solution.html#Solution.maxProfitII"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.impl.solution.Solution.maxProfitII" title="Permalink to this definition">¶</a></dt>
+<dd><ol class="arabic simple" start="122">
+<li><p>Best Time to Buy and Sell Stock II docstring for maxProfit (Medium)</p></li>
+</ol>
+<p>You are given an integer array prices where prices[i] is the price of a given stock on the ith day.</p>
+<p>On each day, you may decide to buy and/or sell the stock. You can only hold at most one share of the stock at any time. 
+However, you can buy it then immediately sell it on the same day.</p>
+<p>Find and return the maximum profit you can achieve.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>prices</strong> (<em>List</em><em>[</em><em>int</em><em>]</em>) – integer array prices</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the maximum profit you can achieve</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.impl.solution.Solution.maxProfitIV">
+<code class="sig-name descname">maxProfitIV</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">k</span><span class="p">:</span> <span class="n">int</span></em>, <em class="sig-param"><span class="n">prices</span><span class="p">:</span> <span class="n">List<span class="p">[</span>int<span class="p">]</span></span></em><span class="sig-paren">)</span> &#x2192; int<a class="reference internal" href="_modules/leetcode/impl/solution.html#Solution.maxProfitIV"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.impl.solution.Solution.maxProfitIV" title="Permalink to this definition">¶</a></dt>
+<dd><ol class="arabic simple" start="188">
+<li><p>Best Time to Buy and Sell Stock IV (HARD)</p></li>
+</ol>
+<p>You are given an integer array prices where prices[i] is the price of a given stock on the ith day, and an integer k.</p>
+<p>Find the maximum profit you can achieve. You may complete at most k transactions.</p>
+<p>Note: You may not engage in multiple transactions simultaneously (i.e., you must sell the stock before you buy again).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>prices</strong> (<em>List</em><em>[</em><em>int</em><em>]</em>) – the price of a given stock</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the maximum profit you can achieve</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.impl.solution.Solution.maxProfitwithfee">
+<code class="sig-name descname">maxProfitwithfee</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">prices</span><span class="p">:</span> <span class="n">List<span class="p">[</span>int<span class="p">]</span></span></em>, <em class="sig-param"><span class="n">fee</span><span class="p">:</span> <span class="n">int</span></em><span class="sig-paren">)</span> &#x2192; int<a class="reference internal" href="_modules/leetcode/impl/solution.html#Solution.maxProfitwithfee"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.impl.solution.Solution.maxProfitwithfee" title="Permalink to this definition">¶</a></dt>
+<dd><ol class="arabic" start="714">
+<li><p>Best Time to Buy and Sell Stock with Transaction Fee (Medium)</p>
+<blockquote>
+<div><p>You are given an array prices where prices[i] is the price of a given stock on the ith day, and an integer fee representing a transaction fee.</p>
+</div></blockquote>
+</li>
+</ol>
+<p>Find the maximum profit you can achieve. You may complete as many transactions as you like, but you need to pay the transaction fee for each transaction.</p>
+<p>Note: You may not engage in multiple transactions simultaneously (i.e., you must sell the stock before you buy again).</p>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">param prices<span class="colon">:</span></dt>
+<dd class="field-odd"><p>integer array prices</p>
+</dd>
+<dt class="field-even">type  prices<span class="colon">:</span></dt>
+<dd class="field-even"><p>Lint[int]</p>
+</dd>
+<dt class="field-odd">param fee<span class="colon">:</span></dt>
+<dd class="field-odd"><p>transaction fee</p>
+</dd>
+<dt class="field-even">type  fee<span class="colon">:</span></dt>
+<dd class="field-even"><p>int</p>
+</dd>
+<dt class="field-odd">return<span class="colon">:</span></dt>
+<dd class="field-odd"><p>the maximum profit you can achieve</p>
+</dd>
+<dt class="field-even">rtype<span class="colon">:</span></dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.impl.solution.Solution.maxSubArray">
+<code class="sig-name descname">maxSubArray</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">nums</span><span class="p">:</span> <span class="n">List<span class="p">[</span>int<span class="p">]</span></span></em><span class="sig-paren">)</span> &#x2192; int<a class="reference internal" href="_modules/leetcode/impl/solution.html#Solution.maxSubArray"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.impl.solution.Solution.maxSubArray" title="Permalink to this definition">¶</a></dt>
+<dd><ol class="arabic simple" start="53">
+<li><p>Maximum Subarray docstring for maxSubArray (Easy)</p></li>
+</ol>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.impl.solution.Solution.merge">
+<code class="sig-name descname">merge</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">intervals</span><span class="p">:</span> <span class="n">List<span class="p">[</span>List<span class="p">[</span>int<span class="p">]</span><span class="p">]</span></span></em><span class="sig-paren">)</span> &#x2192; List<span class="p">[</span>List<span class="p">[</span>int<span class="p">]</span><span class="p">]</span><a class="reference internal" href="_modules/leetcode/impl/solution.html#Solution.merge"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.impl.solution.Solution.merge" title="Permalink to this definition">¶</a></dt>
+<dd><ol class="arabic simple" start="56">
+<li><p>Merge Intervals (Medium)</p></li>
+</ol>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.impl.solution.Solution.mergeKLists">
+<code class="sig-name descname">mergeKLists</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">lists</span><span class="p">:</span> <span class="n">List<span class="p">[</span>Optional<span class="p">[</span>leetcode.impl.solution.ListNode<span class="p">]</span><span class="p">]</span></span></em><span class="sig-paren">)</span> &#x2192; Optional<span class="p">[</span>leetcode.impl.solution.ListNode<span class="p">]</span><a class="reference internal" href="_modules/leetcode/impl/solution.html#Solution.mergeKLists"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.impl.solution.Solution.mergeKLists" title="Permalink to this definition">¶</a></dt>
+<dd><ol class="arabic simple" start="23">
+<li><p>Merge k Sorted Lists</p></li>
+</ol>
+<p>You are given an array of k linked-lists lists, each linked-list is sorted in ascending order.</p>
+<p>Merge all the linked-lists into one sorted linked-list and return it.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>lists</strong> (<em>List</em><em>[</em><em>Optional</em><em>[</em><em>ListNode</em><em>]</em><em>]</em>) – an array of k linked-lists lists</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>merge all the linked-lists into one sored linked-list</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Optional[ListNode]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.impl.solution.Solution.mergeTrees">
+<code class="sig-name descname">mergeTrees</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">root1</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>leetcode.impl.solution.TreeNode<span class="p">]</span></span></em>, <em class="sig-param"><span class="n">root2</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>leetcode.impl.solution.TreeNode<span class="p">]</span></span></em><span class="sig-paren">)</span> &#x2192; Optional<span class="p">[</span>leetcode.impl.solution.TreeNode<span class="p">]</span><a class="reference internal" href="_modules/leetcode/impl/solution.html#Solution.mergeTrees"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.impl.solution.Solution.mergeTrees" title="Permalink to this definition">¶</a></dt>
+<dd><ol class="arabic simple" start="617">
+<li><p>Merge Two Binary Trees</p></li>
+</ol>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.impl.solution.Solution.mergeTwoLists">
+<code class="sig-name descname">mergeTwoLists</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">list1</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>leetcode.impl.solution.ListNode<span class="p">]</span></span></em>, <em class="sig-param"><span class="n">list2</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>leetcode.impl.solution.ListNode<span class="p">]</span></span></em><span class="sig-paren">)</span> &#x2192; Optional<span class="p">[</span>leetcode.impl.solution.ListNode<span class="p">]</span><a class="reference internal" href="_modules/leetcode/impl/solution.html#Solution.mergeTwoLists"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.impl.solution.Solution.mergeTwoLists" title="Permalink to this definition">¶</a></dt>
+<dd><ol class="arabic simple" start="21">
+<li><p>Merge Two Sorted Lists</p></li>
+</ol>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.impl.solution.Solution.minDeletionSize">
+<code class="sig-name descname">minDeletionSize</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">strs</span><span class="p">:</span> <span class="n">List<span class="p">[</span>str<span class="p">]</span></span></em><span class="sig-paren">)</span> &#x2192; int<a class="reference internal" href="_modules/leetcode/impl/solution.html#Solution.minDeletionSize"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.impl.solution.Solution.minDeletionSize" title="Permalink to this definition">¶</a></dt>
+<dd><ol class="arabic simple" start="944">
+<li><p>Delete Columns to Make Sorted (Easy)</p></li>
+</ol>
+<p>You are given an array of n strings strs, all of the same length.</p>
+<blockquote>
+<div><p>The strings can be arranged such that there is one on each line, making a grid. For example, 
+strs = [“abc”, “bce”, “cae”] can be arranged as:</p>
+<p>abc
+bce
+cae</p>
+<p>You want to delete the columns that are not sorted lexicographically. 
+In the above example (0-indexed), columns 0 (‘a’, ‘b’, ‘c’) and 2 (‘c’, ‘e’, ‘e’) are 
+sorted while column 1 (‘b’, ‘c’, ‘a’) is not, so you would delete column 1.</p>
+<p>Return the number of columns that you will delete.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>strs</strong> (<em>List</em><em>[</em><em>str</em><em>]</em>) – array of n string</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the number of columns that you will delete</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.impl.solution.Solution.minDepth">
+<code class="sig-name descname">minDepth</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">root</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>leetcode.impl.solution.TreeNode<span class="p">]</span></span></em><span class="sig-paren">)</span> &#x2192; int<a class="reference internal" href="_modules/leetcode/impl/solution.html#Solution.minDepth"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.impl.solution.Solution.minDepth" title="Permalink to this definition">¶</a></dt>
+<dd><ol class="arabic simple" start="111">
+<li><p>Minimum Depth of Binary Tree</p></li>
+</ol>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.impl.solution.Solution.minNumberOfSemesters">
+<code class="sig-name descname">minNumberOfSemesters</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">n</span><span class="p">:</span> <span class="n">int</span></em>, <em class="sig-param"><span class="n">dependencies</span><span class="p">:</span> <span class="n">List<span class="p">[</span>List<span class="p">[</span>int<span class="p">]</span><span class="p">]</span></span></em>, <em class="sig-param"><span class="n">k</span><span class="p">:</span> <span class="n">int</span></em><span class="sig-paren">)</span> &#x2192; int<a class="reference internal" href="_modules/leetcode/impl/solution.html#Solution.minNumberOfSemesters"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.impl.solution.Solution.minNumberOfSemesters" title="Permalink to this definition">¶</a></dt>
+<dd><ol class="arabic simple" start="1496">
+<li><p>Parallel Courses II (HARD)</p></li>
+</ol>
+<p>You are given an integer n, which indicates that there are n courses labeled from 1 to n. You are also given an array relations where
+relations[i] = [prevCoursei, nextCoursei], representing a prerequisite relationship between course prevCoursei and course nextCoursei:
+course prevCoursei has to be taken before course nextCoursei. Also, you are given the integer k.</p>
+<p>In one semester, you can take at most k courses as long as you have taken all the prerequisites in the previous semesters
+for the courses you are taking.</p>
+<p>Return the minimum number of semesters needed to take all courses. The testcases will be generated such that it is 
+possible to take every course.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>n</strong> (<em>int</em>) – courses</p></li>
+<li><p><strong>dependencies</strong> (<em>List</em><em>[</em><em>List</em><em>[</em><em>int</em><em>]</em><em>]</em>) – prerequisite relationship between course prevCoursei and course nextCoursei has to be taken before course nextCoursi</p></li>
+<li><p><strong>k</strong> (<em>int</em>) – take at most k courses</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>minimum number of semesters needed to take all courses</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.impl.solution.Solution.minOperations">
+<code class="sig-name descname">minOperations</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">nums</span><span class="p">:</span> <span class="n">List<span class="p">[</span>int<span class="p">]</span></span></em><span class="sig-paren">)</span> &#x2192; int<a class="reference internal" href="_modules/leetcode/impl/solution.html#Solution.minOperations"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.impl.solution.Solution.minOperations" title="Permalink to this definition">¶</a></dt>
+<dd><ol class="arabic simple" start="1827">
+<li><p>Minimum Operations to Make the Array Increasing</p></li>
+</ol>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.impl.solution.Solution.minPathSum">
+<code class="sig-name descname">minPathSum</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">grid</span><span class="p">:</span> <span class="n">List<span class="p">[</span>List<span class="p">[</span>int<span class="p">]</span><span class="p">]</span></span></em><span class="sig-paren">)</span> &#x2192; int<a class="reference internal" href="_modules/leetcode/impl/solution.html#Solution.minPathSum"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.impl.solution.Solution.minPathSum" title="Permalink to this definition">¶</a></dt>
+<dd><ol class="arabic simple" start="64">
+<li><p>Minimum Path Sum (Medium)</p></li>
+</ol>
+<p>Given a m x n grid filled with non-negative numbers, find a path from top left to bottom right, which minimizes 
+the sum of all numbers along its path.</p>
+<p>Note: You can only move either down or right at any point in time.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>grid</strong> (<em>List</em><em>[</em><em>List</em><em>[</em><em>int</em><em>]</em><em>]</em>) – m x n grid filled with non-negative numbers</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>minimizes the sum of all numbers along its path</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.impl.solution.Solution.minSwaps">
+<code class="sig-name descname">minSwaps</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">nums</span><span class="p">:</span> <span class="n">List<span class="p">[</span>int<span class="p">]</span></span></em><span class="sig-paren">)</span> &#x2192; int<a class="reference internal" href="_modules/leetcode/impl/solution.html#Solution.minSwaps"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.impl.solution.Solution.minSwaps" title="Permalink to this definition">¶</a></dt>
+<dd><ol class="arabic simple" start="2134">
+<li><p>Minimum Swaps to Group All 1’s Together II</p></li>
+</ol>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.impl.solution.Solution.minimumCardPickup">
+<code class="sig-name descname">minimumCardPickup</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">cards</span><span class="p">:</span> <span class="n">List<span class="p">[</span>int<span class="p">]</span></span></em><span class="sig-paren">)</span> &#x2192; int<a class="reference internal" href="_modules/leetcode/impl/solution.html#Solution.minimumCardPickup"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.impl.solution.Solution.minimumCardPickup" title="Permalink to this definition">¶</a></dt>
+<dd><ol class="arabic simple" start="2260">
+<li><p>Minimum Consecutive Cards to Pick Up</p></li>
+</ol>
+<p>You are give an integer array cards where cards[i] represents the value of the ith card. A pair of cards are matching if the cards have the same value.</p>
+<p>Return the minimum number of consecutive cards you have to pick up to have a pair of matching cards among the picked cards. If it is impossible to have matching cards, return -1.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>cards</strong> (<em>List</em><em>[</em><em>int</em><em>]</em>) – integer array cards</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the minimum number of consecutive cards</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.impl.solution.Solution.minimumLines">
+<code class="sig-name descname">minimumLines</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">stockPrices</span><span class="p">:</span> <span class="n">List<span class="p">[</span>List<span class="p">[</span>int<span class="p">]</span><span class="p">]</span></span></em><span class="sig-paren">)</span> &#x2192; int<a class="reference internal" href="_modules/leetcode/impl/solution.html#Solution.minimumLines"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.impl.solution.Solution.minimumLines" title="Permalink to this definition">¶</a></dt>
+<dd><ol class="arabic simple" start="2280">
+<li><p>Minimum Lines to Represent a Line Chart (Medium)</p></li>
+</ol>
+<p>You are given a 2D integer array stockPrices where stockPrices[i] = [dayi, pricei] indicates the price of the stock on day dayi is pricei. 
+A line chart is created from the array by plotting the points on an XY plane with the X-axis representing the day and the Y-axis 
+representing the price and connecting adjacent points. One such example is shown below:</p>
+<p>Return the minimum number of lines needed to represent the line chart.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>stockPrices</strong> (<em>List</em><em>[</em><em>List</em><em>[</em><em>int</em><em>]</em><em>]</em>) – 2D integer array stockPrices</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the minimum number of lines needed to represent the line chart</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.impl.solution.Solution.moveZeroes">
+<code class="sig-name descname">moveZeroes</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">nums</span><span class="p">:</span> <span class="n">List<span class="p">[</span>int<span class="p">]</span></span></em><span class="sig-paren">)</span> &#x2192; List<span class="p">[</span>int<span class="p">]</span><a class="reference internal" href="_modules/leetcode/impl/solution.html#Solution.moveZeroes"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.impl.solution.Solution.moveZeroes" title="Permalink to this definition">¶</a></dt>
+<dd><ol class="arabic simple" start="283">
+<li><p>Move Zeroes docstring for fname (Easy)</p></li>
+</ol>
+<p>Given an integer array nums, move all 0’s to the end of it while maintaining the relative order of the non-zero elements.</p>
+<p>Note that you must do this in-place without making a copy of the array.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>nums</strong> (<em>List</em><em>[</em><em>int</em><em>]</em>) – integer array nums</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>integer array nums that being move all o’s to the end of it while maintaing the relative order of the non-zero elements</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>List[int]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.impl.solution.Solution.myAtoi">
+<code class="sig-name descname">myAtoi</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">s</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span> &#x2192; int<a class="reference internal" href="_modules/leetcode/impl/solution.html#Solution.myAtoi"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.impl.solution.Solution.myAtoi" title="Permalink to this definition">¶</a></dt>
+<dd><ol class="arabic simple" start="8">
+<li><p>String to Integer (atoi)</p></li>
+</ol>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.impl.solution.Solution.myPow">
+<code class="sig-name descname">myPow</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span><span class="p">:</span> <span class="n">float</span></em>, <em class="sig-param"><span class="n">n</span><span class="p">:</span> <span class="n">int</span></em><span class="sig-paren">)</span> &#x2192; float<a class="reference internal" href="_modules/leetcode/impl/solution.html#Solution.myPow"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.impl.solution.Solution.myPow" title="Permalink to this definition">¶</a></dt>
+<dd><ol class="arabic simple" start="50">
+<li><p>Pow(x, n)</p></li>
+</ol>
+<p>Implement pow(x, n), which calculates x raised to the power n (i.e., xn).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<em>float</em>) – the number</p></li>
+<li><p><strong>n</strong> (<em>int</em>) – power</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>calculates x raised to the power n</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.impl.solution.Solution.nextGreaterElement">
+<code class="sig-name descname">nextGreaterElement</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">nums1</span><span class="p">:</span> <span class="n">List<span class="p">[</span>int<span class="p">]</span></span></em>, <em class="sig-param"><span class="n">nums2</span><span class="p">:</span> <span class="n">List<span class="p">[</span>int<span class="p">]</span></span></em><span class="sig-paren">)</span> &#x2192; List<span class="p">[</span>int<span class="p">]</span><a class="reference internal" href="_modules/leetcode/impl/solution.html#Solution.nextGreaterElement"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.impl.solution.Solution.nextGreaterElement" title="Permalink to this definition">¶</a></dt>
+<dd><ol class="arabic simple" start="496">
+<li><p>Next Greater Element I (Easy)</p></li>
+</ol>
+<p>The next greater element of some element x in an array is the first greater element that is to the right of x in the same array.</p>
+<p>You are given two distinct 0-indexed integer arrays nums1 and nums2, where nums1 is a subset of nums2.</p>
+<p>For each 0 &lt;= i &lt; nums1.length, find the index j such that nums1[i] == nums2[j] and determine the next greater element of nums2[j] in nums2.
+If there is no next greater element, then the answer for this query is -1.</p>
+<p>Return an array ans of length nums1.length such that ans[i] is the next greater element as described above.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>nums1</strong> (<em>List</em><em>[</em><em>int</em><em>]</em>) – integer arrays</p></li>
+<li><p><strong>nums2</strong> (<em>List</em><em>[</em><em>int</em><em>]</em>) – integer arrays</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>an array is the next greater element</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Line[int]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.impl.solution.Solution.nextGreaterElementsII">
+<code class="sig-name descname">nextGreaterElementsII</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">nums</span><span class="p">:</span> <span class="n">List<span class="p">[</span>int<span class="p">]</span></span></em><span class="sig-paren">)</span> &#x2192; List<span class="p">[</span>int<span class="p">]</span><a class="reference internal" href="_modules/leetcode/impl/solution.html#Solution.nextGreaterElementsII"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.impl.solution.Solution.nextGreaterElementsII" title="Permalink to this definition">¶</a></dt>
+<dd><ol class="arabic simple" start="503">
+<li><p>Next Greater Element II (Medium)</p></li>
+</ol>
+<p>Given a circular integer array nums (i.e., the next element of nums[nums.length - 1] is nums[0]), return the next greater number for every element in nums.</p>
+<p>The next greater number of a number x is the first greater number to its traversing-order next in the array, 
+which means you could search circularly to find its next greater number. If it doesn’t exist, return -1 for this number.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>nums</strong> (<em>List</em><em>[</em><em>int</em><em>]</em>) – circular integer array</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the next greater number for every element in nums</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>List[int]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.impl.solution.Solution.numDecodings">
+<code class="sig-name descname">numDecodings</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">s</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span> &#x2192; int<a class="reference internal" href="_modules/leetcode/impl/solution.html#Solution.numDecodings"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.impl.solution.Solution.numDecodings" title="Permalink to this definition">¶</a></dt>
+<dd><ol class="arabic simple" start="91">
+<li><p>Decode Ways (Medium)</p></li>
+</ol>
+<p>A message containing letters from A-Z can be encoded into numbers using the following mapping:</p>
+<p>To decode an encoded message, all the digits must be grouped then mapped back into letters using the reverse of the mapping above (there may be multiple ways). For example, “11106” can be mapped into:</p>
+<p>“AAJF” with the grouping (1 1 10 6)
+“KJF” with the grouping (11 10 6)</p>
+<p>Note that the grouping (1 11 06) is invalid because “06” cannot be mapped into ‘F’ since “6” is different from “06”.</p>
+<p>Given a string s containing only digits, return the number of ways to decode it.</p>
+<p>The test cases are generated so that the answer fits in a 32-bit integer.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>s</strong> (<em>str</em>) – string containing only digits</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the number of ways to decode it</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.impl.solution.Solution.numIslands">
+<code class="sig-name descname">numIslands</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">grid</span><span class="p">:</span> <span class="n">List<span class="p">[</span>List<span class="p">[</span>str<span class="p">]</span><span class="p">]</span></span></em><span class="sig-paren">)</span> &#x2192; int<a class="reference internal" href="_modules/leetcode/impl/solution.html#Solution.numIslands"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.impl.solution.Solution.numIslands" title="Permalink to this definition">¶</a></dt>
+<dd><ol class="arabic simple" start="200">
+<li><p>Number of Islands (Medium)</p></li>
+</ol>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.impl.solution.Solution.numUniqueEmails">
+<code class="sig-name descname">numUniqueEmails</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">emails</span><span class="p">:</span> <span class="n">List<span class="p">[</span>str<span class="p">]</span></span></em><span class="sig-paren">)</span> &#x2192; int<a class="reference internal" href="_modules/leetcode/impl/solution.html#Solution.numUniqueEmails"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.impl.solution.Solution.numUniqueEmails" title="Permalink to this definition">¶</a></dt>
+<dd><ol class="arabic simple" start="929">
+<li><p>Unique Email Addresses</p></li>
+</ol>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.impl.solution.Solution.originalDigits">
+<code class="sig-name descname">originalDigits</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">s</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span> &#x2192; str<a class="reference internal" href="_modules/leetcode/impl/solution.html#Solution.originalDigits"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.impl.solution.Solution.originalDigits" title="Permalink to this definition">¶</a></dt>
+<dd><ol class="arabic simple" start="423">
+<li><p>Reconstruct Original Digits from English (Medium)</p></li>
+</ol>
+<p>Given a string s containing an out-of-order English representation of digits 0-9, return the digits in ascending order.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>s</strong> (<em>str</em>) – string containing an out-of-order English</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the digits in ascending order</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.impl.solution.Solution.permute">
+<code class="sig-name descname">permute</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">nums</span><span class="p">:</span> <span class="n">List<span class="p">[</span>int<span class="p">]</span></span></em><span class="sig-paren">)</span> &#x2192; List<span class="p">[</span>List<span class="p">[</span>int<span class="p">]</span><span class="p">]</span><a class="reference internal" href="_modules/leetcode/impl/solution.html#Solution.permute"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.impl.solution.Solution.permute" title="Permalink to this definition">¶</a></dt>
+<dd><ol class="arabic simple" start="46">
+<li><p>Permutations (Medium)</p></li>
+</ol>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.impl.solution.Solution.removeDuplicates">
+<code class="sig-name descname">removeDuplicates</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">nums</span><span class="p">:</span> <span class="n">List<span class="p">[</span>int<span class="p">]</span></span></em><span class="sig-paren">)</span> &#x2192; int<a class="reference internal" href="_modules/leetcode/impl/solution.html#Solution.removeDuplicates"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.impl.solution.Solution.removeDuplicates" title="Permalink to this definition">¶</a></dt>
+<dd><ol class="arabic simple" start="26">
+<li><p>Remove Duplicates from Sorted Array</p></li>
+</ol>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.impl.solution.Solution.removeNthFromEnd">
+<code class="sig-name descname">removeNthFromEnd</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">head</span><span class="p">:</span> <span class="n">Optional<span class="p">[</span>leetcode.impl.solution.ListNode<span class="p">]</span></span></em>, <em class="sig-param"><span class="n">n</span><span class="p">:</span> <span class="n">int</span></em><span class="sig-paren">)</span> &#x2192; Optional<span class="p">[</span>leetcode.impl.solution.ListNode<span class="p">]</span><a class="reference internal" href="_modules/leetcode/impl/solution.html#Solution.removeNthFromEnd"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.impl.solution.Solution.removeNthFromEnd" title="Permalink to this definition">¶</a></dt>
+<dd><ol class="arabic simple" start="19">
+<li><p>Remove Nth Node From End of List</p></li>
+</ol>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.impl.solution.Solution.restoreIpAddresses">
+<code class="sig-name descname">restoreIpAddresses</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">s</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span> &#x2192; List<span class="p">[</span>str<span class="p">]</span><a class="reference internal" href="_modules/leetcode/impl/solution.html#Solution.restoreIpAddresses"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.impl.solution.Solution.restoreIpAddresses" title="Permalink to this definition">¶</a></dt>
+<dd><ol class="arabic simple" start="93">
+<li><p>Restore IP Addresses (Medium)</p></li>
+</ol>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.impl.solution.Solution.reverseBits">
+<code class="sig-name descname">reverseBits</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">n</span><span class="p">:</span> <span class="n">int</span></em><span class="sig-paren">)</span> &#x2192; int<a class="reference internal" href="_modules/leetcode/impl/solution.html#Solution.reverseBits"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.impl.solution.Solution.reverseBits" title="Permalink to this definition">¶</a></dt>
+<dd><ol class="arabic simple" start="190">
+<li><p>Reverse Bits</p></li>
+</ol>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.impl.solution.Solution.reverseString">
+<code class="sig-name descname">reverseString</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">s</span><span class="p">:</span> <span class="n">List<span class="p">[</span>str<span class="p">]</span></span></em><span class="sig-paren">)</span> &#x2192; None<a class="reference internal" href="_modules/leetcode/impl/solution.html#Solution.reverseString"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.impl.solution.Solution.reverseString" title="Permalink to this definition">¶</a></dt>
+<dd><ol class="arabic simple" start="344">
+<li><p>Reverse String</p></li>
+</ol>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.impl.solution.Solution.reverseVowels">
+<code class="sig-name descname">reverseVowels</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">s</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span> &#x2192; str<a class="reference internal" href="_modules/leetcode/impl/solution.html#Solution.reverseVowels"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.impl.solution.Solution.reverseVowels" title="Permalink to this definition">¶</a></dt>
+<dd><ol class="arabic simple" start="345">
+<li><p>Reverse Vowels of a String</p></li>
+</ol>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.impl.solution.Solution.rob">
+<code class="sig-name descname">rob</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">nums</span><span class="p">:</span> <span class="n">List<span class="p">[</span>int<span class="p">]</span></span></em><span class="sig-paren">)</span> &#x2192; int<a class="reference internal" href="_modules/leetcode/impl/solution.html#Solution.rob"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.impl.solution.Solution.rob" title="Permalink to this definition">¶</a></dt>
+<dd><ol class="arabic simple" start="198">
+<li><p>House Robber</p></li>
+</ol>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.impl.solution.Solution.romanToInt">
+<code class="sig-name descname">romanToInt</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">s</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span> &#x2192; int<a class="reference internal" href="_modules/leetcode/impl/solution.html#Solution.romanToInt"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.impl.solution.Solution.romanToInt" title="Permalink to this definition">¶</a></dt>
+<dd><ol class="arabic simple" start="13">
+<li><p>Roman numerals are represented by seven different symbols: I, V, X, L, C, D and M. (Easy)</p></li>
+</ol>
+<p>Symbol       Value
+I             1
+V             5
+X             10
+L             50
+C             100
+D             500
+M             1000</p>
+<p>For example, 2 is written as II in Roman numeral, just two one’s added together. 12 is written as XII, which is simple X + II. The number 27 is written as XXVII, which is XX + V + II.</p>
+<p>Roman numerals are usually written largest to smallest from left to right. However, the numeral for four is not III. Instead, the number four is written as IV. Because the one is before the five we substract it making four. The same principle applies to the number nine, which is written as IX. There are six instances where substraction used:</p>
+<ul class="simple">
+<li><p>I can be placed before V (5) and X (10) to make 4 and 9.</p></li>
+<li><p>X can be placed before L (50) and C (100) to make 40 and 90</p></li>
+<li><p>C can be placed before D (500) and M (1000) to make 400 and 900</p></li>
+</ul>
+<p>Given a roman numeral, convert it to an integer.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>s</strong> (<em>string</em>) – Roman numeral</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>integer</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.impl.solution.Solution.search">
+<code class="sig-name descname">search</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">nums</span><span class="p">:</span> <span class="n">List<span class="p">[</span>int<span class="p">]</span></span></em>, <em class="sig-param"><span class="n">target</span><span class="p">:</span> <span class="n">int</span></em><span class="sig-paren">)</span> &#x2192; int<a class="reference internal" href="_modules/leetcode/impl/solution.html#Solution.search"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.impl.solution.Solution.search" title="Permalink to this definition">¶</a></dt>
+<dd><ol class="arabic simple" start="704">
+<li><p>Binary Search (Easy)</p></li>
+</ol>
+<p>Given an array of integers nums which is sorted in ascending order, and an integer target, write a function to search target in nums. If target exists, then return its index. Otherwise, return -1.</p>
+<p>You must write an algorithm with O(log n) runtime complexity.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>nums</strong> (<em>List</em><em>[</em><em>int</em><em>]</em>) – an array of integers</p></li>
+<li><p><strong>target</strong> (<em>int</em>) – integer target</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>index of target</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.impl.solution.Solution.searchInsert">
+<code class="sig-name descname">searchInsert</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">nums</span><span class="p">:</span> <span class="n">List<span class="p">[</span>int<span class="p">]</span></span></em>, <em class="sig-param"><span class="n">target</span><span class="p">:</span> <span class="n">int</span></em><span class="sig-paren">)</span> &#x2192; int<a class="reference internal" href="_modules/leetcode/impl/solution.html#Solution.searchInsert"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.impl.solution.Solution.searchInsert" title="Permalink to this definition">¶</a></dt>
+<dd><ol class="arabic simple" start="35">
+<li><p>Search Insert Position</p></li>
+</ol>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.impl.solution.Solution.searchRange">
+<code class="sig-name descname">searchRange</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">nums</span><span class="p">:</span> <span class="n">List<span class="p">[</span>int<span class="p">]</span></span></em>, <em class="sig-param"><span class="n">target</span><span class="p">:</span> <span class="n">int</span></em><span class="sig-paren">)</span> &#x2192; List<span class="p">[</span>int<span class="p">]</span><a class="reference internal" href="_modules/leetcode/impl/solution.html#Solution.searchRange"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.impl.solution.Solution.searchRange" title="Permalink to this definition">¶</a></dt>
+<dd><ol class="arabic simple" start="34">
+<li><p>Find First and Last Position of Element in Sorted Array (Medium)</p></li>
+</ol>
+<p>Given an array of integers nums sorted in non-decreasing order, find the starting and ending position of a given target value.</p>
+<p>If target is not found in the array, return [-1, -1].</p>
+<p>You must write an algorithm with O(log n) runtime complexity.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>nums</strong> (<em>List</em><em>[</em><em>int</em><em>]</em>) – array of integers</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the starting and ending position of a given target value</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>List[int]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.impl.solution.Solution.simplifyPath">
+<code class="sig-name descname">simplifyPath</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">path</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span> &#x2192; str<a class="reference internal" href="_modules/leetcode/impl/solution.html#Solution.simplifyPath"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.impl.solution.Solution.simplifyPath" title="Permalink to this definition">¶</a></dt>
+<dd><ol class="arabic simple" start="71">
+<li><p>Simplify Path (Medium)</p></li>
+</ol>
+<p>Given a string path, which is an absolute path (starting with a slash ‘/’) to a file or directory in a Unix-style file system,
+convert it to the simplified canonical path.</p>
+<p>In a Unix-style file system, a period ‘.’ refers to the current directory, a double period ‘..’ refers to the directory up a level,
+and any multiple consecutive slashes (i.e. ‘//’) are treated as a single slash ‘/’. For this problem, any other format of periods such 
+as ‘…’ are treated as file/directory names.</p>
+<p>The canonical path should have the following format:</p>
+<p>The path starts with a single slash ‘/’.
+Any two directories are separated by a single slash ‘/’.
+The path does not end with a trailing ‘/’.
+The path only contains the directories on the path from the root directory to the target file or directory 
+(i.e., no period ‘.’ or double period ‘..’)</p>
+<p>Return the simplified canonical path.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>path</strong> (<em>str</em>) – an absolute path to a file or directory in a Uinx-style file system</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>canonical path</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.impl.solution.Solution.strStr">
+<code class="sig-name descname">strStr</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">haystack</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">needle</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span> &#x2192; int<a class="reference internal" href="_modules/leetcode/impl/solution.html#Solution.strStr"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.impl.solution.Solution.strStr" title="Permalink to this definition">¶</a></dt>
+<dd><ol class="arabic simple" start="28">
+<li><p>Implement strStr()</p></li>
+</ol>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.impl.solution.Solution.strongPasswordChecker">
+<code class="sig-name descname">strongPasswordChecker</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">password</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span> &#x2192; int<a class="reference internal" href="_modules/leetcode/impl/solution.html#Solution.strongPasswordChecker"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.impl.solution.Solution.strongPasswordChecker" title="Permalink to this definition">¶</a></dt>
+<dd><p>Strong Password Checker (HARD)</p>
+<p>A password is considered strong if the below conditions are all met:</p>
+<p>It has at least 6 characters and at most 20 characters.
+It contains at least one lowercase letter, at least one uppercase letter, and at least one digit.
+It does not contain three repeating characters in a row (i.e., “…aaa…” is weak, but “…aa…a…” is strong, assuming other conditions are met).
+Given a string password, return the minimum number of steps required to make password strong. if password is already strong, return 0.</p>
+<p>In one step, you can:</p>
+<p>Insert one character to password,
+Delete one character from password, or
+Replace one character of password with another character.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>password</strong> (<em>str</em>) – password</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the minimum number of steps required to make password strong</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.impl.solution.Solution.subsets">
+<code class="sig-name descname">subsets</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">nums</span><span class="p">:</span> <span class="n">List<span class="p">[</span>int<span class="p">]</span></span></em><span class="sig-paren">)</span> &#x2192; List<span class="p">[</span>List<span class="p">[</span>int<span class="p">]</span><span class="p">]</span><a class="reference internal" href="_modules/leetcode/impl/solution.html#Solution.subsets"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.impl.solution.Solution.subsets" title="Permalink to this definition">¶</a></dt>
+<dd><ol class="arabic simple" start="78">
+<li><p>Subsets (Medium)</p></li>
+</ol>
+<p>Given an integer array nums of unique elements, return all possible subsets (the power set).</p>
+<p>The solution set must not contain duplicate subsets. Return the solution in any order.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>param</strong> (<em>List</em><em>[</em><em>int</em><em>]</em>) – integer array nums of unique elements</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>all possible subsets (the power set)</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>List[List[int]]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.impl.solution.Solution.threeSum">
+<code class="sig-name descname">threeSum</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">nums</span><span class="p">:</span> <span class="n">List<span class="p">[</span>int<span class="p">]</span></span></em><span class="sig-paren">)</span> &#x2192; List<span class="p">[</span>List<span class="p">[</span>int<span class="p">]</span><span class="p">]</span><a class="reference internal" href="_modules/leetcode/impl/solution.html#Solution.threeSum"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.impl.solution.Solution.threeSum" title="Permalink to this definition">¶</a></dt>
+<dd><ol class="arabic simple" start="15">
+<li><p>3Sum (Medium)</p></li>
+</ol>
+<p>Given an integer array nums, return all the triplets [nums[i], nums[j], nums[k]] such that i != j, i != k, and j != k, and nums[i] + nums[j] + nums[k] == 0.</p>
+<p>Notice that the solution set must not contain duplicate triplets.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>nums</strong> (<em>List</em><em>[</em><em>int</em><em>]</em>) – integer array nums</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>all the triplets</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>List[List[int]]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.impl.solution.Solution.topKFrequent">
+<code class="sig-name descname">topKFrequent</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">nums</span><span class="p">:</span> <span class="n">List<span class="p">[</span>int<span class="p">]</span></span></em>, <em class="sig-param"><span class="n">k</span><span class="p">:</span> <span class="n">int</span></em><span class="sig-paren">)</span> &#x2192; List<span class="p">[</span>int<span class="p">]</span><a class="reference internal" href="_modules/leetcode/impl/solution.html#Solution.topKFrequent"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.impl.solution.Solution.topKFrequent" title="Permalink to this definition">¶</a></dt>
+<dd><ol class="arabic simple" start="347">
+<li><p>Top K Frequent Elements</p></li>
+</ol>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.impl.solution.Solution.totalStrength">
+<code class="sig-name descname">totalStrength</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">strength</span><span class="p">:</span> <span class="n">List<span class="p">[</span>int<span class="p">]</span></span></em><span class="sig-paren">)</span> &#x2192; int<a class="reference internal" href="_modules/leetcode/impl/solution.html#Solution.totalStrength"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.impl.solution.Solution.totalStrength" title="Permalink to this definition">¶</a></dt>
+<dd><ol class="arabic simple" start="2281">
+<li><p>Sum of Total Strength of Wizards (Hard)</p></li>
+</ol>
+<p>As the ruler of a kingdom, you have an army of wizards at your command.</p>
+<p>You are given a 0-indexed integer array strength, where strength[i] denotes the strength of the ith wizard. For a contiguous group of wizards
+(i.e. the wizards’ strengths form a subarray of strength), the total strength is defined as the product of the following two values:</p>
+<ul class="simple">
+<li><p>The strength of the weakest wizard in the group.</p></li>
+<li><p>The total of all the individual strengths of the wizards in the group.</p></li>
+</ul>
+<p>Return the sum of the total strengths of all contiguous groups of wizards.
+Since the answer may be very large, return it modulo 109 + 7.</p>
+<p>A subarray is a contiguous non-empty sequence of elements within an array.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>strength</strong> (<em>Lint</em><em>[</em><em>int</em><em>]</em>) – integer array strength</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the sum of the total strengths of all contiguous groups of wizards</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.impl.solution.Solution.twoSum">
+<code class="sig-name descname">twoSum</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">nums</span><span class="p">:</span> <span class="n">List<span class="p">[</span>int<span class="p">]</span></span></em>, <em class="sig-param"><span class="n">target</span><span class="p">:</span> <span class="n">int</span></em><span class="sig-paren">)</span> &#x2192; List<span class="p">[</span>int<span class="p">]</span><a class="reference internal" href="_modules/leetcode/impl/solution.html#Solution.twoSum"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.impl.solution.Solution.twoSum" title="Permalink to this definition">¶</a></dt>
+<dd><ol class="arabic simple">
+<li><p>Two Sum (Easy)</p></li>
+</ol>
+<p>Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
+You may assume that each input would have exactly one solution, and you may not use the same element twice.
+You can return the answer in any order.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>num</strong> (<em>List</em><em>[</em><em>int</em><em>]</em>) – array of integers</p></li>
+<li><p><strong>target</strong> (<em>inEasyt</em>) – integer target</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>indices of the two numbers such that they add up to target</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>List[int]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.impl.solution.Solution.uniquePaths">
+<code class="sig-name descname">uniquePaths</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">m</span><span class="p">:</span> <span class="n">int</span></em>, <em class="sig-param"><span class="n">n</span><span class="p">:</span> <span class="n">int</span></em><span class="sig-paren">)</span> &#x2192; int<a class="reference internal" href="_modules/leetcode/impl/solution.html#Solution.uniquePaths"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.impl.solution.Solution.uniquePaths" title="Permalink to this definition">¶</a></dt>
+<dd><ol class="arabic simple" start="62">
+<li><p>Unique Paths</p></li>
+</ol>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.impl.solution.Solution.uniquePathsWithObstacles">
+<code class="sig-name descname">uniquePathsWithObstacles</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">obstacleGrid</span><span class="p">:</span> <span class="n">List<span class="p">[</span>List<span class="p">[</span>int<span class="p">]</span><span class="p">]</span></span></em><span class="sig-paren">)</span> &#x2192; int<a class="reference internal" href="_modules/leetcode/impl/solution.html#Solution.uniquePathsWithObstacles"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.impl.solution.Solution.uniquePathsWithObstacles" title="Permalink to this definition">¶</a></dt>
+<dd><ol class="arabic simple" start="63">
+<li><p>Unique Paths II</p></li>
+</ol>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.impl.solution.Solution.wordBreak">
+<code class="sig-name descname">wordBreak</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">s</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">wordDict</span><span class="p">:</span> <span class="n">List<span class="p">[</span>str<span class="p">]</span></span></em><span class="sig-paren">)</span> &#x2192; bool<a class="reference internal" href="_modules/leetcode/impl/solution.html#Solution.wordBreak"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.impl.solution.Solution.wordBreak" title="Permalink to this definition">¶</a></dt>
+<dd><ol class="arabic simple" start="139">
+<li><p>Word Break</p></li>
+</ol>
+</dd></dl>
+
+<dl class="py method">
+<dt id="leetcode.impl.solution.Solution.wordPattern">
+<code class="sig-name descname">wordPattern</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pattern</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">s</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span> &#x2192; bool<a class="reference internal" href="_modules/leetcode/impl/solution.html#Solution.wordPattern"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.impl.solution.Solution.wordPattern" title="Permalink to this definition">¶</a></dt>
+<dd><ol class="arabic simple" start="290">
+<li><p>Word Pattern</p></li>
+</ol>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-leetcode.impl.solution_design">
+<span id="the-solution-design-module"></span><h2>The “solution_design” module<a class="headerlink" href="#module-leetcode.impl.solution_design" title="Permalink to this headline">¶</a></h2>
+<p>Use the Solution class to represent Leedcode problems - design</p>
+<dl class="py class">
+<dt id="leetcode.impl.solution_design.StreamChecker">
+<em class="property">class </em><code class="sig-prename descclassname">leetcode.impl.solution_design.</code><code class="sig-name descname">StreamChecker</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">words</span><span class="p">:</span> <span class="n">List<span class="p">[</span>str<span class="p">]</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/leetcode/impl/solution_design.html#StreamChecker"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.impl.solution_design.StreamChecker" title="Permalink to this definition">¶</a></dt>
+<dd><ol class="arabic simple" start="1032">
+<li><p>Stream of Characters (HARD) description</p></li>
+</ol>
+<dl class="py method">
+<dt id="leetcode.impl.solution_design.StreamChecker.query">
+<code class="sig-name descname">query</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">letter</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span> &#x2192; bool<a class="reference internal" href="_modules/leetcode/impl/solution_design.html#StreamChecker.query"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.impl.solution_design.StreamChecker.query" title="Permalink to this definition">¶</a></dt>
+<dd><p>Search user input in tire with reversed order docstring for query</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="leetcode.impl.solution_design.TrieNode">
+<em class="property">class </em><code class="sig-prename descclassname">leetcode.impl.solution_design.</code><code class="sig-name descname">TrieNode</code><a class="reference internal" href="_modules/leetcode/impl/solution_design.html#TrieNode"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#leetcode.impl.solution_design.TrieNode" title="Permalink to this definition">¶</a></dt>
+<dd><p>description</p>
+</dd></dl>
+
+</section>
+</section>
+
+
+      </div>
+      <div class="bottomnav" role="navigation" aria-label="bottom navigation">
+      
+        <p>
+        «&#160;&#160;<a href="guide.html">Example: guide.rst — The leetcode practice guide</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="index.html">Contents</a>
+        </p>
+
+      </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2022, Louis Liu.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.1.2.
+    </div>
+  </body>
+</html>

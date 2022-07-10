@@ -1,0 +1,115 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>leetcode.impl.solution_design &#8212; leetcode 1.0 documentation</title>
+    <link rel="stylesheet" href="../../../_static/haiku.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+  </head><body>
+      <div class="header" role="banner"><h1 class="heading"><a href="../../../index.html">
+          <span>leetcode 1.0 documentation</span></a></h1>
+        <h2 class="heading"><span>leetcode.impl.solution_design</span></h2>
+      </div>
+      <div class="topnav" role="navigation" aria-label="top navigation">
+      
+        <p>
+        <a class="uplink" href="../../../index.html">Contents</a>
+        </p>
+
+      </div>
+      <div class="content" role="main">
+        
+        
+  <h1>Source code for leetcode.impl.solution_design</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Use the Solution class to represent Leedcode problems - design</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">defaultdict</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span>
+
+
+<div class="viewcode-block" id="TrieNode"><a class="viewcode-back" href="../../../api.html#leetcode.impl.solution_design.TrieNode">[docs]</a><span class="k">class</span> <span class="nc">TrieNode</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;description&quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">dict</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="n">TrieNode</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">is_word</span> <span class="o">=</span> <span class="kc">False</span></div>
+
+
+<div class="viewcode-block" id="StreamChecker"><a class="viewcode-back" href="../../../api.html#leetcode.impl.solution_design.StreamChecker">[docs]</a><span class="k">class</span> <span class="nc">StreamChecker</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot; 1032. Stream of Characters (HARD) description&quot;&quot;&quot;</span>
+    <span class="sd">&quot;&quot;&quot; Design an algorithm that accepts a stream of characters and checks if a suffix of these characters is a string of a given array of strings words.</span>
+
+<span class="sd">    For example, if words = [&quot;abc&quot;, &quot;xyz&quot;] and the stream added the four characters (one by one) &#39;a&#39;, &#39;x&#39;, &#39;y&#39;, and &#39;z&#39;, your algorithm should detect that the suffix &quot;xyz&quot; of the characters &quot;axyz&quot; matches &quot;xyz&quot; from words.</span>
+
+<span class="sd">    Implement the StreamChecker class:</span>
+
+<span class="sd">    - StreamChecker(String[] words) Initializes the object with the strings array words.</span>
+<span class="sd">    - boolean query(char letter) Accepts a new character from the stream and returns true if any non-empty suffix from the stream forms a word that is in words.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">words</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]):</span>
+        <span class="sd">&quot;&quot;&quot; Build a tire for each word in reversed order &quot;&quot;&quot;</span>
+        <span class="c1"># for user query record, init as empty string</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">prefix</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+
+        <span class="c1"># for root node of tire, init as empty Trie</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">tire</span> <span class="o">=</span> <span class="n">TrieNode</span><span class="p">()</span>
+
+        <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">words</span><span class="p">:</span>
+            <span class="c1"># root</span>
+            <span class="n">cur_node</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">tire</span>
+
+            <span class="c1"># make word in reverse order</span>
+            <span class="n">word</span> <span class="o">=</span> <span class="n">word</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+            <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">word</span><span class="p">:</span>
+                <span class="n">cur_node</span> <span class="o">=</span> <span class="n">cur_node</span><span class="o">.</span><span class="n">dict</span><span class="p">[</span><span class="n">char</span><span class="p">]</span>
+
+                <span class="c1"># make this tire path as a vaild word</span>
+                <span class="n">cur_node</span><span class="o">.</span><span class="n">is_word</span> <span class="o">=</span> <span class="kc">True</span>
+
+<div class="viewcode-block" id="StreamChecker.query"><a class="viewcode-back" href="../../../api.html#leetcode.impl.solution_design.StreamChecker.query">[docs]</a>    <span class="k">def</span> <span class="nf">query</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">letter</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot; Search user input in tire with reversed order docstring for query&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">prefix</span> <span class="o">+=</span> <span class="n">letter</span>
+
+        <span class="c1"># root</span>
+        <span class="n">cur_node</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">tire</span>
+
+        <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">prefix</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">char</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">cur_node</span><span class="o">.</span><span class="n">dict</span><span class="p">:</span>
+                <span class="c1"># current char not in Tire, impossible to match words</span>
+                <span class="k">break</span>
+
+            <span class="n">cur_node</span> <span class="o">=</span> <span class="n">cur_node</span><span class="o">.</span><span class="n">dict</span><span class="p">[</span><span class="n">char</span><span class="p">]</span>
+            <span class="k">if</span> <span class="n">cur_node</span><span class="o">.</span><span class="n">is_word</span><span class="p">:</span>
+                <span class="c1"># usr input match a word in Tire</span>
+                <span class="k">return</span> <span class="kc">True</span>
+
+        <span class="c1"># No match</span>
+        <span class="k">return</span> <span class="kc">False</span></div></div>
+</pre></div>
+
+      </div>
+      <div class="bottomnav" role="navigation" aria-label="bottom navigation">
+      
+        <p>
+        <a class="uplink" href="../../../index.html">Contents</a>
+        </p>
+
+      </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2022, Louis Liu.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.1.2.
+    </div>
+  </body>
+</html>
