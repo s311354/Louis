@@ -4,16 +4,17 @@ title: "How to Document Python Code by Using Sphinx"
 date: 2022-05-08
 tags: [Programming, Python]
 ---
+[UPDATED: 2022/07/11]
 
 ## Purpose ##
 
-Previously, during the project development, I usually only put some brief comments in the Python functions or methods. However, since Python does not enforce function and variable type annotations, and those comments would not usually contain the typing information, It might hardly remember how those variables could be used. In order to quickly recap the code or projects, Sphinx can automatically makes it easy to create intelligent documentation. It was originally created for the Python documentation, and it has excellent facilities for the documentation of software projects in a range of languages, for example: [Python 3.7.13 documentation][python37] was created using Sphinx 2.3.1.
+Previously, during the project development, I usually only put some brief comments in the Python functions or methods. However, since Python does not enforce function and variable type annotations, and those comments would not usually contain the typing information, It might hardly remember how those variables could be used. In addition, it is importance for the code documenting: Good code is not only self-explanatory but also well-documented. In order to quickly recap the code or projects, Sphinx can automatically makes it easy to create intelligent documentation. It was originally created for the Python documentation, and it has excellent facilities for the documentation of software projects in a range of languages, for example: [Python 3.7.13 documentation][python37] was created using Sphinx 2.3.1.
 
 In this blog post, as the a Sphinx beginner, I am going to make some notes and practice how to use reStructuredText and Sphinx v4.2.0 in my lite python project after reading or watching the relevant blogs or videos.
 
 ## Python Documentation by Using Sphinx ##
 
-The practicing Python documentation code could be found in [Sphinx Python Practice][practice] on my GitHub. The documentation corresponding to this practice could be referred to [View Documentation][documentation] and looks like this:
+The practicing Python documentation code could be found in [Sphinx Python Practice][practice] on my GitHub. The documentation corresponding to this practice is available at [Documentation][documentation] and looks like this:
 
 <figure><center><img src="{{ site.baseurl }}/picture/documentation.png" width="100%"></center></figure>
 
@@ -98,11 +99,12 @@ Now, you can automatically generate the intelligent documentation by using Sphin
 + [Documenting Your Project in Sphinx](https://www.youtube.com/watch?v=QNHM7q2hLh8)
 + [Python Documentation Using Sphinx](https://leimao.github.io/blog/Python-Documentation-Using-Sphinx/)
 + [reStructuredText Markup Specification](https://docutils.sourceforge.io/docs/ref/rst/restructuredtext.html)
++ [Read the Docs - Configuration File V2](https://docs.readthedocs.io/en/stable/config-file/v2.html)
 
 [python37]:https://docs.python.org/3.7/ "https://docs.python.org/3.7/"
 [install]:https://www.sphinx-doc.org/en/master/usage/installation.html "https://www.sphinx-doc.org/en/master/usage/installation.html"
 [practice]:https://github.com/s311354/Sphinx-Python-Practice "https://github.com/s311354/Sphinx-Python-Practice"
-[documentation]:https://github.com/s311354/Sphinx-Python-Practice/tree/Master/doc#view-documentation "https://github.com/s311354/Sphinx-Python-Practice/tree/Master/doc#view-documentation"
+[documentation]:https://sphinx-python-practice.readthedocs.io/en/latest/ "https://sphinx-python-practice.readthedocs.io/en/latest/"
 [conf]:https://www.sphinx-doc.org/en/master/usage/configuration.html "https://www.sphinx-doc.org/en/master/usage/configuration.html"
 [docstrings]:https://www.sphinx-doc.org/en/master/usage/extensions/autodoc.html "https://www.sphinx-doc.org/en/master/usage/extensions/autodoc.html"
 
