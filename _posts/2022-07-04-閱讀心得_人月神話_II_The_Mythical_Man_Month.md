@@ -1,7 +1,6 @@
-
 ---
 layout: post
-title: "閱讀心得 人月神話 II The Mythical Man Month"
+title: "閱讀心得 人月神話 The Mythical Man Month II"
 date: 2022-07-04
 tags: [Reading]
 ---
