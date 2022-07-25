@@ -43,7 +43,8 @@ int main()
 
 Print statement:
 ```
-$ ./shared_print
+$ g++ -std=c++14   sharing_data.cc  -o sharing_data
+$ ./sharing_data
 BC  A1
 C 2
  1
@@ -52,14 +53,14 @@ A 2
 B 2
 ```
 
-The print statement results in a a race condition when executing print function. There are several ways to deal with problematic race conditions. The simplest option is to wrap the data structure with a protection mechanism to ensure that only the thread performing a modification can see the intermediate states where the invariants are broken.
+The print statement results in a race condition when executing print function. There are several ways to deal with problematic race conditions. The simplest option is to wrap the data structure with a protection mechanism to ensure that only the thread performing a modification can see the intermediate states where the invariants are broken.
 
 ### Sharing Print Function with mutex ###
 <details markdown=block>
 <summary markdown=span>*sharing_data_mutex.cc*</summary>
 <div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb" style="font-size: 80%">#include &lt;iostream&gt;
 #include &lt;thread&gt;
-#include $lt;mutex&gt;
+#include &lt;mutex&gt;
 using namespace std;
 // mutex used to lock other threads from gaining access to shared resource
 mutex m_mutex;
@@ -88,6 +89,7 @@ int main()
 
 Print statement:
 ```
+$ g++ -std=c++14   sharing_data_mutex .cc  -o sharing_data_mutex
 $ ./sharing_data_mutex
 A 1
 A 2
@@ -97,7 +99,7 @@ C 1
 C 2
 ```
 
-The std::mutex class provides a basic mutual exclusion and synchronization facility for threads that can be used to protect shared print function. Prior to accessing the data protexted by the mutex, the mutex must be locked by calling lock(). Only one thread may hold the lock at a time, so if another thread also tries to lock the mutex, it will fail as appropriate. Once a thread is done accessing the shared print function, it then must call unlock() to release the lock and allow other threads to acquire it.
+The std::mutex class provides a basic mutual exclusion and synchronization facility for threads that can be used to protect shared print function. Prior to accessing the data protected by the mutex, the mutex must be locked by calling lock(). Only one thread may hold the lock at a time, so if another thread also tries to lock the mutex, it will fail as appropriate. Once a thread is done accessing the shared print function, it then must call unlock() to release the lock and allow other threads to acquire it.
 
 ## Bank Transaction ##
 
@@ -142,7 +144,7 @@ account2.balance 30
 
 ### Transfering Money with Multithreading ###
 
-In the multithreading case, the calls of transferMoney will be executed concurrenyly. Because of the thread t1 and t2, there is a data race on the balance of the account in the functio transferMoney. In order to make the race condition visible, putting the threads for a short period of time to sleep. A short sleep in concurrent program is sufficient to make an issue visible.
+In the multithreading case, the calls of transferMoney will be executed concurrenyly. Because of the thread t1 and t2, there is a data race on the balance of the account in the functio transferMoney. In order to make the race condition visible, putting the threads for a short period to sleep. A short sleep in concurrent program is sufficient to make an issue visible.
 
 <details markdown=block>
 <summary markdown=span>*multithreading.cc*</summary>
@@ -178,10 +180,18 @@ int main(int argc, char *argv[])
 
 The balance of both account in concurrent program: 
 ```
+$ g++ -std=c++14   multithreading.cc  -o multithreading -lsfml-graphics -lsfml-window -lsfml-system
 $ ./multithreading
 Thread ID: 0x700008718000 account1.balance 50
 Thread ID: 0x70000879b000 account2.balance 150
 ```
+
+
+
+
+
+
+
 
 ## Reference ##
 
