@@ -136,7 +136,7 @@ int main(int argc, char *argv[])
 The balance of both accounts after withdrawing money:
 
 ```
-$ g++ single_threading.cc -o single_threading -lsfml-graphics -lsfml-window -lsfml-system
+$ g++ -std=c++14 single_threading.cc -o single_threading
 $ ./single_threading
 account1.balance 170
 account2.balance 30
@@ -180,18 +180,11 @@ int main(int argc, char *argv[])
 
 The balance of both account in concurrent program: 
 ```
-$ g++ -std=c++14   multithreading.cc  -o multithreading -lsfml-graphics -lsfml-window -lsfml-system
+$ g++ -std=c++14   multithreading.cc  -o multithreading
 $ ./multithreading
 Thread ID: 0x700008718000 account1.balance 50
 Thread ID: 0x70000879b000 account2.balance 150
 ```
-
-
-
-
-
-
-
 
 ## Reference ##
 
