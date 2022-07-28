@@ -121,9 +121,11 @@ Example: Input: nums = [1,1,1,2,2,3], k = 2, Output: [1,2]
 
     return topk_select(start, end, len(keys) - k)</span></code></pre></div></details>
 
-Description: The solution was followed through the quick select algorithm. The basic functions for caculating the Kth largest element in an array are similar as the general process.
+Description: The solution was followed through the quick select algorithm. The basic functions for caculating the top k frequent elements in an array are similar as the general process.
 
 ## Reference ##
 
 + [Wiki: Quickselect](https://en.wikipedia.org/wiki/Quickselect)
 
+
+<p>Thanks for reading! Feel free to leave the comments below or <a href="mailto:qazqazqaz850@gmail.com">email</a> to me. Any pieces of advice or discussions are always welcome. :)</p>
