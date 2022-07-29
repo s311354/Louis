@@ -5,7 +5,7 @@ date: 2022-04-09
 tags: [Algorithms, C_C_plus_plus]
 ---
 
-"In computer science, a topological sort or topological ordering of a directed graph is a linear ordering of its vertices such that for every directed edge uv from vertex u to vertex v, u comes before v in the ordering. For instance, <span style="background-color: #FFFF00">the vertices of the graph may represent tasks to be performed, and the edges may represent constraints that one task must be performed before another; in this application, a topological ordering is just a valid sequence for the tasks.</span> Precisely, a topological sort is a graph traversal in which each node v is visited only after all its dependencies are visited." .. from Wiki
+"In computer science, a topological sort or topological ordering of a directed graph is a linear ordering of its vertices such that for every directed edge uv from vertex u to vertex v, u comes before v in the ordering. For instance, the vertices of the graph may represent tasks to be performed, and the edges may represent constraints that one task must be performed before another; in this application, a topological ordering is just a valid sequence for the tasks. <span style="background-color: #FFFF00">Precisely, a topological sort is a directed graph traversal in which each node is visited only after all its dependencies are visited.</span>" .. from Wiki page
 
 ## Brief ##
 A topological sort is a linear ordering of vertices in a directed acyclic graph (DAG). Directed graph can be used to indicate precedence among a set of events. In many applications, we use directed acyclic graphs to indicate precedence among events. For example, in a scheduling problem, there is a set of tasks and a set of constraints specifying the order of these tasks. In this post, I would like to briefly discuss about several practices for the applications of topolgical sort (Course Schedule, Parallel Courses).
@@ -17,7 +17,7 @@ The basic properties of topolgical sorting:
 
 <figure><center><img src="{{ site.baseurl }}/picture/toplogical_sort.png" width="100%"></center></figure>
 
-Note: The usual algorithms for topological sorting
+Note: These are three common algorithms for topological sorting
 
 + Kahn's algorithm: First, find a list of "start node" which have no incoming edges and insert them into a set S; at least one such node must exist in a non-empty actclic graph
 + Depth-first search: Loops through each node of the graph, in an arbitrary order, initiating a depth-first search that terminates when it hits any node that has already been visited since the beginning of the topological sort or the node has no outgoing edges

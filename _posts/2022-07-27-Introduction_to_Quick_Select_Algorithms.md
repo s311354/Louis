@@ -20,7 +20,7 @@ In this post, I would like to briefly discuss about several practices for the ap
 Quickselect uses the same overall approach as quicksort, choosing one element as a pivot and partitioning the data in two based on the pivot, accordingly as less than or greater the pivot. However, instead of recursing into both sides, as in quicksort, quickselect only recurses into one side - the side with the element it is searching for. Here is the general process:
 
 1. Pick a pivot point
-2. Move all elements that are smaller than or equal to/larger than or equal to the pivot to the left and vice versa.
+2. Move all elements that are larger than or equal to the pivot to the left and vice versa.
 3. If the position of pivot is equal to k, then we can find the kth largest value at pivot point
 4. If not, perform quick select on the left partition or right partition depending on the kth largest element in the position after/before k
 
@@ -50,28 +50,26 @@ Example: Input: nums = [3,2,1,5,6,4], k = 2. Output: 5
         swap(pivot_idx, end)
         pivot_val = nums[end]
         # assign end of larger index
-        end_of_larger_idx = start - 1
+        end_of_larger_idx = start
         # Move all elements that are larger than or equal to the pivot to the left and vice versa
         for i in range(start, end):
             if nums[i] &gt;= pivot_val:
-                swap(i, end_of_larger_idx + 1)
+                swap(i, end_of_larger_idx)
                 end_of_larger_idx += 1
-        swap(end, end_of_larger_idx + 1)
-        return end_of_larger_idx + 1
+        swap(end, end_of_larger_idx)
+        return end_of_larger_idx
 
     def kth_largest(start, end, k):
         # Pick a pivot point
         pivot_idx = find_pivot_idx(start, end)
-        # If the position of pivot is equal to k, then we can find the kth largest value at pivot point
         if pivot_idx - start + 1 == k:
             return nums[pivot_idx]
-        # If not, perform quick select on the left partition or right partition depending on the kth largest element in the position after/befor k
-        elif pivot_idx - start + 1 &gt; k: # the kth largest element in the position before k
+        elif pivot_idx - start + 1 &lt; k:
             # quick selection on the right partition
-            return kth_largest(start, pivot_idx - 1, k)
-        else: # (pivot_idx - start + 1 &lt; k), the kth largest element in the position after k
-            # quick selection on the left partition
             return kth_largest(pivot_idx + 1, end, k - (pivot_idx - start + 1))
+        else:
+            # quick selection on the left partition
+            return kth_largest(start, pivot_idx - 1, k)
 
     return kth_largest(start, end, k)
 
@@ -88,6 +86,7 @@ Example: Input: nums = [1,1,1,2,2,3], k = 2, Output: [1,2]
 <details markdown=block>
 <summary markdown=span>*topKFrequent.py*</summary>
 <div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb" style="font-size: 80%">def topKFrequent(self, nums: List[int], k: int) -> List[int]:
+    # time:O(N) space:O(N)
     ct = Counter(nums)
     keys = list(ct.keys())
     start, end = 0, len(keys) - 1
@@ -99,27 +98,28 @@ Example: Input: nums = [1,1,1,2,2,3], k = 2, Output: [1,2]
         pivot_index = start + (end - start) // 2
         swap(pivot_index, end)
         pivot_val = ct[keys[end]]
-        end_of_larger_idx = start - 1
+        end_of_larger_idx = start
+        # Move all elements that are larger than or equal to the pivot to the left and vice versa
         for i in range(start, end):
-            if ct[keys[i]] &lt; pivot_val:
-                swap(i, end_of_larger_idx + 1)
+            if ct[keys[i]] &gt;= pivot_val:
+                swap(i, end_of_larger_idx)
                 end_of_larger_idx += 1
-        swap(end, end_of_larger_idx + 1)
-        return end_of_larger_idx + 1
+        swap(end, end_of_larger_idx)
+        return end_of_larger_idx
 
     def topk_select(start, end, k):
-        if start == end:
-            return keys[k:]
         # Pick a pivot point
         pivot_index = find_pivot_idx(start, end)
-        if pivot_index == k:
-            return keys[k:]
-        elif pivot_index &lt; k:
-            return topk_select(pivot_index + 1, end, k)
+        if pivot_index - start + 1 == k:
+            return keys[:pivot_index+1]
+        elif pivot_index - start + 1 &lt; k:
+            # quick selection on the right partition
+            return topk_select(pivot_index + 1, end, k - (pivot_index - start + 1))
         else:
+            # quick selection on the left partition
             return topk_select(start, pivot_index - 1, k)
 
-    return topk_select(start, end, len(keys) - k)</span></code></pre></div></details>
+    return topk_select(start, end, k)</span></code></pre></div></details>
 
 Description: The solution was followed through the quick select algorithm. The basic functions for caculating the top k frequent elements in an array are similar as the general process.
 
