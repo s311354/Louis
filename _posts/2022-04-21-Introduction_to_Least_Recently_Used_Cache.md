@@ -106,7 +106,8 @@ The solution was learned from [LeetCode Discuss][discuss1].
 + [Wiki: Cache replacement policies](https://en.wikipedia.org/wiki/Cache_replacement_policies)
 + [LRU Cache in Python using OrderedDict](https://www.geeksforgeeks.org/lru-cache-in-python-using-ordereddict/)
 + [Caching in Python Using the LRU Cache Strategy](https://realpython.com/lru-cache-python/)
-
++ [LRU Cache Implementation](https://www.scaler.com/topics/lru-cache-implementation/)
+  
 [cache]:https://docs.python.org/3.7/library/functools.html#functools.lru_cache "https://docs.python.org/3.7/library/functools.html#functools.lru_cache"
 
 [functools]:https://github.com/python/cpython/blob/3.7/Lib/functools.py "https://github.com/python/cpython/blob/3.7/Lib/functools.py"
