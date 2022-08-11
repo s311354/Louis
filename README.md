@@ -1,12 +1,11 @@
-# Description
+# [🌍 louiscode00.com](http://louiscode00.com/)
 
-[Blog Link](https://s311354.github.io/Louis.github.io/)
+[![Lighthouse Accessibility Badge](./badges/lighthouse_accessibility.svg)](http://louiscode00.com/)
+[![Lighthouse Best Practices Badge](./badges/lighthouse_best-practices.svg)](http://louiscode00.com/)
+[![Lighthouse Performance Badge](./badges/lighthouse_performance.svg)](http://louiscode00.com/)
+[![Lighthouse SEO Badge](./badges/lighthouse_seo.svg)](http://louiscode00.com/)
 
 This blog is an minimalist and unassuming [Jekyll](http://jekyllrb.com) theme that places content first by tucking away navigation in a hidden drawer. It's based on [Poole](http://getpoole.com), the Jekyll butler.
-
-![Lanyon blog](https://f.cloud.github.com/assets/98681/1825266/be03f014-71b0-11e3-9539-876e61530e24.png)
-![Lanyon blog with open sidebar](https://f.cloud.github.com/assets/98681/1825267/be04a914-71b0-11e3-966f-8afe9894c729.png)
-
 
 ## Contents
 
