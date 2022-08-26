@@ -1,0 +1,3 @@
+[submodule "themes/tranquilpeak"]
+	path = themes/tranquilpeak
+	url = https://github.com/s311354/hexo-theme-tranquilpeak.git

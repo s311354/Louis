@@ -111,7 +111,7 @@ theme: tranquilpeak
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: 'git'
-  repo: https://github.com/s311354/LouisSrLiu.github.io.git
+  repo: https://github.com/LouisSrLiu/LouisSrLiu.github.io.git
   branch: gh-pages
 
 # RSS feed
