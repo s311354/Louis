@@ -7,6 +7,7 @@
     "clean": "hexo clean",
     "deploy": "hexo deploy",
     "server": "hexo server",
+    "algolia": "hexo algolia",
     "update-theme": "git submodule update --remote"
   },
   "hexo": {
