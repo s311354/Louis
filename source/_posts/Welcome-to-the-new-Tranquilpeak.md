@@ -1,6 +1,5 @@
 ---
 title: "Welcome to Louis"
-date: 2022-08-01
 categories:
 - louissrliu
 - releases
