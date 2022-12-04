@@ -22,7 +22,7 @@ The HTML canvas can be used for sketching/drawing either by mouse or by touch. I
 The belowing canvas can be used with any devices that use mouse or touch screen:
 
 <div style="overflow-x:auto;">
-    <iframe src="/javascript/canvas/mouse_touch_canvas.html" style="width:100%; height:360px", title="add-default-marker"></iframe>
+    <iframe src="/javascript/canvas/mouse_touch_canvas.html" style="width:50%; height:300px", title="add-default-marker"></iframe>
 </div>
 
 ## Source Code ##
