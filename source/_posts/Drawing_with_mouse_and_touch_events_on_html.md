@@ -1,6 +1,6 @@
 ---
 title: Drawing with Mouse and Touch Events on HTML
-date: 2022-11-19
+date: 2022-12-04
 categories:
 - louissrliu
 - miscellaneous
