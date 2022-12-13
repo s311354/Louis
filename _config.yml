@@ -6,11 +6,14 @@
 title: Louis
 subtitle: 'Louis'
 description: 'Hello and wellcome to the internet home of Louis blog. (That’s me!)'
+favicon: /assets/images/logo.jpg
 keywords:
   - hexo
   - javascript
 author: ShiRong Liu
-language: en
+language:
+  - en
+  - zh-tw
 timezone: ''
 
 # URL
@@ -125,7 +128,8 @@ feed:
 algolia:
   appId: "N2INP4C5YH"
   apiKey: "a254c6a4e95825bd7c2c6eb46f8e9bc3" # search only api key
-  adminApiKey: "~key~"
+    # adminApiKey: "~key~"
+  adminApiKey: "1dd326e5458938fad45d1569a508c734"
   chunkSize: 5000
   indexName: "dev_louissriiu"
   fields:
@@ -136,3 +140,11 @@ algolia:
     - excerpt
     - permalink
     - thumbnailImageUrl
+
+mathjax:
+  tags: none # or 'ams' or 'all'
+  single_dollars: true # enable single dollar signs as in-line math delimiters
+  cjk_width: 0.9 # relative CJK char width
+  normal_width: 0.6 # relative normal (monospace) width
+  append_css: true # add CSS to pages rendered by MathJax
+  every_page: false # if true, every page will be rendered by MathJax regardless the `mathjax` setting in Front-matter

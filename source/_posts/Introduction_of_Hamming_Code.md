@@ -11,7 +11,7 @@ toc: true
 mathjax: true
 language: en
 thumbnailImagePosition: left
-thumbnailImage: https://d3p3tllh95j94n.cloudfront.net/wellcome-to-louissrliu/alviso.jpeg
+thumbnailImage: https://d3p3tllh95j94n.cloudfront.net/wellcome-to-louissrliu/reflection.jpeg
 ---
 
 Either computer data storage or telecommunication, regardless of the data storages and transmission, is non-zero probabilities that the data could be changed while it's being stored or transmitted. There is always a code-word with block length without free bit-errors. That means the data probably could be changed while it is being processed or transmitted. If the machine can't locate the position of the error and correct it, the information might be lost forever.
