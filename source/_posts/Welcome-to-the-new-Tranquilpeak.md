@@ -38,6 +38,7 @@ It should be noted that all the contents of this website are solely my own and d
 
 If you have any piece of advice or critical comments regarding my blog posts, please leave your comments under the blog post. If you have any questions regarding my [GitHub][github] open source projects, please open an issue ticket in the repository. This will be beneficial for all the readers and save our time for not answering duplicated questions. For private questions or private inquiry, please contact me via my personal <a href="mailto:qazqazqaz850@gmail.com">email</a>.
 
+
 [github]:https://github.com/s311354 "https://github.com/s311354"
 
 [jekyll]:http://louiscode00.com/ "http://louiscode00.com/"

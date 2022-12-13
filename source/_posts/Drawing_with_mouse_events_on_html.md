@@ -19,7 +19,7 @@ The HTML canvas can be used for sketching/drawing by mouse. The canvas API provi
 
 ## Mouse Canvas ##
 
-The mouse canvas can be used with any devices (laptop/mobile..) that use mouse. Belowing is the simple example:
+The mouse canvas can be used with any devices (desktop computer/laptop..) that use mouse. Belowing is the simple example:
 
 <div style="overflow-x:auto;">
     <iframe src="/javascript/canvas/mouse_canvas.html" style="width:100%; height:360px", title="add-default-marker"></iframe>
