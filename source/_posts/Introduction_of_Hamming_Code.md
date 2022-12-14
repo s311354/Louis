@@ -172,7 +172,7 @@ $$
 
 Error Detection:
 
-Suppose that the reveived data is **x'**, and **x'** may or may not equal to **x**, where
+Suppose that the reveived data is **x'**, and **x'** may or may not equal to **x**. The error detection is just parity checking by applying the parity-check matrix **H** on **x'**, where
 
 $$
 H = \begin{bmatrix}
@@ -182,7 +182,7 @@ H = \begin{bmatrix}
     \end{bmatrix}
 $$
 
-The property of **H** is that each column in **H** is actually binary index sequence, 1, 2, 3, etc. This property will be very useful for error correction.
+The property of **H** is that each column in **H** is actually binary index sequence, 1, 2, 3, etc. This property will be very useful for error correction. From the definition of the parity-check matrix is directly follows the minimum distance of the code is the minimum number **d** while there exist **d** columns of H that are linearly dependent.
 
 Error Correction:
 
