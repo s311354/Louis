@@ -209,4 +209,4 @@ Touch events are similar to mouse events except they support simultaneous touche
 
 [mouse]:https://louissrliu.github.io/2022/11/06/Drawing_with_mouse_events_on_html/ "https://louissrliu.github.io/2022/11/06/Drawing_with_mouse_events_on_html/"
 
-<p>Thanks for reading! Feel free to leave the comments below or <a href="mailto:qazqazqaz850@gmail.com">email</a> to me. Any pieces of advice or discussions are always welcome. :)</p>
+<p>Thanks for reading! Feel free to leave the comments below or <a href="mailto:shirong0419@icloud.com">email</a> to me. Any pieces of advice or discussions are always welcome. :)</p>

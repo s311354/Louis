@@ -206,7 +206,7 @@ git bisect bad 72a35907200b42246fd039d495cbef8d80fdefe3
 
 + [Git SCM](https://git-scm.com)
 
-<p>Thanks for reading! Feel free to leave the comments below or <a href="mailto:qazqazqaz850@gmail.com">email</a> to me. Any pieces of advice or discussions are always welcome. :)</p>
+<p>Thanks for reading! Feel free to leave the comments below or <a href="mailto:shirong0419@icloud.com">email</a> to me. Any pieces of advice or discussions are always welcome. :)</p>
 
 Hope this post will help! :)
 </p>
