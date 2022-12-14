@@ -65,6 +65,7 @@ $ git push -u origin master</span></code></pre></div>
     <li><a href="#UpdateRepo">Update your local copy of repository</a></li>
     <li><a href="#StashChange">Stash your work</a></li>
     <li><a href="#Bisect">Binary search the commit</a></li>
+    <li><a href="#Submodules">Start with submodules</a></li>
 </ol></h6>
 
 #### Git Commands
@@ -154,7 +155,7 @@ $ git stash apply </span></code></pre></div>
   
 </ul>
 
-<li><a name="StashChange"></a> <a name="Bisect"> Binary search to find the commit: </a> </li>
+<li><a name="StashChange"></a> Binary search to find the commit:</li>
 <p></p>
 
 <ul style="list-style-type:disc"> 
@@ -181,6 +182,22 @@ git bisect skip 72a35907200b42246fd039d495cbef8d80fdefe3
 # bad: [72a35907200b42246fd039d495cbef8d80fdefe3] Miscellaneous
 git bisect bad 72a35907200b42246fd039d495cbef8d80fdefe3
   </span></code></pre></div>
+</ul>
+
+<li> <a name="Submodules"> </a> Starting with submodules:</li>
+
+<ul>
+    <li>Add an existing Git repo as a submodule</li>
+    <div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb" style="font-size: 100%">$ git submodule add <repo_url> <destination_folder> </span></code></pre></div>
+
+    <li>Fetch and merge in the subdirectory</li>
+    <div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb" style="font-size: 100%">$ git submodule update --remote <destination_folder> </span></code></pre></div>
+
+    <li>Show the status of the submodule</li>
+    <div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb" style="font-size: 100%">$ git submodule status </span></code></pre></div>
+
+    <li>Synchronizes submodules's remote URL configuration setting</li>
+    <div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb" style="font-size: 100%">$ git submodules sync --remote </span></code></pre></div>
 </ul>
 
 </ol>
