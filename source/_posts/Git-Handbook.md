@@ -38,6 +38,11 @@ Now, you can see your current configurations, type:
 <div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb">$ </span><span class="nb">git config --list
 </span></code></pre></div>
 
+Note: The method saves the credentials in plaintext on your terminal. Please use credentials before pull changes.
+
+<div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb">$ </span><span class="nb">git config --global credential.helper store
+</span></code></pre></div>
+
 ###  Connect an existing progect with github
 
 If you have an existing progect and want to connect with github, you can do the following and start to tract with git.
