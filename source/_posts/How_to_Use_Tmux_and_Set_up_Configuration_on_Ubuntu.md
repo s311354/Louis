@@ -1,5 +1,5 @@
 ---
-title: How to Use Tmux and Set up Configuration
+title: How to Use Tmux and Set up Configuration on Ubuntu
 date: 2022-12-30
 categories:
 - louissrliu
