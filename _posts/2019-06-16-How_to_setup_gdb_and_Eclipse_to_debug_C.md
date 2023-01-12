@@ -42,35 +42,11 @@ tags: [IDE]
 
 ### Sign the certificate for GDB and Create a GDB command file
 
-  Firstly, create an entitlements file, XML file, which shows associated permissions to grant the binary:
-
-  <div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb" style="font-size: 100%">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
-    &lt;!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN"
-    "http://www.apple.com/DTDs/PropertyList-1.0.dtd"&gt;
-    &lt;plist version="1.0"&gt;
-    &lt;dict&gt;
-        &lt;key&gt;com.apple.security.cs.allow-jit&lt;/key&gt;
-        &lt;true/&gt;
-        &lt;key&gt;com.apple.security.cs.allow-unsigned-executable-memory&lt;/key&gt;
-        &lt;true/&gt;
-        &lt;key&gt;com.apple.security.cs.allow-dyld-environment-variables&lt;/key&gt;
-        &lt;true/&gt;
-        &lt;key&gt;com.apple.security.cs.disable-library-validation&lt;/key&gt;
-        &lt;true/&gt;
-        &lt;key&gt;com.apple.security.cs.disable-executable-page-protection&lt;/key&gt;
-        &lt;true/&gt;
-        &lt;key&gt;com.apple.security.cs.debugger&lt;/key&gt;
-        &lt;true/&gt;
-        &lt;key&gt;com.apple.security.get-task-allow&lt;/key&gt;
-        &lt;true/&gt;
-    &lt;/dict&gt;
-    &lt;/plist&gt;</span></code></pre></div>
-
   Open your Terminal prompt and run:
 
-  <div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb">$ codesign --entitlements gdb.xml -fs gdb-cert /usr/local/bin/gdb </span></code></pre></div>
+  <div class="language-shell highlighter-rouge"><pre class="highlight"><code class="hljs ruby"><span class="nb">$ codesign -s gdb-cert < gdbPat > </span></code></pre></div>
   
-  ,where gdb-cert is the name of your certificate.
+  ,where gdb-cert is the name of your certificate and \<gdbPath\> is the full path to your gdb binary file.
 
   Then, from the Terminal, you can do that by running this:
 
@@ -115,9 +91,8 @@ tags: [IDE]
 
 [2] [Eclipse 2019-03](https://www.eclipse.org/downloads/download.php?file=/oomph/epp/2019-03/R/eclipse-inst-mac64.dmg)
 
-[3] [Launching gdb aborting configuring gdb issue](https://stackoverflow.com/questions/5425396/eclipse-cdt-cant-use-debugger-always-stuck-on-89-process)
 
-[4] [Getting gdb to (semi) reliably work on Mojave MacOS](https://timnash.co.uk/getting-gdb-to-semi-reliably-work-on-mojave-macos/)
+[3] [Launching gdb aborting configuring gdb issue](https://stackoverflow.com/questions/5425396/eclipse-cdt-cant-use-debugger-always-stuck-on-89-process)
 
 <p>Thanks for reading! Feel free to leeve the comments below or <a href="mailto:qazqazqaz850@gmail.com">email</a> to me. Any pieces of advice or discussions are always welcome. :)
 

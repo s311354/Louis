@@ -72,7 +72,14 @@ $ cat /etc/ld.so.conf.d/x86_64-linux-gnu.conf
 
 </span></code></pre>
 
-Note: the path where the dynamic linker searches for the libraries is configured in the /etc directory, namely in the file /etc/ld.so.conf and in files residing in the /etc/ld.so.conf.d directory
+Note:
+
++ The path where the dynamic linker searches for the libraries is configured in the /etc directory, namely in the file /etc/ld.so.conf and in files residing in the /etc/ld.so.conf.d directory
+
++ PATH environment variable specifies the search paths for commands
+
++ LD_LIBRARY_PATH environment specifies the search paths for shared libraries for the linker
+
 
 ## Reference ##
 
