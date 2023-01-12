@@ -80,6 +80,7 @@ Note:
 
 + LD_LIBRARY_PATH environment specifies the search paths for shared libraries for the linker
 
++ ldd command displays the shared objects (shared libraries) required by each program or shared object specified on the command line.
 
 ## Reference ##
 
