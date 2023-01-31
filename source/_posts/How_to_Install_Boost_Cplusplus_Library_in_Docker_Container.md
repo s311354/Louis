@@ -157,7 +157,7 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-      
+
     steps:
     - name: Checkout
       uses: actions/checkout@v3
@@ -170,17 +170,18 @@ jobs:
     
     - name: Set up Docker Buildx
       uses: docker/setup-buildx-action@v2
-
+    
     - name: Build and push
       uses: docker/build-push-action@v3
       with:
           context: .
           file: ./Dockerfile
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}
-          build-args: BOOST_VERSION=1.80.0,NUM_JOBS=4
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/clockbox:latest
+          build-args: |
+            "BOOST_VERSION=1.80.0"
+            "NUM_JOBS=8"
 ```
-
 
 ## Reference ##
 
