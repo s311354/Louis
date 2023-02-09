@@ -223,6 +223,10 @@ root@a2c941bd0212:/mnt# valgrind --leak-check=yes build/memoryLeak
 
 By viewing the memory profile from valgrind, it identifies the bottlenecks of definitely lost in the line 3 of memoryLeak.cpp.
 
+## Reference ##
+
+[How to Debug Using GDB](https://cs.baylor.edu/~donahoo/tools/gdb/tutorial.html)
+
 [strace]:https://en.wikipedia.org/wiki/Strace "https://en.wikipedia.org/wiki/Strace"
 
 [perf]:https://perf.wiki.kernel.org/index.php/Main_Page "https://perf.wiki.kernel.org/index.php/Main_Page"
